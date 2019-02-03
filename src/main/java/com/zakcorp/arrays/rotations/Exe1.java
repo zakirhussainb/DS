@@ -6,6 +6,7 @@ public class Exe1 {
     int k = 2;
     for (int i=0;i<arr.length;i++) {
       System.out.println(arr[i + 1]);
+
     }
   }
 }
