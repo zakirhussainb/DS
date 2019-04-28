@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * @author : Zakir
- * Result: Success
+ * Result: Correct Answer
  * Execution Time: 2.48
  * TODO: Need to find an efficient solution for this problem, In O(n) time.
  */
