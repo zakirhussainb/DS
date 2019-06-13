@@ -27,30 +27,19 @@ public class MDGFG_Arr05 {
     }
 
     private static int maxLen(int[] arr) {
-        HashMap<Integer,Integer> hp= new HashMap<>();
-        int sum=0;
-        int maxsize=0;
-        for(int i=0;i<arr.length;i++) {
-            if(arr[i]==0)
-                arr[i]=-1;
+        int maxSize = 0;
+        int sum = 0;
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] == 0) {
+                arr[i] = -1;
+            }
         }
-        for(int i=0;i<arr.length;i++) {
-            sum = sum+arr[i];
+        for(int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
             if(sum == 0) {
-                maxsize = i + 1;
-            }
-            else {
-                if(hp.containsKey(sum)) {
-                    if((hp.get(sum)+1)>0) {
-                        if( (i-hp.get(sum)) > maxsize ) {
-                            maxsize = i-hp.get(sum);
-                        }
-                    }
-                }else {
-                    hp.put(sum,i);
-                }
+                maxSize = i + 1;
             }
         }
-        return maxsize;
+        return maxSize;
     }
 }
