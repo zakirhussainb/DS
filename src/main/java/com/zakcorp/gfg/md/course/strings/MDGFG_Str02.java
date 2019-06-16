@@ -11,6 +11,8 @@ import java.util.Arrays;
  * Result: Correct Answer
  * Execution Time: 0.07
  * TODO:
+ *      Step 1: Split the string with the given character either (" ", ".") and form an array.
+ *      Step 2: Reverse the array and append into a StringBuilder.
  */
 public class MDGFG_Str02 {
     public static void main(String[] args) throws IOException {

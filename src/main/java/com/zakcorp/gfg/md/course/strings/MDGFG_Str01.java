@@ -11,6 +11,10 @@ import java.util.Arrays;
  * Result: Correct Answer
  * Execution Time: 0.78
  * TODO:
+ *         Step 1: Convert the strings into character array.
+ *         Step 2: Sort the character arrays.
+ *         Step 3: Create new string from the sorted character arrays.
+ *         Step 4: Check the new strings for equality.
  */
 public class MDGFG_Str01 {
     public static void main(String[] args) throws IOException {
