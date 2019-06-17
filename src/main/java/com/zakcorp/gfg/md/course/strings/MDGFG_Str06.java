@@ -7,11 +7,15 @@ import java.io.InputStreamReader;
 /**
  * @author : Zakir
  * Question: Roman Number to Integer
- * Result:
- * Execution Time:
+ * Result: Correct Answer
+ * Execution Time: 0.06
  * TODO:
- *     Step 1: Use substring.
- *     Step 2: Check for clockwise rotation, if unmatched then also check for anti-clockwise rotation.
+ *     Step 1: Split the Roman Numeral string into Roman Symbols (character).
+ *     Step 2: Convert each symbol of Roman Numerals into the value it represents.
+ *     Step 3: Take symbol one by one from starting from index 0:
+ *              If current value of symbol is greater than or equal to the value of next symbol,
+ *                          then add this value to the running total.
+ *              else subtract this value by adding the value of next symbol to the running total.
  */
 public class MDGFG_Str06 {
     public static void main(String[] args) throws IOException {
@@ -25,8 +29,6 @@ public class MDGFG_Str06 {
 
     private static int convertRomanToInteger(String roman) {
         int result = 0;
-        System.out.println("rom...len..." + roman.length());
-        // IV
         for(int i = 0 ; i < roman.length(); i++) {
             int s1 = value(roman.charAt(i));
             if(i + 1 < roman.length()) {
