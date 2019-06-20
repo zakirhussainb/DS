@@ -20,6 +20,14 @@ import java.io.InputStreamReader;
  *              Step 3.1: Use a inner for loop to check whether s2 contains s1Array element.
  *                        If yes, then add the character, else break the loop.
  *              Step 3.2: Store the value of s2 in x and check it against max value.
+ *              Example:
+ *              Input:
+ *              2
+ *              abababcdefababcdab
+ *              geeksforgeeks
+ *              Output:
+ *              6
+ *              7
  */
 public class MDGFG_Str04 {
     public static void main(String[] args) throws IOException {

@@ -12,6 +12,14 @@ import java.io.InputStreamReader;
  * TODO:
  *     Step 1: Use substring.
  *     Step 2: Check for clockwise rotation, if unmatched then also check for anti-clockwise rotation.
+ *     Example:
+ *      Input:
+ *      2
+ *      abababcdefababcdab
+ *      geeksforgeeks
+ *      Output:
+ *      6
+ *      7
  */
 public class MDGFG_Str05 {
     public static void main(String[] args) throws IOException {
