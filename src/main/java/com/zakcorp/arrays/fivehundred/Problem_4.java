@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Map;
 
-public class Array_4_0 {
+public class Problem_4 {
     public static void main(String[] args) throws IOException {
-        Array_4_0 p = new Array_4_0();
+        Problem_4 p = new Problem_4();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
         while (t --> 0) {

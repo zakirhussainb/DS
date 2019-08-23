@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Array_2_0 {
+public class Problem_2 {
     /*
            1. Check if subarray with 0 sum is exists or not -> 1 variation
                 1.1 boolean isZeroSumExists(arr);    -> (sum == 0) return true;
      */
     public static void main(String[] args) throws IOException {
-        Array_2_0 p = new Array_2_0();
+        Problem_2 p = new Problem_2();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
         while (t --> 0) {

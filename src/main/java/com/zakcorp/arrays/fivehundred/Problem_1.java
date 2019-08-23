@@ -3,11 +3,10 @@ package com.zakcorp.arrays.fivehundred;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Array_1_0 {
+public class Problem_1 {
     /*
            1. Find Pair with given Sum in the Array -> It has four variations
                 1.1 getIndexForSinglePair();    -> return new int[]{map.get(complement), i};
@@ -21,7 +20,7 @@ public class Array_1_0 {
 //        int[] arr = {3, 3};//6
 //        int[] arr = {-1, -2, -3, -4, -5};//-8
 //        int target = -8;
-        Array_1_0 p = new Array_1_0();
+        Problem_1 p = new Problem_1();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
         while (t --> 0) {
