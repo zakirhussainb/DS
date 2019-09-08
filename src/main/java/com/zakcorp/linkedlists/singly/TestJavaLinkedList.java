@@ -9,6 +9,10 @@ public class TestJavaLinkedList {
         linkedList.add(20);
         linkedList.add(30);
         linkedList.add(40);
+        linkedList.add(4, 35);
+//        linkedList.clear();
+        System.out.println(linkedList.toString());
+        System.out.println(linkedList.get(5));
         System.out.println(linkedList.toString());
     }
 }
