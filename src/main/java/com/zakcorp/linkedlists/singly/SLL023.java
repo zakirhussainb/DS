@@ -23,7 +23,7 @@ public class SLL023 {
     private boolean isLoopExists(LinkedList101<Integer> linkedList) {
         LinkedList101.Node p = linkedList.head;
         LinkedList101.Node q = linkedList.head;
-        while(p != null && q != null && q.next != null) {
+        while(q != null && q.next != null) {
             p = p.next;
             q = q.next.next;
             if(p == q){

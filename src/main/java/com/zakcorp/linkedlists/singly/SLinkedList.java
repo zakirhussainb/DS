@@ -1,14 +1,16 @@
 package com.zakcorp.linkedlists.singly;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class SLinkedList<E> {
-
 	private static int size = 0;
-
-
-
-    Node<E> head;
+	Node<E> head;
+	public SLinkedList(){}
+	public SLinkedList(Node<E> head){
+		this.head = head;
+	}
     static class Node<E> {
         E element;
         Node<E> next;
@@ -73,20 +75,23 @@ public class SLinkedList<E> {
     	size = 0;
 	}
 
-	/*public Node clone(Node p){
-    	Node newHead = null;
-    	Node tail = null;
-    	while(p != null){
-    		if(newHead == null){
-    			newHead = new Node(p.element);
-    			tail = newHead;
-			} else {
-    			tail.next = new Node(p.element);
-    			tail = tail.next;
-			}
+	public SLinkedList<E> cloneLL(){
+		Node<E> p = head;
+		Node<E> q = null;
+		Map<Node<E>, Node<E>> hashMap = new HashMap<>();
+		while(p != null){
+			q = new Node<>(p.element);
+			hashMap.put(p, q);
+			p = p.next;
 		}
-		return null;
-	}*/
+		p = head;
+		while(p != null){
+			q = hashMap.get(p);
+			q.next = hashMap.get(p.next);
+			p = p.next;
+		}
+    	return new SLinkedList<>(hashMap.get(head));
+	}
 
 	public boolean contains(Object o) {
 		Node p = head;
@@ -256,6 +261,10 @@ public class SLinkedList<E> {
 		return removeFirst();
 	}
 
+	public E pop(){
+		return removeFirst();
+	}
+
     public void printCustom(Node p){
     	if(p == null){
 			System.out.println("List is empty...Size: " + size);
@@ -286,5 +295,7 @@ public class SLinkedList<E> {
 	public boolean isPositionIndex(int index){
     	return index >=0 && index <= size;
 	}
+
+	/*Other utility Functions*/
 
 }

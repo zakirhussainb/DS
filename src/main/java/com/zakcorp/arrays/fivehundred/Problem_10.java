@@ -28,6 +28,8 @@ public class Problem_10 {
                 intArr2[i] = Integer.parseInt(splitArr2[i]);
             }
             p.mergeTwoSortedArraysInPlace(intArr1, intArr2);
+            String str = "SAMPLE";
+            System.out.println(str.toLowerCase());
 //            p.mergeTwoSortedArraysToSingleArray(intArr1, 3, intArr2, 3);
 //            System.out.println(Arrays.toString(intArr1));
 //            System.out.println(Arrays.toString(intArr2));
