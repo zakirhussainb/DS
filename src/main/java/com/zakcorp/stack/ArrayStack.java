@@ -6,6 +6,7 @@ public class ArrayStack<E> implements StackI<E> {
     private E[] elements;
     public ArrayStack(){
         this(DEFAULT_SIZE);
+        top = -1;
     }
     public ArrayStack(int initSize){
         elements = (E[])new Object[initSize];
