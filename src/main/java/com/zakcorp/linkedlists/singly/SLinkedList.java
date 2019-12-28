@@ -134,9 +134,10 @@ public class SLinkedList<E> {
     	}
     	Node<E> p = head;
     	while(p != null){
-    		System.out.print(p.element + " ");
+    		System.out.print(p.element + "->");
     		p = p.next;
     	}
+    	System.out.print("NULL");
     	System.out.println("\tSize of SLL: " + size);
     }
 	public int indexOf(Object o){
@@ -271,9 +272,10 @@ public class SLinkedList<E> {
 			return;
 		}
     	while(p != null){
-			System.out.print(p.element + " ");
+			System.out.print(p.element + "->");
 			p = p.next;
 		}
+    	System.out.print("NULL");
 	}
 
     public void checkPositionIndex(int index) {
