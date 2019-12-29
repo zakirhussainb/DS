@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 
 public class LLQueue<E> implements QueueI<E> {
     private Node<E> front;

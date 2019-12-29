@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 
 public interface DEQueueI<E> {
     void insertFirst(E element);

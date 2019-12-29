@@ -3,7 +3,7 @@ package com.zakcorp.linkedlists.circular;
 public class CircularSLLImpl {
     Node head;
     Node tail;
-    class Node{
+    static class Node{
         Node next = null;
         int data;
         Node(int data){

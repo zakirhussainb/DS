@@ -2,100 +2,9 @@ package com.zakcorp.linkedlists.singly;
 
 import java.util.*;
 
-public class GFG_All_Problems {
-    public static void main(String[] args) {
-        SLinkedListInteger sll = new SLinkedListInteger();
-        sll.add(5);
-        sll.add(20);
-        sll.add(4);
-        sll.add(3);
-        sll.add(30);
-//        sll.add(49);
-//        sll.add(53);
-//        sll.add(53);
-//        sll.printListCustom(sll.head);
-//        SLinkedList.Node<Integer> head = makeMiddlePointToHead(sll.head);
-//        sll.printCustom(head);
-//        SLinkedList.Node<Integer> head1 = rotateLLBlockWise(sll.head, 3, 1);
-//        sll.printCustom(head1);
+public class SinglyLLProblemsGFG {
 
-//        SLinkedListInteger.Node head = rotateLinkedList(sll.head, 3);
-//        sll.printListCustom(head);
-//        SLinkedListInteger.Node head = sortZeroOneTwo(sll.head);
-//        sll.printListCustom(head);
-        /*SLinkedListInteger sllCp1 = new SLinkedListInteger();
-        sllCp1.add(4);
-        sllCp1.add(3);
-        sllCp1.add(5);
-        sllCp1.add(7);
-        sllCp1.add(11);
-        sllCp1.add(2);
-        sllCp1.add(1);
-        SLinkedListInteger sllCp2 = new SLinkedListInteger();
-        sllCp2.add(2);
-        sllCp2.add(3);
-        sllCp2.add(4);
-        sllCp2.add(5);
-        sllCp2.add(6);
-        sllCp2.add(8);
-        sllCp2.add(12);
-        int x = 9;
-        int pairCount = countPairsSumEqual(sllCp1.head, sllCp2.head, x);
-        System.out.println("Number of Pairs from two linked lists whose sum is equal to...." + pairCount);*/
-
-//        SLinkedListInteger.Node head = removeEveryKthNode(sll.head, 4);
-//        sll.printListCustom(head);
-
-//        SLinkedListInteger.Node head = removeAllDuplicatesFromSortedList(sll.head);
-//        sll.printListCustom(head);
-
-//        SLinkedListInteger.Node head = moveAllOccurrencesToEnd(sll.head, 2);
-//        sll.printListCustom(head);
-
-        /*HashSet<HashSet<Integer>> twoDList= findPairForGivenSum_70(sll.head, 17);
-        for(HashSet<Integer> l1 : twoDList){
-            for(Integer i : l1){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }*/
-
-//        SLinkedListInteger.Node head = partitionLL_71(sll.head, 3);
-//        sll.printListCustom(head);
-
-        /* Check linked list with a loop is palindrome or not */
-        /*SLinkedListInteger.Node head = new SLinkedListInteger.Node(1);
-        head.next = new SLinkedListInteger.Node(2);
-        head.next.next = new SLinkedListInteger.Node(3);
-        head.next.next.next = new SLinkedListInteger.Node(2);
-        head.next.next.next.next = new SLinkedListInteger.Node(1);
-
-        *//*Creating a loop for testing purpose*//*
-        head.next.next.next.next = head.next;
-
-        if(isPalindrome_72(head)){
-            System.out.println("Paindrome");
-        } else {
-            System.out.println("Not a palindrome");
-        }*/
-
-//        SLinkedListInteger.Node head = problem_59_1(sll.head);
-//        sll.printNextArbitPointers(head);
-
-//        SLinkedListInteger.Node head = problem_59_2(sll.head);
-//        sll.printNextArbitPointers(head);
-
-
-//        SLinkedListInteger.Node head = problem_58(sll.head);
-//        sll.printListCustom(head);
-
-        int result = problem_54(sll.head);
-        System.out.println("Randomly selected Key is..." + result);
-
-
-    }
-
-    private static int problem_54(SLinkedListInteger.Node head) {
+    protected int problem_54(SinglyLLIntImpl.Node head) {
         int length = 5;
         Random random = new Random();
         int res = random.nextInt(length);
@@ -104,7 +13,7 @@ public class GFG_All_Problems {
             return result;
         }
         result = head.data;
-        SLinkedListInteger.Node curr = head;
+        SinglyLLIntImpl.Node curr = head;
         int n = 2;
         while(curr != null){
             if(Math.random() % n == 0){
@@ -116,11 +25,11 @@ public class GFG_All_Problems {
         return result;
     }
 
-    private static SLinkedListInteger.Node problem_58(SLinkedListInteger.Node head) {
+    protected SinglyLLIntImpl.Node problem_58(SinglyLLIntImpl.Node head) {
         if(head == null)
             return head;
-        SLinkedListInteger.Node curr = reverseList(head);
-        SLinkedListInteger.Node pHead = curr;
+        SinglyLLIntImpl.Node curr = reverseList(head);
+        SinglyLLIntImpl.Node pHead = curr;
         pHead.data = pHead.data + 1;
 //        SLinkedListInteger.Node nPtr = pHead.next;
         while (pHead != null){
@@ -129,7 +38,7 @@ public class GFG_All_Problems {
                 if(pHead.next != null){
                     pHead.next.data = pHead.next.data + 1;
                 } else {
-                    pHead.next = new SLinkedListInteger.Node(1);
+                    pHead.next = new SinglyLLIntImpl.Node(1);
                 }
             }
             pHead = pHead.next;
@@ -137,10 +46,10 @@ public class GFG_All_Problems {
         return reverseList(curr);
     }
 
-    private static SLinkedListInteger.Node problem_59_2(SLinkedListInteger.Node head) {
+    protected SinglyLLIntImpl.Node problem_59_2(SinglyLLIntImpl.Node head) {
         head = reverseList(head);
-        SLinkedListInteger.Node max = head;
-        SLinkedListInteger.Node temp = head.next;
+        SinglyLLIntImpl.Node max = head;
+        SinglyLLIntImpl.Node temp = head.next;
         while(temp != null){
 //            temp.arbit = max;
             if(max.data < temp.data) {
@@ -151,10 +60,10 @@ public class GFG_All_Problems {
         return reverseList(head);
     }
 
-    private static SLinkedListInteger.Node reverseList(SLinkedListInteger.Node head) {
-        SLinkedListInteger.Node p = head;
-        SLinkedListInteger.Node q = null;
-        SLinkedListInteger.Node r = null;
+    protected SinglyLLIntImpl.Node reverseList(SinglyLLIntImpl.Node head) {
+        SinglyLLIntImpl.Node p = head;
+        SinglyLLIntImpl.Node q = null;
+        SinglyLLIntImpl.Node r = null;
         while(p != null){
             r = q;
             q = p;
@@ -165,11 +74,11 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static SLinkedListInteger.Node problem_59_1(SLinkedListInteger.Node head) {
-        SLinkedListInteger.Node otrNode = head;
+    protected SinglyLLIntImpl.Node problem_59_1(SinglyLLIntImpl.Node head) {
+        SinglyLLIntImpl.Node otrNode = head;
         while(otrNode != null){
-            SLinkedListInteger.Node inrNode  = otrNode.next;
-            SLinkedListInteger.Node prev = null;
+            SinglyLLIntImpl.Node inrNode  = otrNode.next;
+            SinglyLLIntImpl.Node prev = null;
             while(inrNode != null){
                 if(otrNode.data < inrNode.data){
 //                    otrNode.arbit = inrNode;
@@ -187,9 +96,9 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static boolean isPalindrome_72(SLinkedListInteger.Node head) {
-        SLinkedListInteger.Node slow = head;
-        SLinkedListInteger.Node fast = head;
+    protected boolean isPalindrome_72(SinglyLLIntImpl.Node head) {
+        SinglyLLIntImpl.Node slow = head;
+        SinglyLLIntImpl.Node fast = head;
         while(fast.next != null && fast.next.next != null){
             slow = slow.next;
             fast = fast.next.next;
@@ -208,8 +117,8 @@ public class GFG_All_Problems {
             }
         }
         //System.out.println(prev.data);
-        SLinkedListInteger.Node tempHead = slow;
-        SLinkedListInteger.Node curr = tempHead;
+        SinglyLLIntImpl.Node tempHead = slow;
+        SinglyLLIntImpl.Node curr = tempHead;
         do
         {
             System.out.println(curr.data);
@@ -219,8 +128,8 @@ public class GFG_All_Problems {
         return true;
     }
 
-    private static SLinkedListInteger.Node partitionLL_71(SLinkedListInteger.Node head, int x) {
-        SLinkedListInteger.Node smallHead = null, smallLast = null,
+    protected SinglyLLIntImpl.Node partitionLL_71(SinglyLLIntImpl.Node head, int x) {
+        SinglyLLIntImpl.Node smallHead = null, smallLast = null,
                 equalHead = null, equalLast = null, greaterHead = null,
                 greaterLast = null;
         while(head != null){
@@ -268,10 +177,10 @@ public class GFG_All_Problems {
         return smallHead;
     }
 
-    private static HashSet<HashSet<Integer>> findPairForGivenSum_70(SLinkedListInteger.Node head, int x) {
+    protected HashSet<HashSet<Integer>> findPairForGivenSum_70(SinglyLLIntImpl.Node head, int x) {
         HashSet<HashSet<Integer>> twoDList = new HashSet<>();
         HashSet<Integer> hSet = new HashSet<>();
-        SLinkedListInteger.Node curr = head;
+        SinglyLLIntImpl.Node curr = head;
         while(curr != null){
             hSet.add(curr.data);
             curr = curr.next;
@@ -291,10 +200,10 @@ public class GFG_All_Problems {
         return twoDList;
     }
 
-    private static SLinkedListInteger.Node moveAllOccurrencesToEnd(SLinkedListInteger.Node head, int k) {
-        SLinkedListInteger.Node curr = head;
-        SLinkedListInteger.Node last = head;
-        SLinkedListInteger.Node prev = null;
+    protected SinglyLLIntImpl.Node moveAllOccurrencesToEnd(SinglyLLIntImpl.Node head, int k) {
+        SinglyLLIntImpl.Node curr = head;
+        SinglyLLIntImpl.Node last = head;
+        SinglyLLIntImpl.Node prev = null;
         while(last.next != null){
             last = last.next;
         }
@@ -315,12 +224,12 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static SLinkedListInteger.Node removeAllDuplicatesFromSortedList(SLinkedListInteger.Node head) {
+    protected SinglyLLIntImpl.Node removeAllDuplicatesFromSortedList(SinglyLLIntImpl.Node head) {
         // Not Understood this program
-        SLinkedListInteger.Node dummy = new SLinkedListInteger.Node(0);
+        SinglyLLIntImpl.Node dummy = new SinglyLLIntImpl.Node(0);
         dummy.next = head;
-        SLinkedListInteger.Node prev = dummy;
-        SLinkedListInteger.Node curr = head;
+        SinglyLLIntImpl.Node prev = dummy;
+        SinglyLLIntImpl.Node curr = head;
         while(curr != null){
             while(curr.next != null && (prev.next.data == curr.next.data) ){
                 curr = curr.next;
@@ -335,9 +244,9 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static SLinkedListInteger.Node removeEveryKthNode(SLinkedListInteger.Node head, int k) {
-        SLinkedListInteger.Node prev = null;
-        SLinkedListInteger.Node curr = head;
+    protected SinglyLLIntImpl.Node removeEveryKthNode(SinglyLLIntImpl.Node head, int k) {
+        SinglyLLIntImpl.Node prev = null;
+        SinglyLLIntImpl.Node curr = head;
         int i = 1;
         while(curr != null){
             if(i == k){
@@ -360,9 +269,9 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static int countPairsSumEqual(SLinkedListInteger.Node head1, SLinkedListInteger.Node head2, int x) {
+    protected int countPairsSumEqual(SinglyLLIntImpl.Node head1, SinglyLLIntImpl.Node head2, int x) {
         HashSet<Integer> hSet = new HashSet<>();
-        SLinkedListInteger.Node curr = head1;
+        SinglyLLIntImpl.Node curr = head1;
         while(curr != null){
             hSet.add(curr.data);
             curr = curr.next;
@@ -379,8 +288,8 @@ public class GFG_All_Problems {
         return counter;
     }
 
-    private static SLinkedListInteger.Node sortZeroOneTwo(SLinkedListInteger.Node head) {
-        SLinkedListInteger.Node curr = head;
+    protected SinglyLLIntImpl.Node sortZeroOneTwo(SinglyLLIntImpl.Node head) {
+        SinglyLLIntImpl.Node curr = head;
         int[] count = {0, 0, 0};
         while(curr != null){
             count[curr.data]++;
@@ -402,9 +311,9 @@ public class GFG_All_Problems {
         return head;
     }
 
-    private static SLinkedListInteger.Node rotateLinkedList(SLinkedListInteger.Node head, int key) {
-        SLinkedListInteger.Node curr = head;
-        SLinkedListInteger.Node kthNode = null;
+    protected SinglyLLIntImpl.Node rotateLinkedList(SinglyLLIntImpl.Node head, int key) {
+        SinglyLLIntImpl.Node curr = head;
+        SinglyLLIntImpl.Node kthNode = null;
         int i = 1;
         while(curr.next != null){
             if(i == key){
@@ -416,27 +325,27 @@ public class GFG_All_Problems {
         if(kthNode == null){
             return head;
         }
-        SLinkedListInteger.Node lastNode = curr;
+        SinglyLLIntImpl.Node lastNode = curr;
         lastNode.next = head;
         head = kthNode.next;
         kthNode.next = null;
         return head;
     }
 
-    private static SLinkedList.Node<Integer> rotateLLBlockWise(SLinkedList.Node<Integer> head, int k, int d){
-        SLinkedList.Node<Integer> prev = null;
+    protected SinglyLLIntImpl.Node rotateLLBlockWise(SinglyLLIntImpl.Node head, int k, int d){
+        SinglyLLIntImpl.Node prev = null;
         if(d == 1){
             recurRotate(prev, head, k);
         }
         return head;
     }
 
-    private static void recurRotate(SLinkedList.Node<Integer> prev, SLinkedList.Node<Integer> head, int k){
+    protected void recurRotate(SinglyLLIntImpl.Node prev, SinglyLLIntImpl.Node head, int k){
 //        if(prev == null || head == null){
 //            return;
 //        }
-        SLinkedList.Node<Integer> curr = head;
-        SLinkedList.Node<Integer> prev1 = null;
+        SinglyLLIntImpl.Node curr = head;
+        SinglyLLIntImpl.Node prev1 = null;
         for(int i = 1; i < k; i++){
             i++;
             prev1 = curr;
@@ -448,10 +357,10 @@ public class GFG_All_Problems {
         }
     }
 
-    private static SLinkedList.Node<Integer> makeMiddlePointToHead(SLinkedList.Node<Integer> head){
-        SLinkedList.Node<Integer> fast = head;
-        SLinkedList.Node<Integer> slow = head;
-        SLinkedList.Node<Integer> prev = null;
+    protected SinglyLLIntImpl.Node makeMiddlePointToHead(SinglyLLIntImpl.Node head){
+        SinglyLLIntImpl.Node fast = head;
+        SinglyLLIntImpl.Node slow = head;
+        SinglyLLIntImpl.Node prev = null;
         while(fast != null && fast.next != null){
             prev = slow;
             fast = fast.next.next;
@@ -461,5 +370,88 @@ public class GFG_All_Problems {
         slow.next = head;
         head = slow;
         return head;
+    }
+
+    protected SinglyLLIntImpl.Node swapKthNodeFromBothEnds(SinglyLLIntImpl.Node head, int k) {
+        /* https://www.geeksforgeeks.org/swap-kth-node-from-beginning-with-kth-node-from-end-in-a-linked-list/ */
+        SinglyLLIntImpl.Node curr = head;
+        SinglyLLIntImpl.Node prev = null;
+        int i = 1;
+        int l = getLength(head);
+        SinglyLLIntImpl.Node firstPrev = null, first = null, secondPrev = null, second = null;
+        while(curr != null){
+            if(i == k){
+                firstPrev = prev;
+                first = curr;
+            }
+            if(l == k){
+                secondPrev = prev;
+                second = curr;
+                break;
+            }
+            i++;
+            l--;
+            prev = curr;
+            curr = curr.next;
+        }
+        SinglyLLIntImpl.Node temp = secondPrev.next;
+        secondPrev.next = firstPrev.next;
+        firstPrev.next = temp;
+        return head;
+    }
+
+    protected int getLength(SinglyLLIntImpl.Node head){
+        SinglyLLIntImpl.Node curr = head;
+        int length = 0;
+        while(curr != null){
+            length++;
+            curr = curr.next;
+        }
+        return length;
+    }
+
+    protected SinglyLLIntImpl.Node segregateZeroOneTwo(SinglyLLIntImpl.Node head) {
+        int[] count = {0, 0, 0};
+        SinglyLLIntImpl.Node curr = head;
+        while(curr != null){
+            count[curr.data]++;
+            curr = curr.next;
+        }
+        int i = 0;
+        curr = head;
+        while(curr != null){
+            if(count[i] == 0)
+                i++;
+            else {
+                curr.data = i;
+                --count[i];
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    private SinglyLLIntImpl.Node mergeTwoLL(SinglyLLIntImpl.Node headA, SinglyLLIntImpl.Node headB) {
+        SinglyLLIntImpl.Node p = new SinglyLLIntImpl.Node(0);
+        SinglyLLIntImpl.Node tail = p;
+        while(true){
+            if(headA == null){
+                tail.next = headB;
+                break;
+            }
+            if(headB == null){
+                tail.next = headA;
+                break;
+            }
+            if(headA.data <= headB.data) {
+                tail.next = headA;
+                headA = headA.next;
+            } else {
+                tail.next = headB;
+                headB = headB.next;
+            }
+            tail = tail.next;
+        }
+        return p.next;
     }
 }

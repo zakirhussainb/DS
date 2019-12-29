@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 
 public interface QueueI<E> {
     void enqueue(E x);

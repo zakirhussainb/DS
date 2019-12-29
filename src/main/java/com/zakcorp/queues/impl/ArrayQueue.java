@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 
 public class ArrayQueue<E> implements QueueI<E>{
     private final static int DEFAULT_SIZE = 5;

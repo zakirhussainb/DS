@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 
 public class CircularQueue<E> implements QueueI<E> {
     private static final int DEFAULT_SIZE = 5;

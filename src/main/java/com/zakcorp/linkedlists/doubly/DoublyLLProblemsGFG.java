@@ -2,51 +2,9 @@ package com.zakcorp.linkedlists.doubly;
 
 import java.util.*;
 
-public class DoublyLLProblems {
-    public static void main(String[] args) {
-        DoublyLLIntImpl dll = new DoublyLLIntImpl();
-        dll.add(6);
-        dll.add(8);
-        dll.add(9);
-        dll.add(5);
-        dll.add(1);
-        dll.add(3);
-        dll.add(2);
-//        dll.printListCustom(dll.head);
-//        dll.addFirst(59);
-        dll.printListCustom(dll.head);
-        LinkedList<Integer> linkedList = new LinkedList<>();
-//        System.out.println("remFirst...." + dll.removeFirst());
-//        System.out.println("remLast...." + dll.removeLast());
-//        dll.removeByElement(10);
-//        dll.printListCustom(dll.head);
+public class DoublyLLProblemsGFG {
 
-        /* All Problems start from here for the Doubly Linked List*/
-        DoublyLLProblems dllProblems = new DoublyLLProblems();
-//        DoublyLLIntImpl.Node head = dllProblems.reverseDoublyLinkedList(dll.head);
-//        dll.printListCustom(head);
-
-        dllProblems.quickSort(dll.head, dll.tail);
-        dll.printListCustom(dll.head);
-
-
-//        HashSet<HashSet<Integer>> pairList = findPairsWithGivenSum_1(dll.head, 7);
-//        System.out.println(pairList.toString());
-
-//        HashSet<HashSet<Integer>> pairList = findPairsWithGivenSum_2(dll.head, 7);
-//        System.out.println(pairList.toString());
-
-//        HashSet<HashSet<Integer>> pairSet = findPairsWithGivenSum_3(dll.head, dll.tail, 7);
-//        System.out.println(pairSet.toString());
-
-        insertInASortedDLL(dll.head, 3);
-        DoublyLLIntImpl.Node head = insertInASortedDLL(dll.head, 7);
-        dll.printListCustom(head);
-
-
-    }
-
-    private static DoublyLLIntImpl.Node insertInASortedDLL(DoublyLLIntImpl.Node head, int x) {
+    protected DoublyLLIntImpl.Node insertInASortedDLL(DoublyLLIntImpl.Node head, int x) {
         // https://www.geeksforgeeks.org/insert-value-sorted-way-sorted-doubly-linked-list/
         /* Time Complexity:- O(n)
          * Space Complexity:- O(1) */
@@ -72,7 +30,7 @@ public class DoublyLLProblems {
         return head;
     }
 
-    private static HashSet<HashSet<Integer>> findPairsWithGivenSum_3(DoublyLLIntImpl.Node head,
+    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_3(DoublyLLIntImpl.Node head,
                                                                      DoublyLLIntImpl.Node tail, int x) {
         /* This doubly linked list is in sorted condition so we can use the 2-pointer method
         * Time Complexity:- O(n)
@@ -97,7 +55,7 @@ public class DoublyLLProblems {
         return pairSet;
     }
 
-    private static HashSet<HashSet<Integer>> findPairsWithGivenSum_1(DoublyLLIntImpl.Node head, int x) {
+    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_1(DoublyLLIntImpl.Node head, int x) {
         // https://www.geeksforgeeks.org/find-pairs-given-sum-doubly-linked-list/
         /* This implementation uses extra space by storing the given node.data into a hashSet
         * Time Complexity:- O(n)
@@ -124,7 +82,7 @@ public class DoublyLLProblems {
     }
 
 
-    private static HashSet<HashSet<Integer>> findPairsWithGivenSum_2(DoublyLLIntImpl.Node head, int x) {
+    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_2(DoublyLLIntImpl.Node head, int x) {
         /* Time Complexity:- O(n^2)
          * Space Complexity:- O(1) */
         HashSet<HashSet<Integer>> pairSet = new HashSet<>();
@@ -146,7 +104,7 @@ public class DoublyLLProblems {
     }
 
 
-    private void quickSort(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
+    protected void quickSort(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
         /* https://www.geeksforgeeks.org/quicksort-for-linked-list/ */
         if(end != null && start != end && start != end.next){
             DoublyLLIntImpl.Node pi = qsPartition(start, end);
@@ -156,7 +114,7 @@ public class DoublyLLProblems {
 
     }
 
-    private DoublyLLIntImpl.Node qsPartition(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
+    protected DoublyLLIntImpl.Node qsPartition(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
         int pivot = end.data;
         DoublyLLIntImpl.Node i = start.prev;
         for(DoublyLLIntImpl.Node j = start; j != end; j = j.next){
@@ -176,7 +134,10 @@ public class DoublyLLProblems {
         return i;
     }
 
-    private DoublyLLIntImpl.Node reverseDoublyLinkedList(DoublyLLIntImpl.Node head) {
+    protected DoublyLLIntImpl.Node reverseDoublyLinkedList(DoublyLLIntImpl.Node head) {
+        /* https://www.geeksforgeeks.org/reverse-a-doubly-linked-list/
+        * Reversing a DLL using 3-pointer method */
+
         DoublyLLIntImpl.Node p = head;
         DoublyLLIntImpl.Node q = null;
         DoublyLLIntImpl.Node r;
@@ -188,7 +149,6 @@ public class DoublyLLProblems {
             if(r != null)
                 r.prev = q;
         }
-        head = q;
-        return head;
+        return q;
     }
 }

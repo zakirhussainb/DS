@@ -1,11 +1,11 @@
 package com.zakcorp.linkedlists.singly;
 
-public class SLinkedListInteger {
+public class SinglyLLIntImpl {
     Node head;
-    public SLinkedListInteger(){
+    public SinglyLLIntImpl(){
 
     }
-    public SLinkedListInteger(Node head){
+    public SinglyLLIntImpl(Node head){
         this.head = head;
     }
 

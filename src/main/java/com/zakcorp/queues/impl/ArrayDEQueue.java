@@ -1,4 +1,4 @@
-package com.zakcorp.queues;
+package com.zakcorp.queues.impl;
 /*
 Concept of ArrayDEQueue:-
 1. Insertion and Deletion happens from both the ends.
