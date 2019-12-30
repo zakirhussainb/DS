@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DoublyLLProblemsGFG {
 
-    protected DoublyLLIntImpl.Node insertInASortedDLL(DoublyLLIntImpl.Node head, int x) {
+    public DoublyLLIntImpl.Node insertInASortedDLL(DoublyLLIntImpl.Node head, int x) {
         // https://www.geeksforgeeks.org/insert-value-sorted-way-sorted-doubly-linked-list/
         /* Time Complexity:- O(n)
          * Space Complexity:- O(1) */

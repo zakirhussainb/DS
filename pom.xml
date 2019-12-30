@@ -7,9 +7,30 @@
   <groupId>com.zakcorp</groupId>
   <artifactId>datastructure</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi</artifactId>
+          <version>4.1.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
+          <version>4.1.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/junit/junit -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+  </dependencies>
   <build>
     <plugins>
-      <plugin>
+    <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.1</version>

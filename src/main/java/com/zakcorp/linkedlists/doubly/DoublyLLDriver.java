@@ -23,8 +23,8 @@ public class DoublyLLDriver {
 
         /* All Problems start from here for the Doubly Linked List*/
         DoublyLLProblemsGFG dllProblems = new DoublyLLProblemsGFG();
-        DoublyLLIntImpl.Node head = dllProblems.reverseDoublyLinkedList(dll.head);
-        dll.printListCustom(head);
+//        DoublyLLIntImpl.Node head = dllProblems.reverseDoublyLinkedList(dll.head);
+//        dll.printListCustom(head);
 
 //        dllProblems.quickSort(dll.head, dll.tail);
 //        dll.printListCustom(dll.head);
@@ -39,9 +39,9 @@ public class DoublyLLDriver {
 //        HashSet<HashSet<Integer>> pairSet = findPairsWithGivenSum_3(dll.head, dll.tail, 7);
 //        System.out.println(pairSet.toString());
 
-//        dllProblems.insertInASortedDLL(dll.head, 3);
-//        DoublyLLIntImpl.Node head = dllProblems.insertInASortedDLL(dll.head, 7);
-//        dll.printListCustom(head);
+        dllProblems.insertInASortedDLL(dll.head, 3);
+        DoublyLLIntImpl.Node head = dllProblems.insertInASortedDLL(dll.head, 7);
+        dll.printListCustom(head);
 
 
     }
