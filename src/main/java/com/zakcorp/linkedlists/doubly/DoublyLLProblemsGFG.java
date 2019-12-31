@@ -30,7 +30,7 @@ public class DoublyLLProblemsGFG {
         return head;
     }
 
-    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_3(DoublyLLIntImpl.Node head,
+    public HashSet<HashSet<Integer>> findPairsWithGivenSum_3(DoublyLLIntImpl.Node head,
                                                                      DoublyLLIntImpl.Node tail, int x) {
         /* This doubly linked list is in sorted condition so we can use the 2-pointer method
         * Time Complexity:- O(n)
@@ -55,7 +55,7 @@ public class DoublyLLProblemsGFG {
         return pairSet;
     }
 
-    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_1(DoublyLLIntImpl.Node head, int x) {
+    public HashSet<HashSet<Integer>> findPairsWithGivenSum_1(DoublyLLIntImpl.Node head, int x) {
         // https://www.geeksforgeeks.org/find-pairs-given-sum-doubly-linked-list/
         /* This implementation uses extra space by storing the given node.data into a hashSet
         * Time Complexity:- O(n)
@@ -82,7 +82,7 @@ public class DoublyLLProblemsGFG {
     }
 
 
-    protected HashSet<HashSet<Integer>> findPairsWithGivenSum_2(DoublyLLIntImpl.Node head, int x) {
+    public HashSet<HashSet<Integer>> findPairsWithGivenSum_2(DoublyLLIntImpl.Node head, int x) {
         /* Time Complexity:- O(n^2)
          * Space Complexity:- O(1) */
         HashSet<HashSet<Integer>> pairSet = new HashSet<>();
@@ -104,7 +104,7 @@ public class DoublyLLProblemsGFG {
     }
 
 
-    protected void quickSort(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
+    public void quickSort(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
         /* https://www.geeksforgeeks.org/quicksort-for-linked-list/ */
         if(end != null && start != end && start != end.next){
             DoublyLLIntImpl.Node pi = qsPartition(start, end);
@@ -114,7 +114,7 @@ public class DoublyLLProblemsGFG {
 
     }
 
-    protected DoublyLLIntImpl.Node qsPartition(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
+    public DoublyLLIntImpl.Node qsPartition(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end) {
         int pivot = end.data;
         DoublyLLIntImpl.Node i = start.prev;
         for(DoublyLLIntImpl.Node j = start; j != end; j = j.next){
@@ -134,7 +134,7 @@ public class DoublyLLProblemsGFG {
         return i;
     }
 
-    protected DoublyLLIntImpl.Node reverseDoublyLinkedList(DoublyLLIntImpl.Node head) {
+    public DoublyLLIntImpl.Node reverseDoublyLinkedList(DoublyLLIntImpl.Node head) {
         /* https://www.geeksforgeeks.org/reverse-a-doubly-linked-list/
         * Reversing a DLL using 3-pointer method */
 
@@ -150,5 +150,97 @@ public class DoublyLLProblemsGFG {
                 r.prev = q;
         }
         return q;
+    }
+
+    public String countTriplets_1(DoublyLLIntImpl.Node head, int x){
+        /* https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/ */
+        /* Time Complexity:- O(n^3)
+         * Space Complexity:- O(1) */
+        DoublyLLIntImpl.Node p = head;
+        int counter = 0;
+        while(p != null){
+            DoublyLLIntImpl.Node q = p.next;
+            while(q != null){
+                DoublyLLIntImpl.Node r = q.next;
+                while (r != null){
+                    if(p.data + q.data + r.data == x){
+                        counter++;
+                    }
+                    r = r.next;
+                }
+                q = q.next;
+            }
+            p = p.next;
+        }
+        return counter + ",";
+    }
+
+    public String countTriplets_2(DoublyLLIntImpl.Node head, int x){
+        /* https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/ */
+        /* Time Complexity:- O(n^2)
+         * Space Complexity:- O(n) */
+        HashSet<HashSet<Integer>> tripletSet = new HashSet<>();
+        int counter = 0;
+        HashSet<Integer> set = new HashSet<>();
+        DoublyLLIntImpl.Node curr = head;
+        while(curr != null){
+            set.add(curr.data);
+            curr = curr.next;
+        }
+        DoublyLLIntImpl.Node p = head;
+        while(p != null){
+            DoublyLLIntImpl.Node q = p.next;
+            while(q != null){
+                HashSet<Integer> triplet = new HashSet<>();
+                int sum = p.data + q.data;
+                int diff = x - sum;
+                if(set.contains(diff) && (diff != p.data) && (diff != q.data) ){
+                    triplet.add(p.data);
+                    triplet.add(q.data);
+                    triplet.add(diff);
+                    tripletSet.add(triplet);
+                    counter++;
+                }
+                q = q.next;
+            }
+            p = p.next;
+        }
+        System.out.println(tripletSet.toString());
+        return counter / 3 + ",";
+    }
+
+    public String countTriplets_3(DoublyLLIntImpl.Node head, int x){
+        /* https://www.geeksforgeeks.org/count-triplets-sorted-doubly-linked-list-whose-sum-equal-given-value-x/ */
+        /* Time Complexity:- O(n^2)
+         * Space Complexity:- O(1) */
+        DoublyLLIntImpl.Node curr = head;
+        int counter = 0;
+        DoublyLLIntImpl.Node start = null;
+        DoublyLLIntImpl.Node end = head;
+        while(end.next != null){
+            end = end.next;
+        }
+        while(curr != null){
+            start = curr.next;
+            counter += countPairsForTriplet(start, end, x - curr.data);
+            curr = curr.next;
+        }
+        return counter + ",";
+    }
+
+    public int countPairsForTriplet(DoublyLLIntImpl.Node start, DoublyLLIntImpl.Node end, int value){
+        int count = 0;
+        while(start != null && end != null && start != end && end.next != start){
+            if(start.data + end.data > value){
+                end = end.prev;
+            } else if(start.data + end.data < value){
+                start = start.next;
+            } else {
+                count++;
+                start = start.next;
+                end = end.next;
+            }
+        }
+        return count;
     }
 }

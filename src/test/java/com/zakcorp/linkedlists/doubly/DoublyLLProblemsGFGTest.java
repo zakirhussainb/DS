@@ -1,21 +1,15 @@
 package com.zakcorp.linkedlists.doubly;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.Iterator;
 
 public class DoublyLLProblemsGFGTest {
     @Test
@@ -55,8 +49,13 @@ public class DoublyLLProblemsGFGTest {
         DoublyLLProblemsGFG dll = new DoublyLLProblemsGFG();
         DoublyLLIntImpl.Node head = createListFromGivenInput(input);
         Method method = dll.getClass().getMethod(methodName, DoublyLLIntImpl.Node.class, int.class);
-        DoublyLLIntImpl.Node result = (DoublyLLIntImpl.Node) method.invoke(dll, head, splInput);
-        String resultOutput = constructOutput(result);
+        String resultOutput;
+        if(method.getName().contains("countTriplets")){
+            resultOutput = (String) method.invoke(dll, head, splInput);
+        } else {
+            DoublyLLIntImpl.Node result = (DoublyLLIntImpl.Node) method.invoke(dll, head, splInput);
+            resultOutput = constructOutput(result);
+        }
         Assert.assertEquals(output, resultOutput);
     }
 
