@@ -205,7 +205,7 @@ public class DoublyLLProblemsGFG {
             }
             p = p.next;
         }
-        System.out.println(tripletSet.toString());
+//        System.out.println(tripletSet.toString());
         return counter / 3 + ",";
     }
 
@@ -242,5 +242,72 @@ public class DoublyLLProblemsGFG {
             }
         }
         return count;
+    }
+
+    public DoublyLLIntImpl.Node remDupSortedDLL(DoublyLLIntImpl.Node head, int dummy){
+        /* https://www.geeksforgeeks.org/remove-duplicates-sorted-doubly-linked-list/ */
+        /* Time Complexity:- O(n)
+         * Space Complexity:- O(1) */
+        DoublyLLIntImpl.Node curr = head;
+        while(curr.next != null){
+            if(curr.data == curr.next.data){
+                if(curr.next.next != null){
+                    curr.next.next.prev = curr.next.prev;
+                    curr.next = curr.next.next;
+                } else {
+                    curr.next = null;
+                }
+            } else {
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    public DoublyLLIntImpl.Node delAllOccurKeyDLL(DoublyLLIntImpl.Node head, int x){
+        /* https://www.geeksforgeeks.org/delete-occurrences-given-key-doubly-linked-list/ */
+        /* Time Complexity:- O(n)
+         * Space Complexity:- O(1) */
+        DoublyLLIntImpl.Node curr = head;
+        while(curr != null){
+            if(curr.data == x){
+                if(curr.prev == null){
+                    head = head.next;
+                    curr = curr.next;
+                    curr.prev = null;
+                } else {
+                    if(curr.next != null){
+                        curr.prev.next = curr.next;
+                        curr.next.prev = curr.prev;
+                    } else {
+                        curr.prev.next = null;
+                    }
+                    curr = curr.next;
+                }
+            } else {
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    public DoublyLLIntImpl.Node remDupUnSortedDLL_3(DoublyLLIntImpl.Node head, int dummy){
+        /* https://www.geeksforgeeks.org/remove-duplicates-unsorted-doubly-linked-list/ */
+        /* Time Complexity:- O(n)
+         * Space Complexity:- O(n) */
+        HashSet<Integer> set = new HashSet<>();
+        DoublyLLIntImpl.Node curr = head;
+        while(curr != null){
+            if(set.contains(curr.data)){
+                if(curr.next != null) {
+                    curr.next.prev = curr.prev;
+                }
+                curr.prev.next = curr.next;
+            } else {
+                set.add(curr.data);
+            }
+            curr = curr.next;
+        }
+        return head;
     }
 }
