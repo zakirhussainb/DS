@@ -310,4 +310,40 @@ public class DoublyLLProblemsGFG {
         }
         return head;
     }
+
+    public DoublyLLIntImpl.Node sortBiotonicDLL(DoublyLLIntImpl.Node head, int dummy){
+        DoublyLLIntImpl.Node curr = head;
+        DoublyLLIntImpl.Node secondStart = null;
+        while(curr != null){
+            if(curr.prev != null){
+                if(curr.data < curr.prev.data){
+                    secondStart = curr;
+                    curr.prev.next = null;
+                    break;
+                }
+            }
+            curr = curr.next;
+        }
+        DoublyLLIntImpl.Node reverseSecond = reverseDoublyLinkedList(secondStart);
+        return mergeFunc(head, reverseSecond);
+    }
+    public DoublyLLIntImpl.Node mergeFunc(DoublyLLIntImpl.Node left, DoublyLLIntImpl.Node right){
+        if(left == null){
+            return right;
+        }
+        if(right == null){
+            return left;
+        }
+        if(left.data < right.data){
+            left.next = mergeFunc(left.next, right);
+            left.next.prev = left;
+            left.prev = null;
+            return left;
+        } else {
+            right.next = mergeFunc(left, right.next);
+            right.next.prev = right;
+            right.prev = null;
+            return right;
+        }
+    }
 }
