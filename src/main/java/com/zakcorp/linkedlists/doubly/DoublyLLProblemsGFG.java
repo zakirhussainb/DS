@@ -324,6 +324,9 @@ public class DoublyLLProblemsGFG {
             }
             curr = curr.next;
         }
+        if(curr == null)
+            return head;
+
         DoublyLLIntImpl.Node reverseSecond = reverseDoublyLinkedList(secondStart);
         return mergeFunc(head, reverseSecond);
     }
@@ -345,5 +348,28 @@ public class DoublyLLProblemsGFG {
             right.prev = null;
             return right;
         }
+    }
+
+    public DoublyLLIntImpl.Node insertInSortedOrder(DoublyLLIntImpl.Node head, int data){
+        return null;
+    }
+
+    public String isDLLaPalindrome(DoublyLLIntImpl.Node head, int dummy){
+        boolean result = true;
+        DoublyLLIntImpl.Node first = head;
+        DoublyLLIntImpl.Node last = head;
+        while(last.next != null){
+            last = last.next;
+        }
+        while(first != null && last != null && first != last && last.next != first){
+            if(first.data == last.data){
+                first = first.next;
+                last = last.prev;
+            } else {
+                result = false;
+                break;
+            }
+        }
+        return result + ",";
     }
 }

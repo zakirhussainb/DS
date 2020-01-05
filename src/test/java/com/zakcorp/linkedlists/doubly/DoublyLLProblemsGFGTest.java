@@ -1,6 +1,7 @@
 package com.zakcorp.linkedlists.doubly;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -12,6 +13,8 @@ import java.io.FileInputStream;
 import java.lang.reflect.Method;
 
 public class DoublyLLProblemsGFGTest {
+
+    private static final boolean SORTED = false;
     @Test
     public void constructInput() throws Exception{
         FileInputStream file = new FileInputStream(new File("/Users/zb/zakir/zakir-local/linkedlists.xlsx"));
@@ -52,6 +55,11 @@ public class DoublyLLProblemsGFGTest {
         String resultOutput;
         if(method.getName().contains("countTriplets")){
             resultOutput = (String) method.invoke(dll, head, splInput);
+        } else if(method.getName().contains("insertInSortedOrder")){
+            head = createListFromGivenInput(input, SORTED);
+            resultOutput = constructOutput(head);
+        } else if(method.getName().contains("Palindrome")){
+            resultOutput = (String) method.invoke(dll, head, splInput);
         } else {
             DoublyLLIntImpl.Node result = (DoublyLLIntImpl.Node) method.invoke(dll, head, splInput);
             resultOutput = constructOutput(result);
@@ -74,6 +82,15 @@ public class DoublyLLProblemsGFGTest {
         String[] splitArr = input.split(",");
         for (String s : splitArr) {
             dll.add(Integer.parseInt(s));
+        }
+        return dll.head;
+    }
+
+    private DoublyLLIntImpl.Node createListFromGivenInput(String input, boolean sorted) {
+        DoublyLLIntImpl dll = new DoublyLLIntImpl();
+        String[] splitArr = input.split(",");
+        for (String s : splitArr) {
+            dll.addInSortedOrder(Integer.parseInt(s));
         }
         return dll.head;
     }

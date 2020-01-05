@@ -47,6 +47,39 @@ public class DoublyLLIntImpl {
         tail = t;
     }
 
+    public void addInSortedOrder(int data){
+        Node t = new Node(data);
+        if(head == null){
+            head = t;
+            tail = t;
+            return;
+        }
+        Node first = head;
+        // Node to be inserted has value less than curr node.
+        if(data < first.data){
+            first.prev = t;
+            t.next = head;
+            head = t;
+        }
+        // Node to be inserted has value more than tail node.
+        if(data > tail.data){
+            t.prev = tail;
+            tail.next = t;
+            tail = t;
+            return;
+        }
+
+        Node temp = head.next;
+        while(temp.data < t.data){
+            temp = temp.next;
+        }
+
+        temp.prev.next = t;
+        t.prev = temp.prev;
+        temp.prev = t;
+        t.next = temp;
+    }
+
     public int removeFirst(){
         if(head == null)
             throw new NoSuchElementException();
