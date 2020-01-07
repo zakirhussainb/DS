@@ -14,13 +14,14 @@ public class LLStack<E> implements StackI<E> {
 
     @Override
     public void push(E element) {
-        // Push at the front
-        if(isEmpty()){
-            throw new StackOverflowError();
-        }
+        // Push at the front]
         Node<E> t = new Node<>(element);
-        t.next = head;
-        head = t;
+        if(t == null){
+            throw new StackOverflowError();
+        } else {
+            t.next = head;
+            head = t;
+        }
     }
 
     @Override

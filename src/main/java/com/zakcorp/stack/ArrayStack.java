@@ -1,22 +1,23 @@
 package com.zakcorp.stack;
 
 public class ArrayStack<E> implements StackI<E> {
-    private final static int DEFAULT_SIZE = 10;
+    private int size;
     private int top;
     private E[] elements;
     public ArrayStack(){
-        this(DEFAULT_SIZE);
+        size = 6;
+        elements = (E[])new Object[size];
         top = -1;
     }
     public ArrayStack(int initSize){
-        elements = (E[])new Object[initSize];
+        this.size = initSize;
+        elements = (E[])new Object[this.size];
         top = -1;
     }
     @Override
     public void push(E element) {
         if(isFull()){
-            System.out.println("Stack Overflow");
-            return;
+            throw new StackOverflowError();
         }
         elements[++top] = element;
     }
@@ -31,10 +32,11 @@ public class ArrayStack<E> implements StackI<E> {
 
     @Override
     public E peek(int index) {
-        if(isEmpty()){
+        if(isEmpty() || (top - index + 1) < 0){
+            System.out.println("Invalid Position...");
             return null;
         }
-        return null;
+        return elements[top - index + 1];
     }
 
     @Override
@@ -57,7 +59,7 @@ public class ArrayStack<E> implements StackI<E> {
 
     @Override
     public int getSize() {
-        return top + 1;
+        return size;
     }
 
     @Override

@@ -1,13 +1,11 @@
 package com.zakcorp.test;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class GeneralTest {
     public static void main(String[] args) {
         PriorityQueue<Integer> pQueue = new PriorityQueue<>();
+        Stack<Integer> stack = new Stack<>();
         pQueue.add(10);
         pQueue.add(20);
         pQueue.add(15);
