@@ -1,14 +1,18 @@
 package com.zakcorp.linkedlists.singly;
 
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class SinglyLLDriver {
 	public static void main(String[] args) {
 		SinglyLLProblemsGFG gfg = new SinglyLLProblemsGFG();
 		SinglyLLProblemsLC lc = new SinglyLLProblemsLC();
 		SinglyLLIntImpl sll = new SinglyLLIntImpl();
-
+		LinkedList<Integer> lll = new LinkedList<>();
+		Map<Integer, Integer> map = new HashMap<>();
 		/* GFG Problems */
 		/*
 		sll.add(5);
@@ -110,8 +114,21 @@ public class SinglyLLDriver {
 		sll.printListCustom(head);*/
 
 		/* LeetCode Problems*/
-		SinglyLLIntImpl.Node head = lc.problem_92(sll.head, 2, 4);
-		sll.printListCustom(head);
+//		SinglyLLIntImpl.Node head = lc.problem_92(sll.head, 2, 4);
+//		sll.printListCustom(head);
+
+		SinglyLLIntImpl l1 = new SinglyLLIntImpl();
+		l1.add(1);
+//		l1.add(2);
+//		l1.add(4);
+//		l1.add(3);
+		SinglyLLIntImpl l2 = new SinglyLLIntImpl();
+		l2.add(9);
+		l2.add(9);
+//		l2.add(4);
+
+		SinglyLLIntImpl.Node result = lc.addTwoNumbers(l1.head, l2.head);
+		sll.printListCustom(result);
 
 	}
 

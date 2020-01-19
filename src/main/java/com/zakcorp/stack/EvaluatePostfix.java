@@ -19,14 +19,16 @@ public class EvaluatePostfix {
 
     private int evaluate(String expr) {
         char[] chArr = expr.toCharArray();
+        String str = "";
+//        str.
         Stack<Integer> stack = new Stack<>();
-        for(int i = 0; i < chArr.length; i++){
-            if(isOperand(chArr[i])){
-                stack.push(chArr[i] - '0');
+        for (char ch : chArr) {
+            if (isOperand(ch)) {
+                stack.push(ch - '0');
             } else {
                 int top0 = stack.pop();
                 int top1 = stack.pop();
-                switch (chArr[i]){
+                switch (ch) {
                     case '*':
                         stack.push(top1 * top0);
                         break;

@@ -1,7 +1,7 @@
 package com.zakcorp.linkedlists.singly;
 
 public class SinglyLLIntImpl {
-    Node head;
+    public Node head;
     public SinglyLLIntImpl(){
 
     }

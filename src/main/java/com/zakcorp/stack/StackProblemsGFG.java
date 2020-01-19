@@ -45,4 +45,37 @@ public class StackProblemsGFG {
         return str;
     }
 
+    public String easyString(String str){
+        //aabbB -> 2a3b
+        str = str.toLowerCase();
+        char[] chArr = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        int n = chArr.length;
+        for(int i = 0; i < n; i++){
+            int counter = 1;
+            while(i < n - 1 && chArr[i] == chArr[i + 1]){
+                counter++;
+                i++;
+            }
+            sb.append(counter);
+            sb.append(chArr[i]);
+        }
+        System.out.println("str...." + sb.toString());
+        return sb.toString();
+    }
+
+    public String manipulationOfString(String str){
+        String[] splitArr = str.split("\\s+");
+        int n = splitArr.length;
+        Stack<String> st = new Stack<>();
+        for(int i = 0; i < n; i++){
+            if(!st.isEmpty() && st.peek().equalsIgnoreCase(splitArr[i])){
+                st.pop();
+            } else {
+                st.push(splitArr[i]);
+            }
+        }
+        return st.toString();
+    }
+
 }

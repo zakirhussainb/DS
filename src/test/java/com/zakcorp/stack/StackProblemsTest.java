@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
 
-public class StackProblemsGFGTest {
+public class StackProblemsTest {
     @Test
     public void constructInput() throws Exception{
         FileInputStream file = new FileInputStream(new File("/Users/zb/zakir/zakir-local/data-structures-gfg.xlsx"));
@@ -49,7 +49,19 @@ public class StackProblemsGFGTest {
 
     public void executeProblems(String methodName, String input, String output, boolean isExecutable) throws Exception{
         StackProblemsGFG stPro = new StackProblemsGFG();
+        StackProblemsLC stLC = new StackProblemsLC();
         if(isExecutable){
+            if(methodName.equalsIgnoreCase("easyString")){
+                Method method = stPro.getClass().getMethod(methodName, String.class);
+                String result = (String) method.invoke(stPro, input);
+                Assert.assertEquals(output, result);
+                return;
+            } else if(methodName.contains("calPoints")){
+                Method method = stLC.getClass().getMethod(methodName, String.class);
+                String result = (String) method.invoke(stPro, input);
+                Assert.assertEquals(output, result);
+                return;
+            }
             int[] arr = createArrayFromInput(input);
             Method method = stPro.getClass().getMethod(methodName, int[].class);
             int[] outputArr = (int[]) method.invoke(stPro, arr);
