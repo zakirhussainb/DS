@@ -160,5 +160,19 @@ public class SinglyLLProblemsLC {
         return getReverseList(result.next);
     }
 
+    public SinglyLLIntImpl.Node copyRandomList(SinglyLLIntImpl.Node head){
+        SinglyLLIntImpl.Node dummy = new SinglyLLIntImpl.Node(-1);
+        SinglyLLIntImpl.Node result = dummy;
+        SinglyLLIntImpl.Node curr = head;
+        while(curr != null){
+            dummy.next = curr;
+            dummy = dummy.next;
+            curr = curr.next;
+        }
+        return result.next;
+    }
+
+
+
 
 }

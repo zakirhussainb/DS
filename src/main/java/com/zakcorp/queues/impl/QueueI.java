@@ -5,6 +5,4 @@ public interface QueueI<E> {
     E dequeue();
     boolean isFull();
     boolean isEmpty();
-
-
 }

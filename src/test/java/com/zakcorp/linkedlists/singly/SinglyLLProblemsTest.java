@@ -55,7 +55,7 @@ public class SinglyLLProblemsTest {
         if(isExecutable){
             SinglyLLIntImpl.Node head = createListFromGivenInput(input);
             Method method = sllc.getClass().getMethod(methodName, SinglyLLIntImpl.Node.class);
-            if(method.getName().contains("oddEven")){
+            if(method.getName().contains("oddEven") || method.getName().contains("copyRandomList")){
                 SinglyLLIntImpl.Node resultHead = (SinglyLLIntImpl.Node) method.invoke(sllc, head);
                 String resultOutput = constructOutput(resultHead);
                 Assert.assertEquals(output, resultOutput);
