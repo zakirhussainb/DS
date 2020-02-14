@@ -9,10 +9,10 @@ public class SinglyLLIntImpl {
         this.head = head;
     }
 
-    static class Node{
-        int data;
-        Node next;
-        Node(int data){
+    public static class Node{
+        public int data;
+        public Node next;
+        public Node(int data){
             this.data = data;
             next = null;
         }
