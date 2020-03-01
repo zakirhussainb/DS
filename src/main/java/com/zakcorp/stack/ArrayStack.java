@@ -5,9 +5,10 @@ public class ArrayStack<E> implements StackI<E> {
     private int top;
     private E[] elements;
     public ArrayStack(){
-        size = 6;
-        elements = (E[])new Object[size];
-        top = -1;
+        this(10);
+//        size = 6;
+//        elements = (E[])new Object[size];
+//        top = -1;
     }
     public ArrayStack(int initSize){
         this.size = initSize;

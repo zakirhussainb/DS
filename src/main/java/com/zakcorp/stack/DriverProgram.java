@@ -8,6 +8,7 @@ import com.zakcorp.stack.impl.TwoStacks;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class DriverProgram {
     public static void main(String[] args) {
@@ -83,6 +84,17 @@ public class DriverProgram {
 //        arrDq.addFirst(9);
 //        arrDq.pollFirst();
 //        arrDq.peekFirst();
+        ArrayStack<Integer> stack = new ArrayStack<>();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
+        Stack<Integer> stack1 = new Stack<>();
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.poll();
+        deque.add(10);
+
+
 
     }
 }
