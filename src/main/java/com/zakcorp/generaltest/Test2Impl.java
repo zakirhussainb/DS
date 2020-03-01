@@ -1,4 +1,4 @@
-package com.zakcorp.test;
+package com.zakcorp.generaltest;
 
 public class Test2Impl implements TestInterface {
     @Override

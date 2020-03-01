@@ -1,4 +1,4 @@
-package com.zakcorp.test;
+package com.zakcorp.generaltest;
 
 @FunctionalInterface
 public interface TestInterface {

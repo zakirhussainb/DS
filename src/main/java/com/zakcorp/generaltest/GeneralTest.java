@@ -1,6 +1,5 @@
-package com.zakcorp.test;
+package com.zakcorp.generaltest;
 
-import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
