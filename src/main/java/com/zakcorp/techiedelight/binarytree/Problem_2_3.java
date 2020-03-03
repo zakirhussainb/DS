@@ -1,21 +1,18 @@
 package com.zakcorp.techiedelight.binarytree;
 
-import com.zakcorp.arrays.fivehundred.Problem_2;
-
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Problem_2_2 {
+public class Problem_2_3 {
     /*
-    Problem:- Calculate Count of Nodes in a Binary Tree
-    Description:- The no. of nodes in a Binary tree is number of nodes on longest path from root node to leaf node.
+    Problem:- Calculate Sum of all the Nodes in a Binary Tree
     Procedure:-
-        1. The idea is to traverse the tree in post-order fashion and calculate the count of nodes in left and right subtree.
+        1. The idea is to traverse the tree in post-order fashion and calculate the sum of nodes in left and right subtree.
      */
     public static void main(String[] args) {
-        Problem_2_2.Solver.Recursive recursive = new Solver.Recursive();
-        Problem_2_2.Solver.Iterative iterative = new Solver.Iterative();
-        Problem_2_2.Solver.Node root = new Solver.Node(8);
+        Problem_2_3.Solver.Recursive recursive = new Solver.Recursive();
+        Problem_2_3.Solver.Iterative iterative = new Solver.Iterative();
+        Problem_2_3.Solver.Node root = new Solver.Node(8);
         root.left = new Solver.Node(3);
         root.right = new Solver.Node(4);
         root.left.left = new Solver.Node(12);
@@ -25,8 +22,8 @@ public class Problem_2_2 {
         root.right.left = new Solver.Node(5);
         root.right.right = new Solver.Node(6);
         root.right.right.left = new Solver.Node(13);
-        System.out.println("The no. of nodes in this Binary Tree using recursive strategy are....." + recursive.count(root));
-        System.out.println("The no. of nodes in this Binary Tree using iterative strategy are....." + iterative.count(root));
+//        System.out.println("The sum of nodes in this Binary Tree using recursive strategy are....." + recursive.sum(root));
+        System.out.println("The sum of nodes in this Binary Tree using iterative strategy are....." + iterative.sum(root));
     }
     static class Solver {
         static class Node {
@@ -38,22 +35,22 @@ public class Problem_2_2 {
             }
         }
         static class Recursive {
-            public int count(Node root){
+            public int sum(Node root){
                 int x, y;
                 if(root != null){
-                    x = count(root.left);
-                    y = count(root.right);
-                    return x + y + 1;
+                    x = sum(root.left);
+                    y = sum(root.right);
+                    return x + y + root.data;
                 }
                 return 0;
             }
         }
         static class Iterative {
-            public int count(Node root){
+            public int sum(Node root){
                 if(root == null){
                     return 0;
                 }
-                int counter = 0;
+                int sum = 0;
                 Queue<Node> queue = new ArrayDeque<>();
                 queue.add(root);
                 while (!queue.isEmpty()){
@@ -65,10 +62,10 @@ public class Problem_2_2 {
                         if(front.right != null){
                             queue.add(front.right);
                         }
-                        counter++;
+                        sum = sum + front.data;
                     }
                 }
-                return counter;
+                return sum;
             }
         }
     }
