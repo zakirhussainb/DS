@@ -55,7 +55,11 @@ public class Problem_2_1 {
                 if(root != null){
                     x = getHeightRec(root.left);
                     y = getHeightRec(root.right);
-                    return x + y + 1;
+                    if(x > y){
+                        return x + 1;
+                    } else {
+                        return y + 1;
+                    }
                 }
                 return 0;
             }*/
@@ -75,11 +79,13 @@ public class Problem_2_1 {
                     // Traversing the tree for each and every level
                     while(size --> 0){
                         Node front = queue.poll();
-                        if(front.left != null){
-                            queue.add(front.left);
-                        }
-                        if(front.right != null){
-                            queue.add(front.right);
+                        if(front != null) {
+                            if (front.left != null) {
+                                queue.add(front.left);
+                            }
+                            if (front.right != null) {
+                                queue.add(front.right);
+                            }
                         }
                     }
                     // counting the height for each level by incrementing it to 1
