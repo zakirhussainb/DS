@@ -8,8 +8,16 @@ public class Problem_8 {
     /*
     Problem:- Spiral Order traversal of a Binary Tree
     Description:- Given a binary tree, write an efficient algorithm to traverse the tree in a spiral order fashion.
-    Procedure:-
-        1.
+    Idea:- The idea is to use a Deque, and utilize a flag to toggle between spiral orders.
+    TODO:- Procedure:-
+        1. Add root to the first position of a Deque.
+        2. Initialize a boolean flag = false.
+        3. While the Deque is not Empty, perform traversal.
+            3.1 Calculate deque size -> size = deque.size();
+            3.2 Check if flag is true.
+                3.2.1
+            3.3 Else flag is false
+            3.4 Flip the flag -> flag != flag
      */
     public static void main(String[] args) {
         Problem_8 problem_8 = new Problem_8();
