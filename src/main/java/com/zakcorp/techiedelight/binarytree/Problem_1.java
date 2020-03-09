@@ -2,6 +2,8 @@ package com.zakcorp.techiedelight.binarytree;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Problem_1 {
     /*
@@ -9,7 +11,8 @@ public class Problem_1 {
     Description:- They must identical structure and their contents are also same.
     Procedure:-
         1. The idea is to traverse both trees and compare value at their root node.
-        2. If the value matches, we recursively check if left subtree of first tree is identical to left subtree of second tree and right subtree of first tree is identical to right subtree of second tree.
+        2. If the value matches, we recursively check if left subtree of first tree is identical to left subtree of second tree
+        and right subtree of first tree is identical to right subtree of second tree.
         3. If the value at their root node differs, the trees violates data property.
         4. If at any point in the recursion, the first tree is empty & second tree is non-empty or second tree is empty
         & first tree is non-empty, the trees violates structural property and they cannot be identical.
@@ -20,11 +23,11 @@ public class Problem_1 {
         Solver.Iterative iterative = new Solver.Iterative();
         Solver.Node x = p.dataGeneration();
         Solver.Node y = p.dataGeneration();
-        if (recursive.isIdentical(x, y)) {
+        /*if (recursive.isIdentical(x, y)) {
             System.out.println("Given binary Trees are identical....");
         } else {
             System.out.println("Given binary Trees are not identical....");
-        }
+        }*/
         if(iterative.isIdentical(x, y)) {
             System.out.println("Given binary Trees are identical....");
         } else {
@@ -86,7 +89,7 @@ public class Problem_1 {
                 if(y == null){
                     return false;
                 }
-                Deque<Pair<Node, Node>> deque = new ArrayDeque<>();
+                Queue<Pair<Node, Node>> deque = new LinkedList<>();
                 deque.add(Pair.of(x, y));
                 while(!deque.isEmpty()){
                     x = deque.peek().first;
