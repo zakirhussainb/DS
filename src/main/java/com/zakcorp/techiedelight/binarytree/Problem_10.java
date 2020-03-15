@@ -2,9 +2,7 @@ package com.zakcorp.techiedelight.binarytree;
 
 import com.zakcorp.trees.binarytree.BinaryTree;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Problem_10 {
     /*
@@ -17,12 +15,16 @@ public class Problem_10 {
     TODO:- Procedure for Top-Down:-
         1. Similar to Level Order Traversal.
         2. Use two Queues to maintain * Left Half of the Perfect BT and * Right Half of the Perfect BT
+    TODO:- Procedure for Bottom-Up:-
+        1. Very similar to the above approach.
+        2. Need to maintain a HashMap with {Key-Current Level, Value-Nodes in that level}
      */
     public static void main(String[] args) {
         Problem_10 problem_10 = new Problem_10();
         BinaryTreeImpl.Node root = problem_10.dataGeneration();
         Problem_10.Solver solver = new Problem_10.Solver();
-        solver.printNodesInTopDown(root);
+//        solver.printNodesInTopDown(root);
+        solver.printNodesInBottomUp(root);
     }
     public BinaryTreeImpl.Node dataGeneration() {
         BinaryTreeImpl.Node root = new BinaryTreeImpl.Node(1);
@@ -79,5 +81,50 @@ public class Problem_10 {
                 }
             }
         }
+        public void printNodesInBottomUp(BinaryTreeImpl.Node root) {
+            if(root == null){
+                return;
+            }
+            int level = 1;
+            Map<Integer, List<Integer>> map = new HashMap<>();
+            insertIntoMultiMap(map, level, root.data);
+            Queue<BinaryTreeImpl.Node> q1 = new ArrayDeque<>();
+            Queue<BinaryTreeImpl.Node> q2 = new ArrayDeque<>();
+            q1.add(root.left);
+            q2.add(root.right);
+            while(!q1.isEmpty()){
+                int size = q1.size();
+                level++;
+                while(size --> 0){
+                    BinaryTreeImpl.Node x = q1.poll();
+                    insertIntoMultiMap(map, level, x.data);
+                    if(x.left != null){
+                        q1.add(x.left);
+                    }
+                    if(x.right != null){
+                        q1.add(x.right);
+                    }
+
+                    BinaryTreeImpl.Node y = q2.poll();
+                    map.get(level).add(y.data);
+                    if(y.right != null){
+                        q2.add(y.right);
+                    }
+                    if(y.left != null){
+                        q2.add(y.left);
+                    }
+                }
+            }
+            for(int i = map.size(); i >= 0; i--){
+                System.out.print(map.get(i) + " ");
+            }
+        }
+        public void insertIntoMultiMap(Map<Integer, List<Integer>> map, int level, int data){
+            if(!map.containsKey(level)){
+                map.put(level, new ArrayList<>());
+            }
+            map.get(level).add(data);
+        }
+
     }
 }
