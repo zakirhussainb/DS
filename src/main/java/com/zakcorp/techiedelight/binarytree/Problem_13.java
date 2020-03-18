@@ -15,8 +15,8 @@ public class Problem_13 {
         map.
      */
     public static void main(String[] args) {
-        Problem_13 problem_12 = new Problem_13();
-        BinaryTreeImpl.Node root = problem_12.dataGeneration();
+        Problem_13 problem_13 = new Problem_13();
+        BinaryTreeImpl.Node root = problem_13.dataGeneration();
         Problem_13.Solver solver = new Problem_13.Solver();
 //        solver.printLeftViewOofNAndOofN(root);
         solver.printTopView(root);
