@@ -1,24 +1,25 @@
 package com.zakcorp.techiedelight.binarytree;
 
-import java.util.*;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class Problem_12 {
+public class Problem_13 {
     /*
-    Problem:- Print Bottom view of a binary tree.
-    Description:- Given a binary tree, print bottom view of it. Assume the left and right child of a node
+    Problem:- Print Top view of a binary tree.
+    Description:- Given a binary tree, print top view of it. Assume the left and right child of a node
     makes 45 degree angle with parent.
     TODO:- Procedure:-
         1. Maintain a TreeMap for {Key - Horizontal Distance, Value - Pair<Level, Root.Data>}
         2. Perform Pre-order Traversal
-        3. Insert into the map by checking for distance and whether current level is greater than or equal to existing level
-         in the map.
+        3. Insert into the map by checking for distance and whether current level is lesser than existing level in the
+        map.
      */
     public static void main(String[] args) {
-        Problem_12 problem_12 = new Problem_12();
+        Problem_13 problem_12 = new Problem_13();
         BinaryTreeImpl.Node root = problem_12.dataGeneration();
-        Problem_12.Solver solver = new Problem_12.Solver();
+        Problem_13.Solver solver = new Problem_13.Solver();
 //        solver.printLeftViewOofNAndOofN(root);
-        solver.printBottomView(root);
+        solver.printTopView(root);
     }
     public BinaryTreeImpl.Node dataGeneration() {
         BinaryTreeImpl.Node root = new BinaryTreeImpl.Node(1);
@@ -50,23 +51,23 @@ public class Problem_12 {
             }
         }
         // This is an O(n (log n)) solution as you are using a TreeMap, which internally sorts based on key
-        public void printBottomView(BinaryTreeImpl.Node root) {
+        public void printTopView(BinaryTreeImpl.Node root) {
             Map<Integer, Pair<Integer, Integer>> map = new TreeMap<>();
-            printBottomView(root, 0, 1, map);
+            printTopView(root, 0, 1, map);
             for(Pair<Integer, Integer> pair : map.values()){
                 System.out.print(pair.second + " ");
             }
         }
-        private void printBottomView(BinaryTreeImpl.Node root, int dist, int level,
+        private void printTopView(BinaryTreeImpl.Node root, int dist, int level,
                                      Map<Integer, Pair<Integer, Integer>> map){
             if(root == null){
                 return;
             }
-            if(!map.containsKey(dist) || level >= map.get(dist).first){
+            if(!map.containsKey(dist) || level < map.get(dist).first){
                map.put(dist, Pair.of(level, root.data));
             }
-            printBottomView(root.left, dist - 1, level + 1, map);
-            printBottomView(root.right, dist + 1, level + 1, map);
+            printTopView(root.left, dist - 1, level + 1, map);
+            printTopView(root.right, dist + 1, level + 1, map);
         }
     }
 }
