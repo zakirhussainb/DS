@@ -115,7 +115,7 @@ public class Problem_10 {
                     }
                 }
             }
-            for(int i = map.size(); i >= 0; i--){
+            for(int i = map.size(); i > 0; i--){
                 System.out.print(map.get(i) + " ");
             }
         }

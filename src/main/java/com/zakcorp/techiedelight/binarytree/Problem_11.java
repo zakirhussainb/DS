@@ -1,7 +1,6 @@
 package com.zakcorp.techiedelight.binarytree;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.*;
 
 public class Problem_11 {
     /*
@@ -17,7 +16,8 @@ public class Problem_11 {
         Problem_11 problem_11 = new Problem_11();
         BinaryTreeImpl.Node root = problem_11.dataGeneration();
         Problem_11.Solver solver = new Problem_11.Solver();
-        solver.printLeftView(root);
+//        solver.printLeftViewOofNAndOofN(root);
+        solver.printLeftViewOofNAndOofNHashing(root);
     }
     public BinaryTreeImpl.Node dataGeneration() {
         BinaryTreeImpl.Node root = new BinaryTreeImpl.Node(1);
@@ -25,25 +25,17 @@ public class Problem_11 {
         root.left = new BinaryTreeImpl.Node(2);
         root.right = new BinaryTreeImpl.Node(3);
 
-        root.left.left = new BinaryTreeImpl.Node(4);
-        root.left.right = new BinaryTreeImpl.Node(5);
+        root.left.right = new BinaryTreeImpl.Node(4);
 
-        root.left.left.left = new BinaryTreeImpl.Node(8);
-        root.left.left.right = new BinaryTreeImpl.Node(9);
-        root.left.right.left = new BinaryTreeImpl.Node(10);
-        root.left.right.right = new BinaryTreeImpl.Node(11);
-        //********
-        root.right.left = new BinaryTreeImpl.Node(6);
-        root.right.right = new BinaryTreeImpl.Node(7);
+        root.right.left = new BinaryTreeImpl.Node(5);
+        root.right.right = new BinaryTreeImpl.Node(6);
 
-        root.right.left.left = new BinaryTreeImpl.Node(12);
-        root.right.left.right = new BinaryTreeImpl.Node(13);
-        root.right.right.left = new BinaryTreeImpl.Node(14);
-        root.right.right.right = new BinaryTreeImpl.Node(15);
+        root.right.left.left = new BinaryTreeImpl.Node(7);
+        root.right.left.right = new BinaryTreeImpl.Node(8);
         return root;
     }
     static class Solver {
-        public void printLeftView(BinaryTreeImpl.Node root) {
+        public void printLeftViewOofNAndOofN(BinaryTreeImpl.Node root) {
             if(root == null){
                 return;
             }
@@ -65,6 +57,21 @@ public class Problem_11 {
                     }
                 }
             }
+        }
+        public void printLeftViewOofNAndOofNHashing(BinaryTreeImpl.Node root){
+            Map<Integer, Integer> map = new HashMap<>();
+            leftView(map, 1, root);
+            for(int i = 0; i <= map.size(); i++){
+                System.out.print(map.get(i) + " ");
+            }
+        }
+        public void leftView(Map<Integer, Integer> map, int level, BinaryTreeImpl.Node root){
+            if(root == null){
+                return;
+            }
+            map.put(level, root.data);
+            leftView(map, level + 1, root.right);
+            leftView(map, level + 1, root.left);
         }
     }
 }
