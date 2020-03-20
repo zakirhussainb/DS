@@ -16,4 +16,17 @@ public class BinaryTreeImpl {
             preorder(root.right);
         }
     }
+    public BinaryTreeImpl.Node dataGeneration() {
+        BinaryTreeImpl.Node root = new BinaryTreeImpl.Node(1);
+
+        root.left = new BinaryTreeImpl.Node(2);
+        root.right = new BinaryTreeImpl.Node(3);
+
+        root.left.left = new BinaryTreeImpl.Node(4);
+        root.left.right = new BinaryTreeImpl.Node(5);
+
+        root.right.left = new BinaryTreeImpl.Node(6);
+        root.right.right = new BinaryTreeImpl.Node(7);
+        return root;
+    }
 }

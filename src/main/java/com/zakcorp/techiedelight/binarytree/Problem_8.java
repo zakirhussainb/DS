@@ -1,8 +1,6 @@
 package com.zakcorp.techiedelight.binarytree;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Stack;
+import java.util.*;
 
 public class Problem_8 {
     /*
@@ -20,45 +18,25 @@ public class Problem_8 {
             3.4 Flip the flag -> flag != flag
      */
     public static void main(String[] args) {
-        Problem_8 problem_8 = new Problem_8();
-        Problem_8.Solver.Node root = problem_8.dataGeneration();
+        BinaryTreeImpl btImpl = new BinaryTreeImpl();
+        BinaryTreeImpl.Node root = btImpl.dataGeneration();
         Problem_8.Solver solver = new Problem_8.Solver();
-        solver.spiralOrder(root);
-    }
-    public Problem_8.Solver.Node dataGeneration() {
-        Problem_8.Solver.Node root = new Problem_8.Solver.Node(8);
-        root.left = new Problem_8.Solver.Node(3);
-        root.right = new Problem_8.Solver.Node(4);
-        root.left.left = new Problem_8.Solver.Node(12);
-        root.left.left.right = new Problem_8.Solver.Node(7);
-        root.left.left.right.left = new Problem_8.Solver.Node(19);
-        root.left.left.right.right = new Problem_8.Solver.Node(25);
-        root.right.left = new Problem_8.Solver.Node(5);
-        root.right.right = new Problem_8.Solver.Node(6);
-        root.right.right.left = new Problem_8.Solver.Node(13);
-        return root;
+//        solver.spiralOrder(root);
+        solver.spiralOrderUsingHashing(root);
     }
     static class Solver {
-        static class Node {
-            Node left;
-            int data;
-            Node right;
-            public Node(int data){
-                this.data = data;
-            }
-        }
-        public void spiralOrder(Node root){
+        public void spiralOrder(BinaryTreeImpl.Node root){
             if(root == null){
                 return;
             }
-            Deque<Node> deque = new ArrayDeque<>();
+            Deque<BinaryTreeImpl.Node> deque = new ArrayDeque<>();
             deque.addFirst(root);
             boolean flag = false;
             while(!deque.isEmpty()){
                 int size = deque.size();
                 if(flag){
                     while(size --> 0){
-                        Node curr = deque.pollFirst();
+                        BinaryTreeImpl.Node curr = deque.pollFirst();
                         System.out.print(curr.data + " ");
                         if(curr.left != null){
                             deque.addLast(curr.left);
@@ -69,7 +47,7 @@ public class Problem_8 {
                     }
                 } else {
                     while(size --> 0){
-                        Node curr = deque.pollLast();
+                        BinaryTreeImpl.Node curr = deque.pollLast();
                         System.out.print(curr.data + " ");
                         if(curr.right != null){
                             deque.addFirst(curr.right);
@@ -82,6 +60,29 @@ public class Problem_8 {
                 flag = !flag;
                 System.out.println();
             }
+        }
+        public void spiralOrderUsingHashing(BinaryTreeImpl.Node root){
+            Map<Integer, Deque<Integer>> map = new HashMap<>();
+            int level = 1;
+            preOrderSpiral(root, level, map);
+            for(int i = 1; i <= map.size(); i++){
+                System.out.print(map.get(i) + " ");
+            }
+        }
+        public void preOrderSpiral(BinaryTreeImpl.Node root, int level, Map<Integer, Deque<Integer>> map){
+            if(root == null){
+                return;
+            }
+            if(!map.containsKey(level)){
+                map.put(level, new ArrayDeque<>());
+            }
+            if(level % 2 == 0){
+                map.get(level).addLast(root.data);
+            } else {
+                map.get(level).addFirst(root.data);
+            }
+            preOrderSpiral(root.left, level + 1, map);
+            preOrderSpiral(root.right, level + 1, map);
         }
     }
 }
