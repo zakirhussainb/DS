@@ -12,8 +12,8 @@ public class Problem_15 {
         1.
      */
     public static void main(String[] args) {
-        Problem_15 problem_15 = new Problem_15();
-        BinaryTreeImpl.Node root = problem_15.dataGeneration();
+        BinaryTreeImpl bTImpl = new BinaryTreeImpl();
+        BinaryTreeImpl.Node root = bTImpl.dataGeneration();
         Problem_15.Solver solver = new Problem_15.Solver();
         if(solver.isComplete(root)){
             System.out.println("Given BT is Complete....");
@@ -25,19 +25,6 @@ public class Problem_15 {
         } else {
             System.out.println("Given BT is NOT Complete....");
         }
-    }
-    public BinaryTreeImpl.Node dataGeneration() {
-        BinaryTreeImpl.Node root = new BinaryTreeImpl.Node(1);
-
-        root.left = new BinaryTreeImpl.Node(2);
-        root.right = new BinaryTreeImpl.Node(3);
-
-        root.left.left = new BinaryTreeImpl.Node(4);
-        root.left.right = new BinaryTreeImpl.Node(5);
-
-        root.right.left = new BinaryTreeImpl.Node(6);
-        root.right.right = new BinaryTreeImpl.Node(7);
-        return root;
     }
     static class Solver {
         public boolean isComplete(BinaryTreeImpl.Node root){
