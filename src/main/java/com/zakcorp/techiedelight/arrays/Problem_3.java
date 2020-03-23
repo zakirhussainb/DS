@@ -5,33 +5,55 @@ import java.util.*;
 public class Problem_3 {
     /*
     Problem:- Print all sub-arrays with zero-sum.
-    Description:- Given an array of integers, check if array contains at least one sub-array with 0-sum.
+    Description:- Given an array of integers, return all the sub-arrays with zero-sum
     Procedure:-
         1. Easily solvable using Hashing, in linear time.
+        2. Create a multimap like Map<Integer, List<Integer>> -> to store {key -> sum, value -> List<Index>}
+        3. Create a Pair structure Pair<StartIndex, EndIndex> -> return the list of all Pairs.
      */
     public static void main(String[] args) {
-        Solver.OofNSquare oofNSquare = new Solver.OofNSquare();
+        Solver solver = new Solver();
 //        int[] arr = {3, 4, -7, 3, 1, 3, 1, -4, -2, -2};
-        int[] arr = {4, 2, -3, -1, 0, 4};
-
-//        oofNSquare.printAllSubArraysWithZeroSum(arr);
-//        System.out.println("Output...." + oofNSquare.printAllSubArraysWithZeroSum(arr, arr.length));
+        int[] arr = {0, 6, 3, -1, -3, 4, -2, 2};
+        List<Solver.Pair> pairs = solver.getAllSubArraysWithZeroSum(arr);
+        for(Solver.Pair pair : pairs){
+            System.out.println(pair.startIndex + "," +pair.endIndex);
+        }
 
     }
     static class Solver {
-        static class OofNSquare {
-            public void printAllSubArraysWithZeroSum(int[] arr){
-                int n = arr.length;
-                for(int i = 0; i < n; i++){
-                    int sum = 0;
-                    for(int j = i; j < n; j++){
-                        sum += arr[j];
-                        if(sum == 0){
-                            System.out.println("Subarray [" + i + ".." + j + "]");
-                        }
+        static class Pair {
+            int startIndex;
+            int endIndex;
+            public Pair(int startIndex, int endIndex){
+                this.startIndex = startIndex;
+                this.endIndex = endIndex;
+            }
+        }
+        public List<Pair> getAllSubArraysWithZeroSum(int[] arr){
+            int n = arr.length;
+            List<Pair> pairList = new ArrayList<>();
+            Map<Integer, List<Integer>> multiMap = new HashMap<>();
+            // to handle cases where the array starts with a zero
+            insertIntoMultiMap(multiMap, 0, -1);
+            int sum = 0;
+            for(int i = 0; i < n; i++){
+                sum = sum + arr[i];
+                if(multiMap.containsKey(sum)){
+                    List<Integer> list = multiMap.get(sum);
+                    for(Integer value : list){
+                        pairList.add(new Pair(value + 1, i));
                     }
                 }
+                insertIntoMultiMap(multiMap, sum, i);
             }
+            return pairList;
+        }
+        public void insertIntoMultiMap(Map<Integer, List<Integer>> map, int key, int value){
+            if(!map.containsKey(key)){
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(value);
         }
     }
 }
