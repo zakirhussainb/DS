@@ -21,7 +21,7 @@ public class Problem_2 {
             public boolean subArrayWithZeroSum(int[] arr){
                 int sum = 0;
                 Set<Integer> set = new HashSet<>();
-                set.add(71);
+                set.add(sum);
                 for (int value : arr) {
                     sum += value;
                     if (set.contains(sum)) {
