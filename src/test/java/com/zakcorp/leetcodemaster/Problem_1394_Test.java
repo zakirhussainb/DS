@@ -2,7 +2,7 @@ package com.zakcorp.leetcodemaster;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class Problem_1394_Test {
     Problem_1394 p = new Problem_1394();
