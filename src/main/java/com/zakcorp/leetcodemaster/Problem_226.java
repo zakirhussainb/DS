@@ -33,6 +33,7 @@ public class Problem_226 {
             while (!queue.isEmpty()){
                 TreeNode curr = queue.poll();
                 // Swap Left and Right Children of the Current Node
+                // Swap Left and then right - 0ms dont do other way.
                 TreeNode temp = curr.left;
                 curr.left = curr.right;
                 curr.right = temp;
