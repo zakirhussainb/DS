@@ -1,9 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Problem_429 {
     static class Node {
@@ -23,20 +20,23 @@ public class Problem_429 {
     }
     static class Solver {
         public List<List<Integer>> levelOrder(Node root){
-            List<List<Integer>> resultList = new ArrayList<>();
-            Queue<Node> queue = new ArrayDeque<>();
+            List<List<Integer>> resultList = new LinkedList<>();
+            if(root == null){
+                return resultList;
+            }
+            Queue<Node> queue = new LinkedList<>();
             queue.add(root);
             while (!queue.isEmpty()){
                 int size = queue.size();
+                List<Integer> list = new LinkedList<>();
                 while(size --> 0){
                     Node curr = queue.poll();
-                    List<Integer> list = new ArrayList<>();
                     list.add(curr.val);
                     if(curr.children != null){
                         queue.addAll(curr.children);
                     }
-                    resultList.add(list);
                 }
+                resultList.add(list);
             }
             return resultList;
         }
