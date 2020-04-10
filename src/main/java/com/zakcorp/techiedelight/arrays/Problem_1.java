@@ -17,6 +17,8 @@ public class Problem_1 {
         int sum = 10;
         System.out.println("O of NSquare...." + Arrays.toString(nSquare.pair(arr, sum)));
         System.out.println("O of N....." + Arrays.toString(oofN.pair(arr, sum)));
+        HashMap<Integer, Integer> hMap = new HashMap<>();
+        Integer count = hMap.get(1);
 
     }
     static class Solver {
