@@ -15,7 +15,7 @@ public class Problem_1394 {
         final int[] max = {-1};
         final Map<Integer, Integer> map = new HashMap<>();
         for (int item : arr) {
-            map.put(item, !map.containsKey(item) ? 1 : map.get(item) + 1);
+            map.put(item, map.getOrDefault(item, 0) + 1);
         }
         map.forEach((key, value) -> {
             if (key.equals(value)) {

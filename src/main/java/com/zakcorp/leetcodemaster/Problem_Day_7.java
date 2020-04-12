@@ -4,7 +4,18 @@ import java.util.*;
 
 public class Problem_Day_7 {
     static class Solver {
-        public int countElements(int[] arr) {
+        public int countElementsUsingHashSet(int[] arr) {
+            Set<Integer> set = new HashSet<>();
+            for(int num : arr)
+                set.add(num);
+            int counter = 0;
+            for (int num : arr) {
+                if (set.contains(num + 1))
+                    counter++;
+            }
+            return counter;
+        }
+        public int countElementsUsingHashMap(int[] arr) {
             final int[] counter = {0};
             int n = arr.length;
             if(n == 1) {
