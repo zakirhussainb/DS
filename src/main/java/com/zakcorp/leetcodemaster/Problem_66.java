@@ -18,7 +18,7 @@ public class Problem_66 {
             }
             int[] extraArr = new int[n + 1];
             extraArr[0] = 1;
-                return extraArr;
+            return extraArr;
         }
     }
 }
