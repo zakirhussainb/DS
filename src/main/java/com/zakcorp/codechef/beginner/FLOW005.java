@@ -1,9 +1,6 @@
 package com.zakcorp.codechef.beginner;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-class CIELRCPT {
+class FLOW005 {
     public static void main(String[] args) throws Exception {
         InputReader in = new InputReader(System.in);
         OutputWriter out = new OutputWriter(System.out);
@@ -19,14 +16,16 @@ class CIELRCPT {
     }
     static class Solver {
         public int solve(int num) {
-            int minMenus = 0;
-            for(int i = 2048; i > 0; i = i / 2) {
-                while(num - i >= 0) {
-                    num = num - i;
-                    minMenus++;
+            int counter = 0;
+            int[] arr = {1, 2, 5, 10, 50, 100};
+            for(int i = arr.length - 1; i >= 0; i--) {
+                if(arr[i] <= num) {
+                    int div = num / arr[i];
+                    counter = counter + div;
+                    num = num % arr[i];
                 }
             }
-            return minMenus;
+            return counter;
         }
     }
 }
