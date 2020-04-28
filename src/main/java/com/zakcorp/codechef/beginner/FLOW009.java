@@ -1,5 +1,7 @@
 package com.zakcorp.codechef.beginner;
 
+import java.text.DecimalFormat;
+
 class FLOW009 {
     public static void main(String[] args) throws Exception {
         InputReader in = new InputReader(System.in);
@@ -9,7 +11,8 @@ class FLOW009 {
             while(tc --> 0) {
                 int quantity = in.readInt();
                 int price = in.readInt();
-                System.out.println(new Solver().solve(quantity, price));
+                String result = String.format("%.6f", new Solver().solve(quantity, price));
+                System.out.println(result);
             }
             out.flush();
             out.close();
@@ -17,8 +20,13 @@ class FLOW009 {
     }
     static class Solver {
         public double solve(double quantity, double price) {
-            double expense = quantity * price;
-            return expense;
+            if(quantity > 1000) {
+                double discount = (quantity * 10) / 100;
+                double discountedPrice = quantity - discount;
+                return discountedPrice * price;
+            } else {
+                return quantity * price;
+            }
         }
     }
 }
