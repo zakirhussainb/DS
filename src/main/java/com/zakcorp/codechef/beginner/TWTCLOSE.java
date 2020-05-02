@@ -9,20 +9,26 @@ class TWTCLOSE {
             int K = in.readInt();
             while(K --> 0) {
                 String click = in.readString();
-                if(click.equals("CLOSEALL")){
-                    System.out.println("0");
-                    continue;
+                int tweetNo = 0;
+                if(!click.equals("CLOSEALL")) {
+                    tweetNo = in.readInt();
                 }
-                int no = in.readInt();
-                System.out.println(new Solver().solve(click, no));
+                new Solver().solve(click, tweetNo, N);
             }
             out.flush();
             out.close();
         } catch (Exception e){}
     }
     static class Solver {
-        public int solve(String click, int no) {
-            return click.equals("CLOSEALL") ? 0 : no;
+        public void solve(String click, int no, int N) {
+            if(click.equals("CLOSEALL")){
+                System.out.println(0);
+            }
+            for(int i = 1; i <= N; i++) {
+                if(i == no) {
+                    System.out.println(no);
+                }
+            }
         }
     }
 }
