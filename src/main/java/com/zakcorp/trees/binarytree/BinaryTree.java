@@ -4,11 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTree {
-    Node root;
-    static class Node {
-        Node left;
-        Node right;
-        int data;
+    public static class Node {
+        public Node left;
+        public Node right;
+        public int data;
         public Node(int data){
             this.data = data;
             left = null; right = null;
@@ -55,4 +54,43 @@ public class BinaryTree {
         }
         return p;
     }
+    public Node getBinaryTree(String str) {
+        String[] splitArr = str.split("\\s+");
+        int n = splitArr.length;
+        Node root = new Node(Integer.parseInt(splitArr[0]));
+        for(int i = 1; i < n; i++) {
+            insert(root, Integer.parseInt(splitArr[i]));
+        }
+        return root;
+    }
+    public Node buildTree(String str) {
+        if( str.length() == 0 || str.charAt(0) == 'N' ) {
+            return null;
+        }
+        String[] input = str.split("\\s+");
+        Node root = new Node(Integer.parseInt(input[0]));
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        int i = 1;
+        int n = input.length;
+        while (queue.size() > 0 && i < n) {
+            Node curr = queue.poll();
+            String currVal = input[i];
+            if(!currVal.equals("N")) {
+                curr.left = new Node(Integer.parseInt(currVal));
+                queue.add(curr.left);
+            }
+            i++;
+            if(i >= n)
+                break;
+            currVal = input[i];
+            if(!currVal.equals("N")) {
+                curr.right = new Node(Integer.parseInt(currVal));
+                queue.add(curr.right);
+            }
+            i++;
+        }
+        return root;
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.zakcorp.algorithms.greedy;
+package com.zakcorp.algorithms.greedy.gfg;
 
 import java.util.Arrays;
 
