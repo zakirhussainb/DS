@@ -1,7 +1,7 @@
 package com.zakcorp.misc;
 
 public class Factorial {
-    // Taken from abdul Bari notes
+    // Recursion - Taken from abdul Bari notes
     public static void main(String[] args) {
         Factorial p = new Factorial();
         System.out.println(p.recursiveSol(5));

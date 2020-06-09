@@ -1,7 +1,7 @@
 package com.zakcorp.misc;
 
 public class SumOfNNatural {
-    // Taken from abdul Bari notes
+    // Recursion - Taken from abdul Bari notes
     public static void main(String[] args) {
         SumOfNNatural p = new SumOfNNatural();
         System.out.println("recur..." + p.recursiveSol(5));

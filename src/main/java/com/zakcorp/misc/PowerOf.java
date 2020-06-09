@@ -1,7 +1,7 @@
 package com.zakcorp.misc;
 
 public class PowerOf {
-    // Taken from abdul Bari notes
+    // Recursion - Taken from abdul Bari notes
     // Similar to Math.pow() method
     public static void main(String[] args) {
         PowerOf p = new PowerOf();
