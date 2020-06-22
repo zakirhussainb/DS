@@ -11,4 +11,9 @@ public class Problem_172_Test {
     public void test1() {
         assertEquals(29998, p.trailingZeroes(120000));
     }
+
+    @Test
+    public void test2() {
+        assertEquals(4, p.trailingZeroes(23));
+    }
 }
