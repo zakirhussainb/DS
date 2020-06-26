@@ -1,4 +1,4 @@
-package com.zakcorp.misc;
+package com.zakcorp.books.karumachi;
 
 public class Factorial {
     // Recursion - Taken from abdul Bari notes

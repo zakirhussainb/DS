@@ -1,4 +1,4 @@
-package com.zakcorp.misc;
+package com.zakcorp.books.karumachi;
 
 public class CheckArrayIsSorted {
     // Recursion - Taken from Narasimhan Karumachi Notes

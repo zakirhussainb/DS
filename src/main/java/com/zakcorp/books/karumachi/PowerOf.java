@@ -1,4 +1,4 @@
-package com.zakcorp.misc;
+package com.zakcorp.books.karumachi;
 
 public class PowerOf {
     // Recursion - Taken from abdul Bari notes
