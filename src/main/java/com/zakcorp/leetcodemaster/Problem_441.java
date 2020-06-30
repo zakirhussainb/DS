@@ -7,11 +7,27 @@ import java.util.List;
 public class Problem_441 {
     static class Solver {
         public int arrangeCoins(int n) {
-            int num = n;
-            for(int i = 1; i <=n; i++) {
-                num = num - i;
+
+            return -1;
+        }
+    }
+    static class Solver1 {
+        public int arrangeCoins(int n) {
+            long left = 0;
+            long right = n;
+            long res, mid;
+            while(left <= right) {
+                mid = left + (right - left) / 2;
+                res = mid * (mid + 1) / 2;
+                if(res == n) {
+                    return (int)mid;
+                } else if(res > n) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
             }
-            return 0;
+            return (int)right;
         }
     }
 }
