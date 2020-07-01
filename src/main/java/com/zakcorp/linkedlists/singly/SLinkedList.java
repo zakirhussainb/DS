@@ -6,14 +6,14 @@ import java.util.NoSuchElementException;
 
 public class SLinkedList<E> {
 	private static int size = 0;
-	Node<E> head;
+	public Node<E> head;
 	public SLinkedList(){}
 	public SLinkedList(Node<E> head){
 		this.head = head;
 	}
-    static class Node<E> {
-        E element;
-        Node<E> next;
+    public static class Node<E> {
+        public E element;
+        public Node<E> next;
         public Node(E element) {
             this.element = element;
             next = null;
