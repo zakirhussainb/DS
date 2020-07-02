@@ -44,6 +44,14 @@ public class Problem_2 {
             return p.element;
         }
         public int solve2(SLinkedList.Node<Integer> head, int n) {
+            /* Take two pointers, p1 and p2. p1 = head and p2 = null;
+             * Move p1 till it reaches nth position.
+             * Then move p2 and p1 one by one until p1 becomes null;
+             * While performing the above step, capture the previous position to p2 in a node "prev"
+             * Now you can delete the nth node by, prev.next = p2.next;
+             * Check for null pointer wherever possible.
+             * O(n) and O(1)
+             */
             if(head == null) {
                 return -1;
             }
