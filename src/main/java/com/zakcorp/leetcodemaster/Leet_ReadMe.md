@@ -5,3 +5,6 @@ July Month
 4. https://leetcode.com/problems/hamming-distance/
 5. https://leetcode.com/problems/powerful-integers/
 6. https://leetcode.com/problems/keyboard-row/
+7. https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/
+8. https://leetcode.com/problems/minimum-time-visiting-all-points/
+9. https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
