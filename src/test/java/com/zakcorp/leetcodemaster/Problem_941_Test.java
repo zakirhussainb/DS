@@ -44,5 +44,13 @@ public class Problem_941_Test {
     public void test8() {
         assertFalse(p.validMountainArray(new int[]{2,1}));
     }
+    @Test
+    public void test9() {
+        assertFalse(p.validMountainArray(new int[]{0,1,2,3,4,5,6,7,8,9}));
+    }
+    @Test
+    public void test10() {
+        assertFalse(p.validMountainArray(new int[]{3,7,6,4,3,0,1,0}));
+    }
 
 }

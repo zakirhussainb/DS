@@ -1,32 +1,28 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.*;
+
 public class Problem_941 {
     static class Solver {
         public boolean validMountainArray(int[] arr) {
-            if(arr.length < 3) {
-                return false;
-            }
-            boolean isMountain = true;
             int n = arr.length;
             int i = 0;
-            while(i < n - 1) {
-                if(arr[i] < arr[i + 1]) {
-                    i++;
-                } else {
-                    isMountain = false;
-                    break;
-                }
+
+            // Increasing or Walking up the mountain
+            while(i + 1 < n && arr[i] < arr[i + 1]) {
+                i++;
             }
-            while(i < n - 1) {
-                if(arr[i] > arr[i + 1]) {
-                    isMountain = true;
-                    i++;
-                } else {
-                    isMountain = false;
-                    break;
-                }
+
+            if(i == 0 || i == n - 1) { // Since peak element cannot be the first element or the last element.
+                return false;
             }
-            return isMountain;
+
+            // Decreasing or Walking down the mountain
+            while(i + 1 < n && arr[i] > arr[i + 1]) {
+                i++;
+            }
+
+            return i == n - 1;
         }
     }
 }
