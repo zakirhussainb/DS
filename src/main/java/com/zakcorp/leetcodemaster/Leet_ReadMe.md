@@ -8,3 +8,5 @@ July Month
 7. https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/
 8. https://leetcode.com/problems/minimum-time-visiting-all-points/
 9. https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
+10. https://leetcode.com/problems/longest-common-prefix
+11. https://leetcode.com/problems/valid-mountain-array
