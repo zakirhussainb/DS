@@ -10,3 +10,4 @@ July Month
 9. https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
 10. https://leetcode.com/problems/longest-common-prefix
 11. https://leetcode.com/problems/valid-mountain-array
+12. https://leetcode.com/problems/add-to-array-form-of-integer/
