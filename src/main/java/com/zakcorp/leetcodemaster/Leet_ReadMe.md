@@ -11,3 +11,4 @@ July Month
 10. https://leetcode.com/problems/longest-common-prefix
 11. https://leetcode.com/problems/valid-mountain-array
 12. https://leetcode.com/problems/add-to-array-form-of-integer/
+13. https://leetcode.com/problems/maximum-average-subarray-i/
