@@ -12,3 +12,4 @@ July Month
 11. https://leetcode.com/problems/valid-mountain-array
 12. https://leetcode.com/problems/add-to-array-form-of-integer/
 13. https://leetcode.com/problems/maximum-average-subarray-i/
+14. https://leetcode.com/problems/intersection-of-two-linked-lists/
