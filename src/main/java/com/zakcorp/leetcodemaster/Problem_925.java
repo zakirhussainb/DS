@@ -5,22 +5,26 @@ import java.util.*;
 public class Problem_925 {
     static class Solver {
         public boolean isLongPressedName(String name, String typed) {
+            int m = name.length(); int n = typed.length();
+            if(n < m) return false;
             int i = 0, j = 0;
-            int m = name.length();
-            int n = typed.length();
             while(i < m && j < n) {
-                char ch1 = name.charAt(i);
-                char ch2 = typed.charAt(j);
-                if(ch1 != ch2) {
+                char nameCh = name.charAt(i);
+                char typedCh = typed.charAt(j);
+                if(nameCh != typedCh)
                     return false;
-                }
-                int count1 = 0;
-                while(i < m && name.charAt(i) == ch1) {
-                    count1++;
-                    j++;
-                }
+                int nameIndex = i + 1;
+                int typedIndex = j + 1;
+                while(nameIndex < m && nameCh == name.charAt(nameIndex))
+                    nameIndex++;
+                while(typedIndex < n && typedCh == typed.charAt(typedIndex))
+                    typedIndex++;
+                if( (typedIndex - j) < (nameIndex - i) )
+                    return false;
+                i = nameIndex;
+                j = typedIndex;
             }
-            return false;
+            return i >= m && j >= n;
         }
     }
 }
