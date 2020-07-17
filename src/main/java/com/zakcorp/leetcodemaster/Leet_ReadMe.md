@@ -15,3 +15,6 @@ July Month
 14. https://leetcode.com/problems/intersection-of-two-linked-lists/
 15. https://leetcode.com/problems/middle-of-the-linked-list/
 16. https://leetcode.com/problems/long-pressed-name/
+16. https://leetcode.com/problems/long-pressed-name/
+17. https://leetcode.com/problems/print-in-order/
+18. https://leetcode.com/problems/sum-of-square-numbers/
