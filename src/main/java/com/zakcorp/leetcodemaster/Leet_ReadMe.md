@@ -24,3 +24,4 @@
 23. https://leetcode.com/problems/largest-perimeter-triangle/
 24. https://leetcode.com/problems/maximum-69-number/
 25. https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
+26. https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
