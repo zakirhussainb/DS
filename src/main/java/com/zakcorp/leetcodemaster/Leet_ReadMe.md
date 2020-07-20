@@ -1,4 +1,4 @@
-July Month
+           **July Month**
 1. https://leetcode.com/problems/fizz-buzz/
 2. https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/
 3. https://leetcode.com/problems/contains-duplicate-ii/
@@ -15,9 +15,12 @@ July Month
 14. https://leetcode.com/problems/intersection-of-two-linked-lists/
 15. https://leetcode.com/problems/middle-of-the-linked-list/
 16. https://leetcode.com/problems/long-pressed-name/
-16. https://leetcode.com/problems/long-pressed-name/
-17. https://leetcode.com/problems/print-in-order/
-18. https://leetcode.com/problems/sum-of-square-numbers/
-19. https://leetcode.com/problems/largest-perimeter-triangle/
+17. https://leetcode.com/problems/long-pressed-name/
+18. https://leetcode.com/problems/print-in-order/
+19. https://leetcode.com/problems/sum-of-square-numbers/
 20. https://leetcode.com/problems/lru-cache/
 21. https://leetcode.com/problems/complement-of-base-10-integer/
+22. https://leetcode.com/problems/positions-of-large-groups/
+23. https://leetcode.com/problems/largest-perimeter-triangle/
+24. https://leetcode.com/problems/maximum-69-number/
+25. https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
