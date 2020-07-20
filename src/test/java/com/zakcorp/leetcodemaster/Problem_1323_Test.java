@@ -18,4 +18,8 @@ public class Problem_1323_Test {
     public void test3() {
         assertEquals(9999, p.maximum69Number(9999));
     }
+    @Test
+    public void test4() {
+        assertEquals(9, p.maximum69Number(6));
+    }
 }
