@@ -18,3 +18,6 @@ July Month
 16. https://leetcode.com/problems/long-pressed-name/
 17. https://leetcode.com/problems/print-in-order/
 18. https://leetcode.com/problems/sum-of-square-numbers/
+19. https://leetcode.com/problems/largest-perimeter-triangle/
+20. https://leetcode.com/problems/lru-cache/
+21. https://leetcode.com/problems/complement-of-base-10-integer/
