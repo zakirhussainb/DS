@@ -26,3 +26,4 @@
 25. https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
 26. https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
 27. https://leetcode.com/problems/buddy-strings/
+28. https://leetcode.com/problems/repeated-string-match
