@@ -27,3 +27,6 @@
 26. https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/
 27. https://leetcode.com/problems/buddy-strings/
 28. https://leetcode.com/problems/repeated-string-match
+29. https://leetcode.com/problems/destination-city/
+30. https://leetcode.com/problems/running-sum-of-1d-array/
+31. https://leetcode.com/problems/sum-of-even-numbers-after-queries/ - Partial - TLE
