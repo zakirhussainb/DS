@@ -30,3 +30,4 @@
 29. https://leetcode.com/problems/destination-city/
 30. https://leetcode.com/problems/running-sum-of-1d-array/
 31. https://leetcode.com/problems/sum-of-even-numbers-after-queries/ - Partial - TLE
+32. https://leetcode.com/problems/number-of-good-pairs/
