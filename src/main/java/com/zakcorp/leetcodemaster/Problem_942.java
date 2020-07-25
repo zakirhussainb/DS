@@ -8,16 +8,12 @@ public class Problem_942 {
         // Time and Space Complexities -> O(n) and O(n)
         int N = str.length();
         int[] res = new int[N + 1];
-        int i = 0;
         int iCount = 0, dCount = N;
-        while(i < N) {
-            if(str.charAt(i) == 'I') {
-                res[i++] = iCount++;
-            } else {
-                res[i++] = dCount--;
-            }
+        for(int i = 0; i < N; i++) {
+            res[i] = (str.charAt(i) == 'I') ? iCount++ : dCount--;
         }
-        res[i] = (str.charAt(N - 1) == 'I') ? iCount : dCount;
+        // iCount will be increased and will be the final value, you can verify with test cases for better understanding
+        res[N] = iCount;
         return res;
     }
 }
