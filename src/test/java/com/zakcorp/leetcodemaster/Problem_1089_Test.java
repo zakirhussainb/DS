@@ -11,15 +11,18 @@ public class Problem_1089_Test {
     public void test1() {
         assertArrayEquals(new int[]{1, 0, 0, 2, 3, 0, 0, 4}, p.solve1(new int[]{1,0,2,3,0,4,5,0}));
         assertArrayEquals(new int[]{1, 0, 0, 2, 3, 0, 0, 4}, p.solve2(new int[]{1,0,2,3,0,4,5,0}));
+        assertArrayEquals(new int[]{1, 0, 0, 2, 3, 0, 0, 4}, p.solve3(new int[]{1,0,2,3,0,4,5,0}));
     }
     @Test
     public void test2() {
         assertArrayEquals(new int[]{1, 2, 3}, p.solve1(new int[]{1, 2, 3}));
         assertArrayEquals(new int[]{1, 2, 3}, p.solve2(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{1, 2, 3}, p.solve3(new int[]{1, 2, 3}));
     }
     @Test
     public void test3() {
         assertArrayEquals(new int[]{1, 2, 3}, p.solve1(new int[]{1, 2, 3}));
         assertArrayEquals(new int[]{1, 2, 3}, p.solve2(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{1, 2, 3}, p.solve3(new int[]{1, 2, 3}));
     }
 }

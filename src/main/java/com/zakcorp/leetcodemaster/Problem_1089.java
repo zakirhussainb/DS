@@ -38,5 +38,29 @@ public class Problem_1089 {
             }
             return arr;
         }
+        public int[] solve3(int[] arr) {
+            int n = arr.length;
+            int m = n - 1;
+            int possibleZeroDup = 0;
+            for(int i = 0; i <= m - possibleZeroDup; i++) {
+                if(arr[i] == 0) {
+                    if(i == m - possibleZeroDup) {
+
+                    }
+                    possibleZeroDup++;
+                }
+            }
+            int last = m - possibleZeroDup;
+            for(int i = last; i >= 0; i--) {
+                if(arr[i] == 0) {
+                    arr[i + possibleZeroDup] = 0;
+                    possibleZeroDup--;
+                    arr[i + possibleZeroDup] = 0;
+                } else {
+                    arr[i + possibleZeroDup] = arr[i];
+                }
+            }
+            return arr;
+        }
     }
 }
