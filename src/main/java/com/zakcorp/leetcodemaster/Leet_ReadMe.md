@@ -38,3 +38,4 @@
 37. https://leetcode.com/problems/toeplitz-matrix/ -> TODO:- Follow up 1 and 2
 38. https://leetcode.com/problems/design-hashset -> TODO:- HashFunction finding solution
 39. https://leetcode.com/problems/reverse-bits/
+40. https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/
