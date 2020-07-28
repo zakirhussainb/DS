@@ -2,26 +2,26 @@ package com.zakcorp.linkedlists.circular;
 
 public class CircularSLLDriver {
     public static void main(String[] args) {
-        CircularSLLProblems csllProblems = new CircularSLLProblems();
-        CircularSLLImpl csll = new CircularSLLImpl();
-        csll.add(99);
-        csll.add(11);
-        csll.add(22);
-        csll.add(33);
-        csll.add(44);
-        csll.add(55);
-        csll.add(66);
-        csll.printListCustom(csll.head);
-        csll.add(2, 25);
-        csll.printListCustom(csll.head);
-        csll.removeByElement(5);
-        csll.printListCustom(csll.head);
-        CircularSLLImpl.Node head = csllProblems.exchangeFirstAndLastNodes(csll.head);
-        csll.printListCustom(head);
-
-        int[] arr = csllProblems.sumAndProduct(csll.head, 5);
-        System.out.println("sum..."+ arr[0]);
-        System.out.println("product..."+ arr[1]);
+//        CircularSLLProblems csllProblems = new CircularSLLProblems();
+//        CircularSLLImpl csll = new CircularSLLImpl();
+//        csll.add(99);
+//        csll.add(11);
+//        csll.add(22);
+//        csll.add(33);
+//        csll.add(44);
+//        csll.add(55);
+//        csll.add(66);
+//        csll.printListCustom(csll.head);
+//        csll.add(2, 25);
+//        csll.printListCustom(csll.head);
+//        csll.removeByElement(5);
+//        csll.printListCustom(csll.head);
+//        CircularSLLImpl.Node head = csllProblems.exchangeFirstAndLastNodes(csll.head);
+//        csll.printListCustom(head);
+//
+//        int[] arr = csllProblems.sumAndProduct(csll.head, 5);
+//        System.out.println("sum..."+ arr[0]);
+//        System.out.println("product..."+ arr[1]);
 
         /* true:- Deletes all even position nodes
          *  false:- Deletes all odd position nodes
@@ -35,5 +35,22 @@ public class CircularSLLDriver {
 
 //        CircularSLLImpl.Node head = csllProblems.deleteAllPrimeNodes(csll.head);
 //        csll.printListCustom(head);
+
+        /*
+        Learning Problems from Karumachi's book
+         */
+        CircularSLLImpl cll = new CircularSLLImpl();
+        cll.add(1);
+        cll.add(2);
+        cll.add(3);
+        cll.add(4);
+        System.out.println(cll.countNodes());
+        cll.printList();
+//        cll.printList(cll.head.next);
+        cll.add(3, 5);
+        cll.printList();
+        cll.add(4, 5);
+        cll.printList();
+        System.out.println(cll.contains(6));
     }
 }
