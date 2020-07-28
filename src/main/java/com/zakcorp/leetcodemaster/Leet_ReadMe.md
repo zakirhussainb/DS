@@ -39,3 +39,4 @@
 38. https://leetcode.com/problems/design-hashset -> TODO:- HashFunction finding solution
 39. https://leetcode.com/problems/reverse-bits/
 40. https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/
+41. https://leetcode.com/problems/duplicate-zeros/ -> Accepted:- But O(n^2) TODO:- Handle Efficiently

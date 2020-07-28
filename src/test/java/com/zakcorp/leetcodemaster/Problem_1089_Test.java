@@ -1,0 +1,22 @@
+package com.zakcorp.leetcodemaster;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
+public class Problem_1089_Test {
+    Problem_1089 p = new Problem_1089();
+    @Test
+    public void test1() {
+        assertArrayEquals(new int[]{1, 0, 0, 2, 3, 0, 0, 4}, p.duplicateZeros(new int[]{1,0,2,3,0,4,5,0}));
+    }
+    @Test
+    public void test2() {
+        assertArrayEquals(new int[]{1, 2, 3}, p.duplicateZeros(new int[]{1, 2, 3}));
+    }
+    @Test
+    public void test3() {
+        assertArrayEquals(new int[]{1, 2, 3}, p.duplicateZeros(new int[]{1, 2, 3}));
+    }
+}
