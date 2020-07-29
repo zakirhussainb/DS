@@ -40,3 +40,4 @@
 39. https://leetcode.com/problems/reverse-bits/
 40. https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/
 41. https://leetcode.com/problems/duplicate-zeros/ -> Accepted:- But O(n^2) TODO:- Handle Efficiently
+42. https://leetcode.com/problems/shift-2d-grid
