@@ -46,3 +46,4 @@
 1. https://leetcode.com/problems/detect-capital/
 2. https://leetcode.com/problems/shuffle-string/
 3. https://leetcode.com/problems/reshape-the-matrix/
+4. https://leetcode.com/problems/fair-candy-swap/
