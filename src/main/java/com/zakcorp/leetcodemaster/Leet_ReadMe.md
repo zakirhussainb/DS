@@ -47,3 +47,4 @@
 2. https://leetcode.com/problems/shuffle-string/
 3. https://leetcode.com/problems/reshape-the-matrix/
 4. https://leetcode.com/problems/fair-candy-swap/
+5. https://leetcode.com/problems/verifying-an-alien-dictionary
