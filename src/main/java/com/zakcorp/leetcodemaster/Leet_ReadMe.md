@@ -50,3 +50,4 @@
 5. https://leetcode.com/problems/verifying-an-alien-dictionary
 6. https://leetcode.com/problems/valid-palindrome
 7. https://leetcode.com/problems/distribute-candies-to-people/
+8. https://leetcode.com/problems/find-the-town-judge/ -> Need to improvise/ do it using Graph
