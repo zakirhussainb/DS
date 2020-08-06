@@ -52,3 +52,4 @@
 7. https://leetcode.com/problems/distribute-candies-to-people/
 8. https://leetcode.com/problems/find-the-town-judge/ -> Need to improvise/ do it using Graph
 9. https://leetcode.com/problems/next-greater-element-i/ 
+10. https://leetcode.com/problems/find-all-duplicates-in-an-array/ -> Need to solve the tricky approach.
