@@ -11,25 +11,25 @@ public class Problem_211 {
         }
     }
     public void addWord(String word) {
-        TrieNode tNTemp = root;
+        TrieNode curr = root;
         for(int i = 0; i < word.length(); i++) {
             int index = word.charAt(i) - 'a';
-            if( tNTemp.children[index] == null ) {
-                tNTemp.children[index] = new TrieNode();
+            if( curr.children[index] == null ) {
+                curr.children[index] = new TrieNode();
             }
-            tNTemp = tNTemp.children[index];
+            curr = curr.children[index];
         }
-        tNTemp.isEndOfWord = true;
+        curr.isEndOfWord = true;
     }
     public boolean search(String word) {
-        TrieNode tNTemp = root;
+        TrieNode curr = root;
         for(int i = 0; i < word.length(); i++) {
             int index = word.charAt(i) - 'a';
-            if( tNTemp.children[index] == null )
+            if( curr.children[index] == null )
                 return false;
-            tNTemp = tNTemp.children[index];
+            curr = curr.children[index];
         }
-        return ( tNTemp != null && tNTemp.isEndOfWord );
+        return ( curr != null && curr.isEndOfWord );
     }
 
     public static void main(String[] args) {
@@ -37,6 +37,8 @@ public class Problem_211 {
         Problem_211 p = new Problem_211();
         p.addWord("there");
         p.addWord("their");
+        p.addWord("theirs");
         System.out.println(p.search("there"));
+        System.out.println(p.search("the"));
     }
 }
