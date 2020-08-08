@@ -1,14 +1,12 @@
 package com.zakcorp.trees.bst;
 
-import java.util.Map;
-
 public class BinarySearchTree {
-    Node root;
-    class Node {
-        int data;
-        Node left;
-        Node right;
-        public Node(int data){
+    public TreeNode root;
+    public class TreeNode {
+        public int data;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int data){
             this.data = data;
             left = null; right = null;
         }
@@ -20,9 +18,9 @@ public class BinarySearchTree {
     public void insert(int key){
         root = insertRec(root, key);
     }
-    public Node insertRec(Node root, int key) {
+    public TreeNode insertRec(TreeNode root, int key) {
         if(root == null){
-            root = new Node(key);
+            root = new TreeNode(key);
             return root;
         }
         if(key < root.data){
@@ -38,7 +36,7 @@ public class BinarySearchTree {
         System.out.println();
     }
 
-    public void inorderRec(Node root){
+    public void inorderRec(TreeNode root){
         if(root != null){
             inorderRec(root.left);
             System.out.print(root.data + " ");
@@ -46,11 +44,11 @@ public class BinarySearchTree {
         }
     }
 
-    public Node search(int key) {
+    public TreeNode search(int key) {
         return searchRec(root, key);
     }
 
-    public Node searchRec(Node root, int key){
+    public TreeNode searchRec(TreeNode root, int key){
         if(root == null){
             return null;
         }
@@ -62,10 +60,10 @@ public class BinarySearchTree {
             return searchRec(root.right, key);
         }
     }
-    public Node delete(int key) {
+    public TreeNode delete(int key) {
         return deleteRec(root, key);
     }
-    public Node deleteRec(Node p, int key) {
+    public TreeNode deleteRec(TreeNode p, int key) {
         if(p == null)
             return null;
         if(p.left == null && p.right == null){
@@ -78,7 +76,7 @@ public class BinarySearchTree {
         } else if(key > p.data){
             p.right = deleteRec(p.right, key);
         } else {
-            Node q;
+            TreeNode q;
             if(getHeight(p.left) > getHeight(p.right)){
                q = getInorderPre(p.left);
                p.data = q.data;
@@ -91,7 +89,7 @@ public class BinarySearchTree {
         }
         return p;
     }
-    public int getHeight(Node root) {
+    public int getHeight(TreeNode root) {
         int x,y;
         if(root == null)
             return 0;
@@ -99,13 +97,13 @@ public class BinarySearchTree {
         y = getHeight(root.right);
         return x > y ? x+1 : y+1;
     }
-    public Node getInorderPre(Node p){
+    public TreeNode getInorderPre(TreeNode p){
         while(p != null && p.right != null) {
             p = p.right;
         }
         return p;
     }
-    public Node getInorderSucc(Node p){
+    public TreeNode getInorderSucc(TreeNode p){
         while(p != null && p.left != null){
             p = p.left;
         }
