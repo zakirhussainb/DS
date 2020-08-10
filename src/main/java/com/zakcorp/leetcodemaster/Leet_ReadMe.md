@@ -55,3 +55,5 @@
 10. https://leetcode.com/problems/find-all-duplicates-in-an-array/ -> Need to solve the tricky approach.
 11. https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 12. https://leetcode.com/problems/palindrome-number/ -> Follow-Up ?
+13. https://leetcode.com/problems/search-in-a-binary-search-tree/
+14. https://leetcode.com/problems/degree-of-an-array/
