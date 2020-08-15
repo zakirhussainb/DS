@@ -61,3 +61,4 @@
 16. https://leetcode.com/problems/min-cost-climbing-stairs/
 17. https://leetcode.com/problems/make-the-string-great/
 18. https://leetcode.com/problems/non-overlapping-intervals/
+19. https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
