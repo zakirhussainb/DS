@@ -60,3 +60,4 @@
 15. https://leetcode.com/problems/maximize-distance-to-closest-person/
 16. https://leetcode.com/problems/min-cost-climbing-stairs/
 17. https://leetcode.com/problems/make-the-string-great/
+18. https://leetcode.com/problems/non-overlapping-intervals/submissions/
