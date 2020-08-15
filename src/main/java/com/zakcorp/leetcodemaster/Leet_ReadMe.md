@@ -62,3 +62,4 @@
 17. https://leetcode.com/problems/make-the-string-great/
 18. https://leetcode.com/problems/non-overlapping-intervals/
 19. https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
+20. https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
