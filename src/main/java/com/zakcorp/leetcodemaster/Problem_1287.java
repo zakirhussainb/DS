@@ -50,5 +50,17 @@ public class Problem_1287 {
             }
             return 0;
         }
+        public int solve3(int[] arr) {
+            int n = arr.length;
+            int res = arr[0];
+            int x = n/4;
+            for(int i = 0; i < n - x; i++) {
+                if(arr[i] == arr[i + x]) {
+                    res = arr[i];
+                    break;
+                }
+            }
+            return res;
+        }
     }
 }
