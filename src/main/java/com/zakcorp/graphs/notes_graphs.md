@@ -41,7 +41,9 @@
 - [ ] 4. http://www.spoj.com/problems/MICEMAZE/
 - [ ] 5. http://acm.timus.ru/problem.aspx?space=1&num=2034
 
+***
            Graph Resources and References to Learn
+***
 - [ ] 1. Abdul Bari - Udemy
 - [ ] 2. Karumachi Book
 - [ ] 3. CodeChef -> https://www.codechef.com/LRNDSA08?order=desc&sortBy=successful_submissions
