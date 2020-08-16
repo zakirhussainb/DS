@@ -42,4 +42,8 @@ public class Graph {
         }
         System.out.println();
     }
+
+    public void findShortestPath(int srcVertex, int destVertex) {
+
+    }
 }

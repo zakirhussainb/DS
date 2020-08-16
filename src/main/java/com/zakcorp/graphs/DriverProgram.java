@@ -26,5 +26,6 @@ public class DriverProgram {
         graph.bfs(1);
         graph.bfs(3);
         graph.bfs(7);
+        graph.findShortestPath(1, 7);
     }
 }
