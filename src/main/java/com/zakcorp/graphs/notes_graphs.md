@@ -35,6 +35,7 @@
 ***
          Graph Practice and Problems
 ***
+BFS
 - [ ] 1. https://www.spoj.com/problems/AKBAR/
 - [ ] 2. http://www.spoj.com/problems/NAKANJ/
 - [ ] 3. http://www.spoj.com/problems/WATER
