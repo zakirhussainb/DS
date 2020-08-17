@@ -8,7 +8,7 @@ public class Graph {
     public Graph(int vertex) {
         this.vertex = vertex;
         adjListArray = new LinkedList[vertex];
-        for(int i = 0; i < vertex; i++) {
+        for(int i = 1; i < vertex; i++) {
             adjListArray[i] = new LinkedList<>();
         }
     }
@@ -26,14 +26,12 @@ public class Graph {
             System.out.println();
         }
     }
-    public void bfs(int s) {
-        boolean[] visited = new boolean[vertex];
-        Queue<Integer> queue = new LinkedList<>();
+    public void bfs(int s, boolean[] visited, Queue<Integer> queue) {
         visited[s] = true;
         queue.add(s);
         while(!queue.isEmpty()) {
             s = queue.poll();
-            System.out.print(s + ",");
+//            System.out.print(s + ",");
             for(Integer i : adjListArray[s]) {
                 if(!visited[i]) {
                     visited[i] = true;
@@ -41,7 +39,7 @@ public class Graph {
                 }
             }
         }
-        System.out.println();
+//        System.out.println();
     }
     public void dfs(int s) {
         boolean[] visit = new boolean[vertex];
@@ -56,14 +54,13 @@ public class Graph {
             }
         }
     }
-    public void dfsIter(int s) {
-        boolean[] visit = new boolean[vertex];
+    public void dfsIter(int s, boolean[] visit) {
         Stack<Integer> stack = new Stack<>();
         visit[s] = true;
         stack.push(s);
         while( !stack.isEmpty() ) {
             s = stack.pop();
-            System.out.print(s + ",");
+//            System.out.print(s + ",");
             for(Integer i : adjListArray[s]) {
                 if( !visit[i] ) {
                     visit[i] = true;
@@ -71,16 +68,5 @@ public class Graph {
                 }
             }
         }
-    }
-
-    public void findShortestPath(int srcVertex, int destVertex) {
-
-    }
-
-    public int connectedComponents() {
-        int cc = 0;
-        dfs(adjListArray[0].get(0));
-
-        return cc;
     }
 }
