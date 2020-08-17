@@ -3,13 +3,13 @@
          Graph Concepts and Theory
 ***
          Graph Representations
-- [ ] 1. Adjacency Matrix
-- [ ] 2. Adjacency List
+- [x] 1. Adjacency Matrix
+- [x] 2. Adjacency List
 - [ ] 3. Compact List
 
          Graph Traversals
-- [ ] 1. BFS
-- [ ] 2. DFS
+- [x] 1. BFS
+- [x] 2. DFS
 
          Shortest Paths
 - [ ] 1. Shortest Path in Unweighted graph
@@ -33,16 +33,6 @@
          Lowest Common Ancestor
 - [ ] 1. Lowest Common Ancestor
 ***
-         Graph Practice and Problems
-***
-BFS
-- [ ] 1. https://www.spoj.com/problems/AKBAR/
-- [ ] 2. http://www.spoj.com/problems/NAKANJ/
-- [ ] 3. http://www.spoj.com/problems/WATER
-- [ ] 4. http://www.spoj.com/problems/MICEMAZE/
-- [ ] 5. http://acm.timus.ru/problem.aspx?space=1&num=2034
-
-***
            Graph Resources and References to Learn
 ***
 - [ ] 1. Abdul Bari - Udemy
@@ -54,3 +44,9 @@ BFS
 - [ ] 7. GeeksForGeeks -> https://practice.geeksforgeeks.org/explore/?category%5B%5D=Graph&page=1 - All company problems
 - [ ] 8. LeetCode -> https://leetcode.com/tag/graph/
 
+
+
+***
+         Graph Practice and Problems
+***
+- [x] 1. https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph
