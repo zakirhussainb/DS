@@ -1,3 +1,14 @@
+***
+           Graph Resources and References to Learn
+***
+- [ ] 1. [Udemy - Abdul Bari](https://www.udemy.com/course/datastructurescncpp/learn/lecture/13193534#overview)
+- [ ] 2. Karumachi Book
+- [ ] 3. [CodeChef - From DSA Learning Series](https://www.codechef.com/LRNDSA08?order=desc&sortBy=successful_submissions)
+- [ ] 4. [CodeForces](https://codeforces.com/blog/entry/76010)
+- [ ] 5. [CodeForces Blog](https://codeforces.com/blog/entry/16221)
+- [ ] 6. [Competitive Programming](https://www.quora.com/What-is-a-list-of-data-structures-that-a-competitive-programmer-must-know/answer/Sameer-Gulati-3)
+- [ ] 7. [GFG Practice - Company Problems](https://practice.geeksforgeeks.org/explore/?category%5B%5D=Graph&page=1)
+- [ ] 8. [LeetCode](https://leetcode.com/tag/graph/)
 
 ***
          Graph Concepts and Theory
@@ -13,13 +24,13 @@
 
          Shortest Paths
 Shortest Path in Unweighted graph
-- [ ] 1. https://www.geeksforgeeks.org/shortest-path-unweighted-graph/
+- [ ] 1. [Finding shortest path in Unweighted graph using Modified BFS](https://www.geeksforgeeks.org/shortest-path-unweighted-graph/)
 
 Shortest Path in Weighted graph
-- [ ] 1. Dijkstra's Algorithm using Priority Queue -> https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
-- [ ] 2. Dijkstra's Algorithm using Boolean Array -> https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/ 
-- [ ] 3. Dijkstra's Algorithm using Sets -> https://www.baeldung.com/java-dijkstra
-- [ ] 4. Dijkstra's Algorithm using OOPS -> https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
+- [ ] 1. [Dijkstra's Algorithm using Priority Queue](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/)
+- [ ] 2. [Dijkstra's Algorithm using Boolean Array](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
+- [ ] 3. [Dijkstra's Algorithm using Sets](https://www.baeldung.com/java-dijkstra)
+- [ ] 4. [Dijkstra's Algorithm using OOPS](https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html)
 
 Shortest Path in Weighted graph with negative edges
 - [ ] 1. Bellman-Ford Algorithm
@@ -42,19 +53,6 @@ All Pairs Shortest Path
 
          Lowest Common Ancestor
 - [ ] 1. Lowest Common Ancestor
-***
-           Graph Resources and References to Learn
-***
-- [ ] 1. Abdul Bari - Udemy
-- [ ] 2. Karumachi Book
-- [ ] 3. CodeChef -> https://www.codechef.com/LRNDSA08?order=desc&sortBy=successful_submissions
-- [ ] 4. CodeForces -> https://codeforces.com/blog/entry/76010
-- [ ] 5. CodeForces -> https://codeforces.com/blog/entry/16221
-- [ ] 6. CP -> https://www.quora.com/What-is-a-list-of-data-structures-that-a-competitive-programmer-must-know/answer/Sameer-Gulati-3
-- [ ] 7. GeeksForGeeks -> https://practice.geeksforgeeks.org/explore/?category%5B%5D=Graph&page=1 - All company problems
-- [ ] 8. LeetCode -> https://leetcode.com/tag/graph/
-
-
 
 ***
          Graph Practice and Problems - From Coding Platforms
