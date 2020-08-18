@@ -12,10 +12,17 @@
 - [x] 2. DFS
 
          Shortest Paths
-- [ ] 1. Shortest Path in Unweighted graph
-- [ ] 2. Shortest Path in Weighted graph -> Dijkstra's Algorithm
-- [ ] 3. Shortest Path in Weighted graph with negative edges -> Bellman-Ford Algorithm
-- [ ] 4. Floyd-Warshall Algorithm
+Shortest Path in Unweighted graph
+- [ ] 1. https://www.geeksforgeeks.org/shortest-path-unweighted-graph/
+Shortest Path in Weighted graph
+- [ ] 1. Dijkstra's Algorithm using Priority Queue -> https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
+- [ ] 2. Dijkstra's Algorithm using Boolean Array -> https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/ 
+- [ ] 3. Dijkstra's Algorithm using Sets -> https://www.baeldung.com/java-dijkstra
+- [ ] 4. Dijkstra's Algorithm using OOPS -> https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
+Shortest Path in Weighted graph with negative edges
+- [ ] 1. Bellman-Ford Algorithm
+All Pairs Shortest Path
+- [ ] 1. Floyd-Warshall Algorithm
          
          Disjoint Sets ADT
 - [ ] 1. Union Find (Aka Disjoint Set Union/Union Find Disjoint Sets)
