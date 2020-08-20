@@ -24,10 +24,10 @@
 
          Shortest Paths
 Shortest Path in Unweighted graph
-- [ ] 1. [Finding shortest path in Unweighted graph using Modified BFS](https://www.geeksforgeeks.org/shortest-path-unweighted-graph/)
+- [x] 1. [Finding shortest path in Unweighted graph using Modified BFS](https://www.geeksforgeeks.org/shortest-path-unweighted-graph/)
 
 Shortest Path in Weighted graph
-- [ ] 1. [Dijkstra's Algorithm using Priority Queue](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/)
+- [x] 1. [Dijkstra's Algorithm using Priority Queue](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/)
 - [ ] 2. [Dijkstra's Algorithm using Boolean Array](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
 - [ ] 3. [Dijkstra's Algorithm using Sets](https://www.baeldung.com/java-dijkstra)
 - [ ] 4. [Dijkstra's Algorithm using OOPS](https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html)

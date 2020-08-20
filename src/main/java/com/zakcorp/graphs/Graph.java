@@ -5,16 +5,23 @@ import java.util.*;
 public class Graph {
     public int vertex;
     public LinkedList<Integer>[] adjListArray;
+    public LinkedList<Vertex>[] adjListArrayWithWeights;
     public Graph(int vertex) {
         this.vertex = vertex;
         adjListArray = new LinkedList[vertex];
+        adjListArrayWithWeights = new LinkedList[vertex];
         for(int i = 0; i < vertex; i++) {
             adjListArray[i] = new LinkedList<>();
+            adjListArrayWithWeights[i] = new LinkedList<>();
         }
     }
     public void addEdge(int u, int v) {
         adjListArray[u].add(v);
         adjListArray[v].add(u);
+    }
+    public void addEdgeWithWeight(int u, int v, int weight) {
+        adjListArrayWithWeights[u].add(new Vertex(v, weight));
+        adjListArrayWithWeights[v].add(new Vertex(u, weight));
     }
     public void printGraph() {
         for (int i = 0; i < vertex; i++) {
@@ -112,5 +119,17 @@ public class Graph {
             }
         }
         return false;
+    }
+
+    public void printGraphWithWeights() {
+        for (int i = 0; i < vertex; i++) {
+            System.out.println("\nAdjacency list of vertex " + i);
+            System.out.print("head");
+            for (int j = 0; j < adjListArrayWithWeights[i].size(); j++) {
+                System.out.print(" -> " + adjListArrayWithWeights[i].get(j).node + "(" +
+                        adjListArrayWithWeights[i].get(j).cost + ")");
+            }
+            System.out.println();
+        }
     }
 }
