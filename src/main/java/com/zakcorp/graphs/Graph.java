@@ -8,7 +8,7 @@ public class Graph {
     public Graph(int vertex) {
         this.vertex = vertex;
         adjListArray = new LinkedList[vertex];
-        for(int i = 1; i < vertex; i++) {
+        for(int i = 0; i < vertex; i++) {
             adjListArray[i] = new LinkedList<>();
         }
     }
@@ -68,5 +68,49 @@ public class Graph {
                 }
             }
         }
+    }
+    public int findShortestPath_whenGraphIsUnweighted(int src, int dest) {
+        int distance = 0;
+        // The approach is to use a modified version of BFS
+        Map<Integer, Integer[]> map = new HashMap<>();
+        if( !modifiedBfs(src, dest, map) ) {
+            throw new IllegalArgumentException("The destination does'nt exist");
+        }
+        /*
+        // To print the Path
+        System.out.print(src + "->");
+        for(Map.Entry<Integer, Integer[]> entry : map.entrySet()) {
+            if(entry.getKey() == dest) {
+                System.out.print(entry.getValue()[0] + "->");
+            }
+        }
+        System.out.print(dest);
+        System.out.println();*/
+
+        // To return the distance from the src to dest
+        distance = map.get(dest)[1];
+        return distance;
+    }
+    public boolean modifiedBfs(int v, int dest, Map<Integer, Integer[]> map) {
+        boolean[] visited = new boolean[vertex];
+// The given Map stores the <current_vertex, {predecessor, distance}>
+        Queue<Integer> queue = new LinkedList<>();
+        map.put(v, new Integer[]{v, 0});
+        queue.add(v);
+        visited[v] = true;
+        while( !queue.isEmpty() ) {
+            int s = queue.poll();
+            for(int i : adjListArray[s]) {
+                if( !visited[i] ) {
+                    map.put(i, new Integer[]{s, map.get(s)[1] + 1});
+                    queue.add(i);
+                    visited[i] = true;
+                    if(i == dest) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
