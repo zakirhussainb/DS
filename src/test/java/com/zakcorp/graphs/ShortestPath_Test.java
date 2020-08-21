@@ -43,7 +43,8 @@ public class ShortestPath_Test {
         g.addEdgeWithWeight(7, 8, 7);
 //        g.printGraphWithWeights();
         int src = 0;
-        shortestPath.findShortestPath_whenGraphIsWeighted(g, src);
+//        shortestPath.findShortestPath_whenGraphIsWeighted(g, src);
+        shortestPath.findShortestPath_whenGraphIsWeightedUsingDijkstraBooleanArray(g, src);
 //        List<ShortestPath.Result> result = shortestPath.findShortestPath_whenGraphIsWeighted(g, src);
 //        // The shortest path is
 //        // The weight is

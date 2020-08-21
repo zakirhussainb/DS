@@ -28,5 +28,18 @@ public class ShortestPath {
                 System.out.println(src + " to " + i + " is " + dijkstraAlgorithm.dist[i]);
             }
         }
+
+        // This below implementation is
+        public void findShortestPath_whenGraphIsWeightedUsingDijkstraBooleanArray(Graph g, int src) {
+            DijkstraAlgorithmUsingBoolArray dijkstraAlgorithm = new DijkstraAlgorithmUsingBoolArray(g);
+            dijkstraAlgorithm.findShortestPath(src);
+
+            // Print the shortest path to all the nodes
+            // from the source node
+            System.out.println("The shorted path from node :");
+            for (int i = 0; i < dijkstraAlgorithm.dist.length; i++) {
+                System.out.println(src + " to " + i + " is " + dijkstraAlgorithm.dist[i]);
+            }
+        }
     }
 }
