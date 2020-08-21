@@ -5,13 +5,14 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 20/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: General
+ * @topic: Graph
+ * @sub-topic: ShortestPath
+ * @platform: GeeksForGeeks
+ * @problem_link: https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/
  * @pseudocode: DijkstraAlgorithm using PriorityQueue
- * dist[] // result array of minimum distance, output
+ * // V -> No. of vertex in the graph
+ * dist[V] // result array of minimum distance, output
  * PriorityQueue<> pq // To maintain vertices
  * settled<set> // mark nodes that are already settled/relaxed
  * dijkstra(src):

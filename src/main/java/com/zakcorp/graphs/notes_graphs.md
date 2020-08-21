@@ -28,9 +28,7 @@ Shortest Path in Unweighted graph
 
 Shortest Path in Weighted graph
 - [x] 1. [Dijkstra's Algorithm using Priority Queue](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-java-using-priorityqueue/)
-- [ ] 2. [Dijkstra's Algorithm using Boolean Array](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
-- [ ] 3. [Dijkstra's Algorithm using Sets](https://www.baeldung.com/java-dijkstra)
-- [ ] 4. [Dijkstra's Algorithm using OOPS](https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html)
+- [x] 2. [Dijkstra's Algorithm using Boolean Array](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
 
 Shortest Path in Weighted graph with negative edges
 - [ ] 1. Bellman-Ford Algorithm

@@ -3,12 +3,30 @@ package com.zakcorp.graphs;
 /**
  * Created by Zakir Hussain B on 21/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
+ * @source: General
+ * @topic: Graph
+ * @sub-topic: ShortestPath
+ * @platform: GeeksForGeeks
+ * @problem_link: https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+ * @pseudocode: Dijkstra Algorithm Using a Boolean Array
+ * dijkstra(src):
+ * // V -> No. of vertex in the graph
+ * dist[V] // result array of minimum distance, output
+ * settled[T/F] // boolean array to mark settled/relaxed nodes
+ * dijkstra(src):
+ *      for all u in V:
+ *          dist(u) = Infinity
+ *      dist[src] = 0
+ *      for all v in V:
+ *         u = getMinimumDistNode();
+ *         settled[u] = true
+ *         explore(u)
+ *
+ *  explore(u):
+ *      for all v in u:
+ *          if( settled does not contain "v" )
+ *              dist[v] = min(dist[v], dist[u] + length(u, v))
+ *              pq.add(v)
  */
 public class DijkstraAlgorithmUsingBoolArray {
     Graph g;
@@ -25,7 +43,8 @@ public class DijkstraAlgorithmUsingBoolArray {
             dist[i] = Integer.MAX_VALUE;
         }
         dist[src] = 0;
-        for(int v = 0; v < g.vertex - 1; v++) {
+        // Find Shortest Path for all vertices
+        for(int i = 0; i < g.vertex - 1; i++) {
             int u = getMinDistanceNode();
             settled[u] = true;
             exploreNeighbours(u);
