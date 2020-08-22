@@ -39,23 +39,51 @@ import java.util.List;
 public class BellmanFordAlgorithm {
     DirectedGraph g;
     int[] dist;
-    int[] pathArr;
+    static class DirectedGraph {
+        static class Edge {
+            private int src;
+            private int dest;
+            private int cost;
+            public Edge(int src, int dest, int cost) {
+                this.src = src;
+                this.dest = dest;
+                this.cost = cost;
+            }
+        }
+        private int vertex;
+        private List<Edge> edgeList;
+        public DirectedGraph(int vertex) {
+            this.vertex = vertex;
+            edgeList = new LinkedList<>();
+        }
+        protected void addEdge(int src, int dest, int cost) {
+            edgeList.add(new Edge(src, dest, cost));
+        }
+//    private void printGraph() {
+//        for (int i = 0; i < vertex; i++) {
+//            System.out.print("head");
+//            for (int j = 0; j < adjListArray[i].size(); j++) {
+//                System.out.print(" -> " + adjListArray[i].get(j).node + "(" +
+//                        adjListArray[i].get(j).cost + ")");
+//            }
+//            System.out.println();
+//        }
+//    }
+    }
 
     public BellmanFordAlgorithm(DirectedGraph g) {
         this.g = g;
         dist = new int[g.vertex];
-        pathArr = new int[g.vertex];
     }
     public void findShortestPath(int src) {
         for(int i = 0; i < g.vertex; i++) {
             dist[i] = Integer.MAX_VALUE;
-            pathArr[i] = -1;
         }
         dist[src] = 0;
         // Find Shortest Path for all vertices
         while(true) {
             boolean flag = false;
-            for(Edge e : g.edgeList) {
+            for(DirectedGraph.Edge e : g.edgeList) {
                 if( dist[e.src] != Integer.MAX_VALUE ) {
                     dist[e.dest] = Math.min(dist[e.dest], dist[e.src] + e.cost);
                     flag = true;
@@ -65,7 +93,7 @@ public class BellmanFordAlgorithm {
                 break;
             }
         }
-        int lastV = g.vertex - 1;
+        /*int lastV = g.vertex - 1;
         if(dist[lastV] == Integer.MAX_VALUE) {
             System.out.println("No path from " + src + " to " + lastV);
         } else {
@@ -78,40 +106,10 @@ public class BellmanFordAlgorithm {
             for(Integer i : shortestPaths) {
                 System.out.println(pathArr[i] + ' ');
             }
-        }
+        }*/
     }
-}
-class Edge {
-    protected int src;
-    protected int dest;
-    protected int cost;
-    public Edge(int src, int dest, int cost) {
-        this.src = src;
-        this.dest = dest;
-        this.cost = cost;
+    public void printShortestPath() {
+
     }
 }
 
-class DirectedGraph {
-    protected int vertex;
-    public int[] distance;
-    protected List<Edge> edgeList;
-    public DirectedGraph(int vertex) {
-        this.vertex = vertex;
-        distance = new int[vertex];
-        edgeList = new LinkedList<>();
-    }
-    protected void addEdge(int src, int dest, int cost) {
-        edgeList.add(new Edge(src, dest, cost));
-    }
-    private void printGraph() {
-//        for (int i = 0; i < vertex; i++) {
-//            System.out.print("head");
-//            for (int j = 0; j < adjListArray[i].size(); j++) {
-//                System.out.print(" -> " + adjListArray[i].get(j).node + "(" +
-//                        adjListArray[i].get(j).cost + ")");
-//            }
-//            System.out.println();
-//        }
-    }
-}

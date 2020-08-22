@@ -17,7 +17,7 @@ public class ShortestPath {
             return g.findShortestPath_whenGraphIsUnweighted(src, dest);
         }
         // This below implementation is
-        public void findShortestPath_whenGraphIsWeighted(Graph g, int src) {
+        public void findShortestPath_dijkstraPQ(Graph g, int src) {
             DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm(g);
             dijkstraAlgorithm.findShortestPath(src);
 
@@ -30,7 +30,7 @@ public class ShortestPath {
         }
 
         // This below implementation is
-        public void findShortestPath_whenGraphIsWeightedUsingDijkstraBooleanArray(Graph g, int src) {
+        public void findShortestPath_dijkstra(Graph g, int src) {
             DijkstraAlgorithmUsingBoolArray dijkstraAlgorithm = new DijkstraAlgorithmUsingBoolArray(g);
             dijkstraAlgorithm.findShortestPath(src);
 
@@ -43,13 +43,24 @@ public class ShortestPath {
         }
 
         // This below implementation is
-        public void findShortestPath_whenGraphIsWeighted_withNonNegativeEdges(DirectedGraph g, int src) {
+        public void findShortestPath_bellmanFord(BellmanFordAlgorithm.DirectedGraph g, int src) {
             BellmanFordAlgorithm bf = new BellmanFordAlgorithm(g);
             bf.findShortestPath(src);
 
             System.out.println("Vertex Distance from Source");
             for (int i = 0; i < bf.dist.length; ++i) {
                 System.out.println(i + "\t\t" + bf.dist[i]);
+            }
+        }
+
+        // This below implementation is
+        public void findShortestPath_SPFA(ShortestPathFasterAlgorithm.DirectedGraph g, int src) {
+            ShortestPathFasterAlgorithm spfa = new ShortestPathFasterAlgorithm(g);
+            spfa.findShortestPathFaster(src);
+
+            System.out.println("Vertex Distance from Source");
+            for (int i = 0; i < spfa.dist.length; ++i) {
+                System.out.println(i + "\t\t" + spfa.dist[i]);
             }
         }
     }

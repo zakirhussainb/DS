@@ -43,24 +43,16 @@ public class ShortestPath_Test {
         g.addEdgeWithWeight(7, 8, 7);
 //        g.printGraphWithWeights();
         int src = 0;
-        shortestPath.findShortestPath_whenGraphIsWeighted(g, src);
-//        shortestPath.findShortestPath_whenGraphIsWeightedUsingDijkstraBooleanArray(g, src);
-//        List<ShortestPath.Result> result = shortestPath.findShortestPath_whenGraphIsWeighted(g, src);
-//        // The shortest path is
-//        // The weight is
-//        int vertex = 0;
-//        for(ShortestPath.Result res : result) {
-//            System.out.println("For vertex " + vertex + " the shortest Path is ");
-//            System.out.println(res.path);
-//            System.out.println("And weight is ");
-//            System.out.println(res.weight);
-//            vertex++;
-//        }
+        shortestPath.findShortestPath_dijkstraPQ(g, src);
+        shortestPath.findShortestPath_dijkstra(g, src);
     }
 
+    /**
+     *
+     */
     @Test
     public void testShortestPath_whenGraphIsWeightedWithNegativeEdges() {
-        DirectedGraph g = new DirectedGraph(5);
+        BellmanFordAlgorithm.DirectedGraph g = new BellmanFordAlgorithm.DirectedGraph(5);
         g.addEdge(0, 1, -1);
         g.addEdge(0, 2, 4);
         g.addEdge(1, 2, 3);
@@ -70,6 +62,21 @@ public class ShortestPath_Test {
         g.addEdge(3, 1, 1);
         g.addEdge(4, 3, -3);
 //        g.printGraphWithWeights(g.adjListArrayForDirected);
-        shortestPath.findShortestPath_whenGraphIsWeighted_withNonNegativeEdges(g, 0);
+        shortestPath.findShortestPath_bellmanFord(g, 0);
+    }
+
+    @Test
+    public void testShortestPath_whenGraphIsWeightedWithNegativeEdges_SPFA() {
+        ShortestPathFasterAlgorithm.DirectedGraph g = new ShortestPathFasterAlgorithm.DirectedGraph(5);
+        g.addEdge(0, 1, -1);
+        g.addEdge(0, 2, 4);
+        g.addEdge(1, 2, 3);
+        g.addEdge(1, 3, 2);
+        g.addEdge(1, 4, 2);
+        g.addEdge(3, 2, 5);
+        g.addEdge(3, 1, 1);
+        g.addEdge(4, 3, -3);
+//        g.printGraphWithWeights(g.adjListArrayForDirected);
+        shortestPath.findShortestPath_SPFA(g, 0);
     }
 }
