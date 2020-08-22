@@ -43,7 +43,7 @@ public class ShortestPath {
         }
 
         // This below implementation is
-        public void findShortestPath_bellmanFord(BellmanFordAlgorithm.DirectedGraph g, int src) {
+        public void findShortestPath_bellmanFord(BellmanFordAlgorithm.DirectedGraph g, int src) throws Exception {
             BellmanFordAlgorithm bf = new BellmanFordAlgorithm(g);
             bf.findShortestPath(src);
 
@@ -54,7 +54,7 @@ public class ShortestPath {
         }
 
         // This below implementation is
-        public void findShortestPath_SPFA(ShortestPathFasterAlgorithm.DirectedGraph g, int src) {
+        public void findShortestPath_SPFA(ShortestPathFasterAlgorithm.DirectedGraph g, int src) throws Exception {
             ShortestPathFasterAlgorithm spfa = new ShortestPathFasterAlgorithm(g);
             spfa.findShortestPathFaster(src);
 

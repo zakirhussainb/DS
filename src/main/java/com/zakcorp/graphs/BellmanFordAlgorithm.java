@@ -75,12 +75,13 @@ public class BellmanFordAlgorithm {
         this.g = g;
         dist = new int[g.vertex];
     }
-    public void findShortestPath(int src) {
+    public void findShortestPath(int sourceVertex) throws Exception {
         for(int i = 0; i < g.vertex; i++) {
             dist[i] = Integer.MAX_VALUE;
         }
-        dist[src] = 0;
-        // Find Shortest Path for all vertices
+        dist[sourceVertex] = 0;
+        // Find Shortest Path for all vertices, using a flag here to stop repeating the process for already relaxed
+        // vertices that have reached minimum distance.
         while(true) {
             boolean flag = false;
             for(DirectedGraph.Edge e : g.edgeList) {
@@ -93,6 +94,14 @@ public class BellmanFordAlgorithm {
                 break;
             }
         }
+        // The below loop detects for any negative cycle in the graph
+        for(DirectedGraph.Edge e : g.edgeList) {
+            if( dist[e.src] != Integer.MAX_VALUE && dist[e.dest] > dist[e.src] + e.cost) {
+                throw new Exception("Negative Cycle Detected....");
+            }
+        }
+    }
+    public void printShortestPath() {
         /*int lastV = g.vertex - 1;
         if(dist[lastV] == Integer.MAX_VALUE) {
             System.out.println("No path from " + src + " to " + lastV);
@@ -107,9 +116,6 @@ public class BellmanFordAlgorithm {
                 System.out.println(pathArr[i] + ' ');
             }
         }*/
-    }
-    public void printShortestPath() {
-
     }
 }
 

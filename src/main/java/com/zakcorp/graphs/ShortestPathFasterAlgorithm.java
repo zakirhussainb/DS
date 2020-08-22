@@ -39,7 +39,7 @@ public class ShortestPathFasterAlgorithm {
     DirectedGraph g;
     int[] dist;
     boolean[] inQueue;
-    int[] counter;
+    int[] counter; // Maintain a counter to detect -ve cycle
     static class DirectedGraph {
         static class Vertex {
             private int node;

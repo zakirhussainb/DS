@@ -1,6 +1,8 @@
 package com.zakcorp.graphs;
 
 import org.junit.Test;
+import org.junit.internal.runners.statements.ExpectException;
+
 import java.util.*;
 
 public class ShortestPath_Test {
@@ -51,7 +53,7 @@ public class ShortestPath_Test {
      *
      */
     @Test
-    public void testShortestPath_whenGraphIsWeightedWithNegativeEdges() {
+    public void testShortestPath_whenGraphIsWeightedWithNegativeEdges_BellmanFord() throws Exception {
         BellmanFordAlgorithm.DirectedGraph g = new BellmanFordAlgorithm.DirectedGraph(5);
         g.addEdge(0, 1, -1);
         g.addEdge(0, 2, 4);
@@ -66,7 +68,7 @@ public class ShortestPath_Test {
     }
 
     @Test
-    public void testShortestPath_whenGraphIsWeightedWithNegativeEdges_SPFA() {
+    public void testShortestPath_whenGraphIsWeightedWithNegativeEdges_SPFA() throws Exception {
         ShortestPathFasterAlgorithm.DirectedGraph g = new ShortestPathFasterAlgorithm.DirectedGraph(5);
         g.addEdge(0, 1, -1);
         g.addEdge(0, 2, 4);
@@ -79,4 +81,25 @@ public class ShortestPath_Test {
 //        g.printGraphWithWeights(g.adjListArrayForDirected);
         shortestPath.findShortestPath_SPFA(g, 0);
     }
+
+    @Test(expected = Exception.class)
+    public void testShortestPath_whenGraphHasNegativeCycles_BellmanFord() throws Exception {
+        BellmanFordAlgorithm.DirectedGraph g = new BellmanFordAlgorithm.DirectedGraph(4);
+        g.addEdge(0, 1, 1);
+        g.addEdge(1, 2, -1);
+        g.addEdge(2, 3, -1);
+        g.addEdge(3, 0, -1);
+        shortestPath.findShortestPath_bellmanFord(g, 0);
+    }
+
+    @Test(expected = Exception.class)
+    public void testShortestPath_whenGraphHasNegativeCycles_SPFA() throws Exception {
+        ShortestPathFasterAlgorithm.DirectedGraph g = new ShortestPathFasterAlgorithm.DirectedGraph(4);
+        g.addEdge(0, 1, 1);
+        g.addEdge(1, 2, -1);
+        g.addEdge(2, 3, -1);
+        g.addEdge(3, 0, -1);
+        shortestPath.findShortestPath_SPFA(g, 0);
+    }
+
 }
