@@ -41,5 +41,16 @@ public class ShortestPath {
                 System.out.println(src + " to " + i + " is " + dijkstraAlgorithm.dist[i]);
             }
         }
+
+        // This below implementation is
+        public void findShortestPath_whenGraphIsWeighted_withNonNegativeEdges(DirectedGraph g, int src) {
+            BellmanFordAlgorithm bf = new BellmanFordAlgorithm(g);
+            bf.findShortestPath(src);
+
+            System.out.println("Vertex Distance from Source");
+            for (int i = 0; i < bf.dist.length; ++i) {
+                System.out.println(i + "\t\t" + bf.dist[i]);
+            }
+        }
     }
 }
