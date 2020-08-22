@@ -1,7 +1,5 @@
 package com.zakcorp.graphs;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,29 +10,28 @@ import java.util.List;
  * @topic: Graph
  * @sub-topic: ShortestPath
  * @platform: GeeksForGeeks
- * @problem_link: https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+ * @problem_link: https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/, https://cp-algorithms.com/graph/bellman_ford.html
  * @pseudocode: Bellman–Ford Algorithm
  *
- * TODO:- Don't use an adjacency list of vertices, it is sufficient enough to use list of edges.
+ * TODO:- B-FA works for directed weighted graphs. Don't use an adjacency list of vertices, it is sufficient enough to use list of edges.
  *
- * bellmanFord(src):
- * // V -> No. of vertex in the graph
  * dist[V] // result array of minimum distance, output
- * settled[T/F] // boolean array to mark settled/relaxed nodes
- * dijkstra(src):
+ * bellmanFord(source):
  *      for all u in V:
  *          dist(u) = Infinity
- *      dist[src] = 0
- *      for all v in V:
- *         u = getMinimumDistNode();
- *         settled[u] = true
- *         explore(u)
- *
- *  explore(u):
- *      for all v in u:
- *          if( settled does not contain "v" )
- *              dist[v] = min(dist[v], dist[u] + length(u, v))
- *              pq.add(v)
+ *      dist[source] = 0
+ *      while(true)
+ *          flag = false
+ *          for all e in edgeList:
+ *              if( dist[e.src] != INT_MAX )
+ *                  dist[e.dest] = min(dist[e.dest], dist[e.src] + e.cost);
+ *                  flag = true;
+ *          if(flag)
+ *              break;
+ *      // To detect negative cycles
+ *      for all e in edgeList:
+ *          if( dist[e.src] != INT_MAX && dist[e.dest] > dist[e.src] + e.cost)
+ *              throw -> "Negative Weight Cycle Detected"
  */
 public class BellmanFordAlgorithm {
     DirectedGraph g;
