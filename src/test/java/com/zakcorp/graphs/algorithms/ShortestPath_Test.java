@@ -156,7 +156,7 @@ public class ShortestPath_Test {
 
     @Test
     public void testAllPairShortestPath_FloydWarshall_1() {
-        int[][] graph = { {0, 5, Integer.MAX_VALUE, 10},
+        int[][] graph = { {0, -5, Integer.MAX_VALUE, -4},
                 {Integer.MAX_VALUE, 0, 3, Integer.MAX_VALUE},
                 {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},
                 {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}

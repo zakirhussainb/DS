@@ -35,7 +35,7 @@ Shortest Path in Weighted graph with negative edges
 - [ ] 2. [Shortest Path Faster Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/ShortestPathFasterAlgorithm.java)
 
 All Pairs Shortest Path
-- [ ] 1. Floyd-Warshall Algorithm
+- [ ] 1. [Floyd-Warshall Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/FloydWarshallAlgorithm.java)
          
          Disjoint Sets ADT
 - [ ] 1. Union Find (Aka Disjoint Set Union/Union Find Disjoint Sets)
