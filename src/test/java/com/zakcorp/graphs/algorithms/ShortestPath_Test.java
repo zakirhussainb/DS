@@ -139,9 +139,41 @@ public class ShortestPath_Test {
                           {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},
                           {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
                         };
-
-        FloydWarshallAlgorithm flw = new FloydWarshallAlgorithm(graph.length);
+        int V = graph.length;
+        FloydWarshallAlgorithm flw = new FloydWarshallAlgorithm(V);
         flw.findAllPairShortestPath(graph);
+
+        for(int i = 0; i < V; i++) {
+            for(int j = 0; j < V; j++) {
+                if(flw.distance[i][j] == Integer.MAX_VALUE)
+                    System.out.print("INF ");
+                else
+                    System.out.print(flw.distance[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void testAllPairShortestPath_FloydWarshall_1() {
+        int[][] graph = { {0, 5, Integer.MAX_VALUE, 10},
+                {Integer.MAX_VALUE, 0, 3, Integer.MAX_VALUE},
+                {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},
+                {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
+        };
+        int V = graph.length;
+        FloydWarshallAlgorithm flw = new FloydWarshallAlgorithm(V);
+        flw.findAllPairShortestPath(graph);
+
+        for(int i = 0; i < V; i++) {
+            for(int j = 0; j < V; j++) {
+                if(flw.distance[i][j] == Integer.MAX_VALUE)
+                    System.out.print("INF ");
+                else
+                    System.out.print(flw.distance[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
 }
