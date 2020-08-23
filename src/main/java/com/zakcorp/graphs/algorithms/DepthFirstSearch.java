@@ -30,7 +30,7 @@ public class DepthFirstSearch {
     public void dfsRec(int s, boolean[] visit) {
         System.out.print(s + ",");
         visit[s] = true;
-        for(Integer i : g.adjListArray[s]) {
+        for(int i : g.adjListArray[s]) {
             if( !visit[i] ) {
                 dfsRec(i, visit);
             }

@@ -1,10 +1,6 @@
 package com.zakcorp.graphs.problems;
 
-import com.zakcorp.graphs.InputReader;
-import com.zakcorp.graphs.OutputWriter;
-
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by Zakir Hussain B on 17/08/20.
@@ -16,6 +12,34 @@ import java.util.Queue;
  * @problem_link: https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/so-np-c559f406/description/
  */
 public class SoNP {
+    static class Graph {
+        int V;
+        LinkedList<Integer>[] adjListArray;
+        public Graph(int V) {
+            this.V = V;
+            adjListArray = new LinkedList[V];
+            for(int i = 0; i < V; i++) {
+                adjListArray[i] = new LinkedList<>();
+            }
+        }
+        public void addEdge(int u, int v) {
+            adjListArray[u].add(v);
+            adjListArray[v].add(u);
+        }
+        public void bfs(int src, boolean[] visited, Queue<Integer> queue) {
+            queue.add(src);
+            visited[src] = true;
+            while( !queue.isEmpty() ) {
+                int s = queue.poll();
+                for(int u : adjListArray[s]) {
+                    if( !visited[u] ) {
+                        queue.add(u);
+                        visited[u] = true;
+                    }
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         Solver p = new Solver();
         InputReader in = new InputReader(System.in);
@@ -38,9 +62,9 @@ public class SoNP {
     public static class Solver {
         public int solve1(Graph g, int m, int n, int k) {
             int cc = 0;
-            boolean[] visit = new boolean[g.vertex];
+            boolean[] visit = new boolean[g.V];
             Queue<Integer> queue = new LinkedList<>();
-            for(int i = 1; i < g.vertex; i++) {
+            for(int i = 1; i < g.V; i++) {
                 if( !visit[i] ) {
                     g.bfs(i, visit, queue);
                     cc++;

@@ -1,7 +1,6 @@
 package com.zakcorp.graphs.problems;
 
-import com.zakcorp.graphs.InputReader;
-import com.zakcorp.graphs.OutputWriter;
+import java.util.*;
 
 /**
  * Created by Zakir Hussain B on 17/08/20.
@@ -14,6 +13,29 @@ import com.zakcorp.graphs.OutputWriter;
  * https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/
  */
 public class ConnectedComp {
+    static class Graph {
+        int V;
+        LinkedList<Integer>[] adjListArray;
+        public Graph(int V) {
+            this.V = V;
+            adjListArray = new LinkedList[V];
+            for(int i = 0; i < V; i++) {
+                adjListArray[i] = new LinkedList<>();
+            }
+        }
+        public void addEdge(int u, int v) {
+            adjListArray[u].add(v);
+            adjListArray[v].add(u);
+        }
+        public void dfsRec(int src, boolean[] visited) {
+            visited[src] = true;
+            for(int u : adjListArray[src]) {
+                if(!visited[u]) {
+                    dfsRec(u, visited);
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         Solver p = new Solver();
         InputReader in = new InputReader(System.in);
@@ -34,8 +56,8 @@ public class ConnectedComp {
     public static class Solver {
         public int solve1(Graph g) {
             int cc = 0;
-            boolean[] visit = new boolean[g.vertex];
-            for(int i = 1; i < g.vertex; i++) {
+            boolean[] visit = new boolean[g.V];
+            for(int i = 1; i < g.V; i++) {
                 if( !visit[i] ) {
                     g.dfsRec(i, visit);
                     cc++;

@@ -53,7 +53,7 @@ public class BreadthFirstSearch {
                     adjListArray[i] = new LinkedList<>();
                 }
             }
-            private void addEdge(int u, int v) {
+            void addEdge(int u, int v) {
                 adjListArray[u].add(v);
                 adjListArray[v].add(u);
             }
@@ -61,7 +61,7 @@ public class BreadthFirstSearch {
         public ModifiedBFS(Graph g) {
             this.g = g;
         }
-        public boolean modifiedBFS(int src, int dest, Map<Integer, Integer[]> map) {
+        public boolean findShortestPath(int src, int dest, Map<Integer, Integer[]> map) {
             boolean[] visited = new boolean[g.V];
             // The given Map stores the <current_vertex, {predecessor, distance}>
             map.put(src, new Integer[]{src, 0});
