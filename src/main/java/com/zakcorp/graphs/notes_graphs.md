@@ -31,11 +31,11 @@ Shortest Path in Weighted graph
 - [x] 2. [Dijkstra's Algorithm using Boolean Array](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
 
 Shortest Path in Weighted graph with negative edges
-- [ ] 1. [Bellman-Ford Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/BellmanFordAlgorithm.java)
-- [ ] 2. [Shortest Path Faster Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/ShortestPathFasterAlgorithm.java)
+- [x] 1. [Bellman-Ford Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/BellmanFordAlgorithm.java)
+- [x] 2. [Shortest Path Faster Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/ShortestPathFasterAlgorithm.java)
 
 All Pairs Shortest Path
-- [ ] 1. [Floyd-Warshall Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/FloydWarshallAlgorithm.java)
+- [x] 1. [Floyd-Warshall Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/FloydWarshallAlgorithm.java)
          
          Disjoint Sets ADT
 - [ ] 1. Union Find (Aka Disjoint Set Union/Union Find Disjoint Sets)
