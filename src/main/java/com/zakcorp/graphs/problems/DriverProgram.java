@@ -1,4 +1,4 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.problems;
 
 public class DriverProgram {
     public static void main(String[] args) {

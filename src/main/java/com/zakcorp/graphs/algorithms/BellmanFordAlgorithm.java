@@ -1,10 +1,10 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.algorithms;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Zakir Hussain B on 21/08/20.
+ * Created by Zakir Hussain B on 22/08/20.
  *
  * @source: General
  * @topic: Graph

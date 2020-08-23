@@ -1,4 +1,4 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.problems;
 
 import java.util.*;
 

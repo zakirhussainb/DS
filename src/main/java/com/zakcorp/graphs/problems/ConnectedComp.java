@@ -1,4 +1,7 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.problems;
+
+import com.zakcorp.graphs.InputReader;
+import com.zakcorp.graphs.OutputWriter;
 
 /**
  * Created by Zakir Hussain B on 17/08/20.

@@ -1,7 +1,6 @@
 package com.zakcorp.gfgmaster;
 
-import com.zakcorp.graphs.ConnectedComp;
-import com.zakcorp.graphs.Graph;
+import com.zakcorp.graphs.problems.ConnectedComp;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

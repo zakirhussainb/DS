@@ -1,4 +1,7 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.problems;
+
+import com.zakcorp.graphs.InputReader;
+import com.zakcorp.graphs.OutputWriter;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,12 +1,8 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.algorithms;
 
 import org.junit.Test;
-import org.junit.internal.runners.statements.ExpectException;
-
-import java.util.*;
 
 public class ShortestPath_Test {
-    ShortestPath.Solver shortestPath = new ShortestPath.Solver();
     @Test
     public void testShortestPath_whenGraphIsUnWeighted() {
         Graph g = new Graph(8);
@@ -78,8 +74,12 @@ public class ShortestPath_Test {
         g.addEdge(3, 2, 5);
         g.addEdge(3, 1, 1);
         g.addEdge(4, 3, -3);
-//        g.printGraphWithWeights(g.adjListArrayForDirected);
-        shortestPath.findShortestPath_SPFA(g, 0);
+        ShortestPathFasterAlgorithm spfa = new ShortestPathFasterAlgorithm(g);
+        spfa.findShortestPathFaster(0);
+        System.out.println("Vertex Distance from Source");
+        for (int i = 0; i < spfa.dist.length; ++i) {
+            System.out.println(i + "\t\t" + spfa.dist[i]);
+        }
     }
 
     @Test(expected = Exception.class)
@@ -99,7 +99,19 @@ public class ShortestPath_Test {
         g.addEdge(1, 2, -1);
         g.addEdge(2, 3, -1);
         g.addEdge(3, 0, -1);
-        shortestPath.findShortestPath_SPFA(g, 0);
+
+    }
+
+    @Test
+    public void testAllPairShortestPath_FloydWarshall() {
+        int[][] graph = { {0, 5, Integer.MAX_VALUE, 10},
+                          {Integer.MAX_VALUE, 0, 3, Integer.MAX_VALUE},
+                          {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},
+                          {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
+                        };
+
+        FloydWarshallAlgorithm flw = new FloydWarshallAlgorithm(graph.length);
+        flw.findAllPairShortestPath(graph);
     }
 
 }

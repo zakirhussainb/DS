@@ -1,9 +1,9 @@
-package com.zakcorp.graphs;
+package com.zakcorp.graphs.algorithms;
 
 import java.util.*;
 
 /**
- * Created by Zakir Hussain B on 21/08/20.
+ * Created by Zakir Hussain B on 22/08/20.
  *
  * @source: CP-Algorithm
  * @topic: Graph
