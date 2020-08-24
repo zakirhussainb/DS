@@ -75,16 +75,15 @@ public class Routes {
             }
             int src = in.readInt();
             int dest = in.readInt();
-//            findShortestPath(K, V, E, g, src, dest);
-            Pair[] pairs = findTimeAndDistance(K, V, g, src);
+            int[] parents = new int[V];
+            Pair[] pairs = findTimeAndDistance(K, V, g, src, parents);
+            findShortestPath(src, pairs, parents);
             out.printLine(pairs[dest].time + " " + pairs[dest].cost);
             return 0;
         }
-        private void findShortestPath(int k, int v, int e, Graph g, int src, int dest) {
-
-        }
-        public Pair[] findTimeAndDistance(int k, int v, Graph g, int src) {
+        public Pair[] findTimeAndDistance(int k, int v, Graph g, int src, int[] parents) {
             boolean[] settled = new boolean[v];
+            parents[src] = -1;
             Pair[] pairs = new Pair[v];
             for(int i = 0; i < g.V; i++) {
                 pairs[i] = new Pair(Integer.MAX_VALUE,Integer.MAX_VALUE);
@@ -118,6 +117,19 @@ public class Routes {
                 }
             }
             return minIndex;
+        }
+        private void findShortestPath(int src, Pair[] pairs, int[] parents) {
+            for(int v = 0; v < pairs.length; v++) {
+                if(v != src) {
+                    printPath(v, parents);
+                }
+            }
+        }
+        public void printPath(int v, int[] parents) {
+            if(v == -1)
+                return;
+            printPath(parents[v], parents);
+            System.out.print(v + " ");
         }
     }
 }
