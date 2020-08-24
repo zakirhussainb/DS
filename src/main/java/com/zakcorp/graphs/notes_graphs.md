@@ -58,3 +58,17 @@ All Pairs Shortest Path
 ***
 - [x] 1. https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph
 - [x] 2. https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/build-a-graph-5f5c6b4a/
+
+***
+         PLAN
+***
+AUG
+- [ ] 1. 24th - 31st -> Graph Pending Topics + System Design -> 3 topics + 3 problems
+
+SEP(60 to 90)
+- [ ] 1. 01 to 15 -> {Graph Problems -> CodeForces} && {System Design -> 4 topics + 2 problems}
+- [ ] 2. 16 to 30 -> {Graph Problems -> CodeChef} && {System Design -> 4 topics + 2 problems}
+
+OCT(60 to 90)
+- [ ] 1. 01 to 10 -> {Graph Problems -> GFG Company-Wise} && {System Design -> 4 topics + 2 problems}
+- [ ] 2. 11 to 30 -> {Graph Problems -> LeetCode} && {System Design -> 4 topics + 2 problems}
