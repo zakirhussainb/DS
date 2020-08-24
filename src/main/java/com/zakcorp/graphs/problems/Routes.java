@@ -1,5 +1,7 @@
 package com.zakcorp.graphs.problems;
 
+import com.zakcorp.leetcodemaster.Problem_100;
+
 import java.util.*;
 
 /**
@@ -53,12 +55,53 @@ public class Routes {
             }
         }
         public int solve1(InputReader in, OutputWriter out) {
-            int N = in.readInt();
+            int K = in.readInt();
             int V = in.readInt();
             int E = in.readInt();
-            for() {
-
+            Graph g = new Graph(V);
+            for(int e = 0; e < E; e++) {
+                g.addEdge(in.readInt(), in.readInt(), in.readInt(), in.readInt());
             }
+            int src = in.readInt();
+            int dest = in.readInt();
+            findShortestPath(K, V, E, g, src, dest);
+            findTimeAndDistance(K, V, E, g, src, dest);
+        }
+        private void findShortestPath(int k, int v, int e, Graph g, int src, int dest) {
+
+        }
+        static class Pair {
+            int time;
+            int cost;
+            public Pair(int time, int cost) {
+                this.time = time;
+                this.cost = cost;
+            }
+            public static Pair of(int time, int cost){
+                return new Pair(time, cost);
+            }
+        }
+        public int[] findTimeAndDistance(int k, int v, int e, Graph g, int src, int dest) {
+            boolean[] settled = new boolean[v];
+            Pair[] pairs = new Pair[v];
+            pairs[src] = new Pair(0,0);
+            for(int i = 1; i < v; i++) {
+                int u = getMinimumDistance();
+                settled[u] = true;
+                explore(u, g, settled, pairs);
+            }
+        }
+        private void explore(int u, Graph g, boolean[] settled, Pair[] pairs) {
+            for(Graph.Vertex v : g.adjListArray[u]) {
+                if( !settled[v.src] ) {
+                    // First compute for time
+                    pairs[v.src] = Math.min(pairs[v.src], );
+                    // Compute for cost
+                }
+            }
+        }
+        private int getMinimumDistance() {
+
         }
     }
 }
