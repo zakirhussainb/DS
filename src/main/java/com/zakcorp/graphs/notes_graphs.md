@@ -37,8 +37,11 @@ Shortest Path in Weighted graph with negative edges
 All Pairs Shortest Path
 - [x] 1. [Floyd-Warshall Algorithm](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/FloydWarshallAlgorithm.java)
          
-         Disjoint Sets ADT
-- [ ] 1. Union Find (Aka Disjoint Set Union/Union Find Disjoint Sets)
+         Disjoint Sets Union (DSU)
+- [ ] 1. [Quick-Find](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/DisjointSetUnion.java#L34)
+- [ ] 1. [Quick-Union](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/DisjointSetUnion.java#L97)
+- [ ] 1. [Weighted Quick-Union](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/DisjointSetUnion.java#L150)
+- [ ] 1. [Weighted Quick-Union with Path Compression](https://github.com/zakirhussainb/DS/blob/master/src/main/java/com/zakcorp/graphs/algorithms/DisjointSetUnion.java#L248)
 
          Minimum Spanning Tree
 - [ ] 1. Prim's Algorithm
