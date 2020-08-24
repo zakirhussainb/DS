@@ -37,7 +37,7 @@ public class DisjointSetUnion {
             }
         }
         // Check whether a and b are in the same component (2 array accesses)
-        public boolean connected(int a, int b) {
+        public boolean find(int a, int b) {
             return parent[a] == parent[b];
         }
         // Change all entries with parent[a] to parent[b]
@@ -84,7 +84,7 @@ public class DisjointSetUnion {
             return i;
         }
         // Check whether a and b have same root (depth of a and b array accesses)
-        public boolean connected(int a, int b) {
+        public boolean find(int a, int b) {
             return root(a) == root(b);
         }
         // Change root of a to point to root of b (depth of a and b array accesses)
@@ -103,7 +103,22 @@ public class DisjointSetUnion {
      *
      */
     static class WeightedQuickUnion {
-
+        private int[] parent;
+        private int[] size;
+        public WeightedQuickUnion(int N) {
+            parent = new int[N];
+            size = new int[N];
+            for(int i = 0; i < N; i++) {
+                parent[i] = i;
+                size[i] = 1;
+            }
+        }
+        private int root(int i) {
+            while(i != parent[i]) {
+                i = parent[i];
+            }
+            return i;
+        }
     }
 
     /**
@@ -131,6 +146,23 @@ public class DisjointSetUnion {
      *  > Cost within constant factor of reading in the data.
      *  > In theory, WQUPC is not quite linear.
      *  > In practice, WQUPC is linear.
+     *
+     *  Bottom Line:-
+     *  WQUPC makes it possible to solve problems that could not otherwise be addressed.
+     *
+     *  Eg. [10^9 unions and find operations on 10^9 objects
+     *  > WQUPC reduces time from 30 years to 6 seconds.
+     *  > Supercomputers won't help much; good algorithm enables solution.
+     *      -----------------------------------------------------
+     *      Algorithm                       |   Worst-case time
+     *      -----------------------------------------------------
+     *      Quick-Find                      |   M N
+     *      Quick-Union                     |   M N
+     *      Weighted QU                     |   N + M log N
+     *      QU + Path Compression           |   N + M log N
+     *      Weighted QU + Path Compression  |   N + M log* N
+     *      -----------------------------------------------------
+     *      M union-find operations on a set of N objects
      */
     static class WeightedQuickUnionWithPathCompression {
 
