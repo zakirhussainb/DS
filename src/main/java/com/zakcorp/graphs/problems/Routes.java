@@ -31,14 +31,12 @@ public class Routes {
             private int V;
             private LinkedList<Vertex>[] adjListArray;
             static class Vertex {
-                private int src;
-                private int dest;
+                private int node;
                 private int time;
                 private int cost;
-                public Vertex(int src, int dest, int time,
+                public Vertex(int node, int time,
                               int cost) {
-                    this.src = src;
-                    this.dest = dest;
+                    this.node = node;
                     this.time = time;
                     this.cost = cost;
                 }
@@ -46,33 +44,19 @@ public class Routes {
             public Graph(int V) {
                 this.V = V;
                 adjListArray = new LinkedList[V];
-                for(int i = 0; i < V; i++) {
+                for(int i = 1; i < V; i++) {
                     adjListArray[i] = new LinkedList<>();
                 }
             }
             public void addEdge(int src, int dest, int time, int cost) {
-                adjListArray[src].add(new Vertex(src, dest, time, cost));
+                adjListArray[src].add(new Vertex(dest, time, cost));
+                adjListArray[dest].add(new Vertex(src, time, cost));
             }
-        }
-        public int solve1(InputReader in, OutputWriter out) {
-            int K = in.readInt();
-            int V = in.readInt();
-            int E = in.readInt();
-            Graph g = new Graph(V);
-            for(int e = 0; e < E; e++) {
-                g.addEdge(in.readInt(), in.readInt(), in.readInt(), in.readInt());
-            }
-            int src = in.readInt();
-            int dest = in.readInt();
-            findShortestPath(K, V, E, g, src, dest);
-            findTimeAndDistance(K, V, E, g, src, dest);
-        }
-        private void findShortestPath(int k, int v, int e, Graph g, int src, int dest) {
-
         }
         static class Pair {
             int time;
             int cost;
+            public Pair() { }
             public Pair(int time, int cost) {
                 this.time = time;
                 this.cost = cost;
@@ -81,27 +65,59 @@ public class Routes {
                 return new Pair(time, cost);
             }
         }
-        public int[] findTimeAndDistance(int k, int v, int e, Graph g, int src, int dest) {
+        public int solve1(InputReader in, OutputWriter out) {
+            int K = in.readInt();
+            int V = in.readInt();
+            int E = in.readInt();
+            Graph g = new Graph(V + 1);
+            for(int e = 0; e < E; e++) {
+                g.addEdge(in.readInt(), in.readInt(), in.readInt(), in.readInt());
+            }
+            int src = in.readInt();
+            int dest = in.readInt();
+//            findShortestPath(K, V, E, g, src, dest);
+            Pair[] pairs = findTimeAndDistance(K, V, g, src);
+            out.printLine(pairs[dest]);
+            return 0;
+        }
+        private void findShortestPath(int k, int v, int e, Graph g, int src, int dest) {
+
+        }
+        public Pair[] findTimeAndDistance(int k, int v, Graph g, int src) {
             boolean[] settled = new boolean[v];
             Pair[] pairs = new Pair[v];
+            for(int i = 0; i < g.V; i++) {
+                pairs[i] = new Pair(Integer.MAX_VALUE,Integer.MAX_VALUE);
+            }
             pairs[src] = new Pair(0,0);
             for(int i = 1; i < v; i++) {
-                int u = getMinimumDistance();
+                int u = getMinimumDistance(g, settled, pairs);
                 settled[u] = true;
-                explore(u, g, settled, pairs);
+                explore(k, u, g, settled, pairs);
             }
+            return pairs;
         }
-        private void explore(int u, Graph g, boolean[] settled, Pair[] pairs) {
+        private void explore(int k, int u, Graph g, boolean[] settled, Pair[] pairs) {
             for(Graph.Vertex v : g.adjListArray[u]) {
-                if( !settled[v.src] ) {
+                if( !settled[v.node] && pairs[u].cost != Integer.MAX_VALUE && pairs[u].time != Integer.MAX_VALUE ) {
                     // First compute for time
-                    pairs[v.src] = Math.min(pairs[v.src], );
+                    int time = Math.min(pairs[v.node].time, pairs[u].time + v.time);
                     // Compute for cost
+                    int cost = Math.min(pairs[v.node].cost, pairs[u].cost + v.cost);
+                    pairs[v.node] = Pair.of(time, cost);
                 }
             }
         }
-        private int getMinimumDistance() {
-
+        private int getMinimumDistance(Graph g, boolean[] settled, Pair[] pairs) {
+            int min = Integer.MAX_VALUE;
+            int minIndex = -1;
+            for(int v = 0; v < g.V; v++) {
+                if(!settled[v] && pairs[v].cost <= min) {
+                    min = Math.min(min, pairs[v].cost);
+                    minIndex = v;
+                }
+            }
+            return minIndex;
         }
     }
 }
