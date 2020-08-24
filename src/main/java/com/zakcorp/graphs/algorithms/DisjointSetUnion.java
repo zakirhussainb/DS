@@ -94,5 +94,46 @@ public class DisjointSetUnion {
             parent[i] = j;
         }
     }
+    /**
+     * Weighted Quick Union
+     * Proposition:- Depth of any node x is at most log N.
+     *
+     * Find:- Takes time proportional to depth of a and b -> O(log N)
+     * Union:- Takes constant time, given roots -> O(log N)
+     *
+     */
+    static class WeightedQuickUnion {
+
+    }
+
+    /**
+     * Weighted Quick Union With Path Compression
+     *
+     * Two-Pass implementation:- Add a second loop to root() to set the parent[] of each examined node to the "root".
+     * One-Pass implementation:- Making every other node in path point to its grandparent(thereby halving path length).
+     *
+     * NOTE:- Only one extra line of code.
+     *
+     * In practice:- No reason not to! Keeps tree almost completely flat.
+     *
+     * Proposition: [Hopcroft-Ulman, Tarjan]
+     * Starting from an empty data structure, any sequence of M union-find ops on N objects makes <= c(N + M log * N) array accesses.
+     *  > Analysis can be improved to N + M @(M, N).
+     *  > Simple algorithm with fascinating mathematics.
+     *                  N       |   log* N
+     *                  1       |   0
+     *                  2       |   1
+     *                  4       |   2
+     *                  16      |   3
+     *                  65536   |   4
+     *                  2^65536 |   5
+     * Linear-time algorithm for M union-find operations on N objects?
+     *  > Cost within constant factor of reading in the data.
+     *  > In theory, WQUPC is not quite linear.
+     *  > In practice, WQUPC is linear.
+     */
+    static class WeightedQuickUnionWithPathCompression {
+
+    }
 
 }
