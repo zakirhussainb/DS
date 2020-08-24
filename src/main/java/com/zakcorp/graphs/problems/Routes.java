@@ -67,9 +67,9 @@ public class Routes {
         }
         public int solve1(InputReader in, OutputWriter out) {
             int K = in.readInt();
-            int V = in.readInt();
+            int V = in.readInt() + 1;
             int E = in.readInt();
-            Graph g = new Graph(V + 1);
+            Graph g = new Graph(V);
             for(int e = 0; e < E; e++) {
                 g.addEdge(in.readInt(), in.readInt(), in.readInt(), in.readInt());
             }
@@ -77,7 +77,7 @@ public class Routes {
             int dest = in.readInt();
 //            findShortestPath(K, V, E, g, src, dest);
             Pair[] pairs = findTimeAndDistance(K, V, g, src);
-            out.printLine(pairs[dest]);
+            out.printLine(pairs[dest].time + " " + pairs[dest].cost);
             return 0;
         }
         private void findShortestPath(int k, int v, int e, Graph g, int src, int dest) {
@@ -101,17 +101,17 @@ public class Routes {
             for(Graph.Vertex v : g.adjListArray[u]) {
                 if( !settled[v.node] && pairs[u].cost != Integer.MAX_VALUE && pairs[u].time != Integer.MAX_VALUE ) {
                     // First compute for time
-                    int time = Math.min(pairs[v.node].time, pairs[u].time + v.time);
+                    pairs[v.node].time = Math.min(pairs[v.node].time, pairs[u].time + v.time);
                     // Compute for cost
-                    int cost = Math.min(pairs[v.node].cost, pairs[u].cost + v.cost);
-                    pairs[v.node] = Pair.of(time, cost);
+                    pairs[v.node].cost = Math.min(pairs[v.node].cost, pairs[u].cost + v.cost);
+                    pairs[v.node] = Pair.of(pairs[v.node].time, pairs[v.node].cost);
                 }
             }
         }
         private int getMinimumDistance(Graph g, boolean[] settled, Pair[] pairs) {
             int min = Integer.MAX_VALUE;
             int minIndex = -1;
-            for(int v = 0; v < g.V; v++) {
+            for(int v = 1; v < g.V; v++) {
                 if(!settled[v] && pairs[v].cost <= min) {
                     min = Math.min(min, pairs[v].cost);
                     minIndex = v;
