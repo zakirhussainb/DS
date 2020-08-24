@@ -7,7 +7,11 @@ package com.zakcorp.graphs.algorithms;
  * @topic: Graphs
  * @sub-topic: Disjoint-Set-Union (DSU)
  * @platform: General
- * @problem_link: https://youtu.be/BcRLmCS8pfw?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX
+ * @problem_link:
+ * QF:- https://algs4.cs.princeton.edu/15uf/QuickFindUF.java.html
+ * QU:- https://algs4.cs.princeton.edu/15uf/QuickUnionUF.java.html
+ * WQU:- https://algs4.cs.princeton.edu/15uf/WeightedQuickUnionUF.java.html
+ * WQUQPC:- https://algs4.cs.princeton.edu/15uf/WeightedQuickUnionPathCompressionUF.java.html
  * @pseudocode: DisjointSetUnion (DSU) attempts to solve the dynamic connectivity problems.
  */
 public class DisjointSetUnion {
@@ -28,28 +32,51 @@ public class DisjointSetUnion {
      *   2. Trees are flat(which is fine), but are too expensive to keep them flat.
      */
     static class QuickFind {
-        private int[] parent;
+        private int[] parent; // parent[i] = component identifier of i
+        private int count; // number of components
         // Set id of each object to itself (N array accesses)
         public QuickFind(int N) {
+            count = N;
             parent = new int[N];
             for(int i = 0; i < N; i++) {
                 parent[i] = i;
             }
         }
-        // Check whether a and b are in the same component (2 array accesses)
-        public boolean find(int a, int b) {
-            return parent[a] == parent[b];
+        // Returns the number of sets
+        public int count() {
+            return count;
         }
-        // Change all entries with parent[a] to parent[b]
-        // At most (2N + 2) array accesses
+        /**
+         * Returns the canonical element of the set containing element {a}.
+         */
+        public int find(int a) {
+            validate(a);
+            return parent[a];
+        }
+        // Validate that p is a valid index
+        private void validate(int a) {
+            int n = parent.length;
+            if(a < 0 || a >= n)
+                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
+        }
+        /**
+         * Merges the set containing element {a} with the
+         * the set containing element {b}.
+         */
         public void union(int a, int b) {
+            validate(a);
+            validate(b);
             int aId = parent[a];
             int bId = parent[b];
+            // if a and b are already in the same component
+            if(aId == bId)
+                return;
             for(int i = 0; i < parent.length; i++) {
                 if(parent[i] == aId) {
                     parent[i] = bId;
                 }
             }
+            count--;
         }
     }
 
@@ -68,32 +95,50 @@ public class DisjointSetUnion {
      *  2. Find too expensive (could be N array accesses).
      */
     static class QuickUnion {
-        private int[] parent;
+        private int[] parent; // parent[i] = component identifier of i
+        private int count; // number of components
         // Set id of each object to itself (N array accesses)
         public QuickUnion(int N) {
+            count = N;
             parent = new int[N];
-            for(int i = 0; i < N; i++){
+            for(int i = 0; i < N; i++) {
                 parent[i] = i;
             }
         }
-        // Chase parent pointers until reach root(depth of i array accesses)
-        private int root(int i) {
-            while(i != parent[i]) {
-                i = parent[i];
+        // Returns the number of sets
+        public int count() {
+            return count;
+        }
+        /**
+         * Returns the canonical element of the set containing element {a}.
+         */
+        public int find(int a) {
+            validate(a);
+            while(a != parent[a]) {
+                a = parent[a];
             }
-            return i;
+            return a;
         }
-        // Check whether a and b have same root (depth of a and b array accesses)
-        public boolean find(int a, int b) {
-            return root(a) == root(b);
+        // Validate that p is a valid index
+        private void validate(int a) {
+            int n = parent.length;
+            if(a < 0 || a >= n)
+                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
         }
-        // Change root of a to point to root of b (depth of a and b array accesses)
+        /**
+         * Merges the set containing element {a} with the
+         * the set containing element {b}.
+         */
         public void union(int a, int b) {
-            int i = root(a);
-            int j = root(b);
-            parent[i] = j;
+            int rootA = find(a);
+            int rootB = find(b);
+            if(rootA == rootB)
+                return;
+            parent[rootA] = rootB;
+            count--;
         }
     }
+
     /**
      * Weighted Quick Union
      * Proposition:- Depth of any node x is at most log N.
@@ -103,21 +148,57 @@ public class DisjointSetUnion {
      *
      */
     static class WeightedQuickUnion {
-        private int[] parent;
-        private int[] size;
+        private int[] parent; // parent[i] = component identifier of i
+        private int[] size; // size[i] = number of elements in subtree rooted at i
+        private int count; // number of components
+        // Set id of each object to itself (N array accesses)
         public WeightedQuickUnion(int N) {
+            count = N;
             parent = new int[N];
             size = new int[N];
             for(int i = 0; i < N; i++) {
                 parent[i] = i;
-                size[i] = 1;
+                size[i] = i;
             }
         }
-        private int root(int i) {
-            while(i != parent[i]) {
-                i = parent[i];
+        // Returns the number of sets
+        public int count() {
+            return count;
+        }
+        /**
+         * Returns the canonical element of the set containing element {a}.
+         */
+        public int find(int a) {
+            validate(a);
+            while(a != parent[a]) {
+                a = parent[a];
             }
-            return i;
+            return a;
+        }
+        // Validate that p is a valid index
+        private void validate(int a) {
+            int n = parent.length;
+            if(a < 0 || a >= n)
+                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
+        }
+        /**
+         * Merges the set containing element {a} with the
+         * the set containing element {b}.
+         */
+        public void union(int a, int b) {
+            int rootA = find(a);
+            int rootB = find(b);
+            if(rootA == rootB)
+                return;
+            // make smaller root point to larger one
+            if(size[rootA] < size[rootB]) {
+                parent[rootA] = rootB;
+                size[rootB] += size[rootA];
+            } else {
+                parent[rootB] = rootA;
+                size[rootA] += size[rootB];
+            }
+            count--;
         }
     }
 
@@ -164,8 +245,64 @@ public class DisjointSetUnion {
      *      -----------------------------------------------------
      *      M union-find operations on a set of N objects
      */
-    static class WeightedQuickUnionWithPathCompression {
-
+    static class WeightedQuickUnionPathCompression {
+        private int[] parent; // parent[i] = parent of i
+        private int[] size; // size[i] = number of sites in tree rooted at i
+                            // Note: not necessarily correct if i is not a root node
+        private int count; // number of components
+        public WeightedQuickUnionPathCompression(int N) {
+            count = N;
+            parent = new int[N];
+            size = new int[N];
+            for(int i = 0; i < N; i++) {
+                parent[i] = i;
+                size[i] = i;
+            }
+        }
+        public int count() {
+            return count;
+        }
+        /**
+         * Returns the canonical element of the set containing element {a}.
+         */
+        public int find(int a) {
+            validate(a);
+            int root = a;
+            while(root != parent[root]) {
+                root = parent[root];
+            }
+            while(a != root) {
+                int newA = parent[a];
+                parent[a] = root;
+                a = newA;
+            }
+            return root;
+        }
+        // Validate that p is a valid index
+        private void validate(int a) {
+            int n = parent.length;
+            if(a < 0 || a >= n)
+                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
+        }
+        /**
+         * Merges the set containing element {a} with the
+         * the set containing element {b}.
+         */
+        public void union(int a, int b) {
+            int rootA = find(a);
+            int rootB = find(b);
+            if(rootA == rootB)
+                return;
+            // make smaller root point to larger one
+            if(size[rootA] < size[rootB]) {
+                parent[rootA] = rootB;
+                size[rootB] += size[rootA];
+            } else {
+                parent[rootB] = rootA;
+                size[rootA] += size[rootB];
+            }
+            count--;
+        }
     }
 
 }
