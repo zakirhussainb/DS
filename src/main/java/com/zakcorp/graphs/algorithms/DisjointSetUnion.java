@@ -3,20 +3,14 @@ package com.zakcorp.graphs.algorithms;
 /**
  * Created by Zakir Hussain B on 24/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
+ * @source: https://youtu.be/BcRLmCS8pfw?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX -> Robert Sedgewick Youtube Channel
+ * @topic: Graphs
+ * @sub-topic: Disjoint-Set-Union (DSU)
+ * @platform: General
+ * @problem_link: https://youtu.be/BcRLmCS8pfw?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX
+ * @pseudocode: DisjointSetUnion (DSU) attempts to solve the dynamic connectivity problems.
  */
-interface DisjointSetUnionI {
-    void makeSet(int v);
-    void union(int a, int b);
-    void findSet(int v);
-}
 public class DisjointSetUnion {
-
     /**
      * Cost Model:- Number of array accesses (for read or write).
      *
@@ -28,10 +22,14 @@ public class DisjointSetUnion {
      * NOTE:- Takes O(N^2) array accesses to process sequence of "N union commands on N objects", i.e. quadratic time.
      * Talking rough:- Let's say we have 1 Billion objects and we perform 1 Billion Union operations on them -> 10^18 operations
      * So it will take 30 years to complete.
+     *
+     * Quick-Find drawbacks:-
+     *   1. Union is too expensive(N array accesses).
+     *   2. Trees are flat(which is fine), but are too expensive to keep them flat.
      */
     static class QuickFind {
         private int[] parent;
-        // Set id of each object to itself {N array accesses}
+        // Set id of each object to itself (N array accesses)
         public QuickFind(int N) {
             parent = new int[N];
             for(int i = 0; i < N; i++) {
@@ -57,9 +55,44 @@ public class DisjointSetUnion {
 
     /**
      * Lazy approach to algorithm design, where we try to avoid the work until we have to.
+     *
+     * Cost Model:- Number of array accesses (for read or write).
+     *
+     * Initialize:- O(N)
+     * Union:- O(N)
+     * Union:- O(N)
+     * Find:- O(N) -> In worst case
+     *
+     * Quick-Union drawbacks:-
+     *  1. Trees can get tall.
+     *  2. Find too expensive (could be N array accesses).
      */
     static class QuickUnion {
-
+        private int[] parent;
+        // Set id of each object to itself (N array accesses)
+        public QuickUnion(int N) {
+            parent = new int[N];
+            for(int i = 0; i < N; i++){
+                parent[i] = i;
+            }
+        }
+        // Chase parent pointers until reach root(depth of i array accesses)
+        private int root(int i) {
+            while(i != parent[i]) {
+                i = parent[i];
+            }
+            return i;
+        }
+        // Check whether a and b have same root (depth of a and b array accesses)
+        public boolean connected(int a, int b) {
+            return root(a) == root(b);
+        }
+        // Change root of a to point to root of b (depth of a and b array accesses)
+        public void union(int a, int b) {
+            int i = root(a);
+            int j = root(b);
+            parent[i] = j;
+        }
     }
 
 }
