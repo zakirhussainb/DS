@@ -1,7 +1,6 @@
 package com.zakcorp.graphs.algorithms;
 
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Created by Zakir Hussain B on 25/08/20.
@@ -20,6 +19,7 @@ public class PrimsAlgorithm {
         static class Vertex implements Comparator<Vertex> {
             private int node;
             private int cost;
+            public Vertex() { }
             public Vertex(int node, int cost) {
                 this.node = node;
                 this.cost = cost;
@@ -43,12 +43,34 @@ public class PrimsAlgorithm {
         }
     }
     public void primsMST(Graph g) {
-        boolean[] mst = new boolean[g.V];
-        // Stores the parent of a vertex
-        int[] parent = new int[g.V];
-        Graph.Vertex[] edges = new Graph.Vertex[g.V];
-        for() {
+        int total_weight = 0;
+        Graph.Vertex[] min_edges = new Graph.Vertex[g.V];
+        min_edges[0].cost = 0;
+        TreeSet<Graph.Vertex> treeSet = new TreeSet<>(new Graph.Vertex());
+        treeSet.add(new Graph.Vertex(0, 0));
+        boolean[] selected = new boolean[g.V];
+        for(int i = 0; i < g.V; i++) {
+            if(treeSet.isEmpty()) {
+                System.out.println("NO MST! ");
+                return;
+            }
+            Graph.Vertex v = treeSet.first();
+            selected[v.node] = true;
+            total_weight += v.cost;
+            treeSet.pollFirst();
 
+            if(min_edges[v.node].node != -1) {
+                System.out.print(v + " " + min_edges[v.node].node + "\n");
+            }
+
+            for(Graph.Vertex e : g.adjListArray[v.node]) {
+                if( !selected[e.node] && e.cost < min_edges[e.node].cost ) {
+                    treeSet.remove(min_edges[e.node]);
+                    min_edges[e.node] = new Graph.Vertex(e.node, e.cost);
+                    treeSet.add(new Graph.Vertex(e.node, e.cost));
+                }
+            }
         }
+        System.out.println(" " + total_weight);
     }
 }
