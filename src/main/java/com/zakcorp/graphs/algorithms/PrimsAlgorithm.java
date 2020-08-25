@@ -13,6 +13,11 @@ import java.util.*;
  * @pseudocode:
  */
 public class PrimsAlgorithm {
+    Graph g;
+    int[] parent;
+    boolean[] selected;
+    Graph.Vertex[] min_edges;
+    TreeSet<Graph.Vertex> treeSet;
     static class Graph {
         int V;
         LinkedList<Vertex>[] adjListArray;
@@ -42,13 +47,18 @@ public class PrimsAlgorithm {
             adjListArray[v].add(new Vertex(u, cost));
         }
     }
-    public void primsMST(Graph g) {
+    public PrimsAlgorithm(Graph g) {
+        this.g = g;
+        parent = new int[g.V];
+        selected = new boolean[g.V];
+        min_edges = new Graph.Vertex[g.V];
+        treeSet = new TreeSet<>(new Graph.Vertex());
+        Arrays.fill(parent, -1);
+    }
+    public void primsMST() {
         int total_weight = 0;
-        Graph.Vertex[] min_edges = new Graph.Vertex[g.V];
         min_edges[0].cost = 0;
-        TreeSet<Graph.Vertex> treeSet = new TreeSet<>(new Graph.Vertex());
         treeSet.add(new Graph.Vertex(0, 0));
-        boolean[] selected = new boolean[g.V];
         for(int i = 0; i < g.V; i++) {
             if(treeSet.isEmpty()) {
                 System.out.println("NO MST! ");
@@ -68,6 +78,7 @@ public class PrimsAlgorithm {
                     treeSet.remove(min_edges[e.node]);
                     min_edges[e.node] = new Graph.Vertex(e.node, e.cost);
                     treeSet.add(new Graph.Vertex(e.node, e.cost));
+                    parent[e.node] = v.node;
                 }
             }
         }
