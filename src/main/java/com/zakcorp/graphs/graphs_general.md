@@ -56,6 +56,18 @@ All Pairs Shortest Path
          Lowest Common Ancestor
 - [ ] 1. Lowest Common Ancestor
 
+         Graph Algorithms - Summary
+- [ ] 1. Bread First Search
+- [ ] 2. Depth First Search
+- [ ] 3. Dijkstra's
+- [ ] 4. Bellman Ford
+- [ ] 5. Floyd Warshall
+- [ ] 6. Shortest Path Faster(SPFA)
+- [ ] 7. Prim's
+- [ ] 8. Kruskal's
+- [ ] 9. Disjoint Set Union(DSU)
+- [ ] 10. Topological Sorting
+
 ***
          Graph Practice and Problems - From Coding Platforms
 ***
