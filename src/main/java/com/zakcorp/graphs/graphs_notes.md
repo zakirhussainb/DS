@@ -11,9 +11,15 @@ edges, so V = 4 and E = 3
 > Here "4" denotes the number of cycles that can be formed with 3 edges, 
 > so we need to remove those.
 
+NOTE:- Spanning Tree Rule:- The tree must be connected and it must not have any cycles.
 ***
            Minimum Cost Spanning Tree
 ***
 1. Out of the number of spanning trees that can be formed from a given graph, we need to find out the
 minimum cost spanning tree out of all the spanning trees.
 2. MST - The spanning tree with least total weight/cost, when adding all of its edges.
+
+           Prim's Algorithm for finding MST
+Rules
+1. This must be a Spanning Tree(Connected) and it must not have any cycles.(You must cover all the vertices).
+2. Then it should be minimum cost.
