@@ -74,14 +74,14 @@ public class PrimsAlgorithm {
                 System.out.print(v + " " + min_edges.get(v.node).node + "\n");
             }
 
-            for(Graph.Vertex e : g.adjListArray[v.node]) {
-                if( !selected[e.node] && e.cost < min_edges.get(e.node).cost ) {
-                    treeSet.remove(min_edges.get(e.node), e.node);
-                    min_edges.get(e.node) = new Graph.Vertex(e.node, e.cost);
-                    treeSet.add(new Graph.Vertex(e.node, e.cost));
-                    parent[e.node] = v.node;
-                }
-            }
+//            for(Graph.Vertex e : g.adjListArray[v.node]) {
+//                if( !selected[e.node] && e.cost < min_edges.get(e.node).cost ) {
+//                    treeSet.remove(min_edges.get(e.node), e.node);
+//                    min_edges.get(e.node) = new Graph.Vertex(e.node, e.cost);
+//                    treeSet.add(new Graph.Vertex(e.node, e.cost));
+//                    parent[e.node] = v.node;
+//                }
+//            }
         }
         System.out.println(" " + total_weight);
     }

@@ -2,6 +2,7 @@ package com.zakcorp.graphs.algorithms;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class DepthFirstSearch {
     Graph g;
@@ -15,7 +16,7 @@ public class DepthFirstSearch {
                 adjListArray[i] = new LinkedList<>();
             }
         }
-        private void addEdge(int u, int v) {
+        public void addEdge(int u, int v) {
             adjListArray[u].add(v);
             adjListArray[v].add(u);
         }
@@ -37,7 +38,20 @@ public class DepthFirstSearch {
         }
     }
     // TODO:- Implement this
-    public void dfsIter() {
-
+    public void dfsIter(int s) {
+        boolean[] visited = new boolean[g.V];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(s);
+        visited[s] = true;
+        while( !stack.isEmpty() ) {
+            s = stack.pop();
+            System.out.print(s + ",");
+            for(int v : g.adjListArray[s]) {
+                if( !visited[v] ) {
+                    stack.push(v);
+                    visited[v] = true;
+                }
+            }
+        }
     }
 }
