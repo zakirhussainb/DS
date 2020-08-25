@@ -5,12 +5,26 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 25/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
+ * @source: https://www.codechef.com/LRNDSA08?order=desc&sortBy=successful_submissions
+ * @topic: Graphs
+ * @sub-topic: Topological Sort
+ * @platform: GeeksForGeeks
+ * @problem_link: https://www.geeksforgeeks.org/topological-sorting/
+ * @pseudocode: Topological Sort
+ *
+ * dfs(v):
+ *  visited[v] = true
+ *  for all i in adjList(v)
+ *      if( !visited[i] )
+ *          dfs(i)
+ *  result.add(v)
+ *
+ * topologicalSort():
+ *  result.clear()// empty the result list initially
+ *  for all v in V:
+ *      if( !visited[v] )
+ *          dfs(v)
+ *  result.reverse();
  */
 public class TopologicalSort {
     Graph g;
