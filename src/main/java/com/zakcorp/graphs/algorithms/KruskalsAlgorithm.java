@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Created by Zakir Hussain B on 26/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: General
+ * @topic: Graphs
+ * @sub-topic: Minimum Cost Spanning Tree
+ * @platform: GeeksForGeeks, CP-algorithm
+ * @problem_link: https://cp-algorithms.com/graph/mst_kruskal.html, https://cp-algorithms.com/graph/mst_kruskal_with_dsu.html,
  * @pseudocode:
  */
 public class KruskalsAlgorithm {
@@ -35,9 +35,11 @@ public class KruskalsAlgorithm {
             edgeList.add(new Edge(u, v, weight));
         }
     }
-
     /**
-     * Sorting the edge requires O(M log N)
+     * Sorting the edge requires
+     *  O(M log N) + (N(for all edges) * N(for all child in parent))
+     *  => O(M log N + N * N)
+     *  => O(M log N + N^2)
      */
     static class NaiveImpl {
         Graph g;
@@ -49,7 +51,6 @@ public class KruskalsAlgorithm {
                 parent[i] = i;
             }
         }
-
         /**
          * This algorithm takes O(N log N + N^2) time
          * @return
@@ -77,7 +78,7 @@ public class KruskalsAlgorithm {
      * In the efficient implementation we use the "find" and "union" methods from
      * "Weighted Quick Union With Path Compression"
      * Also the edgeList is always sorted in ascending order, to provide the edge with minimum weight.
-     * This algorithm takes O(N log N) time.
+     * This algorithm takes only O(M log N) time.
      */
     static class EfficientImpl {
         DisjointSetUnion.WeightedQuickUnionPathCompression wqupc;
@@ -86,14 +87,22 @@ public class KruskalsAlgorithm {
             this.g = g;
             wqupc = new DisjointSetUnion.WeightedQuickUnionPathCompression(g.V);
         }
+        /**
+         * The time complexity will be
+         *  O(M log N + M(initializing the parent[] in wqupc) + N (iterating over all the edges))
+         *      => O(M log N + M + N)
+         *      => O(M log N);;
+         * @return
+         */
         public List<Graph.Edge> kruskalsMST() {
+            // The edgeList is already sorted, so that will take O(N log N) time
             List<Graph.Edge> resultList = new ArrayList<>();
-            for(Graph.Edge e : g.edgeList) {
-                if( wqupc.find(e.u) != wqupc.find(e.v) ) {
+            for(Graph.Edge e : g.edgeList) { // This for loop takes O(N)
+                if( wqupc.find(e.u) != wqupc.find(e.v) ) { // Two finds take O(1) and O(1) each
                     resultList.add(e);
-                    wqupc.union(e.u, e.v);
+                    wqupc.union(e.u, e.v); // This union takes O(1)
                 }
-            }
+            }// This for loop takes -> O(N) + O(1) + O(1)
             return resultList;
         }
 
