@@ -1,8 +1,6 @@
 package com.zakcorp.graphs.algorithms;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,14 +19,20 @@ public class KruskalsAlgorithm {
 
     }
 
+    /**
+     * In the efficient implementation we use the "find" and "union" methods from
+     * "Weighted Quick Union With Path Compression"
+     * Also the edgeList is always sorted in ascending order, to provide the edge with minimum weight.
+     */
     static class EfficientImpl {
+        DisjointSetUnion.WeightedQuickUnionPathCompression wqupc;
         int[] parent;
         int[] size;
         Graph g;
         static class Graph {
             int V;
             List<Edge> edgeList;
-            static class Edge implements Comparator<Edge> {
+            static class Edge {
                 int u;
                 int v;
                 int weight;
@@ -36,10 +40,6 @@ public class KruskalsAlgorithm {
                     this.u = u;
                     this.v = v;
                     this.weight = weight;
-                }
-                @Override
-                public int compare(Edge e1, Edge e2) {
-                    return Integer.compare(e1.weight, e2.weight);
                 }
             }
             public Graph(int V) {
@@ -52,57 +52,19 @@ public class KruskalsAlgorithm {
         }
         public EfficientImpl(Graph g) {
             this.g = g;
+            wqupc = new DisjointSetUnion.WeightedQuickUnionPathCompression(g.V);
             parent = new int[g.V];
             size = new int[g.V];
             for(int i = 0; i < g.V; i++) {
                 parent[i] = i;
             }
         }
-        public int find(int a) {
-            validate(a);
-            int root = a;
-            while(root != parent[root]) {
-                root = parent[root];
-            }
-            while(a != root) {
-                int newA = parent[a];
-                parent[a] = root;
-                a = newA;
-            }
-            return root;
-        }
-        // Validate that p is a valid index
-        private void validate(int a) {
-            int n = parent.length;
-            if(a < 0 || a >= n)
-                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
-        }
-        /**
-         * Merges the set containing element {a} with the
-         * the set containing element {b}.
-         */
-        public void union(int a, int b) {
-            int rootA = find(a);
-            int rootB = find(b);
-            if(rootA == rootB)
-                return;
-            // make smaller root point to larger one
-            if(size[rootA] < size[rootB]) {
-                int temp = parent[rootB];
-                parent[rootB] = parent[rootA];
-                parent[rootA] = temp;
-            }
-            parent[rootB] = rootA;
-            if(size[rootA] == size[rootB]) {
-                size[rootA]++;
-            }
-        }
         public List<Graph.Edge> kruskalsMST() {
             List<Graph.Edge> resultList = new ArrayList<>();
             for(Graph.Edge e : g.edgeList) {
-                if( find(e.u) != find(e.v) ) {
+                if( wqupc.find(e.u) != wqupc.find(e.v) ) {
                     resultList.add(e);
-                    union(e.u, e.v);
+                    wqupc.union(e.u, e.v);
                 }
             }
             return resultList;

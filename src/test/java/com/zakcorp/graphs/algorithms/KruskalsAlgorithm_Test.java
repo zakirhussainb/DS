@@ -1,6 +1,7 @@
 package com.zakcorp.graphs.algorithms;
 
 import org.junit.Test;
+import java.util.Comparator;
 
 public class KruskalsAlgorithm_Test {
     @Test
@@ -11,6 +12,7 @@ public class KruskalsAlgorithm_Test {
         g.addEdge(0, 3, 5);
         g.addEdge(1, 3, 15);
         g.addEdge(2, 3, 4);
+        g.edgeList.sort(Comparator.comparingInt(e -> e.weight));
         KruskalsAlgorithm.EfficientImpl krsl = new KruskalsAlgorithm.EfficientImpl(g);
         for( KruskalsAlgorithm.EfficientImpl.Graph.Edge edge : krsl.kruskalsMST() ) {
             System.out.println(edge.u + "->" + edge.v + "=" + edge.weight);
