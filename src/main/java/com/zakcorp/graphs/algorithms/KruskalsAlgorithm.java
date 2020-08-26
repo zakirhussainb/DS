@@ -14,50 +14,77 @@ import java.util.List;
  * @pseudocode:
  */
 public class KruskalsAlgorithm {
+    static class Graph {
+        int V;
+        List<Edge> edgeList;
+        static class Edge {
+            int u;
+            int v;
+            int weight;
+            public Edge(int u, int v, int weight) {
+                this.u = u;
+                this.v = v;
+                this.weight = weight;
+            }
+        }
+        public Graph(int V) {
+            this.V = V;
+            edgeList = new ArrayList<>();
+        }
+        public void addEdge(int u, int v, int weight) {
+            edgeList.add(new Edge(u, v, weight));
+        }
+    }
 
+    /**
+     * Sorting the edge requires O(M log N)
+     */
     static class NaiveImpl {
+        Graph g;
+        int[] parent;
+        public NaiveImpl(Graph g) {
+            this.g = g;
+            parent = new int[g.V];
+            for(int i = 0; i < g.V; i++) {
+                parent[i] = i;
+            }
+        }
 
+        /**
+         * This algorithm takes O(N log N + N^2) time
+         * @return
+         */
+        public List<Graph.Edge> kruskalsMST() {
+            // The edgeList is already sorted, so that will take O(N log N) time
+            List<Graph.Edge> resultList = new ArrayList<>();
+            for(Graph.Edge e : g.edgeList) { // This for loop takes O(E) time
+                if( parent[e.u] != parent[e.v] ) {
+                    resultList.add(e);
+                    int u = parent[e.u];
+                    int v = parent[e.v];
+                    for(int i = 0; i < g.V; i++) { // This for loop takes O(V) time
+                        if(parent[i] == u) {
+                            parent[i] = v;
+                        }
+                    }
+                }
+            } // Both for loops take O(N^2) time
+            return resultList;
+        }
     }
 
     /**
      * In the efficient implementation we use the "find" and "union" methods from
      * "Weighted Quick Union With Path Compression"
      * Also the edgeList is always sorted in ascending order, to provide the edge with minimum weight.
+     * This algorithm takes O(N log N) time.
      */
     static class EfficientImpl {
         DisjointSetUnion.WeightedQuickUnionPathCompression wqupc;
-        int[] parent;
-        int[] size;
         Graph g;
-        static class Graph {
-            int V;
-            List<Edge> edgeList;
-            static class Edge {
-                int u;
-                int v;
-                int weight;
-                public Edge(int u, int v, int weight) {
-                    this.u = u;
-                    this.v = v;
-                    this.weight = weight;
-                }
-            }
-            public Graph(int V) {
-                this.V = V;
-                edgeList = new ArrayList<>();
-            }
-            public void addEdge(int u, int v, int weight) {
-                edgeList.add(new Edge(u, v, weight));
-            }
-        }
         public EfficientImpl(Graph g) {
             this.g = g;
             wqupc = new DisjointSetUnion.WeightedQuickUnionPathCompression(g.V);
-            parent = new int[g.V];
-            size = new int[g.V];
-            for(int i = 0; i < g.V; i++) {
-                parent[i] = i;
-            }
         }
         public List<Graph.Edge> kruskalsMST() {
             List<Graph.Edge> resultList = new ArrayList<>();
