@@ -42,3 +42,16 @@ https://codeforces.com/blog/entry/68288
 | 6.5                        | 28 over             | 2022         | LeetCode Premium -> Company Wise Problems                                 | Except FAAMG all others (Top 100) |
 | 7.5                        | 29 over             | 2023         | Google Focused -> [LC-Google & KickStart Past Papers]                     | Only FAAM                         |
 | 8.5                        | 30 over             | 2024         | No Work -> Start interviewing at Google -> From the starting of the year. | Only G                            |
+
+For all the 8 topics, the problems bust be solved in the given format below.
+1. 2 months for each topic, 
+2. for CodeForces -> 12 groups * 5 problems = 60 problems.
+3. GFG -> Company wise and Topic wise
+4. LC -> Topic wise
+
+| Platform   | Problems | No. of Days |
+|------------|----------|-------------|
+| CodeForces | 30       | 15          |
+| CodeForces | 30       | 15          |
+| GFG        | 30       | 10          |
+| LeetCode   | 40       | 20          |
