@@ -22,9 +22,8 @@ public class KruskalsAlgorithm {
     }
 
     static class EfficientImpl {
-        DisjointSetUnion.WeightedQuickUnionPathCompression wqupc;
         int[] parent;
-        int[] rank;
+        int[] size;
         Graph g;
         static class Graph {
             int V;
@@ -53,22 +52,57 @@ public class KruskalsAlgorithm {
         }
         public EfficientImpl(Graph g) {
             this.g = g;
-            wqupc = new DisjointSetUnion.WeightedQuickUnionPathCompression(g.V);
             parent = new int[g.V];
-            rank = new int[g.V];
+            size = new int[g.V];
             for(int i = 0; i < g.V; i++) {
                 parent[i] = i;
             }
         }
-
+        public int find(int a) {
+            validate(a);
+            int root = a;
+            while(root != parent[root]) {
+                root = parent[root];
+            }
+            while(a != root) {
+                int newA = parent[a];
+                parent[a] = root;
+                a = newA;
+            }
+            return root;
+        }
+        // Validate that p is a valid index
+        private void validate(int a) {
+            int n = parent.length;
+            if(a < 0 || a >= n)
+                throw new IllegalArgumentException("index " + a + " is not between 0 and " + (n - 1));
+        }
+        /**
+         * Merges the set containing element {a} with the
+         * the set containing element {b}.
+         */
+        public void union(int a, int b) {
+            int rootA = find(a);
+            int rootB = find(b);
+            if(rootA == rootB)
+                return;
+            // make smaller root point to larger one
+            if(size[rootA] < size[rootB]) {
+                int temp = parent[rootB];
+                parent[rootB] = parent[rootA];
+                parent[rootA] = temp;
+            }
+            parent[rootB] = rootA;
+            if(size[rootA] == size[rootB]) {
+                size[rootA]++;
+            }
+        }
         public List<Graph.Edge> kruskalsMST() {
-            int weight = 0;
             List<Graph.Edge> resultList = new ArrayList<>();
             for(Graph.Edge e : g.edgeList) {
-                if( wqupc.find(e.u) != wqupc.find(e.v) ) {
-                    weight += e.weight;
+                if( find(e.u) != find(e.v) ) {
                     resultList.add(e);
-                    wqupc.union(e.u, e.v);
+                    union(e.u, e.v);
                 }
             }
             return resultList;

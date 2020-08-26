@@ -33,3 +33,12 @@ It should make sense that problems of future contests belong to the aforemention
 
            CodeForces Problems Difficulty Ratings
 https://codeforces.com/blog/entry/68288
+           
+           Coding Practice and Interview Plan
+| Experience (at year start) | Age (at year start) | Year (start) | Work to be Done (Entire Year)                                             | Interviewing (at year start)      |
+|----------------------------|---------------------|--------------|---------------------------------------------------------------------------|-----------------------------------|
+| 4.5                        | 26 over             | 2020         | Graphs, Trees                                                             |                                   |
+| 5.5                        | 27 over             | 2021         | Greedy,D&C,D&P,R&BT,Arrays,Linkedlist                                     | Freshworks/Walmart                |
+| 6.5                        | 28 over             | 2022         | LeetCode Premium -> Company Wise Problems                                 | Except FAAMG all others (Top 100) |
+| 7.5                        | 29 over             | 2023         | Google Focused -> [LC-Google & KickStart Past Papers]                     | Only FAAM                         |
+| 8.5                        | 30 over             | 2024         | No Work -> Start interviewing at Google -> From the starting of the year. | Only G                            |
