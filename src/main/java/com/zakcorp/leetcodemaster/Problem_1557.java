@@ -5,12 +5,12 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 28/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
+ * @source: LeetCode
+ * @topic: Graphs
+ * @sub-topic: DFS, InDegree of a graph
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
+ * @pseudocode: Just add the nodes with no-indegrees.
  */
 public class Problem_1557 {
     /**
