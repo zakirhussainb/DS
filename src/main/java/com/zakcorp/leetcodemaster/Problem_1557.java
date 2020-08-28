@@ -13,7 +13,10 @@ import java.util.*;
  * @pseudocode:
  */
 public class Problem_1557 {
-    static class Solver {
+    /**
+     * The solution in Solver doesn't work and fails for some edge cases, this is here to just to make you remember of your mistakes.
+     */
+    /*static class Solver {
         static class Graph {
             private LinkedList<Integer>[] adjListArr;
             public Graph(int V){
@@ -52,18 +55,36 @@ public class Problem_1557 {
                 }
             }
         }
-    }
+    }*/
     static class Solver1 {
         public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
             Set<Integer> inDegreeSet = new HashSet<>();
             Set<Integer> outDegreeSet = new HashSet<>();
             for(List<Integer> list : edges) {
-                if( !outDegreeSet.contains(list.get(0)) ) {
+                outDegreeSet.add(list.get(1));
+            }
+            for(List<Integer> list : edges) {
+                if(!outDegreeSet.contains(list.get(0))) {
                     inDegreeSet.add(list.get(0));
                 }
-                outDegreeSet.add(list.get(1));
             }
             return new ArrayList<>(inDegreeSet);
         }
+    }
+    static class Solver2 {
+        public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
+            List<Integer> resultList = new ArrayList<>();
+            int[] hash = new int[n];
+            for(List<Integer> list : edges) {
+                hash[list.get(1)] = 1; // It is enough to be seen.
+//                hash[list.get(1)]++;// Don't need to increment values, it is enough to be seen.
+            }
+            for(int i = 0; i < hash.length; i++) {
+                if(hash[i] == 0) {
+                    resultList.add(i);
+                }
+            }
+            return resultList;
+         }
     }
 }
