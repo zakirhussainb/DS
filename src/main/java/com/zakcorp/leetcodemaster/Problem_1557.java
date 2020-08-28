@@ -14,21 +14,18 @@ import java.util.*;
  */
 public class Problem_1557 {
     static class Solver {
-        Graph g;
         static class Graph {
-            private int V;
             private LinkedList<Integer>[] adjListArr;
             public Graph(int V){
-                this.V = V;
                 adjListArr = new LinkedList[V];
                 for(int i = 0; i < V; i++) {
                     adjListArr[i] = new LinkedList<>();
                 }
             }
             public void addEdge(List<List<Integer>> edges) {
-                for(int i = 0; i < edges.size(); i++) {
-                    for(int j = 0; j < 1; j++) {
-                        adjListArr[edges.get(i).get(j)].add(edges.get(i).get(j + 1));
+                for (List<Integer> edge : edges) {
+                    for (int j = 0; j < 1; j++) {
+                        adjListArr[edge.get(j)].add(edge.get(j + 1));
                     }
                 }
             }
