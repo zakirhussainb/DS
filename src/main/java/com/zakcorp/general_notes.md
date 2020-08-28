@@ -46,24 +46,34 @@ https://codeforces.com/blog/entry/68288
            Solve Problems From LeetCode
 -2020
 
-Graphs - Sep 1 to 10
-Trees - Sep 11 to 20
-Greedy - Sep 21 to 30
+Sep
 
-D&C(BS) - Oct 1 to 10
-DP - Oct 11 to 20
-BT - Oct 21 to 30
+1. Graphs - Sep 1 to 10
+2. Trees - Sep 11 to 20
+3. Greedy - Sep 21 to 30
 
-Sorting - Nov 1 to 10
-HashMap - Nov 11 to 20
-Bit Manipulation - Nov 21 to 30
+Oct
 
-Arrays - Dec 1 to 10
-LinkedList - Dec 11 to 20
-Stack - Dec 21 to 30
+4. D&C(BS) - Oct 1 to 10
+5. DP - Oct 11 to 20
+6. BT - Oct 21 to 30
+
+Nov
+
+7. Sorting - Nov 1 to 10
+8. HashMap - Nov 11 to 20
+9. Bit Manipulation - Nov 21 to 30
+
+Dec
+
+10. Arrays - Dec 1 to 10
+11. LinkedList - Dec 11 to 20
+12. Stack - Dec 21 to 30
 
 -2021
 
-DP - Jan 1 to 10
-Trees - Jan 11 to 20
-Graphs - Jan 21 to 30
+Jan
+
+- DP - Jan 1 to 10
+- Trees - Jan 11 to 20
+- Graphs - Jan 21 to 30
