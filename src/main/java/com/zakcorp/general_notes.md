@@ -35,23 +35,35 @@ It should make sense that problems of future contests belong to the aforemention
 https://codeforces.com/blog/entry/68288
            
            Coding Practice and Interview Plan
-| Experience (at year start) | Age (at year start) | Year (start) | Work to be Done (Entire Year)                                             | Interviewing (at year start)      |
-|----------------------------|---------------------|--------------|---------------------------------------------------------------------------|-----------------------------------|
-| 4.5                        | 26 over             | 2020         | Graphs, Trees                                                             |                                   |
-| 5.5                        | 27 over             | 2021         | Greedy,D&C,D&P,R&BT,Arrays,Linkedlist                                     | Freshworks/Walmart                |
-| 6.5                        | 28 over             | 2022         | LeetCode Premium -> Company Wise Problems                                 | Except FAAMG all others (Top 100) |
-| 7.5                        | 29 over             | 2023         | Google Focused -> [LC-Google & KickStart Past Papers]                     | Only FAAM                         |
-| 8.5                        | 30 over             | 2024         | No Work -> Start interviewing at Google -> From the starting of the year. | Only G                            |
+           
+| Experience (at year start) | Age (at year start) | Year (start) |                                  Work to be Done (Entire Year)                                 |    Interviewing (at year start)   |
+|:--------------------------:|:-------------------:|:------------:|:----------------------------------------------------------------------------------------------:|:---------------------------------:|
+| 4.5                        | 26 over             | 2020         | Concepts Clarity + LC -> Graphs,Trees,Greedy,D&C(BS),DP,BT,Sort,HashMap,Bit-M,Arrays,LL,Stack  |                                   |
+| 5.5                        | 27 over             | 2021         | LeetCode Everything -> Normal + Premium                                                        | Freshworks(Feb)/Walmart(Apr)      |
+| 6.5                        | 28 over             | 2022         | FAAM Preparation -> From LC Premium(Interview Prep)                                            | Except FAAMG all others (Top 100) |
+| 7.5                        | 29 over             | 2023         | Google Focused -> [LC-Google & KickStart Past Papers]                                          | Only FAAM                         |
+| 8.5                        | 30 over             | 2024         | No DSA -> Start interviewing at Google -> From the starting of the year. Continue Practicing   | Only G                            |
+           Solve Problems From LeetCode
+-2020
 
-For all the 8 topics, the problems bust be solved in the given format below.
-1. 2 months for each topic, 
-2. for CodeForces -> 12 groups * 5 problems = 60 problems.
-3. GFG -> Company wise and Topic wise
-4. LC -> Topic wise
+Graphs - Sep 1 to 10
+Trees - Sep 11 to 20
+Greedy - Sep 21 to 30
 
-| Platform   | Problems | No. of Days |
-|------------|----------|-------------|
-| CodeForces | 30       | 15          |
-| CodeForces | 30       | 15          |
-| GFG        | 30       | 10          |
-| LeetCode   | 40       | 20          |
+D&C(BS) - Oct 1 to 10
+DP - Oct 11 to 20
+BT - Oct 21 to 30
+
+Sorting - Nov 1 to 10
+HashMap - Nov 11 to 20
+Bit Manipulation - Nov 21 to 30
+
+Arrays - Dec 1 to 10
+LinkedList - Dec 11 to 20
+Stack - Dec 21 to 30
+
+-2021
+
+DP - Jan 1 to 10
+Trees - Jan 11 to 20
+Graphs - Jan 21 to 30
