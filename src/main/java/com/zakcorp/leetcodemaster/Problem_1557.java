@@ -53,4 +53,17 @@ public class Problem_1557 {
             }
         }
     }
+    static class Solver1 {
+        public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
+            Set<Integer> inDegreeSet = new HashSet<>();
+            Set<Integer> outDegreeSet = new HashSet<>();
+            for(List<Integer> list : edges) {
+                if( !outDegreeSet.contains(list.get(0)) ) {
+                    inDegreeSet.add(list.get(0));
+                }
+                outDegreeSet.add(list.get(1));
+            }
+            return new ArrayList<>(inDegreeSet);
+        }
+    }
 }
