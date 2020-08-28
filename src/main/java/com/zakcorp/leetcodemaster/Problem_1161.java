@@ -49,6 +49,14 @@ public class Problem_1161 {
             levelSum = new LevelSum(level, sum);
             list.add(levelSum);
         }
-        return list.get(list.size() - 1).level;
+        int maxSum = Integer.MIN_VALUE;
+        int index = -1;
+        for (LevelSum levelSum : list) {
+            if (levelSum.sum > maxSum) {
+                maxSum = levelSum.sum;
+                index = levelSum.level;
+            }
+        }
+        return index;
     }
 }

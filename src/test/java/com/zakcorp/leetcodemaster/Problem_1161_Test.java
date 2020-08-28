@@ -6,6 +6,12 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class Problem_1161_Test {
+    /**
+     * [1,7,0,7,-8,null,null]
+     * [2,1,1]
+     * [1,0,1]
+     * [1,1,1,0,1,1,0]
+     */
     Problem_1161 p = new Problem_1161();
     @Test
     public void test1() {
