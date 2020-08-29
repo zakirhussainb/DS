@@ -15,22 +15,22 @@ import java.util.Arrays;
 public class Problem_1043 {
     static class Solver {
         public int maxSumAfterPartitioning(int[] arr, int K) {
-            Arrays.sort(arr);
-            int[] res = new int[arr.length];
+            int n = arr.length;
+            Arrays.sort(arr); // Time O(N log N)
+            int[] res = new int[n]; // Space (N)
             int pos = 0;
-            for(int i = arr.length - 1; i >= 0; i--) {
-                if(pos < res.length) {
-                    int m = K;
-                    while(m --> 0) {
-                        res[pos++] = arr[i];
-                    }
+            for(int i = n - 1; i >= 0 && pos < n;  i--) { // O(N)
+                int m = K;
+                while(m --> 0 && pos < n) { // O(K)
+                    res[pos++] = arr[i];
                 }
-            }
+            } // O(N + K)
             int sum = 0;
-            for (int num : res) {
+            for (int num : res) { // O(N)
                 sum += num;
             }
             return sum;
+            // O(N log N) + O(N + K) + O(N) => O(N log N) + O(N)
         }
     }
 }
