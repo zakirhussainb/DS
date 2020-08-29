@@ -73,6 +73,8 @@ All Pairs Shortest Path
 ***
 - [x] 1. https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph
 - [x] 2. https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/build-a-graph-5f5c6b4a/
+- [x] 3. https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
+- [x] 4. https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes
 
 ***
          PLAN
