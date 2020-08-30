@@ -42,7 +42,11 @@ public class Problem_1306 {
                 }
                 if(arr[i] == 0) {
                     dest = i;
+                    break;
                 }
+            }
+            if(start == dest) {
+                return true;
             }
             return bfs(start, dest, g);
         }
