@@ -30,6 +30,9 @@ public class Problem_1306 {
             }
         }
         public boolean canReach(int[] arr, int start) {
+            if(start == 0) {
+                return true;
+            }
             int V = arr.length;
             Graph g = new Graph(V);
 //            int dest = -1;
