@@ -10,9 +10,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class Problem_841_Test {
-//    Problem_841.Solver p = new Problem_841.Solver();
-//    Problem_841.Solver1 p1 = new Problem_841.Solver1();
-    Problem_841.Solver2 p2 = new Problem_841.Solver2();
+    Problem_841.Solver p2 = new Problem_841.Solver();
     @Test
     public void test1() {
         List<List<Integer>> rooms = new ArrayList<>();
@@ -20,8 +18,6 @@ public class Problem_841_Test {
         rooms.add(Collections.singletonList(2));
         rooms.add(Collections.singletonList(3));
         rooms.add(new ArrayList<>());
-//        assertTrue(p.canVisitAllRooms(rooms));
-//        assertTrue(p1.canVisitAllRooms(rooms));
         assertTrue(p2.canVisitAllRooms(rooms));
     }
     @Test
@@ -31,8 +27,6 @@ public class Problem_841_Test {
         rooms.add(Arrays.asList(3,0,1));
         rooms.add(Collections.singletonList(2));
         rooms.add(Collections.singletonList(0));
-//        assertFalse(p.canVisitAllRooms(rooms));
-//        assertFalse(p1.canVisitAllRooms(rooms));
         assertFalse(p2.canVisitAllRooms(rooms));
     }
     @Test
@@ -42,8 +36,6 @@ public class Problem_841_Test {
         rooms.add(Arrays.asList(3,0,1));
         rooms.add(Collections.singletonList(2));
         rooms.add(Collections.singletonList(2));
-//        assertFalse(p.canVisitAllRooms(rooms));
-//        assertFalse(p1.canVisitAllRooms(rooms));
         assertTrue(p2.canVisitAllRooms(rooms));
     }
     @Test

@@ -5,15 +5,18 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 29/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: LeetCode
+ * @topic: Graph
+ * @sub-topic: DFS
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/keys-and-rooms/
  * @pseudocode:
+ *  1. Do a dfs from room "0"
+ *  2. Mark the rooms visited along the way.
+ *  3. Then iterate visited boolean array again and check for any unvisited room, if yes return false.
  */
 public class Problem_841 {
-    static class Solver { // FAILED
+    /*static class Solver { // FAILED
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
             Set<Integer> keySet = new HashSet<>();
             keySet.add(0);
@@ -43,8 +46,8 @@ public class Problem_841 {
             }
             return true;
         }
-    }
-    static class Solver2 {
+    }*/
+    static class Solver {
         static class Graph {
             private LinkedList<Integer>[] adjListArr;
             public Graph(int V) {
@@ -54,8 +57,7 @@ public class Problem_841 {
                 }
             }
             public void addEdge(int u, int v) {
-                adjListArr[u].add(v);
-//                adjListArr[v].add(u);
+                adjListArr[u].add(v); // This graph is directed, though it looks like it is undirected.
             }
         }
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
