@@ -7,6 +7,14 @@ import static org.junit.Assert.*;
 /**
  * [0,3,0,6,3,3,4]
  * 6
+ * [4,2,3,0,3,1,2]
+ * 0
+ * [4,2,3,0,3,1,2]
+ * 5
+ * [0,0]
+ * 0
+ * [3,0,2,1,2]
+ * 2
  */
 public class Problem_1306_Test {
     Problem_1306.Solver p = new Problem_1306.Solver();
@@ -34,6 +42,7 @@ public class Problem_1306_Test {
     @Test
     public void test5() {
         assertTrue(p.canReach(new int[]{0,3,0,6,3,3,4}, 6));
+        assertTrue(p1.canReach(new int[]{0,3,0,6,3,3,4}, 6));
     }
     @Test
     public void test6() {

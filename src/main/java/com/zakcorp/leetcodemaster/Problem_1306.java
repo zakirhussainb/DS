@@ -5,11 +5,11 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 30/08/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: LeetCode
+ * @topic: Graphs
+ * @sub-topic: DFS, BFS
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/jump-game-iii/
  * @pseudocode:
  */
 public class Problem_1306 {
