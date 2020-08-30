@@ -76,6 +76,7 @@ All Pairs Shortest Path
 - [x] 3. https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
 - [x] 4. https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes
 - [x] 5. https://leetcode.com/problems/keys-and-rooms/
+- [x] 6. https://leetcode.com/problems/jump-game-iii
 
 ***
          PLAN
