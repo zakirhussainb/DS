@@ -22,4 +22,8 @@ public class Problem_55_Test {
     public void test4() {
         assertFalse(p.canJump(new int[]{0,0}));
     }
+    @Test
+    public void test5() {
+        assertTrue(p.canJump(new int[]{2,5,0,0}));
+    }
 }
