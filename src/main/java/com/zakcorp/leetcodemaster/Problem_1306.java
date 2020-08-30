@@ -32,7 +32,19 @@ public class Problem_1306 {
         public boolean canReach(int[] arr, int start) {
             int V = arr.length;
             Graph g = new Graph(V);
-            int dest = -1;
+//            int dest = -1;
+//            for(int i = 0; i < V; i++) {
+//                if(arr[i] == 0) {
+//                    if(start == arr[i]) {
+//                        return true;
+//                    } else {
+//                        dest = i;
+//                    }
+//                }
+//            }
+//            if(start == dest) {
+//                return true;
+//            }
             for(int i = 0; i < V; i++) {
                 if(i + arr[i] < V) {
                     g.addEdge(i, i + arr[i]);
@@ -40,17 +52,10 @@ public class Problem_1306 {
                 if(i - arr[i] > -1) {
                     g.addEdge(i, i - arr[i]);
                 }
-                if(arr[i] == 0) {
-                    dest = i;
-                    break;
-                }
             }
-            if(start == dest) {
-                return true;
-            }
-            return bfs(start, dest, g);
+            return bfs(start, g, arr);
         }
-        public boolean bfs(int start, int dest, Graph g) {
+        public boolean bfs(int start, Graph g, int[] arr) {
             boolean[] visited = new boolean[g.V];
             Queue<Integer> queue = new LinkedList<>();
             queue.add(start);
@@ -61,7 +66,7 @@ public class Problem_1306 {
                     if(!visited[i]) {
                         visited[i] = true;
                         queue.add(i);
-                        if(i == dest){
+                        if(arr[i] == 0){
                             return true;
                         }
                     }
