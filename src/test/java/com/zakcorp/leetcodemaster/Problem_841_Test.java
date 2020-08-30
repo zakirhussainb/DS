@@ -46,4 +46,13 @@ public class Problem_841_Test {
 //        assertFalse(p1.canVisitAllRooms(rooms));
         assertTrue(p2.canVisitAllRooms(rooms));
     }
+    @Test
+    public void test4() {
+        List<List<Integer>> rooms = new ArrayList<>();
+        rooms.add(Collections.singletonList(1));
+        rooms.add(new ArrayList<>());
+        rooms.add(Arrays.asList(0, 3));
+        rooms.add(Collections.singletonList(1));
+        assertFalse(p2.canVisitAllRooms(rooms));
+    }
 }

@@ -55,7 +55,7 @@ public class Problem_841 {
             }
             public void addEdge(int u, int v) {
                 adjListArr[u].add(v);
-                adjListArr[v].add(u);
+//                adjListArr[v].add(u);
             }
         }
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
