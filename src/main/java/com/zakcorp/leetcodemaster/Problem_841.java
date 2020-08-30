@@ -128,12 +128,33 @@ public class Problem_841 {
                 }
             }
         }
-        static class dfsIter {
-
+        static class DfsIter {
+            public boolean solve(List<List<Integer>> rooms) {
+                int counter = 0;
+                boolean[] visited = new boolean[rooms.size()];
+                Stack<Integer> stack = new Stack<>();
+                stack.push(0);
+                visited[0] = true;
+                counter++;
+                while (!stack.isEmpty()) {
+                    int s = stack.pop();
+                    for(int i : rooms.get(s)) {
+                        if(!visited[i]) {
+                            visited[i] = true;
+                            counter++;
+                            stack.push(i);
+                        }
+                    }
+                }
+                return counter == rooms.size();
+            }
         }
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-            Solver2.DfsRec solver2 = new Solver2.DfsRec();
-            return solver2.solve(rooms);
+//            Solver2.DfsRec solver2 = new Solver2.DfsRec();
+//            return solver2.solve(rooms);
+
+            Solver2.DfsIter solver3 = new Solver2.DfsIter();
+            return solver3.solve(rooms);
         }
     }
 }
