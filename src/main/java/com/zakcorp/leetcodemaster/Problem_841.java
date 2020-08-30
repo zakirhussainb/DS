@@ -86,4 +86,54 @@ public class Problem_841 {
             }
         }
     }
+    static class Solver1 {
+        public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+            int V = rooms.size();
+            Stack<Integer> stack = new Stack<>();
+            boolean[] visited = new boolean[V];
+            visited[0] = true;
+            stack.push(0);
+            while( !stack.isEmpty() ) {
+                int s = stack.pop();
+                for(int i : rooms.get(s)) {
+                    if(!visited[i]) {
+                        visited[i] = true;
+                        stack.push(i);
+                    }
+                }
+            }
+            for(int i = 0; i < V; i++) {
+                if(!visited[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    static class Solver2 {
+        static class DfsRec {
+            int counter = 0;
+            public boolean solve(List<List<Integer>> rooms) {
+                boolean[] visited = new boolean[rooms.size()];
+                dfs(0, rooms, visited);
+                return counter == rooms.size();
+            }
+            public void dfs(int s, List<List<Integer>> rooms, boolean[] visited) {
+                visited[s] = true;
+                counter++;
+                for(int i : rooms.get(s)) {
+                    if(!visited[i]) {
+                        dfs(i, rooms, visited);
+                    }
+                }
+            }
+        }
+        static class dfsIter {
+
+        }
+        public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+            Solver2.DfsRec solver2 = new Solver2.DfsRec();
+            return solver2.solve(rooms);
+        }
+    }
 }
