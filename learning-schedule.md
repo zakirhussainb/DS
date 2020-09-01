@@ -52,6 +52,7 @@
     - [ ] 17. Pattern Topological Sort (Graph)
     - [ ] 18. Miscellaneous
     - [ ] 19. Conclusions
+    
 3. - [ ] Grokking the Object Oriented Design Interview
 
     - [ ] 1. Object-Oriented Basics.
@@ -77,4 +78,35 @@
     - [ ] 21. Design LinkedIn.
     - [ ] 22. Design Cricinfo.
     - [ ] 23. Design Facebook - a social network.
+    
 4. - [ ] Grokking the System Design Interview
+
+    - [ ] 1. System Design Basics.
+    - [ ] 2. Key Characteristics of Distributed Systems.
+    - [ ] 3. Load Balancing.
+    - [ ] 4. Caching.
+    - [ ] 5. Data Partitioning.
+    - [ ] 6. Indexes.
+    - [ ] 7. Proxies.
+    - [ ] 8. Redundancy and Replication.
+    - [ ] 9. SQL vs. NoSQL.
+    - [ ] 10. CAP Theorem.
+    - [ ] 11. Consistent Hashing.
+    - [ ] 12. Long-Polling vs WebSockets vs Server-Sent Events.
+    - [ ] 13. System Design Interviews_ A step by step guide.
+    - [ ] 14. Designing a URL Shortening service like TinyURL.
+    - [ ] 15. Designing Pastebin.
+    - [ ] 16. Designing Instagram.
+    - [ ] 17. Designing Dropbox.
+    - [ ] 18. Designing Facebook Messenger.
+    - [ ] 19. Designing Twitter.
+    - [ ] 20. Designing Youtube or Netflix.
+    - [ ] 21. Designing Typeahead Suggestion.
+    - [ ] 22. Designing an API Rate Limiter.
+    - [ ] 23. Designing Twitter Search.
+    - [ ] 24. Designing a Web Crawler.
+    - [ ] 25. Designing Facebook’s Newsfeed.
+    - [ ] 26. Designing Yelp or Nearby Friends.
+    - [ ] 27. Designing Uber backend.
+    - [ ] 28. Design Ticketmaster.
+    - [ ] 29. Additional Resources.
