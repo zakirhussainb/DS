@@ -35,6 +35,22 @@
 
     - [X] 1. Introduction
     - [ ] 2. Pattern Sliding Window
+            - [ ] 1. Introduction
+            - [ ] 2. Maximum Sum Subarray of Size K (easy)
+            - [ ] 3. Smallest Subarray with a given sum (easy)
+            - [ ] 4. Longest Substring with K Distinct Characters (medium)
+            - [ ] 5. Fruits into Baskets (medium)
+            - [ ] 6. No-repeat Substring (hard)
+            - [ ] 7. Longest Substring with Same Letters after Replacement (hard)
+            - [ ] 8. Longest Subarray with Ones after Replacement (hard)
+            - [ ] 9. Problem Challenge 1
+            - [ ] 10. Solution Review Problem Challenge 1
+            - [ ] 11. Problem Challenge 2
+            - [ ] 12. Solution Review Problem Challenge 2
+            - [ ] 13. Problem Challenge 3
+            - [ ] 14. Solution Review Problem Challenge 3
+            - [ ] 15. Problem Challenge 4
+            - [ ] 16. Solution Review Problem Challenge 4
     - [ ] 3. Pattern Two Pointers
     - [ ] 4. Pattern Fast _ Slow pointers
     - [ ] 5. Pattern Merge Intervals
