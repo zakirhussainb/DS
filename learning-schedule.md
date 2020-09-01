@@ -72,7 +72,7 @@
 3. - [ ] Grokking the Object Oriented Design Interview
 
     - [x] 1. Object-Oriented Basics.
-    - [ ] 2. OO Analysis and Design.
+    - [x] 2. OO Analysis and Design.
     - [ ] 3. What is UML_.
     - [ ] 4. Use Case Diagrams.
     - [ ] 5. Class Diagram.
