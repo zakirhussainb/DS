@@ -32,6 +32,7 @@
     - [ ] 12. Stack - Dec 21 to 30
 
 2. - [ ] Grokking the Coding Interview
+
     - [ ] 1. Introduction
     - [ ] 2. Pattern Sliding Window
     - [ ] 3. Pattern Two Pointers
@@ -52,6 +53,7 @@
     - [ ] 18. Miscellaneous
     - [ ] 19. Conclusions
 3. - [ ] Grokking the Object Oriented Design Interview
+
     - [ ] 1. Object-Oriented Basics.
     - [ ] 2. OO Analysis and Design.
     - [ ] 3. What is UML_.
