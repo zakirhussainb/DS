@@ -52,4 +52,27 @@
     - [ ] 18. Miscellaneous
     - [ ] 19. Conclusions
 3. - [ ] Grokking the Object Oriented Design Interview
+    - [ ] 1. Object-Oriented Basics.
+    - [ ] 2. OO Analysis and Design.
+    - [ ] 3. What is UML_.
+    - [ ] 4. Use Case Diagrams.
+    - [ ] 5. Class Diagram.
+    - [ ] 6. Sequence diagram.
+    - [ ] 7. Activity Diagrams.
+    - [ ] 8. Design a Library Management System.
+    - [ ] 9. Design a Parking Lot.
+    - [ ] 10. Design Amazon - Online Shopping System.
+    - [ ] 11. Design Stack Overflow.
+    - [ ] 12. Design a Movie Ticket Booking System.
+    - [ ] 13. Design an ATM.
+    - [ ] 14. Design an Airline Management System.
+    - [ ] 15. Design Blackjack and a Deck of Cards.
+    - [ ] 16. Design a Hotel Management System.
+    - [ ] 17. Design a Restaurant Management system.
+    - [ ] 18. Design Chess.
+    - [ ] 19. Design an Online Stock Brokerage System.
+    - [ ] 20. Design a Car Rental System.
+    - [ ] 21. Design LinkedIn.
+    - [ ] 22. Design Cricinfo.
+    - [ ] 23. Design Facebook - a social network.
 4. - [ ] Grokking the System Design Interview
