@@ -71,7 +71,7 @@
     
 3. - [ ] Grokking the Object Oriented Design Interview
 
-    - [ ] 1. Object-Oriented Basics.
+    - [x] 1. Object-Oriented Basics.
     - [ ] 2. OO Analysis and Design.
     - [ ] 3. What is UML_.
     - [ ] 4. Use Case Diagrams.
@@ -126,3 +126,8 @@
     - [ ] 27. Designing Uber backend.
     - [ ] 28. Design Ticketmaster.
     - [ ] 29. Additional Resources.
+
+Daily Time Allotted   
+- LeetCode - 6 hours
+- Grk-Coding - 2 hours
+- Grk-OOD/SD - 3 hours
