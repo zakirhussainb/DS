@@ -33,7 +33,7 @@
 
 2. - [ ] Grokking the Coding Interview
 
-    - [ ] 1. Introduction
+    - [X] 1. Introduction
     - [ ] 2. Pattern Sliding Window
     - [ ] 3. Pattern Two Pointers
     - [ ] 4. Pattern Fast _ Slow pointers
