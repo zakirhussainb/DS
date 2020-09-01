@@ -43,37 +43,3 @@ https://codeforces.com/blog/entry/68288
 | 6.5                        | 28 over             | 2022         | FAAM Preparation -> From LC Premium(Interview Prep)                                            | Except FAAMG all others (Top 100) |
 | 7.5                        | 29 over             | 2023         | Google Focused -> [LC-Google & KickStart Past Papers]                                          | Only FAAM                         |
 | 8.5                        | 30 over             | 2024         | No DSA -> Start interviewing at Google -> From the starting of the year. Continue Practicing   | Only G                            |
-           Solve Problems From LeetCode
--2020
-
-Sep
-
-1. Graphs - Sep 1 to 10
-2. Trees - Sep 11 to 20
-3. Greedy - Sep 21 to 30
-
-Oct
-
-4. D&C(BS) - Oct 1 to 10
-5. DP - Oct 11 to 20
-6. BT - Oct 21 to 30
-
-Nov
-
-7. Sorting - Nov 1 to 10
-8. HashMap - Nov 11 to 20
-9. Bit Manipulation - Nov 21 to 30
-
-Dec
-
-10. Arrays - Dec 1 to 10
-11. LinkedList - Dec 11 to 20
-12. Stack - Dec 21 to 30
-
--2021
-
-Jan
-
-- DP - Jan 1 to 10
-- Trees - Jan 11 to 20
-- Graphs - Jan 21 to 30

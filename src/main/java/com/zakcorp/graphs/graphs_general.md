@@ -69,25 +69,11 @@ All Pairs Shortest Path
 - [ ] 10. Topological Sorting
 
 ***
-         Graph Practice and Problems - From Coding Platforms
+         Graph Practice and Problems - From LeetCode
 ***
-- [x] 1. https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph
-- [x] 2. https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/practice-problems/algorithm/build-a-graph-5f5c6b4a/
-- [x] 3. https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
-- [x] 4. https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes
-- [x] 5. https://leetcode.com/problems/keys-and-rooms/
-- [x] 6. https://leetcode.com/problems/jump-game-iii
-
-***
-         PLAN
-***
-AUG
-- [ ] 1. 24th - 31st -> Graph Pending Topics + System Design -> 3 topics + 3 problems
-
-SEP(60 to 90)
-- [ ] 1. 01 to 15 -> {Graph Problems -> CodeForces} && {System Design -> 4 topics + 2 problems}
-- [ ] 2. 16 to 30 -> {Graph Problems -> CodeChef} && {System Design -> 4 topics + 2 problems}
-
-OCT(60 to 90)
-- [ ] 1. 01 to 10 -> {Graph Problems -> GFG Company-Wise} && {System Design -> 4 topics + 2 problems}
-- [ ] 2. 11 to 30 -> {Graph Problems -> LeetCode} && {System Design -> 4 topics + 2 problems}
+- [x] 1. https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
+- [x] 2. https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes
+- [x] 3. https://leetcode.com/problems/keys-and-rooms/
+- [x] 4. https://leetcode.com/problems/jump-game-iii
+- [x] 5. https://leetcode.com/problems/count-servers-that-communicate/
+- [x] 6. https://leetcode.com/problems/find-the-town-judge/

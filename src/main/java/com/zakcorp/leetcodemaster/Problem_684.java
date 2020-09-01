@@ -21,7 +21,6 @@ public class Problem_684 {
             }
             return resultEdge;
         }
-
         private void isArrayVisited(int[] arr, boolean[] visited) {
             int count = 0;
             for(int i : arr) {
