@@ -13,7 +13,7 @@ public class Chapter_1 {
         Solver p = new Solver();
         int K = 5;
         int[] arr = new int[]{1, 3, 2, 6, -1, 4, 1, 8, 2};
-        for(double d : p.solve1(K, arr)) {
+        for(double d : p.solve2(K, arr)) {
             System.out.print(d + ", ");
         }
     }
@@ -32,8 +32,20 @@ public class Chapter_1 {
             return result;// Space O(K), Time O(N * K)
         }
         // Efficient Approach -> O(N) using Sliding Window
-        public int[] solve2(int K, int[] arr) {
-            return null;
+        public double[] solve2(int K, int[] arr) {
+            double[] result = new double[K];
+            int n = arr.length;
+            int sum = 0;
+            int start = 0;
+            for(int end = 0; end < n; end++) { // O(N)
+                sum = sum + arr[end];
+                if(end >= K - 1) {
+                    result[start] = (double) sum / K;
+                    sum = sum - arr[start];
+                    start++;
+                }
+            }
+            return result;
         }
     }
 }
