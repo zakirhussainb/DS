@@ -1,7 +1,15 @@
 package com.zakcorp.grokking.coding.slidingwindow;
 
 /**
- * Introduction Chapter
+ * Created by Zakir Hussain B on 02/09/20.
+ *
+ * @source: Educative.io
+ * @topic: Coding Problems Patterns
+ * @sub-topic: Sliding Window
+ * @platform:
+ * @problem_link:
+ * @pseudocode:
+ *  Introduction Chapter
  */
 public class Chapter_1 {
     /**
