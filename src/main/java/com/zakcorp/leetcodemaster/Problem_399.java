@@ -5,12 +5,14 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 02/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: LeetCode
+ * @topic: Graphs
+ * @sub-topic: DFS
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/evaluate-division/
  * @pseudocode:
+ * Imagine this as a graph
+ * a -> 2.0 -> b and b -> 3.0 -> c;  so therefore a -> 6.0 -> c
  */
 public class Problem_399 {
     /**

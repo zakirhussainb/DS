@@ -4,12 +4,12 @@
 
 1. - [ ] Solve Problems From LeetCode
 
-** NOTE:- Each day 2 medium-level problems from LeetCode, approx~ 240 med problems
+** NOTE:- Each day 1 medium-level problems from LeetCode, approx~ 150 med problems
 -2020
 
 - [ ] Sep
 
-    - [ ] 1. Graphs - Sep 1 to 10 -> 6/20
+    - [ ] 1. Graphs - Sep 1 to 10 -> 7
     - [ ] 2. Trees - Sep 11 to 20
     - [ ] 3. Greedy - Sep 21 to 30
 
@@ -62,7 +62,7 @@
     - [ ] 11. Pattern Subsets
     - [ ] 12. Pattern Modified Binary Search
     - [ ] 13. Pattern Bitwise XOR
-    - [ ] 14. Pattern Top _K_ Elements
+    - [ ] 14. Pattern Top K Elements
     - [ ] 15. Pattern K-way merge
     - [ ] 16. Pattern  0 or 1 Knapsack (Dynamic Programming)
     - [ ] 17. Pattern Topological Sort (Graph)
