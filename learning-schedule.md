@@ -73,7 +73,7 @@
 
     - [x] 1. Object-Oriented Basics.
     - [x] 2. OO Analysis and Design.
-    - [ ] 3. What is UML_.
+    - [x] 3. What is UML_.
     - [ ] 4. Use Case Diagrams.
     - [ ] 5. Class Diagram.
     - [ ] 6. Sequence diagram.
