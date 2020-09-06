@@ -98,7 +98,7 @@
 4. - [ ] Grokking the System Design Interview
 
     - [x] 1. System Design Basics.
-    - [ ] 2. Key Characteristics of Distributed Systems.
+    - [x] 2. Key Characteristics of Distributed Systems.
     - [ ] 3. Load Balancing.
     - [ ] 4. Caching.
     - [ ] 5. Data Partitioning.
