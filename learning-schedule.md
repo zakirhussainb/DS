@@ -37,7 +37,7 @@
     - [ ] 2. Pattern Sliding Window
         - [x] 1. Introduction
         - [x] 2. Maximum Sum Subarray of Size K (easy)
-        - [ ] 3. Smallest Subarray with a given sum (easy)
+        - [x] 3. Smallest Subarray with a given sum (easy)
         - [ ] 4. Longest Substring with K Distinct Characters (medium)
         - [ ] 5. Fruits into Baskets (medium)
         - [ ] 6. No-repeat Substring (hard)
