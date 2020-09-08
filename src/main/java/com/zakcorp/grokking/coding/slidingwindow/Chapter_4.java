@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @source: Grokking Course - Coding
  * @topic: Sliding Window Pattern
- * @sub-topic: Sliding Window Pattern
+ * @sub-topic: Longest Substring with K Distinct Characters (medium)
  * @platform: Grokking Course - Coding
  * @problem_link: In Local
  * @pseudocode: Normal Sliding Window
