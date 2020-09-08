@@ -38,7 +38,7 @@
         - [x] 1. Introduction
         - [x] 2. Maximum Sum Subarray of Size K (easy)
         - [x] 3. Smallest Subarray with a given sum (easy)
-        - [ ] 4. Longest Substring with K Distinct Characters (medium)
+        - [x] 4. Longest Substring with K Distinct Characters (medium)
         - [ ] 5. Fruits into Baskets (medium)
         - [ ] 6. No-repeat Substring (hard)
         - [ ] 7. Longest Substring with Same Letters after Replacement (hard)
