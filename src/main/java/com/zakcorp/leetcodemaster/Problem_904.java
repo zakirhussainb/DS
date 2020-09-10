@@ -12,20 +12,15 @@ import java.util.*;
  */
 public class Problem_904 {
     public int totalFruit(int[] tree) {
-        int maxLength = 0;
-        int start = 0;
+        int start = 0;int end;
         Map<Integer, Integer> map = new HashMap<>();
-        for(int end = 0; end < tree.length; end++) {
+        for(end = 0; end < tree.length; end++) {
             map.put(tree[end], map.getOrDefault(tree[end], 0) + 1);
-            while(map.size() > 2) {
+            if(map.size() > 2) {
                 map.put(tree[start], map.get(tree[start]) - 1);
-                if(map.get(tree[start]) == 0) {
-                    map.remove(tree[start]);
-                }
-                start++;
+                map.remove(tree[start++], 0);
             }
-            maxLength = Math.max(maxLength, end - start + 1);
         }
-        return maxLength;
+        return end - start;
     }
 }
