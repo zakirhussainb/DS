@@ -23,6 +23,7 @@ public class Problem_3 {
             for(int end = 0; end < n; end++){
                 char endChar = str.charAt(end);
                 if(charIndexMap.containsKey(endChar)) {
+                    // cannot compare "start" with "end", // for test case "dvdf" -> it fails -> op:2; exp:3
                     start = Math.max(start, charIndexMap.get(endChar) + 1);
                 }
                 charIndexMap.put(endChar, end);
