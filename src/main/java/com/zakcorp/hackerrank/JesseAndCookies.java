@@ -6,18 +6,14 @@ import java.io.*;
 /**
  * Created by Zakir Hussain B on 12/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: HackerRank
+ * @topic: PriorityQueue
+ * @sub-topic: PriorityQueue, Min-Heap
+ * @platform: HackerRank
+ * @problem_link: https://www.hackerrank.com/challenges/jesse-and-cookies
  * @pseudocode:
  */
 public class JesseAndCookies {
-
-    /*
-     * Complete the cookies function below.
-     */
     static int cookies(int K, int[] arr) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int num : arr) {
