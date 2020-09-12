@@ -20,14 +20,17 @@ public class Problem_3_Test {
     @Test
     public void test1() {
         assertEquals(3, p.solve1("abcabcbb"));
+        assertEquals(3, p.solve2("abcabcbb"));
     }
     @Test
     public void test2() {
-        assertEquals(2, p.solve1("abbbb"));
+//        assertEquals(2, p.solve1("abbbb"));
+        assertEquals(2, p.solve2("abbbb"));
     }
     @Test
     public void test3() {
         assertEquals(1, p.solve1("b"));
+        assertEquals(1, p.solve2("b"));
     }
 
 }

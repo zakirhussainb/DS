@@ -29,5 +29,19 @@ public class Problem_3 {
             }
             return maxLength;
         }
+        public int solve2(String str) {
+            int n = str.length();
+            int maxLength = 0, start = 0;
+            int[] index = new int[128];
+            for(int end = 0; end < n; end++) {
+                char endChar = str.charAt(end);
+                if(index[end] != 0) {
+                    start = Math.max(start, index[endChar] + 1);
+                }
+                maxLength = Math.max(maxLength, end - start + 1);
+                index[endChar] = end;
+            }
+            return maxLength;
+        }
     }
 }
