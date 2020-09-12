@@ -15,10 +15,8 @@ import java.util.*;
 public class Problem_3 {
     static class Solver {
         public int solve1(String str) {
-            if(str.isEmpty())
-                return 0;
             int n = str.length();
-            int start = 0, maxLength = 1;
+            int start = 0, maxLength = 0;
             Map<Character, Integer> charIndexMap = new HashMap<>();
             for(int end = 0; end < n; end++){
                 char endChar = str.charAt(end);

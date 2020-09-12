@@ -25,5 +25,9 @@ public class Problem_3_Test {
     public void test2() {
         assertEquals(2, p.solve1("abbbb"));
     }
+    @Test
+    public void test3() {
+        assertEquals(1, p.solve1("b"));
+    }
 
 }
