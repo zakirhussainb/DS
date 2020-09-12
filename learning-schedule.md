@@ -2,36 +2,7 @@
          SEP'2020 to DEC'2020
 ***
 
-1. - [ ] Solve Problems From LeetCode
-
-** NOTE:- Each day 1 medium-level problems from LeetCode, approx~ 150 med problems
--2020
-
-- [ ] Sep
-
-    - [ ] 1. Graphs - Sep 1 to 10 -> 7
-    - [ ] 2. Trees - Sep 11 to 20
-    - [ ] 3. Greedy - Sep 21 to 30
-
-- [ ] Oct
-
-    - [ ] 4. D&C(BS) - Oct 1 to 10
-    - [ ] 5. DP - Oct 11 to 20
-    - [ ] 6. BT - Oct 21 to 30
-
-- [ ] Nov
-
-    - [ ] 7. Sorting - Nov 1 to 10
-    - [ ] 8. HashMap - Nov 11 to 20
-    - [ ] 9. Bit Manipulation - Nov 21 to 30
-
-- [ ] Dec
-
-    - [ ] 10. Arrays - Dec 1 to 10
-    - [ ] 11. LinkedList - Dec 11 to 20
-    - [ ] 12. Stack - Dec 21 to 30
-
-2. - [ ] Grokking the Coding Interview
+1. - [ ] Grokking the Coding Interview
 
     - [X] 1. Introduction
     - [ ] 2. Pattern Sliding Window
@@ -69,7 +40,7 @@
     - [ ] 18. Miscellaneous
     - [ ] 19. Conclusions
     
-3. - [ ] Grokking the Object Oriented Design Interview
+2. - [ ] Grokking the Object Oriented Design Interview
 
     - [x] 1. Object-Oriented Basics.
     - [x] 2. OO Analysis and Design.
@@ -95,7 +66,7 @@
     - [ ] 22. Design Cricinfo.
     - [ ] 23. Design Facebook - a social network.
     
-4. - [ ] Grokking the System Design Interview
+3. - [ ] Grokking the System Design Interview
 
     - [x] 1. System Design Basics.
     - [x] 2. Key Characteristics of Distributed Systems.
@@ -127,7 +98,11 @@
     - [ ] 28. Design Ticketmaster.
     - [ ] 29. Additional Resources.
 
-Daily Time Allotted   
-- LeetCode - 6 hours
-- Grk-Coding - 2 hours
-- Grk-OOD/SD - 3 hours
+Daily Time Allotted
+- 7am to 11am - GC
+- 11am to 12pm - BB
+- 12pm to 4pm - GO
+- 4pm to 7pm - BB
+- 7pm to 11pm - GS
+- 11pm to 1.30am - HC
+- 1.30m to 6.30am - Sleep
