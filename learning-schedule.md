@@ -48,7 +48,7 @@
     - [x] 4. Use Case Diagrams.
     - [ ] 5. Class Diagram.
     - [x] 6. Sequence diagram.
-    - [ ] 7. Activity Diagrams.
+    - [x] 7. Activity Diagrams.
     - [ ] 8. Design a Library Management System.
     - [ ] 9. Design a Parking Lot.
     - [ ] 10. Design Amazon - Online Shopping System.
