@@ -47,7 +47,7 @@
     - [x] 3. What is UML_.
     - [x] 4. Use Case Diagrams.
     - [ ] 5. Class Diagram.
-    - [ ] 6. Sequence diagram.
+    - [x] 6. Sequence diagram.
     - [ ] 7. Activity Diagrams.
     - [ ] 8. Design a Library Management System.
     - [ ] 9. Design a Parking Lot.
