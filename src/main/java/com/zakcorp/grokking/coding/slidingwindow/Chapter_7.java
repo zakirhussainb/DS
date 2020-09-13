@@ -6,12 +6,13 @@ import java.io.*;
 /**
  * Created by Zakir Hussain B on 13/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking the Coding Interview
+ * @topic: Sliding Window
+ * @sub-topic: Sliding Window, Two-Pointers
+ * @platform: GC, LeetCode
+ * @problem_link: https://leetcode.com/problems/longest-repeating-character-replacement/
  * @pseudocode:
+ * For a better approach please refer the problem -> 424 from leetcodemaster
  */
 public class Chapter_7 {
     public static void main(String[] args) {
