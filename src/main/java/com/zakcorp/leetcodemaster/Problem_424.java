@@ -40,12 +40,12 @@ public class Problem_424 {
             int[] letterFreq = new int[26];
             for(int end = 0; end < n; end++) {
                 char endLetter = str.charAt(end);
-                letterFreq[endLetter - 'a']++;
-                maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFreq[endLetter - 'a']);
+                letterFreq[endLetter - 'A']++;
+                maxRepeatLetterCount = Math.max(maxRepeatLetterCount, letterFreq[endLetter - 'A']);
                 int lettersToChange = (end - start + 1) - maxRepeatLetterCount;
                 if(lettersToChange > K) {
                     char startLetter = str.charAt(start);
-                    letterFreq[startLetter - 'a']--;
+                    letterFreq[startLetter - 'A']--;
                     start++;
                 }
                 maxLength = Math.max(maxLength, end - start + 1);
