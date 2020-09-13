@@ -6,11 +6,11 @@ import java.util.Map;
 /**
  * Created by Zakir Hussain B on 13/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: LeetCode
+ * @topic: Sliding Window
+ * @sub-topic: Sliding Window, Two Pointers, Strings
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/longest-repeating-character-replacement/
  * @pseudocode:
  */
 public class Problem_424 {
@@ -46,6 +46,21 @@ public class Problem_424 {
                 if(lettersToChange > K) {
                     char startLetter = str.charAt(start);
                     letterFreq[startLetter - 'A']--;
+                    start++;
+                }
+                maxLength = Math.max(maxLength, end - start + 1);
+            }
+            return maxLength;
+        }
+        public int solve3(String str, int K) {
+            int n = str.length();
+            int start = 0, maxLength = 0, maxRepeatLetterCount = 0;
+            int[] letterFreq = new int[26];
+            char[] chars = str.toCharArray();
+            for(int end = 0; end < n; end++) {
+                maxRepeatLetterCount = Math.max(maxRepeatLetterCount, ++letterFreq[chars[end] - 'A']);
+                while(end - start + 1 - maxRepeatLetterCount > K) { // Here using while loop instead of if -> TODO:- Research Why ?
+                    letterFreq[chars[start] - 'A']--;
                     start++;
                 }
                 maxLength = Math.max(maxLength, end - start + 1);
