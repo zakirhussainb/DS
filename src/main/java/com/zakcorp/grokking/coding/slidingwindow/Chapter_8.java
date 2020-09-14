@@ -1,7 +1,5 @@
 package com.zakcorp.grokking.coding.slidingwindow;
 
-import java.util.*;
-
 /**
  * Created by Zakir Hussain B on 14/09/20.
  *
@@ -23,13 +21,11 @@ public class Chapter_8 {
         int start = 0, maxLength = 0;
         int onesCount = 0; // The idea is to capture the onesCount in the current window
         for(int end = 0; end < n; end++) {
-            if(arr[end] == 1) {
+            if(arr[end] == 1)
                 onesCount++;
-            }
             if(end - start + 1 - onesCount > K) {
-                if(arr[start] == 1) {
+                if(arr[start] == 1)
                     onesCount--;
-                }
                 start++;
             } else {
                 maxLength = Math.max(maxLength, end - start + 1);
