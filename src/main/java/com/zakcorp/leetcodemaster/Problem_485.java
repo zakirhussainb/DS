@@ -31,7 +31,7 @@ public class Problem_485 {
             }
             return maxOnes;
         }
-        public int solve2(int[] arr) {
+        public int solve2(int[] arr) { // More efficient way and easily understandable too
             int countOnes = 0, maxOnes = 0;
             for (int num : arr) {
                 if (num == 1) {
