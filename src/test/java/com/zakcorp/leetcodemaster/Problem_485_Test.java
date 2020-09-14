@@ -26,4 +26,8 @@ public class Problem_485_Test {
     public void test5() {
         assertEquals(0, p.solve1(new int[]{0,0,0,0,0,0}));
     }
+    @Test
+    public void test6() {
+        assertEquals(2, p.solve1(new int[]{0,1,1,0}));
+    }
 }
