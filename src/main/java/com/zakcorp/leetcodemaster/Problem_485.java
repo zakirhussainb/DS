@@ -31,5 +31,16 @@ public class Problem_485 {
             }
             return maxOnes;
         }
+        public int solve2(int[] arr) {
+            int countOnes = 0, maxOnes = 0;
+            for (int num : arr) {
+                if (num == 1) {
+                    maxOnes = Math.max(maxOnes, ++countOnes);
+                } else {
+                    countOnes = 0;
+                }
+            }
+            return maxOnes;
+        }
     }
 }

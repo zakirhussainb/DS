@@ -9,6 +9,7 @@ public class Problem_485_Test {
     @Test
     public void test1() {
         assertEquals(3, p.solve1(new int[]{1,1,0,1,1,1}));
+        assertEquals(3, p.solve2(new int[]{1,1,0,1,1,1}));
     }
     @Test
     public void test2() {
