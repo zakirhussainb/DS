@@ -30,4 +30,21 @@ public class BirthDayChocolate {
         }
         return ways;
     }
+    public int birthday1(List<Integer> s, int d, int m) {
+        int start = 0, sum = 0, ways = 0;
+        for(int end = 0; end < s.size(); end++) {
+            sum += s.get(end);
+            if(sum > d) {
+                if(sum - s.get(end) == d && end - start + 1 == m) {
+                    ways++;
+                }
+                sum = sum - s.get(start);
+                start++;
+            }
+        }
+        if(ways == 0 && sum == d && s.size() == m) {
+            return 1;
+        }
+        return ways;
+    }
 }

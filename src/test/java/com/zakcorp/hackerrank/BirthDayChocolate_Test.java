@@ -20,5 +20,10 @@ public class BirthDayChocolate_Test {
     public void test3() {
         assertEquals(1, p.birthday(Collections.singletonList(4), 4, 1));
     }
+    @Test
+    public void test4() {
+//        assertEquals(3, p.birthday(Arrays.asList(2,5,1,3,4,4,3,5,1,1,2,1,4,1,3,3,4,2,1), 18, 7));
+        assertEquals(3, p.birthday1(Arrays.asList(2,5,1,3,4,4,3,5,1,1,2,1,4,1,3,3,4,2,1), 18, 7));
+    }
 
 }
