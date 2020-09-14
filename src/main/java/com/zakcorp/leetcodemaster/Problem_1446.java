@@ -1,9 +1,19 @@
 package com.zakcorp.leetcodemaster;
 
+/**
+ * Created by Zakir Hussain B on 14/09/20.
+ *
+ * @source: LeetCode
+ * @topic: Sliding Window
+ * @sub-topic: Sliding Window, Two Pointers, Strings
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/consecutive-characters/
+ * @pseudocode: Use Two Pointers -> Solution 2 is updated recently
+ */
 public class Problem_1446 {
     static class Solver {
         // 1ms
-        public int maxPower(String str) {
+        public int solve1(String str) {
             int n = str.length();
             int i = 0; int j = 1;
             int count = 1, maxPow = 1;
@@ -19,26 +29,17 @@ public class Problem_1446 {
             }
             return maxPow;
         }
-    }
-    static class Solver1 {
-        // 0ms
-        public String reverseOnlyLetters(String str) {
-            int i = 0; int j = str.length() - 1;
-            char[] chars = str.toCharArray();
-            while(i <= j) {
-                if( !Character.isLetter(chars[i]) ) {
-                    i++;
-                } else if( !Character.isLetter(chars[j]) ) {
-                    j--;
+        public int solve2(String str) {
+            int n = str.length();
+            int i = 0, maxPower = 1;
+            for(int j = 1; j < n; j++) {
+                if(str.charAt(i) != str.charAt(j)){
+                    i = j;
                 } else {
-                    char temp = chars[j];
-                    chars[j] = chars[i];
-                    chars[i] = temp;
-                    i++;
-                    j--;
+                    maxPower = Math.max(maxPower, j - i + 1);
                 }
             }
-            return new String(chars);
+            return maxPower;
         }
     }
 }
