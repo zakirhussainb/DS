@@ -27,9 +27,8 @@ public class Chapter_8 {
                 if(arr[start] == 1)
                     onesCount--;
                 start++;
-            } else {
-                maxLength = Math.max(maxLength, end - start + 1);
             }
+            maxLength = Math.max(maxLength, end - start + 1);
         }
         return maxLength;
     }
