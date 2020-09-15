@@ -70,7 +70,7 @@
 
     - [x] 1. System Design Basics.
     - [x] 2. Key Characteristics of Distributed Systems.
-    - [ ] 3. Load Balancing.
+    - [x] 3. Load Balancing.
     - [ ] 4. Caching.
     - [ ] 5. Data Partitioning.
     - [ ] 6. Indexes.
