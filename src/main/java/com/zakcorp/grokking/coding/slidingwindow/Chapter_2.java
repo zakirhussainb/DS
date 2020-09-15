@@ -23,10 +23,10 @@ public class Chapter_2 {
      */
     public static void main(String[] args) {
         Solver p = new Solver();
-        int K = 3; int[] arr = new int[]{2, 1, 5, 1, 3, 2};
-//        int K = 2; int[] arr = new int[]{2, 3, 4, 1, 5};
-        System.out.println(p.solve1(K, arr));
-        System.out.println(p.solve2(K, arr));
+        System.out.println(p.solve1(3, new int[]{2, 1, 5, 1, 3, 2}));
+        System.out.println(p.solve2(3, new int[]{2, 1, 5, 1, 3, 2}));
+        System.out.println(p.solve1(2, new int[]{2, 3, 4, 1, 5}));
+        System.out.println(p.solve2(2, new int[]{2, 3, 4, 1, 5}));
     }
     static class Solver {
         // Brute Force Approach -> O(N * K)
@@ -51,11 +51,11 @@ public class Chapter_2 {
             int sum = 0;
             for(int end = 0; end < n; end++) { // O(N)
                 sum = sum + arr[end];
-                if(end >= K - 1) {
-                    maxSum = Math.max(maxSum, sum);
+                if(end - start + 1 > K) {
                     sum = sum - arr[start];
                     start++;
                 }
+                maxSum = Math.max(maxSum, sum);
             }
             return maxSum;
         }
