@@ -13,7 +13,7 @@
         - [x] 5. Fruits into Baskets (medium)
         - [x] 6. No-repeat Substring (hard)
         - [x] 7. Longest Substring with Same Letters after Replacement (hard)
-        - [ ] 8. Longest Subarray with Ones after Replacement (hard)
+        - [x] 8. Longest Subarray with Ones after Replacement (hard)
         - [ ] 9. Problem Challenge 1
         - [ ] 10. Solution Review Problem Challenge 1
         - [ ] 11. Problem Challenge 2
