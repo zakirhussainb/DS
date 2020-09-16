@@ -29,14 +29,15 @@ public class Problem_209 {
             return minLength == Integer.MAX_VALUE ? 0 : minLength;
         }
         public int solve2(int s, int[] arr) {
-            int n = arr.length, sum = 0;
-            Arrays.sort(arr);
-            for(int i = n - 1; i >= 0; i--) {
-                sum += arr[i];
-                if(sum >= s) {
-                    return n - i;
-                }
-            }
+            // TODO:- Implement this using Divide & Conquer(Binary Search)
+//            int n = arr.length, sum = 0;
+//            Arrays.sort(arr);
+//            for(int i = n - 1; i >= 0; i--) {
+//                sum += arr[i];
+//                if(sum >= s) {
+//                    return n - i;
+//                }
+//            }
             return 0;
         }
     }
