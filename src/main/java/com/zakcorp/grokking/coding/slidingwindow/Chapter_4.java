@@ -9,7 +9,7 @@ import java.util.*;
  * @topic: Sliding Window Pattern
  * @sub-topic: Longest Substring with K Distinct Characters (medium)
  * @platform: Grokking Course - Coding
- * @problem_link: In Local
+ * @problem_link: In Local, https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/ (But Premium)
  * @pseudocode: Normal Sliding Window
  */
 public class Chapter_4 {
