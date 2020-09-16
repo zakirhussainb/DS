@@ -12,9 +12,10 @@ package com.zakcorp.leetcodemaster;
  */
 public class Problem_209 {
     public int minSubArrayLen(int S, int[] arr) {
-        int minLength = Integer.MAX_VALUE;
+        int n = arr.length;
+        int minLength = n;
         int start = 0, windowSum = 0, end;
-        for(end = 0; end < arr.length; end++) {
+        for(end = 0; end < n; end++) {
             windowSum = windowSum + arr[end];
             while(windowSum >= S) {
                 minLength = Math.min(minLength, end - start + 1);
@@ -22,6 +23,6 @@ public class Problem_209 {
                 start++;
             }
         }
-        return minLength;
+        return minLength == n ? 0 : minLength;
     }
 }
