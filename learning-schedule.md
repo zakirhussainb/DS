@@ -99,10 +99,6 @@
     - [ ] 29. Additional Resources.
 
 Daily Time Allotted
-- 7am to 11am - GC
-- 11am to 12pm - BB
-- 12pm to 4pm - GO
-- 4pm to 7pm - BB
-- 7pm to 11pm - GS
-- 11pm to 1.30am - HC
-- 1.30m to 6.30am - Sleep
+- 7am to 12pm - GC
+- 12pm to 7pm - BB
+- 7pm to 12pm - GS
