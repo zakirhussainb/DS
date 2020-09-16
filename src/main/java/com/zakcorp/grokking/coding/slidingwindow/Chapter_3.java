@@ -3,11 +3,11 @@ package com.zakcorp.grokking.coding.slidingwindow;
 /**
  * Created by Zakir Hussain B on 03/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking Coding
+ * @topic: Sliding Window
+ * @sub-topic: Smallest Subarray with a given sum (easy)
+ * @platform: Grokking Coding Interview
+ * @problem_link: Local, https://leetcode.com/problems/minimum-size-subarray-sum/
  * @pseudocode:
  */
 public class Chapter_3 {
