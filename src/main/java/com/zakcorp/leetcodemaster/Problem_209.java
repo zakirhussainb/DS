@@ -13,7 +13,7 @@ package com.zakcorp.leetcodemaster;
 public class Problem_209 {
     public int minSubArrayLen(int S, int[] arr) {
         int n = arr.length;
-        int minLength = n;
+        int minLength = Integer.MAX_VALUE;
         int start = 0, windowSum = 0, end;
         for(end = 0; end < n; end++) {
             windowSum = windowSum + arr[end];
@@ -23,6 +23,6 @@ public class Problem_209 {
                 start++;
             }
         }
-        return minLength == n ? 0 : minLength;
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
     }
 }

@@ -19,4 +19,8 @@ public class Problem_209_Test {
     public void test3() {
         assertEquals(0, p.minSubArrayLen(3, new int[]{1,1}));
     }
+    @Test
+    public void test4() {
+        assertEquals(5, p.minSubArrayLen(15, new int[]{1,2,3,4,5}));
+    }
 }
