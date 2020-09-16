@@ -10,7 +10,7 @@
         - [x] 2. Maximum Sum Subarray of Size K (easy) - Revised{{**1**}}
         - [x] 3. Smallest Subarray with a given sum (easy) - Revised{{**1**}}
         - [x] 4. Longest Substring with K Distinct Characters (medium) - Revised{{**1**}}
-        - [x] 5. Fruits into Baskets (medium)
+        - [x] 5. Fruits into Baskets (medium) - Revised{{**1**}}
         - [x] 6. No-repeat Substring (hard)
         - [x] 7. Longest Substring with Same Letters after Replacement (hard)
         - [x] 8. Longest Subarray with Ones after Replacement (hard)
