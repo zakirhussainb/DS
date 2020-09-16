@@ -6,21 +6,20 @@ package com.zakcorp.grokking.coding.slidingwindow;
  * @source: Educative.io
  * @topic: Coding Problems Patterns
  * @sub-topic: Sliding Window
- * @platform:
- * @problem_link:
+ * @platform: Grokking Coding Interview
+ * @problem_link: Local, Similar(https://leetcode.com/problems/maximum-subarray/)
  * @pseudocode:
- *  Maximum Sum Subarray of Size K
+ * Maximum Sum Sub-array of Size K
+ * Problem Statement #
+ * Given an array of positive numbers and a positive number ‘k’,
+ * find the maximum sum of any contiguous subarray of size ‘k’.
+ * Input: [2, 1, 5, 1, 3, 2], k=3
+ * Output: 9
+ * Input: [2, 3, 4, 1, 5], k=2
+ * Output: 7
  */
 public class Chapter_2 {
-    /**
-     * Problem Statement #
-     * Given an array of positive numbers and a positive number ‘k’,
-     * find the maximum sum of any contiguous subarray of size ‘k’.
-     * Input: [2, 1, 5, 1, 3, 2], k=3
-     * Output: 9
-     * Input: [2, 3, 4, 1, 5], k=2
-     * Output: 7
-     */
+
     public static void main(String[] args) {
         Solver p = new Solver();
         System.out.println(p.solve1(3, new int[]{2, 1, 5, 1, 3, 2}));
