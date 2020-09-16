@@ -1,8 +1,5 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 public class Problem_53 {
     static class Solver {
         public int findMaxSubArrayUsingKadane(int[] arr) {
@@ -15,6 +12,19 @@ public class Problem_53 {
                 finalMax = Math.max(finalMax, currentMax);
             }
             return finalMax;
+        }
+        public int solve1(int[] arr) {
+            int n = arr.length;
+            if(n == 1)
+                return arr[0];
+            int sum = 0, maxSum = Integer.MIN_VALUE;
+            for (int num : arr) {
+                sum += num;
+                maxSum = Math.max(maxSum, sum);
+                if (sum < 0)
+                    sum = 0;
+            }
+            return maxSum;
         }
     }
 }
