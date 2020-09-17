@@ -11,7 +11,7 @@
         - [x] 3. Smallest Subarray with a given sum (easy) - Revised{{**1**}}
         - [x] 4. Longest Substring with K Distinct Characters (medium) - Revised{{**1**}}
         - [x] 5. Fruits into Baskets (medium) - Revised{{**1**}}
-        - [x] 6. No-repeat Substring (hard)
+        - [x] 6. No-repeat Substring (hard) - Revised{{**1**}}
         - [x] 7. Longest Substring with Same Letters after Replacement (hard)
         - [x] 8. Longest Subarray with Ones after Replacement (hard)
         - [ ] 9. Problem Challenge 1
