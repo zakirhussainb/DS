@@ -59,7 +59,10 @@ public class Problem_424 {
             char[] chars = str.toCharArray();
             for(int end = 0; end < n; end++) {
                 maxRepeatLetterCount = Math.max(maxRepeatLetterCount, ++letterFreq[chars[end] - 'A']);
-                while(end - start + 1 - maxRepeatLetterCount > K) { // Here using while loop instead of if -> TODO:- Research Why ?
+                // Here using while loop instead of if -> TODO:- Research Why ? Because Imagine the window,
+                //  it must always include valid 'start' and 'end' positions only. i.e.
+                // To adjust the window size until it has K characters to be replaced
+                while(end - start + 1 - maxRepeatLetterCount > K) {
                     letterFreq[chars[start] - 'A']--;
                     start++;
                 }
