@@ -13,6 +13,38 @@ import java.util.*;
  * @pseudocode:
  */
 public class Problem_567 {
+    static class Solver {
+        public boolean solve1(String pattern, String str) {
+            Map<Character, Integer> charFreqMap = new HashMap<>();
+            for(int i = 0; i < pattern.length(); i++) {
+                charFreqMap.put(pattern.charAt(i), charFreqMap.getOrDefault(pattern.charAt(i), 0) + 1);
+            }
+            int start = 0, matched = 0;
+            for(int end = 0; end < str.length(); end++) {
+                char endChar = str.charAt(end);
+                if(charFreqMap.containsKey(endChar)) {
+                    charFreqMap.put(endChar, charFreqMap.get(endChar) - 1);
+                    if(charFreqMap.get(endChar) == 0) { // character is completely matched
+                        matched++;
+                    }
+                }
+                if(matched == charFreqMap.size()){
+                    return true;
+                }
+                if(end >= pattern.length() - 1) {
+                    char startChar = str.charAt(start);
+                    if(charFreqMap.containsKey(startChar)) {
+                        if(charFreqMap.get(startChar) == 0) {
+                            matched--;
+                        }
+                        charFreqMap.put(startChar, charFreqMap.get(startChar) + 1);
+                    }
+                    start++;
+                }
+            }
+            return false;
+        }
+    }
     public boolean checkInclusion(String s1, String s2) {
         Set<String> set = new HashSet<>();
         permute(s1, 0, s1.length() - 1, set);
