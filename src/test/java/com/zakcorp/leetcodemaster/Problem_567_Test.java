@@ -14,4 +14,8 @@ public class Problem_567_Test {
     public void test2() {
         assertFalse(p.checkInclusion("ab", "eidboaoo"));
     }
+    @Test
+    public void test3() {
+        assertTrue(p.checkInclusion("adc", "dcda"));
+    }
 }

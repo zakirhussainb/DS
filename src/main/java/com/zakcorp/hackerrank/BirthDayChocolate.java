@@ -14,36 +14,17 @@ import java.util.*;
  */
 public class BirthDayChocolate {
     public int birthday(List<Integer> s, int d, int m) {
-        int start = 0, sum = 0, ways = 0;
-        for(int end = 0; end < s.size(); end++) {
-            sum += s.get(end);
-            if(end - start + 1 > m) {
-                if(sum - s.get(end) == d) {
-                    ways++;
-                }
-                sum = sum - s.get(start);
-                start++;
+        int sum = 0, ways = 0;
+        for(int i = 0; i < m; i++) {
+            sum = sum + s.get(i);
+        }
+        for(int i = 0; i < s.size() - m + 1; i++) {
+            if(sum == d) {
+                ways++;
             }
-        }
-        if(ways == 0 && sum == d && s.size() == m) {
-            return 1;
-        }
-        return ways;
-    }
-    public int birthday1(List<Integer> s, int d, int m) {
-        int start = 0, sum = 0, ways = 0;
-        for(int end = 0; end < s.size(); end++) {
-            sum += s.get(end);
-            if(sum > d) {
-                if(sum - s.get(end) == d && end - start + 1 == m) {
-                    ways++;
-                }
-                sum = sum - s.get(start);
-                start++;
+            if(i + m < s.size()) {
+                sum = sum - s.get(i) + s.get(i + m);
             }
-        }
-        if(ways == 0 && sum == d && s.size() == m) {
-            return 1;
         }
         return ways;
     }
