@@ -100,5 +100,43 @@
 
 Daily Time Allotted
 - 7am to 12pm - GC
-- 12pm to 7pm - BB
-- 7pm to 12pm - GS
+- 12pm to 7pm - BB (HR-2 && React-1)
+- 7pm to 12pm - GS/O
+
+Sep 01'2020 to Apr 15'2021
+
+1. Grokking Coding Interview
+	Sep 01'2020 to Feb 28'2021
+
+2. Grokking System Design
+	Sep 01'2020 to Dec 22'2020
+
+3. Grokking Object Oriented
+	Sep 01'2020 to Dec 22'2020
+
+4. HackerRank - Daily 1 Problem {Easy -> Medium -> Hard}
+	Sep 01'2020 to Dec 31'2021
+
+5. Java Collections Framework -> All data structures -> Internal Understanding
+	Oct 01'2020 to Dec 22'2020
+	Materials -> DurgaSoft, etc.
+
+6. Data Structures only -> All concepts revisions from all topics
+	Dec 23'2020 to Jan'03 2020
+
+7. Pramp Interviews Daily -> DSA
+	March'01 2021 to March'31 2021
+
+8. Pramp Interviews Daily -> System Design
+	April'01 2021 to April'15 2021
+
+GS/O -> 5 hours
+GC -> 5 hours
+HR -> 2 hours
+BB -> 5 hours
+- React
+  - 1 hour 
+        - LinkedIn Learning(Sep'21 to Sep 30 2020)
+        - ReactJS 30 days course(Oct'01 2020 to Oct'31 2020)
+        - Start Building apps (Snipdata and Library Management System) 
+        - Nov'21 2020 to Dec'31 2020
