@@ -52,6 +52,12 @@ public class DrawingBook {
         }
         return minTurns;
     }
+    static int pageCount1(int n, int p) {
+        int totalPageTurnCountFromFront = n / 2;
+        int targetPageTurnCountFromFront = p / 2;
+        int targetPageTurnCountFromBack = totalPageTurnCountFromFront - targetPageTurnCountFromFront;
+        return Math.min(targetPageTurnCountFromFront, targetPageTurnCountFromBack);
+    }
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -63,8 +69,8 @@ public class DrawingBook {
         int p = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
 
-        int result = pageCount(n, p);
-        System.out.println(result);
+//        System.out.println(pageCount(n, p));
+        System.out.println(pageCount1(n, p));
         scanner.close();
     }
 }
