@@ -11,6 +11,11 @@ package com.zakcorp.grokking.coding.twopointers;
  * @pseudocode:
  */
 public class Chapter_2 {
+    /*
+    Here the array is sorted, so we can just use two-pointers to solve the problem.
+    But when the array is not sorted and you need to return the index of the pair, then you must use a HashMap to store
+    the array element and index, See:- com/zakcorp/leetcodemaster/Problem_1.java
+     */
     public int[] findPairWithTargetSum(int[] arr, int target) {
         int[] result = new int[2];
         int n = arr.length;
