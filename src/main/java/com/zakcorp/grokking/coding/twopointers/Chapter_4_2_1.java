@@ -11,7 +11,7 @@ package com.zakcorp.grokking.coding.twopointers;
  * @pseudocode:
  */
 public class Chapter_4_2_1 {
-    // For Tests refer:-
+    // For Tests refer:- com/zakcorp/leetcodemaster/Problem_141_Test.java
     public static class ListNode {
         public int val;
         public ListNode next;
@@ -19,27 +19,18 @@ public class Chapter_4_2_1 {
             this.val = val;
         }
     }
-    public int detectCycleAndGetLength(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         if(head == null) {
-            return -1;
+            return false;
         }
         ListNode slow = head, fast = head;
         while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if(slow == fast) {
-                return calculateLength(slow);
+                return true;
             }
         }
-        return -1;
-    }
-    private int calculateLength(ListNode slow) {
-        ListNode curr = slow;
-        int cycleLength = 0;
-        do {
-            curr = curr.next;
-            cycleLength++;
-        }while(curr != slow);
-        return cycleLength;
+        return false;
     }
 }

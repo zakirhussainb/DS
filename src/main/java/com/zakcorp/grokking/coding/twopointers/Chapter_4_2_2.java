@@ -10,8 +10,8 @@ package com.zakcorp.grokking.coding.twopointers;
  * @problem_link:
  * @pseudocode:
  */
-public class Chapter_4_2 {
-    // For Tests refer:- com/zakcorp/leetcodemaster/Problem_141_Test.java
+public class Chapter_4_2_2 {
+    // For Tests refer:-
     public static class ListNode {
         public int val;
         public ListNode next;
@@ -19,18 +19,27 @@ public class Chapter_4_2 {
             this.val = val;
         }
     }
-    public boolean hasCycle(ListNode head) {
+    public int detectCycleAndGetLength(ListNode head) {
         if(head == null) {
-            return false;
+            return -1;
         }
         ListNode slow = head, fast = head;
         while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if(slow == fast) {
-                return true;
+                return calculateLength(slow);
             }
         }
-        return false;
+        return -1;
+    }
+    private int calculateLength(ListNode slow) {
+        ListNode curr = slow;
+        int cycleLength = 0;
+        do {
+            curr = curr.next;
+            cycleLength++;
+        }while(curr != slow);
+        return cycleLength;
     }
 }
