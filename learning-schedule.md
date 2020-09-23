@@ -14,8 +14,8 @@
         - [x] 6. No-repeat Substring (hard) - Revised{{**1**}}
         - [x] 7. Longest Substring with Same Letters after Replacement (hard) - Revised{{**1**}}
         - [x] 8. Longest Subarray with Ones after Replacement (hard)
-        - [ ] 9. Problem Challenge 1
-        - [ ] 10. Solution Review Problem Challenge 1
+        - [x] 9. Problem Challenge 1
+        - [x] 10. Solution Review Problem Challenge 1
         - [ ] 11. Problem Challenge 2
         - [ ] 12. Solution Review Problem Challenge 2
         - [ ] 13. Problem Challenge 3
@@ -23,6 +23,20 @@
         - [ ] 15. Problem Challenge 4
         - [ ] 16. Solution Review Problem Challenge 4
     - [ ] 3. Pattern Two Pointers
+        - [x] 1. Introduction
+        - [x] 2. Pair with Target Sum (easy)
+        - [x] 3. Remove Duplicates (easy)
+        - [ ] 4. Squaring a Sorted Array (easy)
+        - [ ] 5. Triplet Sum to Zero (medium)
+        - [ ] 6. Triplet Sum Close to Target (medium)
+        - [ ] 7. Triplets with Smaller Sum (medium)
+        - [ ] 8. Dutch National Flag Problem (medium)
+        - [ ] 9. Problem Challenge 1
+        - [ ] 10. Solution Review Problem Challenge 1
+        - [ ] 11. Problem Challenge 2
+        - [ ] 12. Solution Review Problem Challenge 2
+        - [ ] 13. Problem Challenge 3
+        - [ ] 14. Solution Review Problem Challenge 3
     - [ ] 4. Pattern Fast _ Slow pointers
     - [ ] 5. Pattern Merge Intervals
     - [ ] 6. Pattern Cyclic Sort
