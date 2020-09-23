@@ -135,7 +135,7 @@ Sep 01'2020 to Apr 15'2021
 	Oct 01'2020 to Dec 22'2020
 	Materials -> DurgaSoft, etc.
 
-6. Data Structures only -> All concepts revisions from all topics
+6. Data Structures only -> All concepts revisions from all topics + Cracking the Coding Interview Book
 	Dec 23'2020 to Jan'03 2020
 
 7. Pramp Interviews Daily -> DSA
@@ -150,7 +150,6 @@ HR -> 2 hours
 BB -> 5 hours
 - React
   - 1 hour 
-        - LinkedIn Learning(Sep'21 to Sep 30 2020)
-        - ReactJS 30 days course(Oct'01 2020 to Oct'31 2020)
-        - Start Building apps (Snipdata and Library Management System) 
-        - Nov'21 2020 to Dec'31 2020
+        - Udemy(Sep'24 to Nov 30 2020)
+        - https://reactjs.org/community/examples.html(Dec 2020)
+        - Start Building apps (Snipdata and Library Management System)
