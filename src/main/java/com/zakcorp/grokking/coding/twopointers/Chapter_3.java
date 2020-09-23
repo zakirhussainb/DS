@@ -10,7 +10,7 @@ package com.zakcorp.grokking.coding.twopointers;
  * @problem_link:
  * @pseudocode:
  */
-public class Chapter_2 {
+public class Chapter_3 {
     public int removeDuplicates(int[] arr) {
         int n = arr.length;
         int nextNonDup = 1;
