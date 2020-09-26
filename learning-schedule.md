@@ -38,6 +38,17 @@
         - [ ] 13. Problem Challenge 3
         - [ ] 14. Solution Review Problem Challenge 3
     - [ ] 4. Pattern Fast _ Slow pointers
+        - [x] 1.Introduction
+        - [x] 2. LinkedList Cycle (easy)
+        - [x] 3. Start of LinkedList Cycle (medium)
+        - [ ] 4. Happy Number (medium)
+        - [ ] 5. Middle of the LinkedList (easy)
+        - [ ] 6. Problem Challenge 1
+        - [ ] 7. Solution Review Problem Challenge 1
+        - [ ] 8. Problem Challenge 2
+        - [ ] 9. Solution Review Problem Challenge 2
+        - [ ] 10. Problem Challenge 3
+        - [ ] 11. Solution Review Problem Challenge 3
     - [ ] 5. Pattern Merge Intervals
     - [ ] 6. Pattern Cyclic Sort
     - [ ] 7. Pattern In-place Reversal of a LinkedList
@@ -153,3 +164,7 @@ BB -> 5 hours
         - Udemy(Sep'24 to Nov 30 2020)
         - https://reactjs.org/community/examples.html(Dec 2020)
         - Start Building apps (Snipdata and Library Management System)
+
+For System Design/ Object Oriented Design.
+Please refer this following link:-
+1. [System Design - Things to know](https://docs.google.com/document/d/1YpmmQkwfqFHSXlr4spCViu5NEQGermAuTD5dqpJJvxA/edit?usp=sharing)

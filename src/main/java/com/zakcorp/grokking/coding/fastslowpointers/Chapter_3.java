@@ -1,4 +1,4 @@
-package com.zakcorp.grokking.coding.twopointers;
+package com.zakcorp.grokking.coding.fastslowpointers;
 
 /**
  * Created by Zakir Hussain B on 23/09/20.
@@ -10,7 +10,7 @@ package com.zakcorp.grokking.coding.twopointers;
  * @problem_link:
  * @pseudocode:
  */
-public class Chapter_4_3 {
+public class Chapter_3 {
     public static class ListNode {
         int val;
         ListNode next;
