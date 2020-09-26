@@ -26,7 +26,7 @@
         - [x] 1. Introduction
         - [x] 2. Pair with Target Sum (easy)
         - [x] 3. Remove Duplicates (easy)
-        - [ ] 4. Squaring a Sorted Array (easy)
+        - [x] 4. Squaring a Sorted Array (easy)
         - [ ] 5. Triplet Sum to Zero (medium)
         - [ ] 6. Triplet Sum Close to Target (medium)
         - [ ] 7. Triplets with Smaller Sum (medium)

@@ -14,12 +14,7 @@ import java.util.*;
  */
 public class Chapter_4 {
     public int[] makeSquares(int[] arr) {
-        int n = arr.length;
-        int[] result = new int[n];
-        for(int i = 0; i < n; i++) {
-            result[i] = arr[i] * arr[i];
-        }
-        Arrays.sort(result);
-        return result;
+        //TODO:- Refer the leetcode problem for different solutions -> com/zakcorp/leetcodemaster/Problem_977.java
+        return null;
     }
 }
