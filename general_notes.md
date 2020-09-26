@@ -55,7 +55,7 @@ https://codeforces.com/blog/entry/68288
         - User must be able to search for a movie and rate the movie.
     - {Technical Components/Services}
         - This will be developed as a full stack microservice based application.
-        - **Microservice 1 - Movie Information Service**
+        - **Microservice 1 - Movie Information Service** -> Let's call this as **Movie Miner**
             - This will be written in python using pyscrapy and the purpose of this service is to crawl all 
             the movies available till date and store them with the relevant movie metadata in a 
             MongoDB(Database is subjective to change).

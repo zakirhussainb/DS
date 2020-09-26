@@ -153,7 +153,10 @@ Sep 01'2020 to Apr 15'2021
 	March'01 2021 to March'31 2021
 
 8. Pramp Interviews Daily -> System Design
-	April'01 2021 to April'15 2021
+	- April'01 2021 to April'15 2021
+	
+9. **Movie Information Application**
+    - Dec'25 2020 to Jan'3'2020
 
 GS/O -> 5 hours
 GC -> 5 hours
