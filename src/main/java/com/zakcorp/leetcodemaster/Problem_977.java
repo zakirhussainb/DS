@@ -1,6 +1,6 @@
-package com.zakcorp.grokking.coding.twopointers;
+package com.zakcorp.leetcodemaster;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * Created by Zakir Hussain B on 27/09/20.
@@ -12,8 +12,8 @@ import java.util.*;
  * @problem_link: https://leetcode.com/problems/squares-of-a-sorted-array/
  * @pseudocode:
  */
-public class Chapter_4 {
-    public int[] makeSquares(int[] arr) {
+public class Problem_977 {
+    public int[] sortedSquares(int[] arr) {
         int n = arr.length;
         int[] result = new int[n];
         for(int i = 0; i < n; i++) {
