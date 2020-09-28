@@ -33,8 +33,8 @@
         - [ ] 8. Dutch National Flag Problem (medium)
         - [ ] 9. Problem Challenge 1
         - [ ] 10. Solution Review Problem Challenge 1
-        - [ ] 11. Problem Challenge 2
-        - [ ] 12. Solution Review Problem Challenge 2
+        - [x] 11. Problem Challenge 2
+        - [x] 12. Solution Review Problem Challenge 2
         - [ ] 13. Problem Challenge 3
         - [ ] 14. Solution Review Problem Challenge 3
     - [ ] 4. Pattern Fast _ Slow pointers
