@@ -171,3 +171,21 @@ BB -> 5 hours
 For System Design/ Object Oriented Design.
 Please refer this following link:-
 1. [System Design - Things to know](https://docs.google.com/document/d/1YpmmQkwfqFHSXlr4spCViu5NEQGermAuTD5dqpJJvxA/edit?usp=sharing)
+
+***
+         LeetCode Practice - Mistakes to Avoid
+***
+
+1. The details aren't always there (ask questions in an Interview)
+2. Working Code ISN'T everything (improve your efficiency)
+3. Your code isn't evaluated, YOU ARE! (think out loud)
+    - Your approach to solve the problem by visualizing it, matters the most.
+4. Focusing on things that don't matter (don't worry about comparative statistics on Leetcode)
+    - Work on the time and space complexities and explicitly state them out to the interviewer.
+5. Not practicing in the right setting (practice without autocomplete/syntax highlighting using a whiteboard/pen-paper)
+    - Talk out loud to the interviewer while you solve the problem, code and debug the test cases on a whiteboard.
+6. Aspects like how you communicate, listen and respond to things matter as much as your coding skills
+
+
+
+
