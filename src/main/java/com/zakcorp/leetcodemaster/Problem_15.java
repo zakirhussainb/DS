@@ -83,7 +83,7 @@ public class Problem_15 {
                     right--;
                     while(left < right && arr[left] == arr[left - 1])
                         left++;
-                    while(left < right && arr[right] == arr[right - 1])
+                    while(left < right && arr[right] == arr[right + 1])
                         right--;
                 } else if( tripletSum < 0 ) {
                     left++;

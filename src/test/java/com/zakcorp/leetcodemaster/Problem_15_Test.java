@@ -37,4 +37,13 @@ public class Problem_15_Test {
         assertEquals(output, p.solve1(new int[]{-2,0,0,2,2}));
         assertEquals(output, p.solve2(new int[]{-2,0,0,2,2}));
     }
+    @Test
+    public void test5() {
+        List<List<Integer>> output = new ArrayList<>();
+        output.add(Arrays.asList(-2,0,2));
+        output.add(Arrays.asList(-2,1,1));
+//        assertEquals(output, p.solve1(new int[]{-2,0,1,1,2}));
+//        assertEquals(output, p.solve2(new int[]{-2,0,1,1,2}));
+        assertEquals(output, p.solve3(new int[]{-2,0,1,1,2}));
+    }
 }
