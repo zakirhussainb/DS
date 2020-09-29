@@ -61,5 +61,36 @@ public class Problem_15 {
             }
             return new ArrayList<>(result);
         }
+        public List<List<Integer>> solve3(int[] arr) {
+            int n = arr.length;
+            if(n == 0)
+                return new ArrayList<>();
+            List<List<Integer>> result = new ArrayList<>();
+            Arrays.sort(arr);
+            for(int i = 0; i < n - 2; i++) {
+                if(i > 0 && arr[i] == arr[i - 1])
+                    continue;
+                findTriplet(arr, result, i, i + 1, n - 1);
+            }
+            return result;
+        }
+        private void findTriplet(int[] arr, List<List<Integer>> result, int x, int left, int right) {
+            while(left < right) {
+                int tripletSum = arr[left] + arr[right] + arr[x];
+                if( tripletSum == 0) {
+                    result.add(Arrays.asList(arr[left], arr[right], arr[x]));
+                    left++;
+                    right--;
+                    while(left < right && arr[left] == arr[left - 1])
+                        left++;
+                    while(left < right && arr[right] == arr[right - 1])
+                        right--;
+                } else if( tripletSum < 0 ) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
     }
 }

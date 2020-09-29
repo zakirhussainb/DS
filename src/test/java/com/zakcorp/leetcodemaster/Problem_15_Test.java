@@ -11,10 +11,11 @@ public class Problem_15_Test {
     @Test
     public void test1() {
         List<List<Integer>> output = new ArrayList<>();
-        output.add(Arrays.asList(-1,-1,2));
-        output.add(Arrays.asList(-1,0,1));
-        assertEquals(output, p.solve1(new int[]{-1,0,1,2,-1,-4}));
-        assertEquals(output, p.solve2(new int[]{-1,0,1,2,-1,-4}));
+        output.add(Arrays.asList(-1, 2, -1));
+        output.add(Arrays.asList(0, 1, -1));
+//        assertEquals(output, p.solve1(new int[]{-1,0,1,2,-1,-4}));
+//        assertEquals(output, p.solve2(new int[]{-1,0,1,2,-1,-4}));
+        assertEquals(output, p.solve3(new int[]{-1,0,1,2,-1,-4}));
     }
     @Test
     public void test2() {
