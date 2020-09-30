@@ -1,13 +1,15 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.*;
+
 /**
  * Created by Zakir Hussain B on 30/09/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking Coding, LeetCode
+ * @topic: Two-Pointers
+ * @sub-topic: Triplet Sum Close to Target
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/3sum-closest/
  * @pseudocode:
  */
 public class Problem_16 {
@@ -32,6 +34,39 @@ public class Problem_16 {
                                 y = currentSum;
                             }
                         }
+                    }
+                }
+            }
+            if(aDist == bDist)
+                return Math.min(x, y);
+            else if(aDist < bDist)
+                return x;
+            else
+                return y;
+        }
+        public int solve2(int[] arr, int target) {
+            Arrays.sort(arr);
+            int n = arr.length;
+            int aDist = Integer.MAX_VALUE, bDist = Integer.MAX_VALUE, x = Integer.MAX_VALUE, y = Integer.MAX_VALUE;
+            for(int i = 0; i < n - 2; i++) {
+                int left = i + 1;
+                int right = n - 1;
+                while(left < right) {
+                    int currSum = arr[i] + arr[left] + arr[right];
+                    if(currSum == target) {
+                        return currSum;
+                    } else if(currSum < target) {
+                        if(aDist > target - currSum) {
+                            aDist = target - currSum;
+                            x = currSum;
+                        }
+                        left++;
+                    } else {
+                        if(bDist > currSum - target) {
+                            bDist = currSum - target;
+                            y = currSum;
+                        }
+                        right--;
                     }
                 }
             }
