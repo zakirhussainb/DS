@@ -77,5 +77,23 @@ public class Problem_16 {
             else
                 return y;
         }
+        public int solve3(int[] arr, int target) {
+            int diff = Integer.MAX_VALUE; int n = arr.length;
+            Arrays.sort(arr);
+            for(int i = 0; i < n - 2; i++) {
+                int left = i + 1, right = n - 1;
+                while(left < right) {
+                    int sum = arr[i] + arr[left] + arr[right];
+                    if(Math.abs(target - sum) < Math.abs(diff)) {
+                        diff = target - sum;
+                    } else if(sum < target) {
+                        left++;
+                    } else {
+                        right--;
+                    }
+                }
+            }
+            return target - diff;
+        }
     }
 }
