@@ -5,11 +5,11 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 01/10/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking Coding
+ * @topic: Two-Pointers
+ * @sub-topic: Triplets with Smaller Sum
+ * @platform: Grokking Coding
+ * @problem_link: It is there is LeetCode but premium.
  * @pseudocode:
  */
 public class Chapter_7 {
