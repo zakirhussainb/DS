@@ -16,6 +16,7 @@ public class Problem_18_Test {
         output.add(Arrays.asList(-1, 0, 0, 1));
         output.add(Arrays.asList(-2, -1, 1, 2));
         output.add(Arrays.asList(-2, 0, 0, 2));
-        assertEquals(new HashSet<>(output), new HashSet<>(p.solve1(new int[]{1,0,-1,0,-2,2}, 0)));
+//        assertEquals(new HashSet<>(output), new HashSet<>(p.solve1(new int[]{1,0,-1,0,-2,2}, 0)));
+        assertEquals(new HashSet<>(output), new HashSet<>(p.solve2(new int[]{1,0,-1,0,-2,2}, 0)));
     }
 }
