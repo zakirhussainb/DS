@@ -3,7 +3,7 @@ package com.zakcorp.leetcodemaster;
 /**
  * Created by Zakir Hussain B on 02/10/20.
  *
- * @source:
+ * @source: LeetCode
  * @topic:
  * @sub-topic:
  * @platform:
@@ -27,6 +27,30 @@ public class Problem_75 {
             while(count --> 0) {
                 arr[k[0]++] = num;
             }
+        }
+        public int[] solve2(int[] arr) {
+            int i = 0, j = arr.length - 1;
+            while(i < j) {
+                if(arr[i] > arr[j] || arr[i] > arr[i + 1]) {
+                    if(arr[i] > arr[j]) {
+                        swap(arr, i, j);
+                    }
+                    if(arr[i] > arr[i + 1]) {
+                        swap(arr, i, i+1);
+                    } else {
+                        i++;
+                    }
+                } else {
+                    i++;
+                    j--;
+                }
+            }
+            return arr;
+        }
+        private void swap(int[] arr, int x, int y) {
+            int temp = arr[x];
+            arr[x] = arr[y];
+            arr[y] = temp;
         }
     }
 }
