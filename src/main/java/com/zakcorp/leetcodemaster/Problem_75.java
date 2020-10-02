@@ -16,16 +16,15 @@ public class Problem_75 {
         for (int num : arr) {
             counter[num]++;
         }
-        int k = 0;
-        while(counter[0] --> 0) {
-            arr[k++] = 0;
-        }
-        while(counter[1] --> 0) {
-            arr[k++] = 1;
-        }
-        while(counter[2] --> 0) {
-            arr[k++] = 2;
-        }
+        int[] k = {0};
+        sortArray(arr, counter[0], 0, k);
+        sortArray(arr, counter[1], 1, k);
+        sortArray(arr, counter[2], 2, k);
         return arr;
+    }
+    private void sortArray(int[] arr, int count, int num, int[] k) {
+        while(count --> 0) {
+            arr[k[0]++] = num;
+        }
     }
 }
