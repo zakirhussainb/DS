@@ -31,4 +31,9 @@ public class Problem_75_Test {
         assertArrayEquals(new int[]{0,1,2}, p.solve1(new int[]{0,2,1}));
         assertArrayEquals(new int[]{0,1,2}, p.solve2(new int[]{0,2,1}));
     }
+    @Test
+    public void test6() {
+        assertArrayEquals(new int[]{0,1,2}, p.solve1(new int[]{0,2,1}));
+        assertArrayEquals(new int[]{0,1,2}, p.solve2(new int[]{0,2,1}));
+    }
 }
