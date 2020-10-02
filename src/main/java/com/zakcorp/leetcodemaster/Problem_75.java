@@ -32,17 +32,16 @@ public class Problem_75 {
             int n = arr.length;
             if(n == 1)
                 return arr;
-            int i = 0, j = n - 1;
-            while(i <= j) {
-                if(arr[i] > arr[j] || (i != n - 1 && arr[i] > arr[i + 1]) ) {
-                    if(arr[i] > arr[j]) {
-                        swap(arr, i, j);
-                    }
-                    if(arr[i] > arr[i + 1]) {
-                        swap(arr, i, i+1);
-                    }
+            int low = 0, high = n - 1;
+            for(int i = 0; i <= high;) {
+                if(arr[i] == 0) {
+                    swap(arr, i, low);
+                    i++; low++;
+                } else if(arr[i] == 1) {
+                    i++;
                 } else {
-                    j--;
+                    swap(arr, i, high);
+                    high--;
                 }
             }
             return arr;
