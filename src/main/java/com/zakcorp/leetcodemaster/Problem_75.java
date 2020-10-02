@@ -29,8 +29,10 @@ public class Problem_75 {
             }
         }
         public int[] solve2(int[] arr) {
+            if(arr.length == 1)
+                return arr;
             int i = 0, j = arr.length - 1;
-            while(i < j) {
+            while(i <= j) {
                 if(arr[i] > arr[j] || arr[i] > arr[i + 1]) {
                     if(arr[i] > arr[j]) {
                         swap(arr, i, j);
