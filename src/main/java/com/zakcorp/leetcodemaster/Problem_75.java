@@ -29,10 +29,11 @@ public class Problem_75 {
             }
         }
         public int[] solve2(int[] arr) {
-            if(arr.length == 1)
+            int n = arr.length;
+            if(n == 1)
                 return arr;
-            int i = 0, j = arr.length - 1;
-            while(i <= j) {
+            int i = 0, j = n - 1;
+            while(i < j) {
                 if(arr[i] > arr[j] || arr[i] > arr[i + 1]) {
                     if(arr[i] > arr[j]) {
                         swap(arr, i, j);
@@ -46,6 +47,13 @@ public class Problem_75 {
                     i++;
                     j--;
                 }
+            }
+            i = 0;
+            while(i < n) {
+                if(i != n - 1 && arr[i] > arr[i + 1]) {
+                    swap(arr, i, i+1);
+                }
+                i++;
             }
             return arr;
         }
