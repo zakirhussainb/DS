@@ -18,9 +18,8 @@ public class SubArrayDivision {
         for(int end = 0; end < s.size(); end++) {
             sum += s.get(end);
             if(end - start + 1 > m) {
-                if(sum - s.get(end) == d) {
+                if(sum - s.get(end) == d)
                     ways++;
-                }
                 sum = sum - s.get(start);
                 start++;
             }
