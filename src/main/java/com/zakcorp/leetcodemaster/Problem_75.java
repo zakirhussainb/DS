@@ -40,11 +40,8 @@ public class Problem_75 {
                     }
                     if(arr[i] > arr[i + 1]) {
                         swap(arr, i, i+1);
-                    } else {
-                        i++;
                     }
                 } else {
-                    i++;
                     j--;
                 }
             }
