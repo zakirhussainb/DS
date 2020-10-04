@@ -27,12 +27,12 @@
         - [x] 2. Pair with Target Sum (easy)
         - [x] 3. Remove Duplicates (easy)
         - [x] 4. Squaring a Sorted Array (easy)
-        - [ ] 5. Triplet Sum to Zero (medium)
-        - [ ] 6. Triplet Sum Close to Target (medium)
-        - [ ] 7. Triplets with Smaller Sum (medium)
-        - [ ] 8. Dutch National Flag Problem (medium)
-        - [ ] 9. Problem Challenge 1
-        - [ ] 10. Solution Review Problem Challenge 1
+        - [x] 5. Triplet Sum to Zero (medium)
+        - [x] 6. Triplet Sum Close to Target (medium)
+        - [x] 7. Triplets with Smaller Sum (medium)
+        - [x] 8. Dutch National Flag Problem (medium)
+        - [x] 9. Problem Challenge 1
+        - [x] 10. Solution Review Problem Challenge 1
         - [x] 11. Problem Challenge 2
         - [x] 12. Solution Review Problem Challenge 2
         - [ ] 13. Problem Challenge 3
@@ -42,7 +42,7 @@
         - [x] 2. LinkedList Cycle (easy)
         - [x] 3. Start of LinkedList Cycle (medium)
         - [ ] 4. Happy Number (medium)
-        - [ ] 5. Middle of the LinkedList (easy)
+        - [x] 5. Middle of the LinkedList (easy)
         - [ ] 6. Problem Challenge 1
         - [ ] 7. Solution Review Problem Challenge 1
         - [ ] 8. Problem Challenge 2
