@@ -3,11 +3,11 @@ package com.zakcorp.leetcodemaster;
 /**
  * Created by Zakir Hussain B on 05/10/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking Coding
+ * @topic: Fast-Slow Pointers
+ * @sub-topic: Palindrome Linked List
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/palindrome-linked-list/
  * @pseudocode:
  */
 public class Problem_234 {
