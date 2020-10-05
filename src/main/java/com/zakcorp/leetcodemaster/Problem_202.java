@@ -28,6 +28,7 @@ public class Problem_202 {
             int fast = n;
             do {
                 slow = calculateSquare(slow);
+                // if fast pointer is at "1" it will stay at "1" only, without moving forward
                 fast = calculateSquare(calculateSquare(fast));
             }while (slow != fast);
             return slow == 1;
