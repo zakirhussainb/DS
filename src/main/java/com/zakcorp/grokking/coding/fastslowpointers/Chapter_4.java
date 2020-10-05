@@ -5,11 +5,11 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 05/10/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
+ * @source: Grokking Coding/ LeetCode
+ * @topic: Fast-Slow Pointers
+ * @sub-topic: Happy Number
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/happy-number/
  * @pseudocode:
  */
 public class Chapter_4 {
