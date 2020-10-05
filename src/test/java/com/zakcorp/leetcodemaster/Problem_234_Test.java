@@ -10,7 +10,8 @@ public class Problem_234_Test {
     public void test1() {
         Problem_234.ListNode head = new Problem_234.ListNode(1);
         head.next = new Problem_234.ListNode(2);
-        assertFalse(p.solve1(head));
+//        assertFalse(p.solve1(head));
+        assertFalse(p.solve2(head));
     }
     @Test
     public void test2() {
@@ -18,6 +19,7 @@ public class Problem_234_Test {
         head.next = new Problem_234.ListNode(2);
         head.next.next = new Problem_234.ListNode(2);
         head.next.next.next = new Problem_234.ListNode(1);
-        assertTrue(p.solve1(head));
+//        assertTrue(p.solve1(head));
+        assertTrue(p.solve2(head));
     }
 }

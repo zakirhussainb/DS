@@ -45,5 +45,27 @@ public class Problem_234 {
             }
             return q;
         }
+
+        // Approach Two
+        public boolean solve2(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while(fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            ListNode fHead = head;
+            ListNode sHead = reverseLinkedList(slow);
+            while(fHead != null && sHead != null) {
+                if(fHead.val != sHead.val) {
+                    break;
+                }
+                fHead = fHead.next;
+                sHead = sHead.next;
+            }
+            return fHead == null || sHead == null;
+        }
+
     }
 }
