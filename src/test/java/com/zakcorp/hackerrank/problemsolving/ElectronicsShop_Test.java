@@ -1,4 +1,4 @@
-package com.zakcorp.hackerrank;
+package com.zakcorp.hackerrank.problemsolving;
 
 import com.zakcorp.hackerrank.problemsolving.ElectronicsShop;
 import org.junit.Test;
