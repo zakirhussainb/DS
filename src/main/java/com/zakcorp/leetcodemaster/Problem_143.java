@@ -1,10 +1,10 @@
 package com.zakcorp.leetcodemaster;
 
 public class Problem_143 {
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) {
+        public ListNode(int x) {
             val = x;
         }
     }
