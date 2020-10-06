@@ -1,8 +1,7 @@
 package com.zakcorp.hackerrank;
 
+import com.zakcorp.hackerrank.problemsolving.ElectronicsShop;
 import org.junit.Test;
-
-import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 

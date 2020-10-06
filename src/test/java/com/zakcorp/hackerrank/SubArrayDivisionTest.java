@@ -1,5 +1,6 @@
 package com.zakcorp.hackerrank;
 
+import com.zakcorp.hackerrank.problemsolving.SubArrayDivision;
 import org.junit.Test;
 
 import java.util.*;

@@ -1,4 +1,4 @@
-package com.zakcorp.hackerrank;
+package com.zakcorp.hackerrank.problemsolving;
 
 /**
  * Created by Zakir Hussain B on 23/09/20.

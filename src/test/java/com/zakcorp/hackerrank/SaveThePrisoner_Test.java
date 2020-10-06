@@ -1,5 +1,6 @@
 package com.zakcorp.hackerrank;
 
+import com.zakcorp.hackerrank.problemsolving.SavethePrisoner;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

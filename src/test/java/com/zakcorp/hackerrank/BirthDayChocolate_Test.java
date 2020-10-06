@@ -1,5 +1,6 @@
 package com.zakcorp.hackerrank;
 
+import com.zakcorp.hackerrank.problemsolving.BirthDayChocolate;
 import org.junit.Test;
 
 import java.util.*;

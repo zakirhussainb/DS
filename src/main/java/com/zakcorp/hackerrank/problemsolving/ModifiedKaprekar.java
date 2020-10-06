@@ -1,4 +1,4 @@
-package com.zakcorp.hackerrank;
+package com.zakcorp.hackerrank.problemsolving;
 
 import java.util.*;
 

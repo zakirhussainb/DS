@@ -1,9 +1,7 @@
 package com.zakcorp.hackerrank;
 
+import com.zakcorp.hackerrank.problemsolving.BeautifulDaysAtMovies;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
