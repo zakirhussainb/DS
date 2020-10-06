@@ -41,12 +41,12 @@
         - [x] 1.Introduction
         - [x] 2. LinkedList Cycle (easy)
         - [x] 3. Start of LinkedList Cycle (medium)
-        - [ ] 4. Happy Number (medium)
+        - [x] 4. Happy Number (medium)
         - [x] 5. Middle of the LinkedList (easy)
-        - [ ] 6. Problem Challenge 1
-        - [ ] 7. Solution Review Problem Challenge 1
-        - [ ] 8. Problem Challenge 2
-        - [ ] 9. Solution Review Problem Challenge 2
+        - [x] 6. Problem Challenge 1
+        - [x] 7. Solution Review Problem Challenge 1
+        - [x] 8. Problem Challenge 2
+        - [x] 9. Solution Review Problem Challenge 2
         - [ ] 10. Problem Challenge 3
         - [ ] 11. Solution Review Problem Challenge 3
     - [ ] 5. Pattern Merge Intervals
@@ -122,7 +122,19 @@
     - [ ] 27. Designing Uber backend.
     - [ ] 28. Design Ticketmaster.
     - [ ] 29. Additional Resources.
-
+    
+4. - [ ] System Design Concepts
+    - [ ] 1. Load Balancing
+    - [ ] 2. Caching
+    - [ ] 3. Data Partitioning
+    - [ ] 4. Indexes
+    - [ ] 5. Proxies.
+    - [ ] 6. Redundancy and Replication.
+    - [ ] 7. SQL vs. NoSQL.
+    - [ ] 8. CAP Theorem.
+    - [ ] 9. Consistent Hashing.
+    - [ ] 10. Long-Polling vs WebSockets vs Server-Sent Events.
+    
 Daily Time Allotted
 - 7am to 12pm - GC
 - 12pm to 7pm - BB (HR-2 && React-1)
