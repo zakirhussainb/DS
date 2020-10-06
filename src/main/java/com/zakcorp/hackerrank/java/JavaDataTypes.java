@@ -20,7 +20,7 @@ public class JavaDataTypes {
                     System.out.println("*  short");
                 if( x >= -Math.pow(2, ONE_INT - 1) && x < Math.pow(2, ONE_INT - 1) )
                     System.out.println("*  int");
-                if( x >= -Math.pow(2, ONE_LONG - 1) && x < Math.pow(2, ONE_LONG - 1) )
+                if( x >= -Math.pow(2, ONE_LONG - 1) && x <= Math.pow(2, ONE_LONG - 1) )
                     System.out.println("*  long");
             }
             catch(Exception e){
