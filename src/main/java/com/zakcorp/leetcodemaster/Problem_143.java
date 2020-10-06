@@ -28,6 +28,16 @@ public class Problem_143 {
             head = t1;
             head2 = t2;
         }
+
+        /* while(head != null && head2 != null){
+            ListNode temp = head.next;
+            head.next = head2;
+            head = temp;
+
+            temp = head2.next;
+            head2.next = head;
+            head2 = temp;
+         }*/
     }
 
     private ListNode reverseList(ListNode head) {
@@ -44,9 +54,10 @@ public class Problem_143 {
     }
 
     private ListNode getMiddle(ListNode head) {
+        // Tweaking the getMiddle method a little in order to fit the problem
         ListNode slow = head;
-        ListNode fast = head;
-        while(fast.next != null && fast.next.next != null){
+        ListNode fast = head.next;
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
