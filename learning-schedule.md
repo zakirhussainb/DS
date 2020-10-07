@@ -47,7 +47,7 @@
         - [x] 7. Solution Review Problem Challenge 1
         - [x] 8. Problem Challenge 2
         - [x] 9. Solution Review Problem Challenge 2
-        - [ ] 10. Problem Challenge 3
+        - [ ] 10. Problem Challenge 3 -> Problem is difficult to understand -> com/zakcorp/leetcodemaster/Problem_457.java
         - [ ] 11. Solution Review Problem Challenge 3
     - [ ] 5. Pattern Merge Intervals
     - [ ] 6. Pattern Cyclic Sort
