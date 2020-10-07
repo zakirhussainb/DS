@@ -1,5 +1,7 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.*;
+
 /**
  * Created by Zakir Hussain B on 07/10/20.
  *
@@ -15,24 +17,33 @@ public class Problem_457 {
         public boolean solve1(int[] arr) {
             int n = arr.length;
             for(int i = 0; i < n; i++) {
-                int m = i;
+                boolean isForward = arr[i] >= 0;
+                int slow = i, fast = i;
                 do {
-                    m = m + arr[m];
-                    if(m < 0) {
-                        break;
-                    }
-                    if(m > n - 1) {
-                        m = m % n;
-                        if(m > i) {
-                            break;
-                        }
-                        if(m == i) {
-                            return true;
-                        }
-                    }
-                }while(m != i);
+                    slow = findNextIndex(arr, isForward, slow);
+                    fast = findNextIndex(arr, isForward, fast);
+                    if(fast != -1)
+                        fast = findNextIndex(arr, isForward, fast);
+                }while(slow != -1 && fast != -1 && slow != fast);
+
+                if(slow != -1 && slow == fast)
+                    return true;
             }
             return false;
+        }
+
+        private int findNextIndex(int[] arr, boolean isForward, int currIndx) {
+            boolean direction = arr[currIndx] >= 0;
+            if(isForward != direction)
+                return -1;
+
+            int nxtIndx = (currIndx + arr[currIndx]) % arr.length;
+            if(nxtIndx < 0)
+                nxtIndx += arr.length;
+            if(nxtIndx == currIndx)
+                nxtIndx = -1;
+
+            return nxtIndx;
         }
     }
 }
