@@ -13,6 +13,12 @@ import java.util.*;
  * @pseudocode:
  */
 public class Problem_457 {
+    // TODO:- This problem is hard and needs understanding of full problem
+    // To understand this problem:-
+    // 1. Solve it using HashSet<>()
+    // 2. Solve it using Slow and Fast Pointers
+    // 3. Solve it using Breadth-First-Search
+    // 4. Solve it using Depth-First-Search
     static class Solver {
         public boolean solve1(int[] arr) {
             int n = arr.length;
