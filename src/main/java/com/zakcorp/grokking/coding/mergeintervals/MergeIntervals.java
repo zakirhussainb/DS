@@ -24,9 +24,11 @@ public class MergeIntervals {
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> mergedIntervals = new LinkedList<>();
         int[] scale = new int[15];
+        int prevIntNo = -1;
         for(int i = 0; i < intervals.size(); i++) {
             int startPos = intervals.get(i).start;
             int endPos = intervals.get(i).end;
+            prevIntNo = i;
             for(int j = startPos; j <= endPos; j++) {
                 if(scale[j] == 0) {
                     scale[j] = i + 1;
