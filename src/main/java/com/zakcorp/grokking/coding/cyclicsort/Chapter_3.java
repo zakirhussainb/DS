@@ -1,18 +1,32 @@
 package com.zakcorp.grokking.coding.cyclicsort;
 
 public class Chapter_3 {
-    static class Solver {
-        public int solve1(int[] arr) {
-            int n = arr.length;
-            int orgSum = 0;
-            for(int i = 0; i <= n; i++) {
-                orgSum += i;
+    /*
+    There are many ways to solve this type of problems,
+    But here we are going to use Cyclic Sort Pattern to solve this problem.
+    It might not be an efficient approach, but it has to be done for understanding
+    the Cyclic Sort Pattern
+     */
+    public int findMissingNumber(int[] arr) {
+        int n = arr.length;
+        for(int i = 0; i < n;) {
+            int j = arr[i] - 1;
+            if(j > 0 && arr[i] != arr[j]) {
+                swap(arr, i, j);
+            } else {
+                i++;
             }
-            int actSum = 0;
-            for (int num : arr) {
-                actSum += num;
-            }
-            return orgSum - actSum;
         }
+        for(int i = 0; i < n; i++) {
+            if(arr[i] == 0) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+    private void swap(int[] arr, int x, int y) {
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
     }
 }
