@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class Problem_448 {
     static class Solver {
-        public List<Integer> findDisappearedNumbers(int[] arr) {
+        public List<Integer> solve1(int[] arr) {
             int n = arr.length;
             List<Integer> result = new ArrayList<>();
             Set<Integer> set = new HashSet<>();
@@ -23,6 +23,20 @@ public class Problem_448 {
             }
             for(int i = 1; i <= n; i++) {
                 if(!set.contains(i)) {
+                    result.add(i);
+                }
+            }
+            return result;
+        }
+        public List<Integer> solve2(int[] arr) {
+            int n = arr.length;
+            List<Integer> result = new ArrayList<>();
+            int[] hash = new int[n + 1];
+            for(int num : arr) {
+                hash[num]++;
+            }
+            for(int i = 1; i <= n; i++) {
+                if(hash[i] == 0) {
                     result.add(i);
                 }
             }
