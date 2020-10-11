@@ -50,7 +50,30 @@
         - [ ] 10. Problem Challenge 3 -> Problem is difficult to understand -> com/zakcorp/leetcodemaster/Problem_457.java
         - [ ] 11. Solution Review Problem Challenge 3
     - [ ] 5. Pattern Merge Intervals
+        - [ ] 1. Introduction
+        - [ ] 2. Merge Intervals (medium)
+        - [ ] 3. Insert Interval (medium)
+        - [ ] 4. Intervals Intersection (medium)
+        - [ ] 5. Conflicting Appointments (medium)
+        - [ ] 6. Problem Challenge 1
+        - [ ] 7. Solution Review Problem Challenge 1
+        - [ ] 8. Problem Challenge 2
+        - [ ] 9. Solution Review Problem Challenge 2
+        - [ ] 10. Problem Challenge 3
+        - [ ] 11. Solution Review Problem Challenge 3
     - [ ] 6. Pattern Cyclic Sort
+        - [x] 1. Introduction
+        - [x] 2. Cyclic Sort (easy)
+        - [x] 3. Find the Missing Number (easy)
+        - [ ] 4. Find all Missing Numbers (easy)
+        - [ ] 5. Find the Duplicate Number (easy)
+        - [ ] 6. Find all Duplicate Numbers (easy)
+        - [ ] 7. Problem Challenge 1
+        - [ ] 8. Solution Review Problem Challenge 1
+        - [ ] 9. Problem Challenge 2
+        - [ ] 10. Solution Review Problem Challenge 2
+        - [ ] 11. Problem Challenge 3
+        - [ ] 12. Solution Review Problem Challenge 3
     - [ ] 7. Pattern In-place Reversal of a LinkedList
     - [ ] 8. Pattern Tree Breadth First Search
     - [ ] 9. Pattern Tree Depth First Search
