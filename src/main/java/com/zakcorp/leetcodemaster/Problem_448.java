@@ -42,5 +42,19 @@ public class Problem_448 {
             }
             return result;
         }
+        public List<Integer> solve3(int[] arr) {
+            int n = arr.length;
+            List<Integer> result = new ArrayList<>();
+            for(int i = 1; i <= n; i++) {
+                int pos = Math.abs(arr[i - 1]);
+                arr[pos - 1] = -Math.abs(arr[pos - 1]);
+            }
+            for(int i = 1; i <= n; i++) {
+                if(arr[i - 1] > 0) {
+                    result.add(i);
+                }
+            }
+            return result;
+        }
     }
 }
