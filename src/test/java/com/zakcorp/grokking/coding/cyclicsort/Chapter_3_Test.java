@@ -14,4 +14,8 @@ public class Chapter_3_Test {
     public void test2() {
         assertEquals(7, p.findMissingNumber(new int[]{8, 3, 5, 2, 4, 6, 0, 1}));
     }
+    @Test
+    public void test3() {
+        assertEquals(2, p.findMissingNumber(new int[]{0, 1, 3}));
+    }
 }

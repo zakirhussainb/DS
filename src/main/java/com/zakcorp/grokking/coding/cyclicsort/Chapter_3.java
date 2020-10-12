@@ -9,20 +9,20 @@ public class Chapter_3 {
      */
     public int findMissingNumber(int[] arr) {
         int n = arr.length;
-        for(int i = 0; i < n;) {
-            int j = arr[i] - 1;
-            if(j > 0 && arr[i] != arr[j]) {
-                swap(arr, i, j);
+        int i = 0;
+        while(i < n) {
+            if(arr[i] < n && arr[i] != arr[arr[i]]) {
+                swap(arr, i, arr[i]);
             } else {
                 i++;
             }
-        }
-        for(int i = 0; i < n; i++) {
-            if(arr[i] == 0) {
-                return i + 1;
+        } // 0 1 4 3
+        for(i = 0 ; i < n; i++) {
+            if(arr[i] != i) {
+                return i;
             }
         }
-        return -1;
+        return arr.length;
     }
     private void swap(int[] arr, int x, int y) {
         int temp = arr[x];
