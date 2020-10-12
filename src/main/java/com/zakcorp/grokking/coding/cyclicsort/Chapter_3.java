@@ -11,7 +11,7 @@ public class Chapter_3 {
         int n = arr.length;
         int i = 0;
         while(i < n) {
-            if(arr[i] < n && arr[i] != arr[arr[i]]) {
+            if(arr[i] < n && arr[i] != i) {
                 swap(arr, i, arr[i]);
             } else {
                 i++;
