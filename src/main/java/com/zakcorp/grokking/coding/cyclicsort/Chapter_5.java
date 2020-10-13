@@ -13,7 +13,7 @@ package com.zakcorp.grokking.coding.cyclicsort;
 public class Chapter_5 {
     public int findNumber(int[] arr) {
         int n = arr.length;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < n;) {
             int j = arr[i] - 1;
             if(arr[i] != arr[j]) {
                 swap(arr, i, j);

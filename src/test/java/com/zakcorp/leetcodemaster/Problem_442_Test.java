@@ -20,6 +20,5 @@ public class Problem_442_Test {
         assertEquals(Collections.singletonList(2),p.solve1(new int[]{2,2}));
         assertEquals(Collections.singletonList(2),p.solve2(new int[]{2,2}));
         assertEquals(Collections.singletonList(2),p.solve3(new int[]{2,2}));
-
     }
 }
