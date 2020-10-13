@@ -222,5 +222,9 @@ Please refer this following link:-
 6. Aspects like how you communicate, listen and respond to things matter as much as your coding skills
 
 
+***
+         Resume Preparation
+***
 
-
+- [ ] 1. Take a look at Fauz Resume -> Check Mail.
+- [ ] 2. [Goals Log - Resume Section](https://docs.google.com/document/d/1HU5TSwYnLbQ7PgO_LLFN_WPTQ5U7je_MQ8oEpR8HZGQ/edit)
