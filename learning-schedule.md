@@ -65,8 +65,8 @@
         - [x] 1. Introduction
         - [x] 2. Cyclic Sort (easy)
         - [x] 3. Find the Missing Number (easy)
-        - [ ] 4. Find all Missing Numbers (easy)
-        - [ ] 5. Find the Duplicate Number (easy)
+        - [x] 4. Find all Missing Numbers (easy)
+        - [x] 5. Find the Duplicate Number (easy)
         - [ ] 6. Find all Duplicate Numbers (easy)
         - [ ] 7. Problem Challenge 1
         - [ ] 8. Solution Review Problem Challenge 1

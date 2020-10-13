@@ -13,10 +13,25 @@ package com.zakcorp.grokking.coding.cyclicsort;
 public class Chapter_5 {
     public int findNumber(int[] arr) {
         int n = arr.length;
-        int dup = arr[0];
-        for(int i = 1; i < n; i++) {
-            dup = dup ^ arr[i];
+        for(int i = 0; i < n; i++) {
+            int j = arr[i] - 1;
+            if(arr[i] != arr[j]) {
+                swap(arr, i, j);
+            } else {
+                i++;
+            }
         }
-        return dup;
+        return arr[n - 1];
+//        for(int i = 0; i < n; i++) {
+//            if(arr[i] != i + 1) {
+//                return arr[i];
+//            }
+//        }
+//        return -1;
+    }
+    private void swap(int[] arr, int x, int y) {
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
     }
 }
