@@ -44,5 +44,21 @@ public class Problem_442 {
             }
             return list;
         }
+        public List<Integer> solve4(int[] arr) {
+            List<Integer> result = new ArrayList<>();
+            int n = arr.length;
+            if(arr.length < 2) {
+                return result;
+            }
+            for(int i = 0; i < n; i++) {
+                int index = Math.abs(arr[i]);
+                if(arr[index - 1] < 0) {
+                    result.add(index);
+                } else {
+                    arr[index - 1] *= -1;
+                }
+            }
+            return result;
+        }
     }
 }
