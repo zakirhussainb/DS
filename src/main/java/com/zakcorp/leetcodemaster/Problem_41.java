@@ -30,15 +30,20 @@ public class Problem_41 {
             }
             return maxN < 0 ? 1 : maxN + 1;
         }
-        public int solve2(int[] arr) {
-            if(arr.length == 0) {
+        // Using a separate hash[] table array wont work due to the size constraints
+        /*public int solve2(int[] arr) {
+            if( arr.length == 0 || (arr.length == 1 && arr[0] == 2147483647) ) {
                 return 1;
             }
             int maxN = Integer.MIN_VALUE;
             for (int num : arr) {
                 maxN = Math.max(maxN, num);
             }
-            int[] hash = new int[maxN + 1];
+            if(maxN < 0) {
+                maxN = 1;
+            }
+            int sizeOfHash = (maxN == 2147483647) ? 2147483647 : maxN + 1;
+            int[] hash = new int[sizeOfHash];
             for(int num : arr) {
                 if(num >= 0) {
                     hash[num]++;
@@ -49,7 +54,10 @@ public class Problem_41 {
                     return i;
                 }
             }
-            return maxN < 0 ? 1 : maxN + 1;
+            return maxN + 1;
+        }*/
+        public int solve2(int[] arr) {
+            return 0;
         }
     }
 }

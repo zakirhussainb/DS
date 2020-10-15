@@ -41,4 +41,19 @@ public class Problem_41_Test {
         assertEquals(1, p.solve1(new int[]{}));
         assertEquals(1, p.solve2(new int[]{}));
     }
+    @Test
+    public void test8() {
+        assertEquals(1, p.solve1(new int[]{2147483647}));
+        assertEquals(1, p.solve2(new int[]{2147483647}));
+    }
+    @Test
+    public void test9() {
+        assertEquals(1, p.solve1(new int[]{-5}));
+        assertEquals(1, p.solve2(new int[]{-5}));
+    }
+    @Test
+    public void test10() {
+        assertEquals(4, p.solve1(new int[]{1,2,3,10,2147483647,9}));
+        assertEquals(4, p.solve2(new int[]{1,2,3,10,2147483647,9}));
+    }
 }
