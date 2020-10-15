@@ -58,12 +58,12 @@ public class Problem_41 {
         }*/
         public int solve2(int[] arr) {
             int n = arr.length;
-            for(int i = 0; i < n; i++) {
-                if(arr[i] >= 0 && arr[i] < n) {
-                    int j = arr[i] - 1;
-                    if(arr[i] != arr[j]) {
-                        swap(arr, i, j);
-                    }
+            for(int i = 0; i < n;) {
+                int j = arr[i] - 1;
+                if(arr[i] > 0 && arr[i] <= n && arr[i] != arr[j]) {
+                    swap(arr, i, j);
+                } else {
+                    i++;
                 }
             }
             for(int i = 0; i < n; i++) {
@@ -71,7 +71,7 @@ public class Problem_41 {
                     return i + 1;
                 }
             }
-            return 1;
+            return n + 1;
         }
         private void swap(int[] arr, int x, int y) {
             int temp = arr[x];
