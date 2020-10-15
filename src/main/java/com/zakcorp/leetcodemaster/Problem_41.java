@@ -5,9 +5,9 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 15/10/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
+ * @source: Grokking Coding and LeetCode
+ * @topic: Cyclic Sort, Array
+ * @sub-topic: Array
  * @platform:
  * @problem_link:
  * @pseudocode:
@@ -66,12 +66,13 @@ public class Problem_41 {
                     i++;
                 }
             }
-            for(int i = 0; i < n; i++) {
+            int i = 0;
+            for(; i < n; i++) {
                 if(arr[i] != i + 1) {
-                    return i + 1;
+                    break;
                 }
             }
-            return n + 1;
+            return i + 1;
         }
         private void swap(int[] arr, int x, int y) {
             int temp = arr[x];
