@@ -20,4 +20,8 @@ public class Chapter_11_Test {
     public void test4() {
         assertEquals(Arrays.asList(1, 2), p.findNumberX(new int[]{-2, -3, 4}, 2));
     }
+    @Test
+    public void test5() {
+        assertEquals(Arrays.asList(4, 7), p.findNumberX(new int[]{2, 1, 3, 6, 5}, 2));
+    }
 }

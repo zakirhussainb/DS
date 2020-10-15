@@ -13,7 +13,10 @@ import java.util.*;
  * @pseudocode:
  */
 public class Chapter_11 {
+    // This below solution will work only if the array is sorted. Otherwise you need to sort the array.
+    // Which will then give you O(N logN) time complexity.
     public List<Integer> findNumberX(int[] arr, int k) {
+        Arrays.sort(arr);
         List<Integer> missingNumbers = new ArrayList<>();
         int n = arr.length, m = 1, i = 0;
         while(i < n && k > 0) {
