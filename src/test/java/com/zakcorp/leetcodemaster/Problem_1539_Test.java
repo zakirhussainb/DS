@@ -10,15 +10,17 @@ public class Problem_1539_Test {
     public void test1() {
         assertEquals(9, p.solve1(new int[]{2,3,4,7,11}, 5));
         assertEquals(9, p.solve2(new int[]{2,3,4,7,11}, 5));
+        assertEquals(9, p.solve3(new int[]{2,3,4,7,11}, 5));
     }
     @Test
     public void test2() {
         assertEquals(6, p.solve1(new int[]{1, 2, 3, 4}, 2));
         assertEquals(6, p.solve2(new int[]{1, 2, 3, 4}, 2));
+        assertEquals(6, p.solve3(new int[]{1, 2, 3, 4}, 2));
     }
     @Test
     public void test3() {
-        assertEquals(1313, p.solve2(new int[]{1,3,5,6,7,8,11,13,14,16,17,18,19,
+        assertEquals(1313, p.solve3(new int[]{1,3,5,6,7,8,11,13,14,16,17,18,19,
                 20,21,23,24,25,26,28,29,30,31,34,35,36,37,38,41,43,44,47,50,51,53,54,
                 56,57,58,59,60,62,63,65,67,68,69,70,71,72,73,74,76,78,80,81,83,84,85,
                 88,89,90,91,92,93,95,97,98,102,103,104,105,108,109,110,111,112,113,
@@ -31,10 +33,12 @@ public class Problem_1539_Test {
     public void test4() {
         assertEquals(1004, p.solve1(new int[]{997,998,999,1000}, 1000));
         assertEquals(1004, p.solve2(new int[]{997,998,999,1000}, 1000));
+        assertEquals(1004, p.solve3(new int[]{997,998,999,1000}, 1000));
     }
     @Test
     public void test5() {
         assertEquals(25, p.solve1(new int[]{1, 2, 3, 4, 5}, 20));
         assertEquals(25, p.solve2(new int[]{1, 2, 3, 4, 5}, 20));
+        assertEquals(25, p.solve3(new int[]{1, 2, 3, 4, 5}, 20));
     }
 }

@@ -48,5 +48,18 @@ public class Problem_1539 {
             }
             return k - counter + 1000;
         }
+        public int solve3(int[] arr, int k) {
+            int m = 1, i = 0;
+            while (i < arr.length) {
+                if (m != arr[i])
+                    k--;
+                else if (m == arr[i])
+                    i++;
+                if (k == 0)
+                    return m;
+                m++;
+            }
+            return m + k - 1;
+        }
     }
 }
