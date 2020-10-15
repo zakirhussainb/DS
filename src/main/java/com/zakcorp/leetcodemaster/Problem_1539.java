@@ -51,9 +51,9 @@ public class Problem_1539 {
         public int solve3(int[] arr, int k) {
             int m = 1, i = 0;
             while (i < arr.length) {
-                if (m != arr[i])
+                if (arr[i] != m)
                     k--;
-                else if (m == arr[i])
+                else if (arr[i] == m)
                     i++;
                 if (k == 0)
                     return m;
