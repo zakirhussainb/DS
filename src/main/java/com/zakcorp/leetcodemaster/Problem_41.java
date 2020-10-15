@@ -57,7 +57,26 @@ public class Problem_41 {
             return maxN + 1;
         }*/
         public int solve2(int[] arr) {
-            return 0;
+            int n = arr.length;
+            for(int i = 0; i < n; i++) {
+                if(arr[i] >= 0 && arr[i] < n) {
+                    int j = arr[i] - 1;
+                    if(arr[i] != arr[j]) {
+                        swap(arr, i, j);
+                    }
+                }
+            }
+            for(int i = 0; i < n; i++) {
+                if(arr[i] != i + 1) {
+                    return i + 1;
+                }
+            }
+            return 1;
+        }
+        private void swap(int[] arr, int x, int y) {
+            int temp = arr[x];
+            arr[x] = arr[y];
+            arr[y] = temp;
         }
     }
 }

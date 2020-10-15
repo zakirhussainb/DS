@@ -5,28 +5,35 @@ import java.util.*;
 /**
  * Created by Zakir Hussain B on 15/10/20.
  *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
+ * @source: Grokking Coding
+ * @topic: Cyclic Sort
+ * @sub-topic: Find the Smallest Missing Positive Number
+ * @platform: LeetCode
+ * @problem_link: https://leetcode.com/problems/first-missing-positive/
+ * @pseudocode: // TODO:- For solution  using HashSet refer LeetCode Problem 41
  */
 public class Chapter_9 {
+
     public int findNumber(int[] arr) {
-        Set<Integer> set = new HashSet<>();
-        for(int num : arr) {
-            set.add(num);
-        }
-        int maxN = Integer.MIN_VALUE;
-        for (int num : arr) {
-            maxN = Math.max(maxN, num);
-        }
-        for(int i = 1; i <= maxN; i++) {
-            if(!set.contains(i)) {
-                return i;
+        int n = arr.length;
+        for(int i = 0; i < n; i++) {
+            if(arr[i] >= 0 && arr[i] < n) {
+                int j = arr[i] - 1;
+                if(arr[i] != arr[j]) {
+                    swap(arr, i, j);
+                }
             }
         }
-        return -1;
+        for(int i = 0; i < n; i++) {
+            if(arr[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        return 1;
+    }
+    private void swap(int[] arr, int x, int y) {
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
     }
 }
