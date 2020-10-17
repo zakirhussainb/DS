@@ -10,7 +10,8 @@ public class Problem_202_A {
         try {
             String str = in.readString();
             Solver p = new Solver();
-            out.printLine(p.solve1(str));
+//            out.printLine(p.solve1(str));
+            out.printLine(p.solve2(str));
             out.flush();
             out.close();
         } catch (Exception e) {
@@ -29,6 +30,22 @@ public class Problem_202_A {
                 sb.append(entry.getKey());
             }
             return sb.toString();
+        }
+        public String solve2(String str) {
+            StringBuilder sb = new StringBuilder();
+            int[] hash = new int[27];
+            for(char ch : str.toCharArray()) {
+                hash[ch - 'a']++;
+            }
+            for(int i = 26; i > 0; i--) {
+                if(hash[i] != 0) {
+                    while(hash[i] --> 0) {
+                        sb.append((char)('a' + i));
+                    }
+                    break;
+                }
+            }
+            return sb.length() == 0 ? str : sb.toString();
         }
     }
     static class InputReader {
