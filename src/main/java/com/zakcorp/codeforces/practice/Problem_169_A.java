@@ -1,30 +1,23 @@
 package com.zakcorp.codeforces.practice;
 
 import java.io.*;
-import java.util.InputMismatchException;
+import java.util.*;
 
-public class Problem_440_A {
+public class Problem_169_A {
     public static void main(String[] args) throws Exception {
         InputReader in = new InputReader(System.in);
         OutputWriter out = new OutputWriter(System.out);
         try {
-            long n = in.readInt();
-            Solver p = new Solver();
-            out.printLine(p.solve1(in, n));
+            int n = in.readInt();
+            int a = in.readInt();
+            int b = in.readInt();
+            int[] arr = in.readIntArray(in, n);
+            Arrays.sort(arr);
+            out.printLine(arr[b] - arr[b - 1]);
             out.flush();
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-    static class Solver {
-        public long solve1(InputReader in, long n) {
-            long total = (n * (n + 1)) / 2;
-            long sum = 0;
-            for(int i = 1; i < n; i++) {
-                sum += in.readInt();
-            }
-            return total - sum;
         }
     }
     static class InputReader {
