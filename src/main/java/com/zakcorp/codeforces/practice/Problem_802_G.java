@@ -1,7 +1,7 @@
 package com.zakcorp.codeforces.practice;
 
 import java.io.*;
-import java.util.InputMismatchException;
+import java.util.*;
 
 public class Problem_802_G {
     public static void main(String[] args) throws Exception {
@@ -9,19 +9,26 @@ public class Problem_802_G {
         OutputWriter out = new OutputWriter(System.out);
         try {
             String str = in.readString();
+            Solver p = new Solver();
+            out.printLine(p.solve1(str));
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    static class Solver {
+        public String solve1(String str) {
             int n = str.length();
             char[] chArr = {'h', 'e', 'i', 'd', 'i'};
             int i = 0, j = 0;
-            while(i < n) {
+            while(i < n && j < 5) {
                 if(str.charAt(i) == chArr[j]) {
                     j++;
                 }
                 i++;
             }
-            out.printLine(j == 5 ? "YES" : "NO");
-            out.flush();
-            out.close();
-        } catch (Exception e) {
+            return j == 5 ? "YES" : "NO";
         }
     }
     static class InputReader {
