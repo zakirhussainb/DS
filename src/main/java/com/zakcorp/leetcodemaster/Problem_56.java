@@ -1,7 +1,10 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.*;
+
 /**
  * Created by Zakir Hussain B on 08/10/20.
+ * Modified by Zakir Hussain B on 19/10/20.
  *
  * @source:
  * @topic:
@@ -20,27 +23,39 @@ public class Problem_56 {
     Practice them in a row for better understanding
      */
     static class Solver {
-        public int[][] solve1(int[][] intervals) {
-            int[] scale = new int[20];
-            int i = 0;
-            int number = 0;
-            for(int[] interval : intervals) {
-                int start = interval[0], end = interval[1];
-                number = i + 1;
-                for(int k = start; k <= end; k++) {
-                    if(scale[k] == 0) {
-                        if(scale[k - 1] != 0) {
-
-                        } else {
-
-                        }
-                    } else if(scale[k] != 0 && scale[k] == number - 1) {
-                        scale[k] = number - 1;
-                    }
-                }
-                i++;
+        private static class IntervalComparator implements Comparator<int[]> {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return Integer.compare(a[0], b[0]);
             }
-            return null;
+        }
+        public int[][] solve1(int[][] intervals) {
+            Arrays.sort(intervals, new IntervalComparator());
+            // Lets assume the intervals are sorted.
+            LinkedList<int[]> mergedList = new LinkedList<>();
+            for(int[] interval : intervals) {
+                if(mergedList.isEmpty() || mergedList.getLast()[1] < interval[0]) {
+                    mergedList.add(interval);
+                } else {
+                    mergedList.getLast()[1] = Math.max(mergedList.getLast()[1], interval[1]);
+                }
+            }
+            return mergedList.toArray(new int[mergedList.size()][]);
+        }
+        public int[][] solve2(int[][] intervals) {
+            Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
+            List<int[]> list = new ArrayList<>();
+            int[] newInterval = intervals[0];
+            list.add(newInterval);
+            for(int[] interval : intervals) {
+                if(interval[0] <= newInterval[1]) { // Overlapping intervals
+                    newInterval[1] = Math.max(newInterval[1], interval[1]);
+                } else {
+                    newInterval = interval;
+                    list.add(newInterval);
+                }
+            }
+            return list.toArray(new int[list.size()][]);
         }
     }
 }
