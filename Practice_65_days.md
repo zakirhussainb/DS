@@ -7,3 +7,4 @@
     - [x] 2. [B. Substrings Sort](https://codeforces.com/contest/988/problem/B)
     - [x] 3. [A. Mishka and Contest](https://codeforces.com/contest/999/problem/A)
     - [x] 4. [B. Reversing Encryption](https://codeforces.com/contest/999/problem/B)
+    - [x] 5. [A. Tanya and Stairways](https://codeforces.com/contest/1005/problem/A)

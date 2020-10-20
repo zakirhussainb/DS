@@ -1,27 +1,45 @@
 package com.zakcorp.codeforces.practice;
 
 import java.io.*;
-import java.util.InputMismatchException;
+import java.util.*;
 
-public class Problem_546_A {
-    public static void main(String[] args) throws Exception {
+public class Problem_1005_A {
+    public static void main(String[] args) {
         InputReader in = new InputReader(System.in);
         OutputWriter out = new OutputWriter(System.out);
         try {
-            int k = in.readInt();
-            int n = in.readInt();
-            int w = in.readInt();
             Solver p = new Solver();
-            out.printLine(p.solve1(k, n, w));
-            out.flush();
-            out.close();
-        } catch (Exception e){}
+            p.solve1(in, out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     static class Solver {
-        public int solve1(int k, int n, int w) {
-            int m = (w * (w + 1)) / 2;// sum of n natural numbers -> n (n + 1) / 2;
-            int l = k * m;
-            return Math.max(l - n, 0);
+        public void solve1(InputReader in, OutputWriter out) {
+            int n = in.readInt();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++) {
+                arr[i] = in.readInt();
+            }
+            List<Integer> list = new ArrayList<>();
+            int start = 0, end = 0, cnt = 0;
+            for(; end < n - 1; end++) {
+                if(arr[end + 1] <= arr[end]) {
+                    cnt++;
+                    list.add(end - start + 1);
+                    start = end + 1;
+                }
+            }
+            if(start <= end) {
+                cnt++;
+                list.add(end - start + 1);
+            }
+            out.printLine(cnt);
+            for(Integer i : list) {
+                out.print(i + " ");
+            }
+            out.flush();
+            out.close();
         }
     }
 
@@ -71,6 +89,25 @@ public class Problem_546_A {
             } while (!isSpaceChar(c));
             return res * sgn;
         }
+        public long readLong() {
+            int c = read();
+            while (isSpaceChar(c))
+                c = read();
+            long sgn = 1;
+            if (c == '-') {
+                sgn = -1;
+                c = read();
+            }
+            long res = 0;
+            do {
+                if (c < '0' || c > '9')
+                    throw new InputMismatchException();
+                res *= 10;
+                res += c - '0';
+                c = read();
+            } while (!isSpaceChar(c));
+            return res * sgn;
+        }
 
         public String readString() {
             int c = read();
@@ -96,6 +133,13 @@ public class Problem_546_A {
 
         public interface SpaceCharFilter {
             public boolean isSpaceChar(int ch);
+        }
+
+        public int[] readIntArray(InputReader in, int size) {
+            int[] array = new int[size];
+            for (int i = 0; i < size; i++)
+                array[i] = in.readInt();
+            return array;
         }
     }
     static class OutputWriter {
