@@ -6,3 +6,4 @@
     - [x] 1. [A. Diverse Team](https://codeforces.com/contest/988/problem/A)
     - [x] 2. [B. Substrings Sort](https://codeforces.com/contest/988/problem/B)
     - [x] 3. [A. Mishka and Contest](https://codeforces.com/contest/999/problem/A)
+    - [x] 4. [B. Reversing Encryption](https://codeforces.com/contest/999/problem/B)
