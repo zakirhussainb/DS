@@ -9,3 +9,6 @@
     - [x] 4. [B. Reversing Encryption](https://codeforces.com/contest/999/problem/B)
     - [x] 5. [A. Tanya and Stairways](https://codeforces.com/contest/1005/problem/A)
     - [x] 6. [A. Adjacent Replacements](https://codeforces.com/contest/1006/problem/A)
+    
+2. - [ ] DAY - 2 -> OCT-21-2020
+    - [x] 7. [A. Many Equal Substrings](https://codeforces.com/contest/1029/problem/A)
