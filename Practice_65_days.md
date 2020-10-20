@@ -13,3 +13,4 @@
 2. - [ ] DAY - 2 -> OCT-21-2020
     - [x] 7. [A. Many Equal Substrings](https://codeforces.com/contest/1029/problem/A) -> Needs Revision
     - [x] 8. [A. String Task](https://codeforces.com/problemset/problem/118/A)
+    - [x] 9. [A. cAPS lOCK](https://codeforces.com/problemset/problem/131/A)
