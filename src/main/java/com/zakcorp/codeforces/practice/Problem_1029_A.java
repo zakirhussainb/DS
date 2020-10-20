@@ -17,27 +17,36 @@ public class Problem_1029_A {
     }
     static class Solver {
         public void solve1(InputReader in, OutputWriter out) {
-            /*int n = in.readInt();
+            int n = in.readInt();
             int k = in.readInt();
             String t = in.readString();
-            String ans = t;
+            StringBuilder sb = new StringBuilder(t);
             int pos = 1;
             int cnt = 1;
             while(cnt < k) {
-                if(pos >= ans.length()) {
-                    ans += t;
+                if(pos >= sb.length()) {
+                    sb.append(t);
                     cnt++;
-                    pos++;
-                } else if() {
-
+                } else {
+                    boolean ok = true;
+                    int len = 0;
+                    for(int i = 0; i < n; i++) {
+                        if(pos + i >= sb.length())
+                            break;
+                        ++len;
+                        if(sb.charAt(pos + i) != t.charAt(i))
+                            ok = false;
+                    }
+                    if(ok) {
+                        sb.append(t.substring(len));
+                        ++cnt;
+                    }
                 }
+                ++pos;
             }
-
-
-
-//            out.printLine(sb.toString());
+            out.printLine(sb.toString());
             out.flush();
-            out.close();*/
+            out.close();
         }
         public void solve2(InputReader in, OutputWriter out) {
             int n = in.readInt();
