@@ -9,7 +9,9 @@ public class Problem_999_A {
         OutputWriter out = new OutputWriter(System.out);
         try {
             Solver p = new Solver();
-            p.solve1(in, out);
+//            p.solve1(in, out);
+//            p.solve2(in, out);
+            p.solve3(in, out);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,6 +42,50 @@ public class Problem_999_A {
                     } else {
                         pS = false;
                     }
+                }
+            }
+            out.printLine(cnt);
+            out.flush();
+            out.close();
+        }
+        public void solve2(InputReader in, OutputWriter out) {
+            int n = in.readInt();
+            int k = in.readInt();
+            LinkedList<Integer> ll = new LinkedList<>();
+            for(int i = 0; i < n; i++) {
+                ll.addLast(in.readInt());
+            }
+            int cnt = 0;
+            while( !ll.isEmpty() && ll.getFirst() <= k) {
+                cnt++;
+                ll.pollFirst();
+            }
+            while(!ll.isEmpty() && ll.getLast() <= k) {
+                cnt++;
+                ll.pollLast();
+            }
+            out.printLine(cnt);
+            out.flush();
+            out.close();
+        }
+        public void solve3(InputReader in, OutputWriter out) {
+            int n = in.readInt();
+            int k = in.readInt();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++) {
+                arr[i] = in.readInt();
+            }
+            int cnt = 0;
+            int l = 0, h = n - 1;
+            while(l <= h) {
+                if(arr[l] <= k) {
+                    cnt++;
+                    l++;
+                } else if(arr[h] <= k) {
+                    cnt++;
+                    h--;
+                } else {
+                    break;
                 }
             }
             out.printLine(cnt);
