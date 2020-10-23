@@ -3,13 +3,16 @@ package com.zakcorp.gfgmaster.babbarsheet;
 import java.io.*;
 import java.util.InputMismatchException;
 
+// ARRAY ROTATIONS
 public class P7 {
     public static void main(String[] args) {
         InputReader in = new InputReader(System.in);
         OutputWriter out = new OutputWriter(System.out);
         try {
             Solver p = new Solver();
-            p.solve1(in, out);
+//            p.solve1(in, out);
+//            p.solve2(in, out);
+            p.solve3(in, out);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -39,8 +42,64 @@ public class P7 {
             out.flush();
             out.close();
         }
+        // Optimized Solution -> O(N) and O(D) -> TLE for large inputs ex 10^5 -> Since creating a temp array of 10^5
         public void solve2(InputReader in, OutputWriter out) {
+            int n = in.readInt();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++) {
+                arr[i] = in.readInt();
+            }
+            int d = in.readInt();
+            // Using temp array for "d"
+            int[] temp = new int[d];
+            for(int i = 0; i < d; i++) {
+                temp[i] = arr[i];
+            }
+            for(int i = d; i < n; i++) {
+                arr[i - d] = arr[i];
+            }
+            int m = n - d;
+            int k = 0;
+            while(m < n) {
+                arr[m++] = temp[k++];
+            }
+            for(int i = 0; i < n; i++) {
+                out.print(arr[i] + " ");
+            }
+            out.printLine();
+            out.flush();
+            out.close();
+        }
 
+        public void solve3(InputReader in, OutputWriter out) {
+            int n = in.readInt();
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++) {
+                arr[i] = in.readInt();
+            }
+            int d = in.readInt();
+            if(d == 0)
+                return;
+            d = d % n;
+            reverseArray(arr, 0, d - 1);
+            reverseArray(arr, d, n - 1);
+            reverseArray(arr, 0, n - 1);
+            for(int i = 0; i < n; i++) {
+                out.print(arr[i] + " ");
+            }
+            out.printLine();
+            out.flush();
+            out.close();
+        }
+
+        private void reverseArray(int[] arr, int start, int end) {
+            while(start < end) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
         }
     }
 
