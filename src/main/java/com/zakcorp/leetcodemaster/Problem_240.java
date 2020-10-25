@@ -10,12 +10,9 @@ package com.zakcorp.leetcodemaster;
  * @problem_link:
  * @pseudocode:
  */
-public class Problem_74 {
+public class Problem_240 {
     static class Solver {
         public boolean solve1(int[][] matrix, int target) {
-            if(matrix.length == 0) {
-                return false;
-            }
             int col = matrix[0].length;
             for (int[] rows : matrix) {
                 for (int j = 0; j < col; j++) {
@@ -27,19 +24,12 @@ public class Problem_74 {
             return false;
         }
         public boolean solve2(int[][] matrix, int target) {
-            if(matrix.length == 0) {
-                return false;
-            }
-            int row = matrix.length;
-            int col = matrix[0].length;
-            int low = 0, high = row * col - 1;
-            while(low <= high){
-                int mid = (low + high) / 2;
-                int midVal = matrix[mid/col][mid%col];
-                if(midVal < target) {
-                    low = mid + 1;
-                } else if(midVal > target) {
-                    high = mid - 1;
+            int i = 0, j = matrix[0].length - 1;
+            while(j >= 0 && i <= matrix.length - 1) {
+                if(target < matrix[i][j]) {
+                    j--;
+                } else if(target > matrix[i][j]) {
+                    i++;
                 } else {
                     return true;
                 }
