@@ -22,3 +22,11 @@ then,
 | 0 | 1 | 0     | 1      | 1     | 1  |
 | 1 | 0 | 0     | 1      | 1     | 0  |
 | 1 | 1 | 1     | 1      | 0     | 0  |
+
+
+
+### References to learn Bit Manipulation
+1. https://docs.google.com/spreadsheets/d/17pgzvv6Jrr8Av5PoCCLqvA8pXOMAlRYd/edit#gid=18185684
+2. https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/
+3. https://leetcode.com/problemset/algorithms/?topicSlugs=bit-manipulation
+4. https://www.hackerrank.com/domains/algorithms?filters%5Bsubdomains%5D%5B%5D=bit-manipulation
