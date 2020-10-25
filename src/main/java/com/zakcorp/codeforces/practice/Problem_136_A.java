@@ -1,9 +1,10 @@
 package com.zakcorp.codeforces.practice;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 
-public class Problem_122_A {
+public class Problem_136_A {
     public static void main(String[] args) {
         InputReader in = new InputReader(System.in);
         OutputWriter out = new OutputWriter(System.out);
@@ -17,11 +18,19 @@ public class Problem_122_A {
     static class Solver {
         public void solve1(InputReader in, OutputWriter out) {
             int n = in.readInt();
-            if(n % 4 == 0 || n % 7 == 0 || n % 47 == 0 || n % 744 == 0 || n % 477 == 0) {
-                out.printLine("YES");
-            } else {
-                out.printLine("NO");
+            int[] arr = new int[n + 1];
+            int m = arr.length;
+            for(int i = 1; i < m; i++) {
+                arr[i] = in.readInt();
             }
+            int[] temp = new int[m];
+            for(int i = 1; i < m; i++) {
+                temp[arr[i]] = i;
+            }
+            for(int i = 1; i < m; i++) {
+                out.print(temp[i] + " ");
+            }
+            out.printLine();
             out.flush();
             out.close();
         }
