@@ -6,7 +6,7 @@ then,
 * Left Shift  => 2^k * n i.e. Left shift is equivalent to multiplying the bit pattern with 2^k
     * One left shift One    -> 1 << 1  = 2  <===========> 2^1 * 1
     * One left shift Two    -> 1 << 2  = 4  <===========> 2^2 * 1
-    * One left shift Four   -> 1 << 4  = 8  <===========> 2^4 * 1
+    * One left shift Four   -> 1 << 4  = 16  <===========> 2^4 * 1
     * Twenty left shift Two -> 20 << 2 = 80 <===========> 2^2 * 20
 * Right Shift => n / 2^k i.e. Right shift is equivalent to dividing the bit pattern with 2^k
     * Four right shift One     -> 4 >> 1 = 2  <===========> 4 / 2^1

@@ -63,3 +63,10 @@
 18. https://leetcode.com/problems/non-overlapping-intervals/
 19. https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
 20. https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+
+           Oct-2020
+26-10-2020
+1. https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+2. https://leetcode.com/problems/xor-operation-in-an-array/
+3. https://www.hackerrank.com/challenges/lonely-integer/problem
+4. https://www.hackerrank.com/challenges/maximizing-xor/problem
