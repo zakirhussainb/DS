@@ -9,7 +9,7 @@ import java.util.List;
  * @topic: Algorithms
  * @sub-topic: Bit Manipulation
  * @platform: Hackerrank
- * @problem_link: https://www.hackerrank.com/challenges/the-birthday-bar/problem
+ * @problem_link: https://www.hackerrank.com/challenges/maximizing-xor/problem
  * @pseudocode:
  */
 public class MaximizingXOR {
