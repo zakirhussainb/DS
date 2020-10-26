@@ -1,5 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -35,7 +36,7 @@ public class Problem_1356 {
         public int[] solve1(int[] arr) {
             PriorityQueue<Pair> pq = new PriorityQueue<>(new MyComparator());
             for(int e : arr) {
-                pq.add(new Pair(e, countOnes(e)));
+                pq.add(new Pair(e, Integer.bitCount(e)));
             }
             int[] op = new int[arr.length];
             int i = 0;
@@ -45,6 +46,7 @@ public class Problem_1356 {
             }
             return op;
         }
+        // Can use Integer.bitCount(num)
         private int countOnes(int num) {
             int c = 0;
             while(num > 0) {
@@ -53,5 +55,8 @@ public class Problem_1356 {
             }
             return c;
         }
+
+
+
     }
 }
