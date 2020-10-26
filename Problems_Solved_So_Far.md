@@ -70,3 +70,4 @@
 2. https://leetcode.com/problems/xor-operation-in-an-array/
 3. https://www.hackerrank.com/challenges/lonely-integer/problem
 4. https://www.hackerrank.com/challenges/maximizing-xor/problem
+5. https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
