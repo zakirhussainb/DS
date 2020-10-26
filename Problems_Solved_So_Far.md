@@ -72,3 +72,5 @@
 4. https://www.hackerrank.com/challenges/maximizing-xor/problem
 5. https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
 6. https://leetcode.com/problems/hamming-distance/
+7. https://www.hackerrank.com/challenges/sum-vs-xor/problem
+8. https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
