@@ -9,5 +9,11 @@ public class Problem_476_Test {
     @Test
     public void test1() {
         assertEquals(2, p.solve1(5));
+        assertEquals(2, p.solve2(5));
+    }
+    @Test
+    public void test2() {
+        assertEquals(0, p.solve1(1));
+        assertEquals(0, p.solve2(1));
     }
 }

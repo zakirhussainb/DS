@@ -31,5 +31,6 @@ Bit Manipulation - Three Versions
 
 27-Oct-2020
 - [x] 10. https://www.hackerrank.com/challenges/flipping-bits
-- [ ] 11. https://leetcode.com/problems/number-complement/
-- [ ] 12. https://leetcode.com/problems/complement-of-base-10-integer/
+- [x] 11. https://leetcode.com/problems/number-complement/
+- [x] 12. https://leetcode.com/problems/complement-of-base-10-integer/
+- [x] 13. https://practice.geeksforgeeks.org/problems/count-total-set-bits/0
