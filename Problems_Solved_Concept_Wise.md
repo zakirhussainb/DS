@@ -34,3 +34,4 @@ Bit Manipulation - Three Versions
 - [x] 11. https://leetcode.com/problems/number-complement/
 - [x] 12. https://leetcode.com/problems/complement-of-base-10-integer/
 - [x] 13. https://practice.geeksforgeeks.org/problems/count-total-set-bits/0
+- [x] 14. https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
