@@ -28,3 +28,8 @@ Bit Manipulation - Three Versions
 - [x] 7. https://www.hackerrank.com/challenges/sum-vs-xor/problem
 - [x] 8. https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
 - [x] 9. https://leetcode.com/problems/single-number/
+
+27-Oct-2020
+- [x] 10. https://www.hackerrank.com/challenges/flipping-bits
+- [ ] 11. https://leetcode.com/problems/number-complement/
+- [ ] 12. https://leetcode.com/problems/complement-of-base-10-integer/
