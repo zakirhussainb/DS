@@ -40,3 +40,4 @@ Bit Manipulation - Three Versions
 
 28-Oct-2020
 - [x] 17. https://leetcode.com/problems/binary-number-with-alternating-bits/
+- [x] 18. https://leetcode.com/problems/number-of-1-bits/

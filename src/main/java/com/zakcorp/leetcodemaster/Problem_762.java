@@ -38,9 +38,11 @@ public class Problem_762 {
             return count;
         }
         // Brian Kernighan’s Algorithm: THIS IS FAST
+        //11111111111111111111111111111111
+        //11111111111111111111111111111101
         private int countSetBitsAlternate(int num) {
             int count = 0;
-            while(num > 0) {
+            while(num != 0) { // here this condition (n != 0) is important instead of (n > 0), because, of this input, 11111111111111111111111111111111
                 num = (num & (num - 1));
                 count++;
             }
