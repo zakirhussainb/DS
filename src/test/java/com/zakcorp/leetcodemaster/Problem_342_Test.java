@@ -9,18 +9,22 @@ public class Problem_342_Test {
 
     @Test
     public void test1() {
-        assertTrue(p1.isPowerOfFour(16));
+        assertTrue(p1.solve1(16));
+        assertTrue(p1.solve2(16));
     }
     @Test
     public void test2() {
-        assertTrue(p1.isPowerOfFour(64));
+        assertTrue(p1.solve1(64));
+        assertTrue(p1.solve2(64));
     }
     @Test
     public void test3() {
-        assertFalse(p1.isPowerOfFour(32));
+        assertFalse(p1.solve1(32));
+        assertFalse(p1.solve2(32));
     }
     @Test
     public void test4() {
-        assertFalse(p1.isPowerOfFour(1162261466));
+        assertFalse(p1.solve1(1162261466));
+        assertFalse(p1.solve2(1162261466));
     }
 }

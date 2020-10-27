@@ -36,3 +36,4 @@ Bit Manipulation - Three Versions
 - [x] 13. https://practice.geeksforgeeks.org/problems/count-total-set-bits/0
 - [x] 14. https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
 - [x] 15. https://leetcode.com/problems/power-of-two/
+- [x] 16. https://leetcode.com/problems/power-of-four/
