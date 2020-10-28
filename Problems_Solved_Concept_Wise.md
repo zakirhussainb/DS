@@ -51,7 +51,7 @@ Bit Manipulation - Three Versions
 - [x] 18. https://leetcode.com/problems/number-of-1-bits/
 - [ ] 19. https://leetcode.com/problems/majority-element/
 - [x] 20. https://leetcode.com/problems/missing-number/
-- [ ] 21. https://leetcode.com/problems/find-the-difference/
+- [x] 21. https://leetcode.com/problems/find-the-difference/
 - [ ] 22. https://leetcode.com/problems/reverse-bits/
 
 29-Oct-2020
