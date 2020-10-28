@@ -20,6 +20,13 @@ Graph, Binary Trees, Binary Search Tree
 
            Bit Manipulation
 
+References/Links:-
+* https://codeforces.com/blog/entry/73490
+* https://codeforces.com/blog/entry/73558
+* https://youtu.be/efL86JCONH0?list=PL2q4fbVm1Ik7ip1VkWwe5U_CEb93vw6Iu
+* https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/
+* CP Handbook - Chapter 10
+
 Bit Manipulation - Three Versions
 * **Version One - 30 problems**
     * LeetCode   		- 18 problems
