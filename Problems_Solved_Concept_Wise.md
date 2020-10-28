@@ -50,7 +50,7 @@ Bit Manipulation - Three Versions
 - [x] 17. https://leetcode.com/problems/binary-number-with-alternating-bits/
 - [x] 18. https://leetcode.com/problems/number-of-1-bits/
 - [ ] 19. https://leetcode.com/problems/majority-element/
-- [ ] 20. https://leetcode.com/problems/missing-number/
+- [x] 20. https://leetcode.com/problems/missing-number/
 - [ ] 21. https://leetcode.com/problems/find-the-difference/
 - [ ] 22. https://leetcode.com/problems/reverse-bits/
 
