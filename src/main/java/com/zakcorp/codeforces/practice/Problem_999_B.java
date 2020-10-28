@@ -1,6 +1,7 @@
 package com.zakcorp.codeforces.practice;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 
@@ -17,6 +18,7 @@ public class Problem_999_B {
     }
     static class Solver {
         public void solve1(InputReader in, OutputWriter out) {
+            Arrays.sort(new int[]{});
             int n = in.readInt();
             String str = in.readString();
             LinkedList<Integer> ll = new LinkedList<>();

@@ -1,13 +1,21 @@
 
 **Version One - Topics**
 
-Bit Manipulation, Greedy, BackTracking, Recursion, Dynamic Programming,
-Searching and Sorting, Binary Trees, Binary Search Tree, Heap, Graph
+Bit Manipulation, Greedy, Divide and Conquer(Binary Search), Dynamic Programming,
+Graph, Binary Trees, Binary Search Tree
 
 * Each Topic 30 problems (+ 5 or -5)
 * Oct-26 to Dec-24 = 60 days
-* 60 * 5 = 300 problems
+* 60 * 5 ~approx 300 problems
 
+- [ ] 1. Bit Manipulation            -> Oct 25th to Oct 30th
+- [ ] 2. Greedy                            -> Oct 31st to Nov 06th
+- [ ] 3. Divide & Conquer (Bin Search)     -> Nov 07th to Nov 13th
+- [ ] 4. Dynamic Programming               -> Nov 14th to Dec 04th
+- [ ] 5. Graph                             -> Dec 05th to Dec 13th
+- [ ] 6. Binary Tree                       -> Dec 14th to Dec 19th
+- [ ] 7. Binary Search Tree                -> Dec 20th to Dec 24th
+* **System Design / Object Design     -> Dec 25th to Jan 3rd**
 
 
            Bit Manipulation
@@ -41,3 +49,21 @@ Bit Manipulation - Three Versions
 28-Oct-2020
 - [x] 17. https://leetcode.com/problems/binary-number-with-alternating-bits/
 - [x] 18. https://leetcode.com/problems/number-of-1-bits/
+- [ ] 19. https://leetcode.com/problems/majority-element/
+- [ ] 20. https://leetcode.com/problems/missing-number/
+- [ ] 21. https://leetcode.com/problems/find-the-difference/
+- [ ] 22. https://leetcode.com/problems/reverse-bits/
+
+29-Oct-2020
+- [ ] 23. https://leetcode.com/problems/binary-watch/
+- [ ] 24. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+- [ ] 25. https://practice.geeksforgeeks.org/problems/power-set4302/1
+- [ ] 26. https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/
+- [ ] 27. https://www.geeksforgeeks.org/divide-two-integers-without-using-multiplication-division-mod-operator/
+
+30-Oct-2020
+- [ ] 28. https://www.geeksforgeeks.org/copy-set-bits-in-a-range/
+- [ ] 29. https://practice.geeksforgeeks.org/problems/find-position-of-set-bit3706/1
+- [ ] 30. https://practice.geeksforgeeks.org/problems/bit-difference/0
+- [ ] 31. https://practice.geeksforgeeks.org/problems/finding-the-numbers0215/1
+

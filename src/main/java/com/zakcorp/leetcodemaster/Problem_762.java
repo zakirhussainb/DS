@@ -1,8 +1,5 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Problem_762 {
     static class Solver {
         public int solve1(int L, int R) {

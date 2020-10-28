@@ -12,7 +12,7 @@ public class Problem_1356 {
             this.num = num;
             this.ones = ones;
         }
-    }
+    } // 3000 problems - 100 problems
     static class MyComparator implements Comparator<Pair> {
 
         @Override
