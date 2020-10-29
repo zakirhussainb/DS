@@ -8,7 +8,7 @@ Graph, Binary Trees, Binary Search Tree
 * Oct-26 to Dec-24 = 60 days
 * 60 * 5 ~approx 300 problems
 
-- [ ] 1. Bit Manipulation            -> Oct 25th to Oct 30th
+- [ ] 1. Bit Manipulation                  -> Oct 25th to Oct 30th
 - [ ] 2. Greedy                            -> Oct 31st to Nov 06th
 - [ ] 3. Divide & Conquer (Bin Search)     -> Nov 07th to Nov 13th
 - [ ] 4. Dynamic Programming               -> Nov 14th to Dec 04th
