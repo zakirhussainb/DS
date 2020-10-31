@@ -63,7 +63,7 @@ Bit Manipulation - Three Versions
 
 29-Oct-2020
 - [ ] 23. https://leetcode.com/problems/binary-watch/
-- [ ] 24. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+- [x] 24. https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 - [ ] 25. https://practice.geeksforgeeks.org/problems/power-set4302/1
 - [ ] 26. https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/
 - [ ] 27. https://www.geeksforgeeks.org/divide-two-integers-without-using-multiplication-division-mod-operator/
