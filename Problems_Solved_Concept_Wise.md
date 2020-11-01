@@ -89,8 +89,11 @@ References/Links:-
 - [ ] 8. [Tocoder](https://www.topcoder.com/community/competitive-programming/tutorials/greedy-is-good/)
 
 1-Nov-2020
-- [ ] 1. https://leetcode.com/problems/count-sorted-vowel-strings
-- [ ] 2. https://leetcode.com/problems/how-many-apples-can-you-put-into-the-basket
-- [ ] 3. https://leetcode.com/problems/meeting-rooms
-- [ ] 4. https://leetcode.com/problems/water-bottles
-- [ ] 5. https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer
+- [x] 1. https://leetcode.com/problems/count-sorted-vowel-strings
+- [x] 2. https://leetcode.com/problems/how-many-apples-can-you-put-into-the-basket
+- [x] 3. https://leetcode.com/problems/meeting-rooms
+- [x] 4. https://leetcode.com/problems/water-bottles
+- [x] 5. https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer
+
+2-Nov-2020
+- [x] 1. https://leetcode.com/problems/lemonade-change/
