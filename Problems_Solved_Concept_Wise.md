@@ -74,3 +74,19 @@ Bit Manipulation - Three Versions
 - [ ] 30. https://practice.geeksforgeeks.org/problems/bit-difference/0
 - [ ] 31. https://practice.geeksforgeeks.org/problems/finding-the-numbers0215/1
 
+
+           Greedy Technique
+
+References/Links:-
+
+- [ ] 1. [Abdul Bari](https://youtu.be/ARvQcqJ_-NY?list=PLfFeAJ-vQopt_S5XlayyvDFL_mi2pGJE3)
+- [ ] 2. [GeeeksForGeeks](https://www.geeksforgeeks.org/greedy-algorithms/)
+- [ ] 3. CP_Handbook - Book
+- [ ] 4. Competitive Programming 3 - Book
+- [ ] 5. Algo By Sedgewick - Book
+- [ ] 6. CLRS - Book
+- [ ] 7. [Hackerearth](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/tutorial/)
+- [ ] 8. [Tocoder](https://www.topcoder.com/community/competitive-programming/tutorials/greedy-is-good/)
+
+1-Nov-2020
+- 
