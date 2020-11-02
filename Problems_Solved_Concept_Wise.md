@@ -96,7 +96,11 @@ References/Links:-
 - [x] 5. https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer
 
 2-Nov-2020
-- [x] 1. https://leetcode.com/problems/lemonade-change/
-- [ ] 2. https://leetcode.com/contest/weekly-contest-213/problems/check-array-formation-through-concatenation/
-- [x] 1. https://leetcode.com/problems/lemonade-change/
-- [x] 1. https://leetcode.com/problems/lemonade-change/
+- [x] 6. https://leetcode.com/problems/lemonade-change/
+- [x] 7. https://leetcode.com/problems/assign-cookies/submissions/
+
+
+           Explore and Contests
+
+2-Nov-2020
+- [x] 1. https://leetcode.com/problems/insertion-sort-list/
