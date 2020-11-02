@@ -97,3 +97,6 @@ References/Links:-
 
 2-Nov-2020
 - [x] 1. https://leetcode.com/problems/lemonade-change/
+- [ ] 2. https://leetcode.com/contest/weekly-contest-213/problems/check-array-formation-through-concatenation/
+- [x] 1. https://leetcode.com/problems/lemonade-change/
+- [x] 1. https://leetcode.com/problems/lemonade-change/
