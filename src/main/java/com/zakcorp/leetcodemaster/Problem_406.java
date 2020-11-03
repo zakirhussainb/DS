@@ -13,7 +13,10 @@ public class Problem_406 {
             // Cannot use the above sorting technique, because when the heights are same, we need to
             // sort them by k.
 
-            Arrays.sort(people, (p1, p2) -> p1[0] == p2[0] ? p1[1] - p2[1] : p2[0] - p1[0]);
+            Arrays.sort(people,
+                    (p1, p2) ->
+                            p1[0] == p2[0] ? p1[1] - p2[1] : p2[0] - p1[0]
+            );
 
             List<int[]> resultList = new ArrayList<>();
             for(int[] p : people) {
