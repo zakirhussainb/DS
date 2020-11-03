@@ -111,3 +111,4 @@ References/Links:-
 
 3-Nov-2020
 - [x] 2. https://leetcode.com/problems/check-array-formation-through-concatenation/
+- [x] 3. https://leetcode.com/problems/consecutive-characters/
