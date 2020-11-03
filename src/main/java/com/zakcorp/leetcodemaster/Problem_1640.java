@@ -5,17 +5,24 @@ import java.util.Map;
 
 public class Problem_1640 {
     static class Solver {
-        public boolean solve3(int[] arr, int[][] pieces) {
-            Map<Integer, Integer> map = new HashMap<>();
-            for(int i = 0; i < arr.length; i++) {
-                map.put(arr[i], i);
+        public boolean solve1(int[] arr, int[][] pieces) {
+            Map<Integer, int[]> map = new HashMap<>();
+            for(int[] p : pieces) {
+                map.put(p[0], p);
             }
-            for(int[] piece : pieces) {
-                if( !map.containsKey(piece[0]) ) {
+            int n = arr.length;
+            for(int i = 0; i < n;) {
+                if(!map.containsKey(arr[i])) {
                     return false;
                 }
-                int idx = map.get(piece[0]);
-
+                // check target piece
+                int[] targetPiece = map.get(arr[i]);
+                for(int x : targetPiece) {
+                    if(i >= n || x != arr[i]) {
+                        return false;
+                    }
+                    i++;
+                }
             }
             return true;
         }
