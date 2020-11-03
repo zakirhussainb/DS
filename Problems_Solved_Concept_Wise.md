@@ -101,6 +101,7 @@ References/Links:-
 
 3-Nov-2020
 - [x] 8. https://leetcode.com/problems/queue-reconstruction-by-height/
+- [x] 9. https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
 
 
            Explore and Contests
