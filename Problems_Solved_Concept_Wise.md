@@ -99,8 +99,15 @@ References/Links:-
 - [x] 6. https://leetcode.com/problems/lemonade-change/
 - [x] 7. https://leetcode.com/problems/assign-cookies/submissions/
 
+3-Nov-2020
+- [x] 8. https://leetcode.com/problems/queue-reconstruction-by-height/
+
 
            Explore and Contests
 
+
 2-Nov-2020
 - [x] 1. https://leetcode.com/problems/insertion-sort-list/
+
+3-Nov-2020
+- [x] 2. https://leetcode.com/problems/check-array-formation-through-concatenation/
