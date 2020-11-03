@@ -8,14 +8,19 @@ Graph, Binary Trees, Binary Search Tree
 * Oct-26 to Dec-24 = 60 days
 * 60 * 5 ~approx 300 problems
 
-- [ ] 1. Bit Manipulation                  -> Oct 25th to Oct 30th
+- [x] 1. Bit Manipulation                  -> Oct 25th to Oct 30th
 - [ ] 2. Greedy                            -> Oct 31st to Nov 06th
 - [ ] 3. Divide & Conquer (Bin Search)     -> Nov 07th to Nov 13th
 - [ ] 4. Dynamic Programming               -> Nov 14th to Dec 04th
 - [ ] 5. Graph                             -> Dec 05th to Dec 13th
 - [ ] 6. Binary Tree                       -> Dec 14th to Dec 19th
 - [ ] 7. Binary Search Tree                -> Dec 20th to Dec 24th
-* **System Design / Object Design     -> Dec 25th to Jan 3rd**
+- [ ] 8. **System Design / Object Design  -> Dec 25th to Jan 3rd**
+- [ ] 9. **Cracking the Coding Interview  -> Jan 4th to Feb 28th**
+- [ ] 10. [LC-Curated-algo-170](https://leetcode.com/problemset/leetcode-curated-algo-170/) -> Jan and Feb
+- [ ] 11. Mock Interview from LeetCode -> Jan, Feb, March -> 12 Coding + 12 Design Interviews
+- [ ] 12. Preparing on our resume and tech stack(Java, Spring Boot, Big Data, etc.) -> March
+- [ ] 13. System Design / Object Design -> Jan, Feb, March -> All 31 Questions from GCI
 
 
            Bit Manipulation
@@ -68,19 +73,13 @@ Bit Manipulation - Three Versions
 - [ ] 26. https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/
 - [ ] 27. https://www.geeksforgeeks.org/divide-two-integers-without-using-multiplication-division-mod-operator/
 
-30-Oct-2020
-- [ ] 28. https://www.geeksforgeeks.org/copy-set-bits-in-a-range/
-- [ ] 29. https://practice.geeksforgeeks.org/problems/find-position-of-set-bit3706/1
-- [ ] 30. https://practice.geeksforgeeks.org/problems/bit-difference/0
-- [ ] 31. https://practice.geeksforgeeks.org/problems/finding-the-numbers0215/1
-
 
            Greedy Technique
 
 References/Links:-
 
 - [ ] 1. [Abdul Bari](https://youtu.be/ARvQcqJ_-NY?list=PLfFeAJ-vQopt_S5XlayyvDFL_mi2pGJE3)
-- [ ] 2. [GeeeksForGeeks](https://www.geeksforgeeks.org/greedy-algorithms/)
+- [ ] 2. [GeeksForGeeks](https://www.geeksforgeeks.org/greedy-algorithms/)
 - [ ] 3. CP_Handbook - Book
 - [ ] 4. Competitive Programming 3 - Book
 - [ ] 5. Algo By Sedgewick - Book
