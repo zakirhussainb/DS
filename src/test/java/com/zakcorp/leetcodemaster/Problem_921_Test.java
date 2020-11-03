@@ -9,25 +9,31 @@ public class Problem_921_Test {
     @Test
     public void test1() {
         assertEquals(1, p.solve1("())"));
+        assertEquals(1, p.solve2("())"));
     }
     @Test
     public void test2() {
         assertEquals(3, p.solve1("((("));
+        assertEquals(3, p.solve2("((("));
     }
     @Test
     public void test3() {
         assertEquals(0, p.solve1("()"));
+        assertEquals(0, p.solve2("()"));
     }
     @Test
     public void test4() {
         assertEquals(4, p.solve1("()))(("));
+        assertEquals(4, p.solve2("()))(("));
     }
     @Test
     public void test5() {
         assertEquals(6, p.solve1(")))((("));
+        assertEquals(6, p.solve2(")))((("));
     }
     @Test
     public void test6() {
         assertEquals(0, p.solve1(""));
+        assertEquals(0, p.solve2(""));
     }
 }
