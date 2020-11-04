@@ -117,3 +117,6 @@ References/Links:-
 - [x] 2. https://leetcode.com/problems/check-array-formation-through-concatenation/
 - [x] 3. https://leetcode.com/problems/consecutive-characters/
 - [x] 4. https://leetcode.com/problems/furthest-building-you-can-reach/
+
+4-Nov-2020
+- [x] 15. https://leetcode.com/problems/moving-average-from-data-stream/
