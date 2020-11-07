@@ -104,7 +104,7 @@ References/Links:-
 - [x] 10. https://leetcode.com/problems/meeting-rooms-ii/
 
 4-Nov-2020
-- [ ] 11. 
+- [x] 11. https://leetcode.com/problems/partition-labels/
 
 
            Explore and Contests
