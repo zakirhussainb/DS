@@ -63,3 +63,10 @@
 18. https://leetcode.com/problems/non-overlapping-intervals/
 19. https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
 20. https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+
+        Problems that need Revision
+
+LC Master Three Lists
+1. https://leetcode.com/problems/maximum-subarray
+2. https://leetcode.com/problems/min-stack/
+3. https://leetcode.com/problems/reverse-integer/
