@@ -8,19 +8,17 @@ Graph, Binary Trees, Binary Search Tree
 * Oct-26 to Dec-24 = 60 days
 * 60 * 5 ~approx 300 problems
 
-- [x] 1. Bit Manipulation                  -> Oct 25th to Oct 30th
-- [ ] 2. Greedy                            -> Oct 31st to Nov 06th
-- [ ] 3. Divide & Conquer (Bin Search)     -> Nov 07th to Nov 13th
-- [ ] 4. Dynamic Programming               -> Nov 14th to Dec 04th
-- [ ] 5. Graph                             -> Dec 05th to Dec 13th
-- [ ] 6. Binary Tree                       -> Dec 14th to Dec 19th
-- [ ] 7. Binary Search Tree                -> Dec 20th to Dec 24th
-- [ ] 8. **System Design / Object Design  -> Dec 25th to Jan 3rd**
-- [ ] 9. **Cracking the Coding Interview  -> Jan 4th to Feb 28th**
-- [ ] 10. [LC-Curated-algo-170](https://leetcode.com/problemset/leetcode-curated-algo-170/) -> Jan and Feb
-- [ ] 11. Mock Interview from LeetCode -> Jan, Feb, March -> 12 Coding + 12 Design Interviews
-- [ ] 12. Preparing on our resume and tech stack(Java, Spring Boot, Big Data, etc.) -> March
-- [ ] 13. System Design / Object Design -> Jan, Feb, March -> All 31 Questions from GCI
+- [x] 1. Bit Manipulation                   -> Oct 25th to Oct 30th
+- [ ] 2. Graph, BFS, DFS                    -> Nov 11th to Nov 30th
+- [ ] 3. Dynamic Programming                -> Dec 1st to Dec 24th
+- [ ] 4. **System Design / Object Design    -> Dec 25th to Jan 3rd**
+- [ ] 5. Tree, BST, Heap                    -> Jan 4th to Jan 31st
+- [ ] 6. **Cracking the Coding Interview    -> Jan 4th to Feb 28th**
+- [ ] 7. Top Interview + Top Liked + LC 170 -> Feb 1st to Mar 31st
+
+- [ ] 1. Mock Interview from LeetCode -> Jan, Feb, March -> 12 Coding + 12 Design Interviews
+- [ ] 2. Preparing on our resume and tech stack(Java, Spring Boot, Big Data, etc.) -> March 1st to 31st
+- [ ] 3. System Design / Object Design -> Jan, Feb, March -> All 31 Questions from GCI
 
 
            Bit Manipulation
@@ -120,3 +118,83 @@ References/Links:-
 
 4-Nov-2020
 - [x] 15. https://leetcode.com/problems/moving-average-from-data-stream/
+
+
+           Graph, DFS, BFS, TS and UF
+DFS
+
+- [ ] 1. 797
+- [ ] 2. 959
+- [ ] 3. 841
+- [ ] 4. 323
+- [ ] 5. 1102
+- [ ] 6. 802
+- [ ] 7. 785
+- [ ] 8. 743
+- [ ] 9. 886
+- [ ] 10. 207
+- [ ] 11. 1059
+- [ ] 12. 261
+- [ ] 13. 210
+- [ ] 14. 1631
+- [ ] 15. 133
+- [ ] 16. 332
+- [ ] 17. 1136
+- [ ] 18. 1203
+- [ ] 19. 928
+- [ ] 20. 839
+- [ ] 21. 685
+
+BFS
+
+- [ ] 22. 1306
+- [ ] 23. 1162
+- [ ] 24. 1129
+- [ ] 25. 310
+- [ ] 26. 854
+
+TS
+
+- [ ] 27. 444
+- [ ] 28. 329
+- [ ] 29. 269
+
+Graph
+
+- [ ] 30. 997
+- [ ] 31. 1557
+- [ ] 32. 1387
+- [ ] 33. 1615
+- [ ] 34. 1153
+- [ ] 35. 765
+- [ ] 36. 1514
+- [ ] 37. 1462
+- [ ] 38. 1361
+- [ ] 39. 1334
+- [ ] 40. 1042
+- [ ] 41. 1267
+- [ ] 42. 1135
+- [ ] 43. 684
+- [ ] 44. 399
+- [ ] 45. 990
+
+Union Find
+
+- [ ] 46. 200
+- [ ] 47. 128
+- [ ] 48. 547
+- [ ] 49. 721
+- [ ] 50. 130
+
+LC Curated Algo
+
+- [ ] 51. 1101
+- [ ] 52. 1061
+- [ ] 53. 286
+- [ ] 54. 737
+- [ ] 55. 314
+- [ ] 56. 694
+- [ ] 57. 1236
+- [ ] 58. 490
+- [ ] 59. 366
+- [ ] 60. 1197
