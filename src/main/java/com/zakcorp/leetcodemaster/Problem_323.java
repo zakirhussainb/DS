@@ -23,13 +23,23 @@ public class Problem_323 {
             for(int[] edge : edges) {
                 g.addEdge(edge[0], edge[1]);
             }
-            for(int i = 0; i < g.adjMatrix.length; i++) {
-                for(int j = 0; j < g.adjMatrix[i].length; j++) {
-                    System.out.print(g.adjMatrix[i][j] + " ");
+            boolean[] visited = new boolean[g.V];
+            int cc = 0;
+            for(int i = 0; i < g.V; i++) {
+                if( !visited[i] ) {
+                    dfs(i, visited, g);
+                    cc++;
                 }
-                System.out.println();
             }
-            return -1;
+            return cc;
+        }
+        private void dfs(int src, boolean[] visited, Graph g) {
+            visited[src] = true;
+            for(int i = 0; i < g.V; i++) {
+                if(g.adjMatrix[src][i] == 1 && !visited[i]) {
+                    dfs(i, visited, g);
+                }
+            }
         }
     }
 }
