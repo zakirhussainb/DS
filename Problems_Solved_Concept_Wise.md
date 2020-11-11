@@ -126,7 +126,7 @@ DFS
 - [ ] 1. 797
 - [ ] 2. 959
 - [ ] 3. 841
-- [ ] 4. 323
+- [x] 4. [323](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 - [ ] 5. 1102
 - [ ] 6. 802
 - [ ] 7. 785
