@@ -27,6 +27,7 @@ public class Problem_797 {
             List<Integer> path = new ArrayList<>();
             path.add(0);
             dfsSearch(g, 0, result, path);
+            return result;
         }
 
         private void dfsSearch(Graph g, int i, List<List<Integer>> result, List<Integer> path) {
