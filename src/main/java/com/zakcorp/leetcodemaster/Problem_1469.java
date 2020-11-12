@@ -48,4 +48,24 @@ public class Problem_1469 {
             preOrder(root.right, map);
         }
     }
+    static class Solver2 {
+        public List<Integer> solve1(TreeNode root) {
+            List<Integer> result = new ArrayList<>();
+            preOrder(root, result);
+            return result;
+        }
+        private void preOrder(TreeNode root, List<Integer> list) {
+            if(root == null) {
+                return;
+            }
+            if(root.left == null && root.right != null) {
+                list.add(root.right.val);
+            }
+            if(root.left != null && root.right == null) {
+                list.add(root.left.val);
+            }
+            preOrder(root.left, list);
+            preOrder(root.right, list);
+        }
+    }
 }
