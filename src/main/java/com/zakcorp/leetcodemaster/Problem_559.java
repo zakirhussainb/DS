@@ -36,4 +36,20 @@ public class Problem_559 {
             return maxDepth;
         }
     }
+    static class Solver1 {
+        int maxDepth = 0;
+        public int maxDepth(Node root) {
+            if(root == null) {
+                return maxDepth;
+            }
+            dfs(root, 1);
+            return maxDepth;
+        }
+        private void dfs(Node root, int level) {
+            maxDepth = Math.max(maxDepth, level);
+            for(Node p : root.children) {
+                dfs(p, level + 1);
+            }
+        }
+    }
 }
