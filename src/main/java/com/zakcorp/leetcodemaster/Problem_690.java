@@ -20,12 +20,7 @@ public class Problem_690 {
                 empMap.put(emp.id, emp);
             }
             int[] result = {0};
-            for(Map.Entry<Integer, Employee> entry : empMap.entrySet()) {
-                if(entry.getKey() == key) {
-                    dfs(key, empMap, result);
-                    break;
-                }
-            }
+            dfs(key, empMap, result);
             return result[0];
         }
         private void dfs(int key, Map<Integer, Employee> empMap, int[] result) {
