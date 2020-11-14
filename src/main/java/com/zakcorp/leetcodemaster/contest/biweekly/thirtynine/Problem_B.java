@@ -1,7 +1,5 @@
 package com.zakcorp.leetcodemaster.contest.biweekly.thirtynine;
 
-import java.util.*;
-
 public class Problem_B {
     static class Solver {
         public int solve1(String str) {
@@ -15,12 +13,10 @@ public class Problem_B {
                 if (a > 0 && str.charAt(l) == 'a') {
                     ++l;
                     --a;
-                }
-                else if (b > 0 && str.charAt(r) == 'b') {
+                } else if (b > 0 && str.charAt(r) == 'b') {
                     --r;
                     --b;
-                }
-                else {
+                } else {
                     ++res;
                     if (a < b) {
                         --a;
