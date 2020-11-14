@@ -1,6 +1,6 @@
-package com.zakcorp.leetcodemaster.contest;
+package com.zakcorp.leetcodemaster.contest.weekly;
 
-import com.zakcorp.leetcodemaster.Problem_1;
+import com.zakcorp.leetcodemaster.contest.weekly.Problem_5382;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

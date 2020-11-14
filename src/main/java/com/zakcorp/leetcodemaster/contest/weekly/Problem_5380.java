@@ -1,4 +1,4 @@
-package com.zakcorp.leetcodemaster.contest;
+package com.zakcorp.leetcodemaster.contest.weekly;
 import java.util.*;
 public class Problem_5380 {
     static class Solver {
