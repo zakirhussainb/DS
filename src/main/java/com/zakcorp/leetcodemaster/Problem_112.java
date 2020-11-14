@@ -56,4 +56,49 @@ public class Problem_112 {
             return false;
         }
     }
+    static class Solver1 {
+        boolean isPathSum = false;
+        public boolean hasPathSum(TreeNode root, int sum) {
+            dfs(root, 0, sum);
+            return isPathSum;
+        }
+        private void dfs(TreeNode root, int s, int sum) {
+            if(root == null) {
+                return;
+            }
+            s += root.val;
+            if(root.left == null && root.right == null) {
+                if(s == sum) {
+                    isPathSum = true;
+                }
+            } else {
+                dfs(root.left, s, sum);
+                dfs(root.right, s, sum);
+            }
+        }
+    }
+    static class Solver2 {
+        public boolean hasPathSum(TreeNode root, int sum) {
+            Set<Integer> set = new HashSet<>();
+            dfs(root, 0, set);
+            for(Integer num : set) {
+                if(sum == num) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void dfs(TreeNode root, int s, Set<Integer> set) {
+            if(root == null) {
+                return;
+            }
+            s += root.val;
+            if(root.left == null && root.right == null) {
+                set.add(s);
+            } else {
+                dfs(root.left, s, set);
+                dfs(root.right, s, set);
+            }
+        }
+    }
 }
