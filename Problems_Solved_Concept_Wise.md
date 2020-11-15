@@ -123,10 +123,9 @@ References/Links:-
            Graph, DFS, BFS, TS and UF
 ##### DFS
 
-**Easy**
+**Easy** -> All solved
 
-- [x] 1. [938](https://leetcode.com/problems/range-sum-of-bst/)
-- [x] 2. [1469](https://leetcode.com/problems/find-all-the-lonely-nodes/)
+**Medium** -> 200, 130
 
 Medium
 - [ ] 1. 797
