@@ -210,3 +210,7 @@ Credits:-
 * DFS - Depth First Search
 * BFS - Breadth First Search
 * TS  - Topological Sort
+
+           Day-Wise
+
+1. 16-Nov-2020 - 547, 199, 695, 105
