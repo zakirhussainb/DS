@@ -91,4 +91,27 @@ public class Problem_547 {
             }
         }
     }
+    static class Solver2 {
+        public int solve1(int[][] arr) {
+            int n = arr.length;
+            boolean[] visited = new boolean[n];
+            int cc = 0;
+            for(int i = 0; i < n; i++) {
+                if( !visited[i] ) {
+                    cc++;
+                    dfs(i, arr, visited);
+                }
+            }
+            return cc;
+        }
+        private void dfs(int src, int[][] arr, boolean[] visited) {
+            visited[src] = true;
+            for(int i = 0; i < arr.length; i++) {
+                if(arr[src][i] == 1 && !visited[i]) {
+                    visited[i] = true;
+                    dfs(i, arr, visited);
+                }
+            }
+        }
+    }
 }
