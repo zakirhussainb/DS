@@ -25,6 +25,8 @@ import java.util.*;
  *      if( !visited[v] )
  *          dfs(v)
  *  result.reverse();
+ *
+ *  Where it is used? It is used in the package build system, like Maven build system.
  */
 public class TopologicalSort {
     Graph g;
