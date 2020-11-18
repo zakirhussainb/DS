@@ -33,4 +33,39 @@ public class Problem_394 {
             return sb.toString();
         }
     }
+    static class Solver1 {
+        public String solve1(String str) {
+            Stack<Character> stack = new Stack<>();
+            for(char ch : str.toCharArray()) {
+                if(ch != ']') {
+                    stack.push(ch);
+                } else {
+                    StringBuilder sb = new StringBuilder();
+                    while( !stack.isEmpty() && Character.isLetter(stack.peek()) ) {
+                        sb.insert(0, stack.pop());
+                    }
+                    String sub = sb.toString();
+                    stack.pop();
+
+                    sb = new StringBuilder();
+                    while( !stack.isEmpty() && Character.isDigit(stack.peek()) ) {
+                        sb.insert(0, stack.pop());
+                    }
+
+                    int count = Integer.parseInt(sb.toString());
+                    while(count > 0) {
+                        for(char ch1 : sub.toCharArray()) {
+                            stack.push(ch1);
+                        }
+                        count--;
+                    }
+                }
+            }
+            StringBuilder sb = new StringBuilder();
+            while( !stack.isEmpty() ) {
+                sb.insert(0, stack.pop());
+            }
+            return sb.toString();
+        }
+    }
 }
