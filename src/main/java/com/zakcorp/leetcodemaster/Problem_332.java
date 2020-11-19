@@ -38,4 +38,40 @@ public class Problem_332 {
             result.addFirst(origin);
         }
     }
+    static class Solver1 {
+        Map<String, PriorityQueue<String>> flightMap = new HashMap<>();
+        List<String> routes = new LinkedList<>();
+        public List<String> solve1(List<List<String>> tickets) {
+            if(tickets.size() == 0) {
+                return new ArrayList<>();
+            }
+            // Build the Graph
+            for(List<String> ticket : tickets) {
+                flightMap.computeIfAbsent(ticket.get(0),
+                        k -> new PriorityQueue<>()).add(ticket.get(1));
+            }
+            dfs("JFK");
+            return routes;
+        }
+        private void dfs(String airport) {
+            while(flightMap.containsKey(airport) && !flightMap.get(airport).isEmpty()) {
+                dfs(flightMap.get(airport).poll());
+            }
+            routes.add(airport);
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
