@@ -3,41 +3,6 @@ package com.zakcorp.leetcodemaster;
 import java.util.*;
 
 public class Problem_210 {
-    static class Solver {
-        Map<Integer, LinkedList<Integer>> courseMap = new HashMap<>();
-        int[] courseOrder;
-        LinkedList<Integer> result = new LinkedList<>();
-        public int[] solve1(int n, int[][] prerequisites) {
-            courseOrder = new int[n];
-            // Build the Graph
-            for (int[] prerequisite : prerequisites) {
-                int pre = prerequisite[1];
-                int course = prerequisite[0];
-                courseMap.computeIfAbsent(course, k -> new LinkedList<>()).add(pre);
-            }
-
-            // Perform Topological Sort
-            boolean[] visited = new boolean[n];
-            for(int i = 0; i < n; i++) {
-                if( !visited[i] ) {
-                    dfs(i, visited);
-                }
-            }
-            for(int i = 0; i < n; i++) {
-                courseOrder[i] = result.get(i);
-            }
-            return courseOrder;
-        }
-
-        private void dfs(int src, boolean[] visited) {
-            visited[src] = true;
-            while(courseMap.containsKey(src) && !courseMap.get(src).isEmpty()) {
-               dfs(courseMap.get(src).pollFirst(), visited);
-            }
-            result.add(src);
-        }
-    }
-
     static class Solver1 {
         static class Graph {
             private int V;
@@ -56,7 +21,7 @@ public class Problem_210 {
         LinkedList<Integer> result = new LinkedList<>();
         public int[] solve1(int n, int[][] prerequisites) {
             if(prerequisites.length == 0) {
-                return new int[]{0};
+                return handleForNoPreq(n);
             }
             Graph g = new Graph(n);
             for(int[] prerequisite : prerequisites) {
@@ -64,15 +29,15 @@ public class Problem_210 {
             }
 
             // 0: not visited; 1: visited; 2: visiting
-            int[] visited = new int[n];
-            for(int i = 0; i < n; i++) {
+            int[] visited = new int[g.V];
+            for(int i = 0; i < g.V; i++) {
                 if(dfs(i, visited, g)) {
                     return new int[0];
                 }
             }
 
-            int[] courseOrder = new int[n];
-            for(int i = 0 ; i < n; i++) {
+            int[] courseOrder = new int[g.V];
+            for(int i = 0 ; i < g.V; i++) {
                 courseOrder[i] = result.get(i);
             }
             return courseOrder;
@@ -92,6 +57,13 @@ public class Problem_210 {
             visited[src] = 1;
             result.add(0, src);
             return false;
+        }
+        private int[] handleForNoPreq(int n) {
+            int[] courses = new int[n];
+            for(int i = n - 1; i >= 0; i--) {
+                courses[i] = i;
+            }
+            return courses;
         }
     }
 }
