@@ -9,9 +9,11 @@ public class Problem_1283_Test {
     @Test
     public void test1() {
         assertEquals(5, p.solve1(new int[]{1, 2, 5, 9}, 6));
+        assertEquals(5, p.solve2(new int[]{1, 2, 5, 9}, 6));
     }
     @Test
     public void test2() {
         assertEquals(495280, p.solve1(new int[]{962551,933661,905225,923035,990560}, 10));
+        assertEquals(495280, p.solve2(new int[]{962551,933661,905225,923035,990560}, 10));
     }
 }
