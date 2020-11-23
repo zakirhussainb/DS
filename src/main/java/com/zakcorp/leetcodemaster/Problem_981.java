@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Problem_981 {
     static class Solver {
-
         Map<String, TreeMap<Integer, String>> timeMap;
         public Solver() {
             timeMap = new HashMap<>();
