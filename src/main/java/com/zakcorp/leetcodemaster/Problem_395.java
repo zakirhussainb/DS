@@ -48,4 +48,29 @@ public class Problem_395 {
             return 0;
         }
     }
+    static class Solver1 {
+        public int solve1(String str, int k) {
+            int n = str.length(), maxLen = 0;
+            for(int i = 0; i < n; i++) {
+                int[] freqMap = new int[26];
+                for(int j = i; j < n; j++) {
+                    freqMap[str.charAt(j) - 'a']++;
+                    if( isValidSubstring(k, freqMap) ) {
+                        maxLen = Math.max(maxLen, j - i + 1);
+                    }
+                }
+            }
+            return maxLen;
+        }
+        private boolean isValidSubstring(int k, int[] freqMap) {
+            int countAtLeastK = 0, totalLetters = 0;
+            for(int freq : freqMap) {
+                if(freq > 0)
+                    totalLetters++;
+                if(freq >= k)
+                    countAtLeastK++;
+            }
+            return totalLetters == countAtLeastK;
+        }
+    }
 }
