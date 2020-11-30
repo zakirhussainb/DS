@@ -73,4 +73,28 @@ public class Problem_395 {
             return totalLetters == countAtLeastK;
         }
     }
+    static class Solver2 {
+        // Using Divide and Conquer Approach
+        public int solve1(String str, int k) {
+            return longestSubstring(str, 0, str.length(), k);
+        }
+        private int longestSubstring(String str, int start, int end, int k) {
+            if(end < k)
+                return 0;
+            int[] freqMap = new int[26];
+            for(int i = 0; i < str.length(); i++) {
+                freqMap[str.charAt(i) - 'a']++;
+            }
+            for(int mid = start; mid < end; mid++) {
+                if(freqMap[str.charAt(mid) - 'a'] >= k)
+                    continue;
+                int midNext = mid + 1;
+                while(midNext < end && freqMap[str.charAt(midNext) - 'a'] < k)
+                    midNext++;
+                return Math.max(longestSubstring(str, start, mid, k),
+                        longestSubstring(str, midNext, end, k));
+            }
+            return end - start;
+        }
+    }
 }
