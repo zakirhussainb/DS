@@ -5,8 +5,8 @@ import java.util.*;
 public class Problem_1198 {
     static class Solver {
         public int solve1(int[][] mat) {
-            PriorityQueue<Integer> pq = new PriorityQueue<>(Integer::compare);
             int res = -1;
+            int minRes = Integer.MAX_VALUE;
             for(int i = 0; i < mat[0].length; i++) {
                 int target = mat[0][i];
                 int resCount = 1, j;
@@ -31,9 +31,9 @@ public class Problem_1198 {
                         break;
                 }
                 if(res == target && resCount == j)
-                    pq.add(res);
+                    minRes = Math.min(minRes, res);
             }
-            return pq.isEmpty() ? -1 : pq.poll();
+            return minRes == Integer.MAX_VALUE ? -1 : minRes;
         }
     }
 }
