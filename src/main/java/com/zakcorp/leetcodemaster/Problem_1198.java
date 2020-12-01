@@ -35,5 +35,18 @@ public class Problem_1198 {
             }
             return minRes == Integer.MAX_VALUE ? -1 : minRes;
         }
+        public int solve2(int[][] mat) {
+            int n = mat.length;
+            int[] count = new int[10001];
+            // Count column by column
+            for(int i = 0; i < mat[0].length; i++) {
+                for (int[] row : mat) {
+                    if (++count[row[i]] == n) {
+                        return row[i];
+                    }
+                }
+            }
+            return -1;
+        }
     }
 }
