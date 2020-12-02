@@ -25,5 +25,16 @@ public class Problem_1060 {
             }
             return i - 1;
         }
+        public int solve2(int[] arr, int k) {
+            int n = arr.length;
+            for(int i = 1; i < n; i++) {
+                int diff = arr[i] - arr[i - 1] - 1;
+                if(diff >= k) {
+                    return arr[i - 1] + k;
+                }
+                k = k - diff;
+            }
+            return arr[n - 1] + k;
+        }
     }
 }

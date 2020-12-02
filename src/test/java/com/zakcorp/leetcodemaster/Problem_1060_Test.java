@@ -9,13 +9,16 @@ public class Problem_1060_Test {
     @Test
     public void test1() {
         assertEquals(5, p.solve1(new int[]{4,7,9,10}, 1));
+        assertEquals(5, p.solve2(new int[]{4,7,9,10}, 1));
     }
     @Test
     public void test2() {
         assertEquals(8, p.solve1(new int[]{4,7,9,10}, 3));
+        assertEquals(8, p.solve2(new int[]{4,7,9,10}, 3));
     }
     @Test
     public void test3() {
         assertEquals(6, p.solve1(new int[]{1,2,4}, 3));
+        assertEquals(6, p.solve2(new int[]{1,2,4}, 3));
     }
 }
