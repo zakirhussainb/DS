@@ -21,8 +21,5 @@ public class Problem_378 {
             }
             return -1;
         }
-        public int solve2(int[][] mat, int k) {
-
-        }
     }
 }
