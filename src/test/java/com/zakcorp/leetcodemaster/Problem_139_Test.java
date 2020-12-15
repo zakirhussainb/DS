@@ -20,4 +20,12 @@ public class Problem_139_Test {
     public void test3() {
         assertFalse( p.solve1("catsandog", Arrays.asList("cats", "dog", "sand", "and", "cat") ));
     }
+    @Test
+    public void test4() {
+        assertTrue( p.solve1("bb", Arrays.asList("a","b","bbb","bbbb") ));
+    }
+    @Test
+    public void test5() {
+        assertTrue( p.solve1("cars", Arrays.asList("car","ca","rs") ));
+    }
 }
