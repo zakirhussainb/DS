@@ -12,7 +12,7 @@ public class Problem_451_Test {
     }
     @Test
     public void test2() {
-        assertEquals("aaaccc", p.solve1("cccaaa"));
+        assertEquals("cccaaa", p.solve1("cccaaa"));
     }
     @Test
     public void test3() {
