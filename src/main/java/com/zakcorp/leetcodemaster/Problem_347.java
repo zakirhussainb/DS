@@ -4,24 +4,21 @@ import java.util.*;
 
 public class Problem_347 {
     public int[] topKFrequent(int[] arr, int k) {
-        // TODO:- This is incomplete and wrong solution.
         Map<Integer, Integer> map = new HashMap<>();
-        for (int num : arr) {
-            if (!map.containsKey(num)) {
-                map.put(num, 1);
-            } else {
-                map.put(num, map.get(num) + 1);
-            }
+        for (int value : arr) {
+            map.put(value, map.getOrDefault(value, 0) + 1);
         }
+
+        // SORT MAP BY VALUES -> Higher value to Lower value
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>( (a,b) -> b.getValue() - a.getValue() );
+        pq.addAll(map.entrySet());
+
         int[] res = new int[k];
-        final int[] i = {0};
-        map.forEach( (key,val) -> {
-            if(val >= k && i[0] < k) {
-                res[i[0]++] = key;
-            }
-        });
-        if(res.length == 0) {
-            return arr;
+        int i = 0;
+        while( !pq.isEmpty() && k > 0) {
+            Map.Entry<Integer, Integer> entry = pq.poll();
+            res[i++] = entry.getKey();
+            k--;
         }
         return res;
     }
