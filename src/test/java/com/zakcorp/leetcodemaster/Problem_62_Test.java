@@ -18,9 +18,11 @@ public class Problem_62_Test {
     public void test2() {
         assertEquals(1287, p.gridRecursive(6, 9));
         assertEquals(1287, p1.gridMemoized(6, 9));
+        assertEquals(1287, p2.gridTabulation(6, 9));
     }@Test
     public void test3() {
 //        assertEquals(1916797311, p.gridRecursive(51, 9));
         assertEquals(1916797311, p1.gridMemoized(51, 9));
+        assertEquals(1916797311, p2.gridTabulation(51, 9));
     }
 }
