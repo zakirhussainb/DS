@@ -60,7 +60,18 @@ public class CanSum {
 
     static class Solver2 {
         public boolean tabulation(int target, int[] arr) {
-            return false;
+            boolean[] dp = new boolean[target + 1];
+            dp[0] = true;
+            for(int i = 0; i < dp.length; i++) {
+                if( dp[i] ) {
+                    for (int num : arr) {
+                        if(i + num <= target) {
+                            dp[i + num] = true;
+                        }
+                    }
+                }
+            }
+            return dp[target];
         }
     }
 }
