@@ -25,11 +25,11 @@ public class CanSum {
         public boolean recursive(int target, int[] arr) {
             if(target == 0)
                 return true;
-            if(target < 0)
-                return false;
             for(int num : arr) {
-                if( recursive(target - num, arr) ) {
-                    return true;
+                if(target >= num) {
+                    if( recursive(target - num, arr) ) {
+                        return true;
+                    }
                 }
             }
             return false;
@@ -38,6 +38,22 @@ public class CanSum {
 
     static class Solver1 {
         public boolean memoized(int target, int[] arr) {
+            return canSum(target, arr, new boolean[target + 1]);
+        }
+        private boolean canSum(int target, int[] arr, boolean[] memo) {
+            if(target < 0)
+                return false;
+            if(target == 0)
+                return true;
+            if(memo[target])
+                return true;
+            for(int num : arr) {
+                if ( canSum(target - num, arr, memo) ) {
+                    memo[target] = true;
+                    return true;
+                }
+            }
+            memo[target] = false;
             return false;
         }
     }
