@@ -25,4 +25,22 @@ public class Problem_62 {
             return memo[m][n];
         }
     }
+    static class Solver2 { // Time: O(m * n); Space: O(m + n)
+        public int gridTabulation(int m, int n) {
+            int[][] dp = new int[m + 1][n + 1];
+            dp[1][1] = 1;
+            for(int i = 1; i <= m; i++) {
+                for(int j = 1; j <= n; j++) {
+                    int curr = dp[i][j];
+                    if(i + 1 <= m) {
+                        dp[i + 1][j] += curr;
+                    }
+                    if(j + 1 <= n) {
+                        dp[i][j + 1] += curr;
+                    }
+                }
+            }
+            return dp[m][n];
+        }
+    }
 }
