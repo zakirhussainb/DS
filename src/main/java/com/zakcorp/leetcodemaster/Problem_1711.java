@@ -1,8 +1,8 @@
-package com.zakcorp.leetcodemaster.contest;
+package com.zakcorp.leetcodemaster;
 
 import java.util.*;
 
-public class Problem_B {
+public class Problem_1711 {
     // Good Brute Force Solution, Got TLE, since the arr size is 10 ^ 5;
     static class Solver {
         public int solve1(int[] arr) {
@@ -26,6 +26,8 @@ public class Problem_B {
             return (n & (n - 1)) == 0;
         }
     }
+    // Good O(22 * N), since 22 is a constant, we can say, O(N).
+    // The approach is similar to Two Sum
     static class Solver1 {
         public int solve1(int[] arr) {
             int mod = 1000000007;
