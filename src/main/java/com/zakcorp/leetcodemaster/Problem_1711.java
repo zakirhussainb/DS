@@ -27,7 +27,7 @@ public class Problem_1711 {
         }
     }
     // Good O(22 * N), since 22 is a constant, we can say, O(N).
-    // The approach is similar to Two Sum
+    // Why 22 or Why 32 ? -> since the integer maximum range is 2 power 32. The approach is similar to Two Sum.
     static class Solver1 {
         public int solve1(int[] arr) {
             int mod = 1000000007;
