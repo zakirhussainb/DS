@@ -51,9 +51,33 @@ public class HowSum {
 
     static class Solver1 {
         public int[] memoized(int target, int[] arr) {
-            return canSum(target, arr, new int[target + 1]);
+            LinkedList<Integer> ll = howSum(target, arr, new LinkedList<>());
+            int[] res = null;
+            if( !ll.isEmpty() ) {
+                res = new int[ll.size()];
+            }
+            for(int i = 0; i < ll.size(); i++) {
+                res[i] = ll.get(i);
+            }
+            return res;
         }
-        private int[] canSum(int target, int[] arr, int[] memo) {
+        private LinkedList<Integer> howSum(int target, int[] arr, LinkedList<LinkedList<Integer>> memo) {
+            if(memo.contains(target)) {
+
+            }
+            if(target == 0)
+                return new LinkedList<>();
+            if(target < 0)
+                return null;
+            for(int num : arr) {
+                LinkedList<Integer> res = howSum(target - num, arr, memo);
+                if(res != null) {
+                    res.add(num);
+                    memo.add(res);
+                    return res;
+                }
+            }
+            memo.add(null);
             return null;
         }
     }
