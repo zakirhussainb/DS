@@ -65,4 +65,13 @@ public class Problem_64 {
             return memo[m][n];
         }
     }
+
+    // Good Solution Tabulation DP
+    static class Solver2 {
+        public int solve1(int[][] grid) {
+            int m = grid.length;
+            int n = grid[0].length;
+            return 0;
+        }
+    }
 }
