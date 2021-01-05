@@ -54,4 +54,11 @@ public class Problem_63 {
             return res;
         }
     }
+
+    //
+    static class Solver2 {
+        public int solve1(int[][] obstacleGrid) {
+            return 0;
+        }
+    }
 }
