@@ -36,4 +36,19 @@ public class Problem_70 {
             return memo[n];
         }
     }
+    static class Solver2 {
+        // Efficient - Tabulation DP passes when 'n' is 45
+        public int solve1(int n) {
+            int[] dp = new int[n + 1];
+            dp[0] = 1;
+            for(int i = 0; i < dp.length; i++) {
+                int curr = dp[i];
+                if(i + 1 < dp.length)
+                    dp[i + 1] += curr;
+                if(i + 2 < dp.length)
+                    dp[i + 2] += curr;
+            }
+            return dp[n];
+        }
+    }
 }
