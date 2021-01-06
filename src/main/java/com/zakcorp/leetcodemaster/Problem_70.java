@@ -17,7 +17,7 @@ public class Problem_70 {
         }
     }
     static class Solver1 {
-        // Brute Force - Recursive solution gives TLE when 'n' is 45
+        // Efficient - Memoized solution passes when 'n' is 45
         public int solve1(int n) {
             int[] memo = new int[n + 1];
             return memoized(n, memo);
