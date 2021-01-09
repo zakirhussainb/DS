@@ -1,9 +1,7 @@
-package com.zakcorp.leetcodemaster.contest;
+package com.zakcorp.leetcodemaster;
 
-import java.util.*;
-
-public class Problem_B {
-    // Good Brute Force Solution, Got TLE, since the arr size is 10 ^ 5;
+public class Problem_1717 {
+    // Good Brute Force Solution, Got TLE, since the arr size is 10 ^ 5 - Recursive
     static class Solver {
         public int solve1(String str, int x, int y) {
             StringBuilder sb = new StringBuilder(str);
@@ -26,6 +24,7 @@ public class Problem_B {
             return score;
         }
     }
+    // Good Brute Force Solution, Got TLE, since the arr size is 10 ^ 5 - Iterative
     static class Solver1 {
         public int solve1(String str, int x, int y) {
             StringBuilder sb = new StringBuilder(str);

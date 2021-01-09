@@ -1,12 +1,13 @@
-package com.zakcorp.leetcodemaster.contest;
+package com.zakcorp.leetcodemaster;
 
+import com.zakcorp.leetcodemaster.contest.Problem_B;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class Problem_B_Test {
-    Problem_B.Solver p = new Problem_B.Solver();
-    Problem_B.Solver1 p1 = new Problem_B.Solver1();
+public class Problem_1717_Test {
+    Problem_1717.Solver p = new Problem_1717.Solver();
+    Problem_1717.Solver1 p1 = new Problem_1717.Solver1();
     @Test
     public void test1() {
         assertEquals(19, p.solve1("cdbcbbaaabab", 4, 5));

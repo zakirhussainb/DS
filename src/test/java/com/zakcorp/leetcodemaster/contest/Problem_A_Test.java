@@ -9,10 +9,18 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(91, p.solve1(new int[][]{{5,10},{2,5},{4,7},{3,9}}, 10));
+        assertEquals(10, p.solve1(4));
     }
     @Test
     public void test2() {
-        assertEquals(8, p.solve1(new int[][]{{1,3},{2,2},{3,1}}, 4));
+        assertEquals(37, p.solve1(10));
+    }
+    @Test
+    public void test3() {
+        assertEquals(96, p.solve1(20));
+    }
+    @Test
+    public void test4() {
+        assertEquals(74926, p.solve1(1000));
     }
 }
