@@ -30,4 +30,12 @@ public class Problem_402_Test {
     public void test6() {
         assertEquals("33", p.solve1("5337", 2));
     }
+    @Test
+    public void test7() {
+        assertEquals("0", p.solve1("9", 1));
+    }
+    @Test
+    public void test8() {
+        assertEquals("0", p.solve1("1234567890", 9));
+    }
 }

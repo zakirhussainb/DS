@@ -15,12 +15,12 @@ public class Problem_402 {
                 }
             }
             // Corner case for Monotonically increasing sequence -> eg. 112, 1111, 337
-            while(k > 0 && sb.length() > 1) {
+            while( k > 0 && sb.length() >= 1 ) {
                 sb.deleteCharAt(sb.length() - 1);
                 k--;
             }
             // Corner case with leading zeros
-            while( sb.length() > 1 && sb.charAt(0) == '0' ) {
+            while( sb.length() >= 1 && sb.charAt(0) == '0' ) {
                 sb.deleteCharAt(0);
             }
             return sb.length() == 0 ? "0" : sb.toString();
