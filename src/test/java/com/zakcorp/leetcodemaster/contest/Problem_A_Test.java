@@ -11,16 +11,4 @@ public class Problem_A_Test {
     public void test1() {
         assertEquals(10, p.solve1(4));
     }
-    @Test
-    public void test2() {
-        assertEquals(37, p.solve1(10));
-    }
-    @Test
-    public void test3() {
-        assertEquals(96, p.solve1(20));
-    }
-    @Test
-    public void test4() {
-        assertEquals(74926, p.solve1(1000));
-    }
 }

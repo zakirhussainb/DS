@@ -1,12 +1,10 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import java.util.*;
-
-public class Problem_B {
+public class Problem_D {
     // Good Brute Force Solution, Got TLE, since the arr size is 10 ^ 5;
     static class Solver {
-        public int solve1(int n) {
-
+        public int solve1(String str) {
+            
             return 0;
         }
     }
