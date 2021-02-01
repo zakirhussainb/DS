@@ -49,7 +49,7 @@ public class Problem_1356 {
         // Can use Integer.bitCount(num)
         private int countOnes(int num) {
             int c = 0;
-            while(num > 0) {
+            while(num != 0) {
                 num = (num & (num - 1));
                 c++;
             }
