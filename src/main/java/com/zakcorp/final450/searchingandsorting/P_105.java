@@ -32,7 +32,7 @@ public class P_105 {
 //                prod *= arr[i];
 //                rightArr[i] = prod;
 //            }
-//            return outputArr;
+            return null;
         }
 
     }
