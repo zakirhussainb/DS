@@ -4,8 +4,34 @@ import java.util.*;
 
 public class Problem_1213 {
     static class Solver {
-        // Remember all three arrays are sorted in increasing order
+        // Create a key to value map, if the value size is 3 add to output list
         public List<Integer> solve1(int[] arr1, int[] arr2, int[] arr3) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int value : arr1) {
+                map.put(value, 1);
+            }
+            for (int value : arr2) {
+                if (map.containsKey(value)) {
+                    map.put(value, map.get(value) + 1);
+                }
+            }
+            for (int value : arr3) {
+                if (map.containsKey(value)) {
+                    map.put(value, map.get(value) + 1);
+                }
+            }
+            List<Integer> list = new ArrayList<>();
+            for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if(entry.getValue() == 3) {
+                    list.add(entry.getKey());
+                }
+            }
+            Collections.sort(list);
+            return list;
+        }
+
+        // Remember all three arrays are sorted in increasing order
+        public List<Integer> solve2(int[] arr1, int[] arr2, int[] arr3) {
             List<Integer> output = new ArrayList<>();
             List<Integer> temp = new ArrayList<>();
             int x = arr1.length, y = arr2.length, z = arr3.length;
