@@ -22,6 +22,11 @@ public class P_52 {
             }
             return i >= x && j >= y;
         }
-
     }
+
+    /*static class Solver1 {
+        public boolean solve1(String first, String second, String input) {
+
+        }
+    }*/
 }
