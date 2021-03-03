@@ -2,7 +2,6 @@ package com.zakcorp.final450.searchingandsorting;
 
 import java.util.*;
 
-/* Reverse the array */
 public class P_103 {
     // Time Complexity:- O(m * n) and Space Complexity:- O(1)
     // Getting TLE while running in GFG, need to write a better solution with O(m + n) time complexity

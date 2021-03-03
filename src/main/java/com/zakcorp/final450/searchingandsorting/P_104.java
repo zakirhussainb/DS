@@ -2,7 +2,6 @@ package com.zakcorp.final450.searchingandsorting;
 
 import java.util.*;
 
-/* Reverse the array */
 public class P_104 {
     static class Solver {
         public List<int[]> solve1(int[] arr)

@@ -2,7 +2,6 @@ package com.zakcorp.final450.searchingandsorting;
 
 import java.util.*;
 
-/* Reverse the array */
 public class P_100 {
     // Problem is incomplete, not understood, as it is hard
     static class Solver {

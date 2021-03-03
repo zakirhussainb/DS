@@ -1,6 +1,5 @@
 package com.zakcorp.final450.searchingandsorting;
 
-/* Reverse the array */
 public class P_105 {
     static class Solver {
         public long[] solve1(int[] arr, int n)
