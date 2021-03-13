@@ -20,7 +20,7 @@ public class SLinkedList<E> {
         }
     }
 
-    void add(E element){
+    public void add(E element){
     	addLast(element);
     	size++;
     }
