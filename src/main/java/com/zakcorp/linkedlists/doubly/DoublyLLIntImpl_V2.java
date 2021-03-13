@@ -1,16 +1,16 @@
 package com.zakcorp.linkedlists.doubly;
 
 public class DoublyLLIntImpl_V2 {
-    Node head;
+    public Node head;
     Node tail;
     int size;
     public DoublyLLIntImpl_V2() {
         this.size = 0;
     }
-    static class Node {
-        Node prev;
-        int data;
-        Node next;
+    public static class Node {
+        public Node prev;
+        public int data;
+        public Node next;
         public Node(int data) {
             this.data = data;
         }
@@ -129,5 +129,17 @@ public class DoublyLLIntImpl_V2 {
         System.out.print("NULL");
         System.out.println("    Size-> " + size);
     }
-
+    public void printListCustom(Node p) {
+        if(p == null) {
+            System.out.println("DList is empty..." + size);
+            return;
+        }
+        Node curr = p;
+        while(curr != null) {
+            System.out.print(curr.data + "<==>");
+            curr = curr.next;
+        }
+        System.out.print("NULL");
+        System.out.println("    Size-> " + size);
+    }
 }
