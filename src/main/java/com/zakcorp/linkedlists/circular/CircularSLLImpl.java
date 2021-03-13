@@ -27,8 +27,9 @@ public class CircularSLLImpl {
         for(int i = 0; i < index - 1; i++) {
             p = p.next;
         }
-        t.next = p.next;
         p.next = t;
+        tail = t;
+        tail.next = head;
     }
     private void addLast(int data) {
         Node t = new Node(data);
@@ -55,14 +56,34 @@ public class CircularSLLImpl {
         return false;
     }
 
-    public void remove(int data) {
+    public void deleteByPos(int pos) {
+        if(head == null)
+            return;
+        if(pos == 1) {
+            Node p = head;
+            while(p.next != head) {
+                p = p.next;
+            }
+            p.next = head.next;
+            head = p.next;
+        } else {
+            Node p = head, q = null;
+            for(int i = 1; i < pos; i++) {
+                q = p;
+                p = p.next;
+            }
+            q.next = p.next;
+        }
+    }
+
+    public void deleteByVal(int data) {
 
     }
 
     public void printList(Node head) {
         Node p = head;
         do {
-            System.out.print(p.data + " ");
+            System.out.print(p.data + "->");
             p = p.next;
         }while(p != head);
         System.out.println();
