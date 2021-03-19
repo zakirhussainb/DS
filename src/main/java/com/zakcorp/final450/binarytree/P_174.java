@@ -29,11 +29,11 @@ public class P_174 {
                     while(size --> 0) {
                         BinaryTree.Node p = deque.pollLast();
                         list.add(p.data);
-                        if(p.left != null) {
-                            deque.addFirst(p.left);
-                        }
                         if(p.right != null) {
                             deque.addFirst(p.right);
+                        }
+                        if(p.left != null) {
+                            deque.addFirst(p.left);
                         }
                     }
                 }
