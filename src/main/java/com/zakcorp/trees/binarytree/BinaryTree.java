@@ -12,6 +12,9 @@ public class BinaryTree {
             this.data = data;
             left = null; right = null;
         }
+        public boolean isLeaf() {
+            return this.left == null && this.right == null;
+        }
     }
 
     public Node insert(Node p, int key){
@@ -91,6 +94,10 @@ public class BinaryTree {
             i++;
         }
         return root;
+    }
+
+    public boolean isLeaf(Node root) {
+        return root.left == null && root.right == null;
     }
 
 }

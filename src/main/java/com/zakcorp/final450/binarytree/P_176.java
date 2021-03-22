@@ -17,6 +17,9 @@ public class P_176 {
             }
             return output;
         }
+//        public List<Integer> solve2(BinaryTree.Node root) {
+//
+//        }
         private void preorder(BinaryTree.Node root, int diagonal, Map<Integer, List<Integer>> map) {
             if(root == null)
                 return;
