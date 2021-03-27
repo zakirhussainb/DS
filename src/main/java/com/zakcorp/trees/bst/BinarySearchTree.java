@@ -1,14 +1,19 @@
 package com.zakcorp.trees.bst;
 
+import java.util.Stack;
+
 public class BinarySearchTree {
     public TreeNode root;
-    public class TreeNode {
+    public static class TreeNode {
         public int data;
         public TreeNode left;
         public TreeNode right;
         public TreeNode(int data){
             this.data = data;
             left = null; right = null;
+        }
+        public TreeNode(){
+
         }
     }
     public BinarySearchTree(){
@@ -39,7 +44,7 @@ public class BinarySearchTree {
     public void inorderRec(TreeNode root){
         if(root != null){
             inorderRec(root.left);
-            System.out.print(root.data + " ");
+            System.out.print(root.data + "->");
             inorderRec(root.right);
         }
     }
@@ -108,5 +113,50 @@ public class BinarySearchTree {
             p = p.left;
         }
         return p;
+    }
+
+    public void insertIterative(TreeNode root, int key) {
+        if(root == null) {
+            root = new TreeNode(key);
+            return;
+        }
+        TreeNode r = null;
+        TreeNode p = root;
+        while(p != null) {
+            r = p;
+            if(key < p.data) {
+                p = p.left;
+            } else if(key > p.data) {
+                p = p.right;
+            } else {
+                break;
+            }
+        }
+        p = new TreeNode(key);
+        if(key < r.data) {
+            r.left = p;
+        } else {
+            r.right = p;
+        }
+    }
+
+    public void inorderIterative(TreeNode root) {
+        if(root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode curr = root;
+        while( !stack.isEmpty() || curr != null ) {
+            if(curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            } else {
+                curr = stack.pop();
+                System.out.print(curr.data + "->");
+                curr = curr.right;
+            }
+        }
+
     }
 }

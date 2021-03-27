@@ -21,6 +21,8 @@ public class P_165 {
 
             int maxDiameter = leftHeight + rightHeight + 1;
 
+//            if(diameter.get())
+
             diameter.set( Math.max( diameter.get(), maxDiameter ) );
 
             return Math.max(leftHeight, rightHeight) + 1;
