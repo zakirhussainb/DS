@@ -1,9 +1,6 @@
 package com.zakcorp.trees.bst;
 
-import com.zakcorp.trees.binarytree.BinaryTree;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class BinarySearchTreeTest {
 
