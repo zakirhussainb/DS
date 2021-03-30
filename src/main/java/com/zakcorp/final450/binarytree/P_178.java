@@ -15,22 +15,24 @@ public class P_178 {
         public BinaryTree.Node solve1(String str) {
             if(str.length() == 0)
                 return null;
-            int firstParen = str.indexOf("(");
-            int val = firstParen == -1 ? Integer.parseInt(str) : Integer.parseInt( str.substring( 0, firstParen ) );
+            int firstParenthesis = str.indexOf("(");
+            int val = firstParenthesis == -1 ? Integer.parseInt(str) : Integer.parseInt( str.substring( 0, firstParenthesis ) );
             BinaryTree.Node curr = new BinaryTree.Node( val );
-            if(firstParen == -1)
+            if(firstParenthesis == -1)
                 return curr;
-            int start = firstParen, leftParenCount = 0;
-            for(int i = start; i < str.length(); i++) {
+            int startIndex = firstParenthesis, leftParenCount = 0;
+            for(int i = startIndex; i < str.length(); i++) {
+
                 if(str.charAt(i) == '(')
                     leftParenCount++;
                 else if(str.charAt(i) == ')')
                     leftParenCount--;
-                if(leftParenCount == 0 && start == firstParen) {
-                    curr.left = solve1( str.substring(start + 1, i) );
-                    start = i + 1;
+
+                if(leftParenCount == 0 && startIndex == firstParenthesis) {
+                    curr.left = solve1( str.substring(startIndex + 1, i) );
+                    startIndex = i + 1;
                 } else if(leftParenCount == 0) {
-                    curr.right = solve1( str.substring(start + 1, i) );
+                    curr.right = solve1( str.substring(startIndex + 1, i) );
                 }
             }
             return curr;

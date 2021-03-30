@@ -1,7 +1,6 @@
 package com.zakcorp.trees.binarytree;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTree {
     public static class Node {
@@ -100,4 +99,20 @@ public class BinaryTree {
         return root.left == null && root.right == null;
     }
 
+    public List<Integer> levelOrder(Node p){
+        List<Integer> result = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(p);
+        while( !queue.isEmpty() ) {
+            Node curr = queue.poll();
+            result.add(curr.data);
+            if(curr.left != null) {
+                queue.add(curr.left);
+            }
+            if(curr.right != null) {
+                queue.add(curr.right);
+            }
+        }
+        return result;
+    }
 }
