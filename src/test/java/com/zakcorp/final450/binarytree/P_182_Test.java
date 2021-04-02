@@ -19,4 +19,14 @@ public class P_182_Test {
 
         assertEquals(4, p.solve1( root ) );
     }
+
+    @Test
+    public void test2() {
+        BinaryTree.Node root = new BinaryTree.Node(4);
+        root.left = new BinaryTree.Node(3);
+        root.right = new BinaryTree.Node(2);
+        root.left.left = new BinaryTree.Node(1);
+
+        assertEquals(2, p.solve1( root ) );
+    }
 }
