@@ -115,4 +115,18 @@ public class BinaryTree {
         }
         return result;
     }
+
+    public List<Integer> inorderList(Node p){
+        List<Integer> list = new ArrayList<>();
+        inorderList(p, list);
+        return list;
+    }
+
+    private void inorderList(Node p, List<Integer> list) {
+        if(p == null)
+            return;
+        inorderList(p.left, list);
+        list.add(p.data);
+        inorderList(p.right, list);
+    }
 }
