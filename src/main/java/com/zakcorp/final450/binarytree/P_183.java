@@ -8,18 +8,23 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class P_183 {
+    // Check if a Binary Tree is a sum tree or not
     static class Solver {
         public boolean solve1(BinaryTree.Node root) {
+            return sumTree(root) != Integer.MIN_VALUE;
+        }
+        private int sumTree(BinaryTree.Node root) {
+            // if tree is empty return 0
             if(root == null)
-                return false;
-            int sum = 0;
-            if(root.left != null) {
-                sum += root.left.data;
+                return 0;
+            // if root is a leaf node
+            if(root.left == null && root.right == null)
+                return root.data;
+
+            if( root.data == sumTree(root.left) + sumTree(root.right) ) {
+                return 2 * root.data;
             }
-            if(root.right != null) {
-                sum += root.right.data;
-            }
-            return root.data == sum;
+            return Integer.MIN_VALUE;
         }
     }
 }
