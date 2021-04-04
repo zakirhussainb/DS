@@ -6,7 +6,9 @@ import java.util.*;
 
 public class P_186 {
     /* Check if two trees are mirror or not - for an n-ary tree
-      We cannot do it like we do for Binary Tree */
+      We cannot do it like we do for Binary Tree
+      We need to use a stack to store the original tree and
+      We need to use a queue to store the mirror tree */
     static class Solver {
         public boolean solve1(N_AryTree.Node t1, N_AryTree.Node t2) {
             Stack<Integer> stack = new Stack<>();
