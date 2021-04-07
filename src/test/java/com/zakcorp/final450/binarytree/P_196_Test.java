@@ -26,7 +26,9 @@ public class P_196_Test {
 
         root2.left.right = new BinaryTree.Node(6);
         root2.right.left = new BinaryTree.Node(4);
-
+        root2.right.right = new BinaryTree.Node(5);
+        root2.right.right.left = new BinaryTree.Node(8);
+        root2.right.right.right = new BinaryTree.Node(7);
 
         assertTrue( p.solve1( root1, root2 ) );
     }
