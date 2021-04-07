@@ -35,6 +35,7 @@ public class P_196_Test {
         assertTrue( p.solve1( root1, root2 ) );
     }
 
+    // Test case to demonstrate that two trees can be isomorphic when both their structures are same
     @Test
     public void test2() {
         BinaryTree.Node root1 = new BinaryTree.Node(1);
