@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class P_190_Test {
     P_190.Solver p = new P_190.Solver();
+    P_190.Solver1 p1 = new P_190.Solver1();
     @Test
     public void test1() {
         BinaryTree.Node root = new BinaryTree.Node(10);
@@ -26,5 +27,6 @@ public class P_190_Test {
 
         BinaryTree.Node lca = root.left;
         assertEquals( lca, p.solve1( root, 7, 1 ) );
+        assertEquals( lca, p1.solve1( root, 7, 1 ) );
     }
 }
