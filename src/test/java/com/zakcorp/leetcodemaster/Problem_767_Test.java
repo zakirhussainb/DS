@@ -16,7 +16,7 @@ public class Problem_767_Test {
     }
     @Test
     public void test3() {
-        assertEquals("acaba", p.solve1("abaac"));
+        assertEquals("abaca", p.solve1("abaac"));
     }
     @Test
     public void test4() {

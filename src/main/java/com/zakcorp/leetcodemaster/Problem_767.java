@@ -5,44 +5,48 @@ import java.util.stream.Collectors;
 
 public class Problem_767 {
     static class Solver {
+        /*
+        Steps:-
+        1. Create a hash array, that stores each characters occurrence count in the string.
+        2. Find the character with the maximum occurrence in the given string.
+        3. Create a resultant character array, resCharArr and fill this maximum occurring character in alternating positions in that
+        array.
+        4. Finally fill all the other remaining characters in that array and return it.
+        */
         public String solve1(String str) {
             int n = str.length();
-            char[] resCh = new char[n];
-            Map<Character, Integer> map = new HashMap<>();
-            for(int i = 0; i < str.length(); i++) {
-                map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
+            int[] hash = new int[26];
+            for(int i = 0; i < n; i++) {
+                hash[str.charAt(i) - 'a']++;
             }
-            final Map<Character, Integer> sortedByValueMap = map.entrySet()
-                    .stream()
-                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new ));
-
-            int j = 0;
-            for(Map.Entry<Character, Integer> entry : sortedByValueMap.entrySet()) {
-                if(j >= n) {
-                    j = j % n;
-                    if(j == 0)
-                        j = 1;
+            int max = 0, letterIndex = 0;
+            for(int i = 0; i < hash.length; i++) {
+                if(hash[i] > max) {
+                    max = hash[i];
+                    letterIndex = i;
                 }
-                int size = entry.getValue();
-                while(size > 0) {
-                    for(; j < n; ) {
-                        if(size > 0) {
-                            if(resCh[j] == '\u0000') {
-                                resCh[j] = entry.getKey();
-                            }
-                        }
-                        j = j + 2;
-                        size--;
+            }
+            if(max > (str.length() + 1) / 2) {
+                return "";
+            }
+            char[] resCharArr = new char[n];
+            int idx = 0;
+            while(hash[letterIndex] > 0) {
+                resCharArr[idx] = (char)(letterIndex + 'a');
+                idx+=2;
+                hash[letterIndex]--;
+            }
+            for(int i = 0; i < hash.length; i++) {
+                while(hash[i] > 0) {
+                    if(idx >= resCharArr.length) {
+                        idx = 1;
                     }
+                    resCharArr[idx] = (char)(i + 'a');
+                    idx+=2;
+                    hash[i]--;
                 }
             }
-            for(char ch : resCh) {
-                if(ch == '\u0000') {
-                    return "";
-                }
-            }
-            return new String(resCh);
+            return new String(resCharArr);
         }
     }
 }
