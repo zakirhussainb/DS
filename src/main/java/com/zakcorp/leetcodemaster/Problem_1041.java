@@ -22,9 +22,9 @@ public class Problem_1041 {
                     y += directions[index][1];
                 }
             }
-            // after one cycle:
-            // robot returns into initial position
-            // Or doesn't face the north direction
+            // after completing one cycle: the robot is bounded to a circle if
+            // the robot returns to initial position
+            // Or it doesn't face north
             return (x == 0 && y == 0) || index != 0;
         }
     }
