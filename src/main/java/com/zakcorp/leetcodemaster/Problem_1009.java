@@ -21,16 +21,11 @@ public class Problem_1009 {
             // TODO:- Did not understand this method.
             if(N == 0)
                 return 1;
-            int ans = 0;
-            int curr = 1;
-            while(N != 0) {
-                if(N % 2 == 0) {
-                    ans += curr;
-                }
-                N /= 2;
-                curr *= 2;
+            int m = 0;
+            while(m < N) {
+                m = (m * 2) + 1; // is same as m = (m << 2) | 1
             }
-            return ans;
+            return m - N;
         }
     }
 }
