@@ -9,10 +9,10 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(1, p.solve1(new int[]{-5,1,5,0,-7}));
+        assertEquals("abcdef", p.solve1("a1c1e1"));
     }
     @Test
     public void test2() {
-        assertEquals(0, p.solve1(new int[]{-4,-3,-2,-1,4,3,2}));
+        assertEquals("abbdcfdhe", p.solve1("a1b2c3d4e"));
     }
 }

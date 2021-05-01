@@ -7,14 +7,18 @@ import java.util.Map;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(int[] arr) {
-            int sum = 0;
-            int max = sum;
-            for (int num : arr) {
-                sum += num;
-                max = Math.max(max, sum);
+        public String solve1(String str) {
+            // s = "a1b2c3d4e"
+            StringBuilder res = new StringBuilder();
+            int n = str.length();
+            for(int i = 0; i < n; i++) {
+                if(i % 2 == 0) {
+                    res.append(str.charAt(i));
+                } else {
+                    res.append( (char)( str.charAt(i - 1) + (str.charAt(i)  - '0') ) );
+                }
             }
-            return max;
+            return res.toString();
         }
     }
 }
