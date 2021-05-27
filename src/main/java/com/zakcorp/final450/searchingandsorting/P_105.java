@@ -63,7 +63,7 @@ public class P_105 {
             // R contains the product of all the elements to the right
             // Note: for the element at index 'length - 1', there are no elements to the right,
             // so the R would be 1
-            int R = 1;
+            long R = 1;
             for (int i = length - 1; i >= 0; i--) {
 
                 // For the index 'i', R would contain the
