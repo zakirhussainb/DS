@@ -48,13 +48,14 @@ public class CanSum {
             if(memo[target])
                 return true;
             for(int num : arr) {
-                if ( canSum(target - num, arr, memo) ) {
+                int diff = target - num;
+                if ( canSum( diff, arr, memo ) ) {
                     memo[target] = true;
-                    return true;
+                    return memo[target];
                 }
             }
             memo[target] = false;
-            return false;
+            return memo[target];
         }
     }
 
