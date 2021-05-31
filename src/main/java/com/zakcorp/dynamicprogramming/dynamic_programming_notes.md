@@ -22,3 +22,7 @@
     - seed the trivial answer into the table
     - iterate through the table
     - fill further positions based on the current position
+    
+#### Java Code for all the programs by Alvin(FreeCodeCamp)
+* ##### Youtube URL for the tutorial - https://www.youtube.com/watch?v=oBt53YbR9Kk
+    - [LuizGuerra-DP-Java](https://github.com/LuizGuerra/Dynamic-Programming/blob/main/Java/src/Sum.java)

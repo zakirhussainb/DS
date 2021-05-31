@@ -22,32 +22,31 @@ public class HowSum_Part {
             return null;
         }
     }
-    /*static class Solver1 {
+    static class Solver1 {
         public List<Integer> howSum(int target, int[] arr) {
-            List<Integer> result = new ArrayList<>();
-            int[] memo = new int[arr.length + 1];
-            howSum(target, arr, memo, result);
-            return result;
+            return howSum(target, arr, new HashMap<>());
         }
-        private List<Integer> howSum(int target, int[] arr, int[] memo, List<Integer> result) {
-            if(memo[target] != 0) {
-
+        private List<Integer> howSum(int target, int[] arr, HashMap<Integer, List<Integer>> memo) {
+            if(memo.containsKey(target)) {
+                return memo.get(target);
             }
             if(target == 0) {
-                return result;
+                return new ArrayList<>();
             }
             if(target < 0) {
                 return null;
             }
-            for (int num : arr) {
+            for(int num : arr) {
                 int diff = target - num;
-                List<Integer> res = howSum(diff, arr, memo, result);
-                if (res != null) {
+                List<Integer> result = howSum(diff, arr, memo);
+                if(result != null) {
                     result.add(num);
-                    return result;
+                    memo.put(num, result);
+                    return memo.get(num);
                 }
             }
-            return null;
+            memo.put(target, null);
+            return memo.get(target);
         }
-    }*/
+    }
 }
