@@ -10,7 +10,11 @@ public class P_89 {
             return result;
         }
         private void recursive(String[][] input, int m, int n, StringBuilder sb) {
-            if(m >= input.length - 1) {
+            sb.append(input[m][n]);
+            if(m == input.length - 1) {
+                for(int i = 0; i < input.length; i ++) {
+                    sb.append(" ");
+                }
                 sb.append(input[m][n]);
                 result.add(sb.toString());
                 sb.setLength(0);

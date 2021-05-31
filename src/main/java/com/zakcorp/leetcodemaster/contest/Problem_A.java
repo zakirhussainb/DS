@@ -7,18 +7,15 @@ import java.util.Map;
 
 public class Problem_A {
     static class Solver {
-        public String solve1(String str) {
-            // s = "a1b2c3d4e"
-            StringBuilder res = new StringBuilder();
-            int n = str.length();
-            for(int i = 0; i < n; i++) {
-                if(i % 2 == 0) {
-                    res.append(str.charAt(i));
-                } else {
-                    res.append( (char)( str.charAt(i - 1) + (str.charAt(i)  - '0') ) );
-                }
+        public boolean solve1(String firstWord, String secondWord, String targetWord) {
+            return getSum(firstWord) + getSum(secondWord) == getSum(targetWord);
+        }
+        private int getSum(String str) {
+            String val = "";
+            for(int i = 0; i < str.length(); i++) {
+                val += str.charAt(i) - 'a';
             }
-            return res.toString();
+            return Integer.parseInt(val);
         }
     }
 }
