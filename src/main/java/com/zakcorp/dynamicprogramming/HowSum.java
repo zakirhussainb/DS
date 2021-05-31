@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @source: Alvin's - https://youtu.be/oBt53YbR9Kk
  * @topic: Dynamic Programming
- * @sub-topic: Can Sum
+ * @sub-topic: How Sum
  * @platform:
  * @problem_link:
  * @pseudocode:
