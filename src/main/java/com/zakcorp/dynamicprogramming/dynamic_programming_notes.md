@@ -26,8 +26,22 @@
 #### Java Code for all the programs by Alvin(FreeCodeCamp)
 * ##### Youtube URL for the tutorial - https://www.youtube.com/watch?v=oBt53YbR9Kk
     - [LuizGuerra-DP-Java](https://github.com/LuizGuerra/Dynamic-Programming/blob/main/Java/src/Sum.java)
-
+* #####  Alvin's Problems
+    1. Fibonacci Number - DONE
+    2. Grid Traveler - DONE
+    3. Can Sum - DONE
+    4. How Sum
+    5. Best Sum
+    6. Can Construct
+    7. Count Construct
+    8. All Construct
 #### LeetCode Problems Equivalent to Alvin's problems
 * [39. Combination Sum](https://leetcode.com/problems/combination-sum/)
 * [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
-* [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
+* [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) - DONE
+
+| S.No. | Problem          | Recursion | Memoization | Tabulation |
+|-------|------------------|-----------|-------------|------------|
+| 1.    | Fibonacci Number | DONE      | DONE        |            |
+| 2.    |                  |           |             |            |
+|       |                  |           |             |            |
