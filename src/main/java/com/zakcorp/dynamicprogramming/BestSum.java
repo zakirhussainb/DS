@@ -40,4 +40,34 @@ public class BestSum {
             return shortestComb;
         }
     }
+    static class Solver1 {
+        public List<Integer> bestSum(int target, int[] arr) {
+            return bestSum(target, arr, new HashMap<>());
+        }
+        private List<Integer> bestSum(int target, int[] arr, HashMap<Integer, List<Integer>> map) {
+            if(map.containsKey(target)) {
+                return map.get(target);
+            }
+            if (target == 0)
+                return new ArrayList<>();
+            if (target < 0)
+                return null;
+            List<Integer> shortestComb = null;
+            for (int num : arr) {
+                int diff = target - num;
+                List<Integer> currComb = bestSum(diff, arr);
+                if (currComb != null) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(num);
+                    list.addAll(currComb);
+                    if (shortestComb == null || list.size() < shortestComb.size()) {
+                        shortestComb = list;
+//                        map.put(num, shortestComb);
+                    }
+                }
+            }
+            map.put(target, shortestComb);
+            return shortestComb;
+        }
+    }
 }
