@@ -36,8 +36,6 @@
     7. Count Construct
     8. All Construct
 #### LeetCode Problems Equivalent to Alvin's problems
-* [39. Combination Sum](https://leetcode.com/problems/combination-sum/)
-* [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
 * [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) - DONE
 
 | S.No. | Problem          | Recursion | Memoization | Tabulation |
