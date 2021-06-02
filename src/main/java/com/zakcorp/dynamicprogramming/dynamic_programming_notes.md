@@ -43,5 +43,10 @@
 | S.No. | Problem          | Recursion | Memoization | Tabulation |
 |-------|------------------|-----------|-------------|------------|
 | 1.    | Fibonacci Number | DONE      | DONE        |            |
-| 2.    |                  |           |             |            |
-|       |                  |           |             |            |
+| 2.    | Grid Traveler    | DONE      | DONE        |            |
+| 3.    | Can Sum          | DONE      |   DONE          |            |
+| 4.    | How Sum          | DONE      |     DONE        |            |
+| 5.    | Best Sum         | DONE     |             |            |
+| 6.    | Can Construct             |           |             |            |
+| 7.    | Count Construct             |           |             |            |
+| 8.    | All Construct             |           |             |            |
