@@ -37,15 +37,15 @@
     8. All Construct
 #### LeetCode Problems Equivalent/Similar to Alvin's problems
 * [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) - DONE
-* Can Construct - [139. Word Break](https://leetcode.com/problems/word-break/)
+* Can Construct - [139. Word Break](https://leetcode.com/problems/word-break/) - DONE
 
 | S.No. | Problem          | Recursion | Memoization | Tabulation |
 |-------|------------------|-----------|-------------|------------|
 | 1.    | Fibonacci Number | DONE      | DONE        |            |
 | 2.    | Grid Traveler    | DONE      | DONE        |            |
-| 3.    | Can Sum          | DONE      |   DONE          |            |
-| 4.    | How Sum          | DONE      |     DONE        |            |
-| 5.    | Best Sum         | DONE     |             |            |
-| 6.    | Can Construct             |           |             |            |
+| 3.    | Can Sum          | DONE      | DONE          |            |
+| 4.    | How Sum          | DONE      | DONE        |            |
+| 5.    | Best Sum         | DONE      | DONE            |            |
+| 6.    | Can Construct    | DONE      | DONE             |            |
 | 7.    | Count Construct             |           |             |            |
 | 8.    | All Construct             |           |             |            |

@@ -40,3 +40,51 @@ public class Problem_139 {
         }
     }
 }
+
+class LeetCodeSolution {
+    public boolean wordBreak(String targetStr, List<String> wordDict) {
+        // Solver p = new Solver();
+        // return p.solve(targetStr, wordDict);
+        Solver1 p1 = new Solver1();
+        return p1.solve(targetStr, wordDict);
+    }
+    static class Solver {
+        public boolean solve(String targetStr, List<String> wordDict) {
+            if(targetStr.isEmpty())
+                return true;
+            for(String word : wordDict) {
+                if(targetStr.startsWith(word)) {
+                    String suffix = targetStr.substring(word.length());
+                    if( solve(suffix, wordDict) ){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+    }
+    static class Solver1 {
+        public boolean solve(String targetStr, List<String> wordDict) {
+            Map<String, Boolean> map = new HashMap<>();
+            return solveWithMemo(targetStr, wordDict, map);
+        }
+        private boolean solveWithMemo(String targetStr, List<String> wordDict, Map<String, Boolean> map) {
+            if(map.containsKey(targetStr)) {
+                return map.get(targetStr);
+            }
+            if(targetStr.isEmpty())
+                return true;
+            for(String word : wordDict) {
+                if(targetStr.startsWith(word)) {
+                    String suffix = targetStr.substring(word.length());
+                    if( solveWithMemo(suffix, wordDict, map) ){
+                        map.put(suffix, true);
+                        return true;
+                    }
+                }
+            }
+            map.put(targetStr, false);
+            return false;
+        }
+    }
+}
