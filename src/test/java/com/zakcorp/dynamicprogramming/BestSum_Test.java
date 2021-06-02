@@ -28,6 +28,11 @@ public class BestSum_Test {
     }
     @Test
     public void test4() {
+        assertEquals(List.of(3, 2), p.bestSum(5, new int[]{2, 3, 1}));
+//        assertEquals(List.of(3, 5), p1.bestSum(8, new int[]{2, 3, 5}));
+    }
+    @Test
+    public void test5() {
 //        assertEquals(List.of(25, 25, 25, 25), p.bestSum(100, new int[]{1, 2,  5, 25}));
         assertEquals(List.of(25, 25, 25, 25), p1.bestSum(100, new int[]{1, 2, 5, 25}));
     }

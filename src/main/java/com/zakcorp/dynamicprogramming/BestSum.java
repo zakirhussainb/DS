@@ -25,16 +25,16 @@ public class BestSum {
         public List<Integer> bestSum(int target, int[] arr) {
             if (target == 0)
                 return new ArrayList<>();
-            if (target < 0)
-                return null;
             List<Integer> shortestComb = null;
             for (int num : arr) {
                 int diff = target - num;
-                List<Integer> currComb = bestSum(diff, arr);
-                if (currComb != null) {
-                    currComb.add(num);
-                    if (shortestComb == null || currComb.size() < shortestComb.size()) {
-                        shortestComb = currComb;
+                if (diff >= 0) {
+                    List<Integer> currComb = bestSum(diff, arr);
+                    if (currComb != null) {
+                        currComb.add(num);
+                        if (shortestComb == null || currComb.size() < shortestComb.size()) {
+                            shortestComb = currComb;
+                        }
                     }
                 }
             }
@@ -47,23 +47,24 @@ public class BestSum {
         public List<Integer> bestSum(int target, int[] arr) {
             return bestSum1(target, arr, new HashMap<>());
         }
+
         public List<Integer> bestSum1(int target, int[] arr, HashMap<Integer, List<Integer>> map) {
-            if( map.containsKey(target) ) {
+            if (map.containsKey(target)) {
                 return map.get(target);
             }
-            if(target == 0) {
+            if (target == 0) {
                 return new ArrayList<>();
             }
             List<Integer> shortestCombination = null;
-            for(int num : arr) {
+            for (int num : arr) {
                 int diff = target - num;
-                if(diff >= 0) {
+                if (diff >= 0) {
                     List<Integer> combination = bestSum1(diff, arr, map);
-                    if(combination != null) {
+                    if (combination != null) {
                         List<Integer> tempList = new ArrayList<>();
                         tempList.add(num);
                         tempList.addAll(combination);
-                        if(shortestCombination == null || tempList.size() < shortestCombination.size()) {
+                        if (shortestCombination == null || tempList.size() < shortestCombination.size()) {
                             shortestCombination = tempList;
                         }
                     }
