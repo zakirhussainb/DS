@@ -38,12 +38,12 @@ public class HowSum_Part_Test {
     }
     @Test
     public void test5() {
-        assertNull(p.howSum(300, new int[]{7, 14}));
-//        assertNull(p1.howSum(300, new int[]{7, 14}));
+//        assertNull(p.howSum(300, new int[]{7, 14}));
+        assertNull(p1.howSum(300, new int[]{7, 14}));
     }
 
-    @After
-    public void after() {
-        System.out.println(String.format("Time Limit Exceeded", System.currentTimeMillis() - startAt));
-    }
+//    @After
+//    public void after() {
+//        System.out.println(String.format("Time Limit Exceeded", System.currentTimeMillis() - startAt));
+//    }
 }

@@ -42,11 +42,11 @@ public class HowSum_Part {
                 if(result != null) {
                     result.add(num);
                     memo.put(num, result);
-                    return memo.get(num);
+                    return result;
                 }
             }
             memo.put(target, null);
-            return memo.get(target);
+            return null;
         }
     }
 }

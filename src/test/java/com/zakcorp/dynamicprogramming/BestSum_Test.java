@@ -19,7 +19,7 @@ public class BestSum_Test {
     @Test
     public void test2() {
         assertEquals(List.of(5, 3), p.bestSum(8, new int[]{2, 3, 5}));
-        assertEquals(List.of(5, 3), p1.bestSum(8, new int[]{2, 3, 5}));
+        assertEquals(List.of(3, 5), p1.bestSum(8, new int[]{2, 3, 5}));
     }
     @Test
     public void test3() {
