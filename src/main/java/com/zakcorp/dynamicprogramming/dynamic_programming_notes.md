@@ -35,8 +35,9 @@
     6. Can Construct
     7. Count Construct
     8. All Construct
-#### LeetCode Problems Equivalent to Alvin's problems
+#### LeetCode Problems Equivalent/Similar to Alvin's problems
 * [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) - DONE
+* Can Construct - [139. Word Break](https://leetcode.com/problems/word-break/)
 
 | S.No. | Problem          | Recursion | Memoization | Tabulation |
 |-------|------------------|-----------|-------------|------------|
