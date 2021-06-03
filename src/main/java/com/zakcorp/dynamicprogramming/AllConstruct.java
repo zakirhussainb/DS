@@ -1,6 +1,7 @@
 package com.zakcorp.dynamicprogramming;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AllConstruct {
     static class Solver {
@@ -37,7 +38,10 @@ public class AllConstruct {
             for(String word : wordDict) {
                 if(targetStr.startsWith(word)) {
                     String suffix = targetStr.substring(word.length());
-                    List<List<String>> ways = memoized(suffix, wordDict, memo);
+                    List<List<String>> ways = memoized(suffix, wordDict, memo)
+                            .stream()
+                            .map(ArrayList::new)
+                            .collect( Collectors.toList() );
                     for(List<String> list : ways) {
                         list.add(0, word);
                     }

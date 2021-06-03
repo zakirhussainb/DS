@@ -17,13 +17,13 @@ public class AllConstruct_Test {
         expected.add(Arrays.asList("ab", "c", "def"));
         expected.add(Arrays.asList("abc", "def"));
         expected.add(Arrays.asList("abcd", "ef"));
-        assertEquals( expected, p.solve1("abcdef", Arrays.asList("ab", "abc", "cd", "def", "abcd", "ef", "c") ));
+//        assertEquals( expected, p.solve1("abcdef", Arrays.asList("ab", "abc", "cd", "def", "abcd", "ef", "c") ));
         assertEquals( expected, p1.solve1("abcdef", Arrays.asList("ab", "abc", "cd", "def", "abcd", "ef", "c") ));
     }
     @Test
     public void test3() {
-//        assertEquals( 0, p.solve1("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-//                Arrays.asList("a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa") ));
+        assertEquals( new ArrayList<>(), p.solve1("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                Arrays.asList("a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa") ));
         assertEquals( new ArrayList<>(), p1.solve1("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
                 Arrays.asList("a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa") ));
     }
