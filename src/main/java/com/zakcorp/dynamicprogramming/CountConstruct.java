@@ -33,7 +33,6 @@ public class CountConstruct {
                 if( targetStr.startsWith(word) ) {
                     String suffix = targetStr.substring(word.length());
                     count += memoFunc(suffix, wordDict, memo);
-//                    memo.put(word, count);
                 }
             }
             memo.put(targetStr, count);
