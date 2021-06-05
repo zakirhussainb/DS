@@ -12,4 +12,22 @@ package com.zakcorp.dynamicprogramming;
  */
 public class GridTraveler {
     // Refer Problem 62 from leetcodemaster
+    static class Solver {
+        public int solve1(int m, int n) {
+            int[][] dp = new int[m + 1][n + 1];
+            dp[1][1] = 1;
+            for(int i = 1; i <= m; i++) {
+                for(int j = 1; j <= n; j++) {
+                    int val = dp[i][j];
+                    if(i + 1 <= m) {
+                        dp[i + 1][j] += val;
+                    }
+                    if(j + 1 <= n) {
+                        dp[i][j + 1] += val;
+                    }
+                }
+            }
+            return dp[m][n];
+        }
+    }
 }
