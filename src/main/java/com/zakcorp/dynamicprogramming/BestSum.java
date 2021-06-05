@@ -89,8 +89,7 @@ public class BestSum {
                         if(dpIndex < dpList.size()) {
                             List<Integer> innerList = new ArrayList<>( dpList.get(i) );
                             innerList.add(arr[j]);
-                            List<Integer> tempList = dpList.get(dpIndex);
-                            if(tempList == null || innerList.size() < tempList.size()) {
+                            if(dpList.get(dpIndex) == null || innerList.size() < dpList.get(dpIndex).size()) {
                                 // Use "set" and don't use "add", because the list already contains the dpIndex(null)
                                 dpList.set(dpIndex, innerList);
                             }
