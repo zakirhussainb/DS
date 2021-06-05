@@ -61,9 +61,8 @@ public class BestSum {
                 if (diff >= 0) {
                     List<Integer> combination = bestSum1(diff, arr, map);
                     if (combination != null) {
-                        List<Integer> tempList = new ArrayList<>();
+                        List<Integer> tempList = new ArrayList<>( combination );
                         tempList.add(num);
-                        tempList.addAll(combination);
                         if (shortestCombination == null || tempList.size() < shortestCombination.size()) {
                             shortestCombination = tempList;
                         }
@@ -72,6 +71,34 @@ public class BestSum {
             }
             map.put(target, shortestCombination);
             return shortestCombination;
+        }
+    }
+
+    // Tabulation solution
+    static class Solver2 {
+        public List<Integer> bestSum(int target, int[] arr) {
+            List<List<Integer>> dpList = new ArrayList<>();
+            dpList.add(new ArrayList<>());
+            for(int i = 0; i < target; i++) {
+                dpList.add(null);
+            }
+            for(int i = 0; i < dpList.size(); i++) {
+                if( dpList.get(i) != null ) {
+                    for(int j = 0; j < arr.length; j++) {
+                        int dpIndex = i + arr[j];
+                        if(dpIndex < dpList.size()) {
+                            List<Integer> innerList = new ArrayList<>( dpList.get(i) );
+                            innerList.add(arr[j]);
+                            List<Integer> tempList = dpList.get(dpIndex);
+                            if(tempList == null || innerList.size() < tempList.size()) {
+                                // Use "set" and don't use "add", because the list already contains the dpIndex(null)
+                                dpList.set(dpIndex, innerList);
+                            }
+                        }
+                    }
+                }
+            }
+            return dpList.get(target);
         }
     }
 }

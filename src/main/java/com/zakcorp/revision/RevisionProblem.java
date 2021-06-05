@@ -43,5 +43,32 @@ public class RevisionProblem {
             }
             return null;
         }
+        public List<Integer> bestSum(int targetSum, int[] arr) {
+            int n = arr.length;
+            List<List<Integer>> dp = new ArrayList<>();
+            dp.add(new ArrayList<>());
+            for(int i = 1; i <= targetSum; i++) {
+                dp.add(null);
+            }
+            List<Integer> shortestComb = null;
+            for(int i = 0; i < dp.size(); i++) {
+                if(dp.get(i) != null) {
+                    for(int j = 0; j < n; j++ ) {
+                        int dpIndex = i + arr[j];
+                        if( dpIndex < dp.size() ) {
+                            List<Integer> innerList = new ArrayList<>( dp.get(i) );
+                            innerList.add(0, arr[j]);
+                            if( dpIndex == targetSum ) {
+                                if(shortestComb == null || innerList.size() < shortestComb.size()) {
+                                    shortestComb = innerList;
+                                }
+                            }
+                            dp.set( dpIndex, innerList );
+                        }
+                    }
+                }
+            }
+            return shortestComb;
+        }
     }
 }
