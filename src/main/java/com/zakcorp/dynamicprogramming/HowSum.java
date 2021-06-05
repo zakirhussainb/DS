@@ -22,24 +22,13 @@ If there are  multiple combinations possible, you may return any single one.
  */
 public class HowSum {
     static class Solver {
-        public int[] recursive(int target, int[] arr) {
-            LinkedList<Integer> ll = howSum(target, arr);
-            int[] res = null;
-            if( !ll.isEmpty() ) {
-                res = new int[ll.size()];
-            }
-            for(int i = 0; i < ll.size(); i++) {
-                res[i] = ll.get(i);
-            }
-            return res;
-        }
-        private LinkedList<Integer> howSum(int target, int[] arr) {
+        public LinkedList<Integer> recursive(int target, int[] arr) {
             if(target == 0)
                 return new LinkedList<>();
             if(target < 0)
                 return null;
             for(int num : arr) {
-                LinkedList<Integer> res = howSum(target - num, arr);
+                LinkedList<Integer> res = recursive(target - num, arr);
                 if( res != null ) {
                     res.add(num);
                     return res;
@@ -50,41 +39,52 @@ public class HowSum {
     }
 
     static class Solver1 {
-        public int[] memoized(int target, int[] arr) {
-            LinkedList<Integer> ll = howSum(target, arr, new LinkedList<>());
-            int[] res = null;
-            if( !ll.isEmpty() ) {
-                res = new int[ll.size()];
-            }
-            for(int i = 0; i < ll.size(); i++) {
-                res[i] = ll.get(i);
-            }
-            return res;
+        public LinkedList<Integer> memoized(int target, int[] arr) {
+            return memoized(target, arr, new HashMap<>());
         }
-        private LinkedList<Integer> howSum(int target, int[] arr, LinkedList<LinkedList<Integer>> memo) {
-            if(memo.contains(target)) {
-
+        private LinkedList<Integer> memoized(int target, int[] arr, HashMap<Integer, LinkedList<Integer>> memo) {
+            if(memo.containsKey(target)) {
+                return memo.get(target);
             }
             if(target == 0)
                 return new LinkedList<>();
             if(target < 0)
                 return null;
             for(int num : arr) {
-                LinkedList<Integer> res = howSum(target - num, arr, memo);
+                LinkedList<Integer> res = memoized(target - num, arr, memo);
                 if(res != null) {
                     res.add(num);
-                    memo.add(res);
+                    memo.put(num, res);
                     return res;
                 }
             }
-            memo.add(null);
+            memo.put(target, null);
             return null;
         }
     }
 
     static class Solver2 {
-        public int[] tabulation(int target, int[] arr) {
-
+        public List<Integer> tabulation(int target, int[] arr) {
+            List<List<Integer>> dp = new ArrayList<>();
+            dp.add(new ArrayList<>());
+            for(int i = 0; i < target; i++) {
+                dp.add(null);
+            }
+            for(int i = 0; i < dp.size(); i++) {
+                if(dp.get(i) != null) {
+                    for(int j = 0; j < arr.length; j++) {
+                        int dpIndex = i + arr[j];
+                        if(dpIndex < dp.size()) {
+                            List<Integer> innerList = new ArrayList<>(dp.get(i));
+                            innerList.add(0, arr[j]);
+                            if(dpIndex == target) {
+                                return innerList;
+                            }
+                            dp.set(dpIndex, innerList);
+                        }
+                    }
+                }
+            }
             return null;
         }
     }

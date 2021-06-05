@@ -25,7 +25,7 @@
     
 #### Java Code for all the programs by Alvin(FreeCodeCamp)
 * ##### Youtube URL for the tutorial - https://www.youtube.com/watch?v=oBt53YbR9Kk
-    - [LuizGuerra-DP-Java](https://github.com/LuizGuerra/Dynamic-Programming/blob/main/Java/src/Sum.java)
+    - [LuizGuerra-DP-Java](https://github.com/LuizGuerra/Dynamic-Programming/tree/main/Java/src)
 * #####  Alvin's Problems
     1. Fibonacci Number - DONE
     2. Grid Traveler - DONE
