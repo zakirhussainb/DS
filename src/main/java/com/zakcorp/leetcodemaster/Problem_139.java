@@ -39,6 +39,27 @@ public class Problem_139 {
             return memo[start] = false;
         }
     }
+
+    static class Solver2 {
+        public boolean solve1(String targetStr, List<String> wordDict) {
+            int m = targetStr.length();
+            boolean[] dp = new boolean[m + 1];
+            dp[0] = true;
+            for(int i = 0; i < dp.length; i++) {
+                if(dp[i]) {
+                    String suffix = targetStr.substring(i);
+                    for(String word : wordDict) {
+                        if(suffix.startsWith(word)) {
+                            dp[i + word.length()] = true;
+                        }
+                        if(dp[m])
+                            return true;
+                    }
+                }
+            }
+            return dp[m];
+        }
+    }
 }
 
 class LeetCodeSolution {
@@ -48,6 +69,7 @@ class LeetCodeSolution {
         Solver1 p1 = new Solver1();
         return p1.solve(targetStr, wordDict);
     }
+
     static class Solver {
         public boolean solve(String targetStr, List<String> wordDict) {
             if(targetStr.isEmpty())
@@ -63,6 +85,7 @@ class LeetCodeSolution {
             return false;
         }
     }
+
     static class Solver1 {
         public boolean solve(String targetStr, List<String> wordDict) {
             Map<String, Boolean> map = new HashMap<>();
@@ -87,4 +110,26 @@ class LeetCodeSolution {
             return false;
         }
     }
+
+    static class Solver2 {
+        public boolean solve(String targetStr, List<String> wordDict) {
+            int m = targetStr.length();
+            boolean[] dp = new boolean[m + 1];
+            dp[0] = true;
+            for(int i = 0; i < dp.length; i++) {
+                if(dp[i]) {
+                    String suffix = targetStr.substring(i);
+                    for(String word : wordDict) {
+                        if(suffix.startsWith(word)) {
+                            dp[i + word.length()] = true;
+                        }
+                        if(dp[m])
+                            return true;
+                    }
+                }
+            }
+            return dp[m];
+        }
+    }
+
 }
