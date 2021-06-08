@@ -39,4 +39,44 @@ public class CountConstruct {
             return count;
         }
     }
+
+    static class Solver2 {
+        public int solve1(String targetStr, List<String> wordDict) {
+            int m = targetStr.length();
+            int[] dp = new int[m + 1];
+            dp[0] = 1;
+            for(int i = 0; i < dp.length; i++) {
+                if(dp[i] != 0) {
+                    String suffix = targetStr.substring(i);
+                    for(String word : wordDict) {
+                        if(suffix.startsWith(word)) {
+                            dp[i + word.length()] += dp[i];
+                        }
+                    }
+                }
+            }
+            return dp[m];
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
