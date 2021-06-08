@@ -52,4 +52,31 @@ public class AllConstruct {
             return resultList;
         }
     }
+    static class Solver2 {
+        public List<List<String>> solve1(String targetStr, List<String> wordDict) {
+            int m = targetStr.length();
+            List<List<List<String>>> dp = new ArrayList<>();
+            dp.add(new ArrayList<>());
+            dp.get(0).add(new ArrayList<>());
+            for(int i = 0; i < m; i++) {
+                dp.add(new ArrayList<>());
+            }
+            for(int i = 0; i <= m; i++) {
+                if(dp.get(i) != null) {
+                    String suffix = targetStr.substring(i);
+                    for(String word : wordDict) {
+                        if(suffix.startsWith(word)) {
+                            List<List<String>> tempList = dp.get(i)
+                                    .stream()
+                                    .map(ArrayList::new)
+                                    .collect(Collectors.toList());
+                            tempList.forEach(innerList -> innerList.add(word));
+                            dp.get(i + word.length()).addAll(tempList);
+                        }
+                    }
+                }
+            }
+            return dp.get(m);
+        }
+    }
 }
