@@ -46,6 +46,6 @@
 | 3.    | Can Sum          | DONE      | DONE        | DONE       |
 | 4.    | How Sum          | DONE      | DONE        | DONE       |
 | 5.    | Best Sum         | DONE      | DONE        |            |
-| 6.    | Can Construct    | DONE      | DONE        |            |
+| 6.    | Can Construct    | DONE      | DONE        | DONE       |
 | 7.    | Count Construct  | DONE      | DONE        |            |
 | 8.    | All Construct    | DONE      | DONE        |            |
