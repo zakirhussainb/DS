@@ -8,6 +8,7 @@ public class P_381_Test {
     P_381.Solver p = new P_381.Solver();
     @Test
     public void test1() {
+        assertEquals(3, p.solve1(3, 2) );
         assertEquals(3, p.solve3(3, 2) );
         assertEquals(3, p.solve4(3, 2) );
     }

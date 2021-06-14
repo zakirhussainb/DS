@@ -6,9 +6,17 @@ public class P_381 {
         Formula:-  nCr = n! / r!(n - r)!
         Example:-  3C2 = 3! / 2!(3 - 2)! = 3;;
         Recurrence
-        Relation:- comb(n - 1, k) + k * comb(n - 1, k - 1)
+        Relation:- comb(n - 1, k) + comb(n - 1, k - 1)
      */
     static class Solver {
+        // Recursion - DP - O(N) and O(N)
+        public int solve1(int n, int r) {
+            if(r > n)
+                return 0;
+            if(r == 0)
+                return 1;
+            return solve1(n - 1, r) + solve1(n - 1, r - 1);
+        }
         // Tabulation - DP - O(N) and O(N)
         public int solve3(int n, int r) {
             int[] factDp = new int[n + 1];
