@@ -7,8 +7,14 @@ public class P_383 {
      */
     static class Solver {
         // Recursive solution - Time - Exponential
-        public int solve1() {
-            return 0;
+        public int solve1(int n) {
+            if(n <= 1)
+                return 1;
+            int res = 0;
+            for(int i = 0; i < n; i++) {
+                res += solve1(i) * solve1(n - i - 1);
+            }
+            return res;
         }
 
         // Tabulation DP - Time - Quadratic - O(N^2)
