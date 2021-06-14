@@ -3,7 +3,9 @@ package com.zakcorp.final450.dp;
 public class P_383 {
     /*
     Catalan Number
-
+        Youtube resources to understand the solution
+        https://youtu.be/0pTN0qzpt-Y
+        https://youtu.be/0s20L4-chDA
      */
     static class Solver {
         // Recursive solution - Time - Exponential
