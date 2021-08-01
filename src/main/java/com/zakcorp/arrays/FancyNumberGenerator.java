@@ -1,6 +1,6 @@
 package com.zakcorp.arrays;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class FancyNumberGenerator {
     public static void main(String[] args) {
@@ -8,13 +8,14 @@ public class FancyNumberGenerator {
         int startRange = 500;
         int endRange = 1500;
         int k = 1, m = 0;
-        int[] output = new int[201];
+        List<Integer> output  = new ArrayList<>();
         for(int i = startRange; i <= endRange; i++) {
             if(isFancy(i, k)) {
-                output[m++] = i;
+                output.add(i);
             }
         }
-        System.out.println(Arrays.toString(output));
+        System.out.println("There are total " + output.size() + " fancy numbers within the range " + startRange + " to " + endRange);
+        System.out.println(output);
     }
     private static boolean isFancy(int num, int total) {
         int sum = 0;
