@@ -1,15 +1,5 @@
 package com.zakcorp.leetcodemaster;
 
-/**
- * Created by Zakir Hussain B on 25/10/20.
- *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
- */
 public class Problem_240 {
     static class Solver {
         public boolean solve1(int[][] matrix, int target) {
