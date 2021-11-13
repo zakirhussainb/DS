@@ -1,31 +1,26 @@
 package com.zakcorp.leetcodemaster;
 
-/**
- * Created by Zakir Hussain B on 30/08/20.
- *
- * @source:
- * @topic:
- * @sub-topic:
- * @platform:
- * @problem_link:
- * @pseudocode:
- */
 public class Problem_55 {
     public boolean canJump(int[] arr) {
-        int n = arr.length;
-        int start = 0;
-        int end = n - 1;
-        int j = start;
-        while(j < n) {
-            if(j == end) {
+        boolean[] memo = new boolean[arr.length + 1];
+        jumpArr(arr, 0, memo);
+        return memo[arr.length - 1];
+    }
+    private boolean jumpArr(int[] arr, int index, boolean[] memo) {
+        if( memo[index] ) {
+            return true;
+        }
+//        if(index == arr.length - 1) {
+//            memo[index] = true;
+//            return true;
+//        }
+        for(int i = index + 1; i <= arr[index]; i++) {
+            if( jumpArr(arr, i, memo) ) {
+                memo[index] = true;
                 return true;
             }
-            if(arr[j] != 0) {
-                j = j + arr[j];
-            } else {
-                return false;
-            }
         }
-        return j >= end;
+        memo[index] = false;
+        return false;
     }
 }
