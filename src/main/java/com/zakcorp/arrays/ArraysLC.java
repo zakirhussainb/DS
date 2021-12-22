@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class ArraysLC {
     public static void main(String[] args) {
-
+        String recallUrl = "/webapps/blackboard/execute/modulepage/viewGroup?course_id=_4_1&group_id=_46_1";
+        String groupId = recallUrl.substring( recallUrl.indexOf( "group_id=" ) );
+        System.out.println("groupId..." + groupId);
     }
 
     public int findMaxLength(int[] arr){
