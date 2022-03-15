@@ -1,7 +1,16 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.Stack;
+
+/**
+ * There are three ways to solve this problem and knowing all of them is mandatory in order to understand the problem
+ * and its solution better
+ *  1. DFS - Recursive
+ *  2. DFS - Iterative using Stack
+ *  3. BFS - Iterative Using Queue
+ */
 public class Problem_733 {
-    static class Solver {
+    static class DFSRecursive {
         public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
             if(image[sr][sc] == newColor) {
                 return image;
@@ -21,6 +30,20 @@ public class Problem_733 {
             fillImage(image, sr - 1, sc, color, newColor);
             fillImage(image, sr, sc + 1, color, newColor);
             fillImage(image, sr, sc - 1, color, newColor);
+        }
+    }
+
+    static class DFSIterative {
+        public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+            if(image[sr][sc] == newColor) {
+                return image;
+            }
+            Stack<Integer> stack = new Stack<>();
+            stack.push(image[sr][sc]);
+            while(stack.isEmpty()) {
+
+            }
+            return image;
         }
     }
 }

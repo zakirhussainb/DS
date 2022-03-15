@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
 public class Problem_733_Test {
-    Problem_733.Solver p = new Problem_733.Solver();
+    Problem_733.DFSRecursive p = new Problem_733.DFSRecursive();
     @Test
     public void test1() {
         assertArrayEquals(new int[][]{ {2, 2, 2}, {2, 2, 0}, {2, 0, 1} },
