@@ -38,10 +38,24 @@ public class Problem_733 {
             if(image[sr][sc] == newColor) {
                 return image;
             }
-            Stack<Integer> stack = new Stack<>();
-            stack.push(image[sr][sc]);
-            while(stack.isEmpty()) {
-
+            int temp = image[sr][sc];
+            Stack<int[]> stack = new Stack<>();
+            stack.push(new int[]{sr, sc});
+            while( !stack.isEmpty() ) {
+                int[] colorIndex = stack.pop();
+                int x = colorIndex[0];
+                int y = colorIndex[1];
+                if( image[x][y] == temp ) {
+                    image[x][y] = newColor;
+                    if(x + 1 < image.length)
+                        stack.push(new int[]{x + 1, y});
+                    if(y + 1 < image[0].length)
+                        stack.push(new int[]{x, y + 1});
+                    if(x - 1 >= 0)
+                        stack.push(new int[]{x - 1, y});
+                    if(y - 1 >= 0)
+                        stack.push(new int[]{x, y - 1});
+                }
             }
             return image;
         }
