@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Problem_200_Test {
-    Problem_200.Solver p = new Problem_200.Solver();
+    Problem_200.DFSRecursive p = new Problem_200.DFSRecursive();
     @Test
     public void test1() {
         assertEquals(3, p.solve1(new int[][]{
