@@ -1,26 +1,33 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import com.zakcorp.leetcodemaster.Problem_5;
-
-import java.util.*;
-import java.util.Map;
 
 public class Problem_A {
     static class Solver {
-        public String solve1(String str) {
-            int n = str.length();
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < n; i++) {
-                int count = 1;
-                while( i < n - 1 && str.charAt(i) == str.charAt(i + 1) ) {
-                    count++;
-                    i++;
+        public int solve1(int start, int goal) {
+            String str = Integer.toBinaryString(start);
+            String goa = Integer.toBinaryString(goal);
+            int c = 0;
+            int i = str.length() - 1, j = goa.length() - 1;
+            while(i >= 0 && j >= 0) {
+                if(str.charAt(i) != goa.charAt(j)) {
+                    c++;
                 }
-                sb.append(count);
-                sb.append(str.charAt(i));
+                i--;
+                j--;
             }
-
-            return sb.toString();
+            while(i >= 0) {
+                if(str.charAt(i) != '0') {
+                    c++;
+                }
+                i--;
+            }
+            while(j >= 0) {
+                if(goa.charAt(j) != '0') {
+                    c++;
+                }
+                j--;
+            }
+            return c;
         }
     }
 }
