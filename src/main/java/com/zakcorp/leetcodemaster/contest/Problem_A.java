@@ -3,31 +3,30 @@ package com.zakcorp.leetcodemaster.contest;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(int start, int goal) {
-            String str = Integer.toBinaryString(start);
-            String goa = Integer.toBinaryString(goal);
-            int c = 0;
-            int i = str.length() - 1, j = goa.length() - 1;
-            while(i >= 0 && j >= 0) {
-                if(str.charAt(i) != goa.charAt(j)) {
-                    c++;
+        public int solve1(int num) {
+            String str = Integer.toString(num);
+            StringBuilder sb = new StringBuilder(str);
+            int maxSum = 0;
+            for(int i = 0; i < sb.length(); i++) {
+                for(int j = i + 1; j < sb.length(); j++) {
+                    int x = sb.charAt(i) - '0';
+                    int y = sb.charAt(j) - '0';
+                    if( ( isEven(x) && isEven(y) ) || ( isOdd(x) && isOdd(y) ) ) {
+                        if(y > x) {
+                            char temp = sb.charAt(i);
+                            sb.setCharAt(i, sb.charAt(j));
+                            sb.setCharAt(j, temp);
+                        }
+                    }
                 }
-                i--;
-                j--;
             }
-            while(i >= 0) {
-                if(str.charAt(i) != '0') {
-                    c++;
-                }
-                i--;
-            }
-            while(j >= 0) {
-                if(goa.charAt(j) != '0') {
-                    c++;
-                }
-                j--;
-            }
-            return c;
+            return Integer.parseInt(sb.toString());
+        }
+        private boolean isOdd(int num) {
+            return num % 2 != 0;
+        }
+        private boolean isEven(int num) {
+            return num % 2 == 0;
         }
     }
 }
