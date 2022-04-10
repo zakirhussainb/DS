@@ -6,10 +6,10 @@ public class Problem_973 {
     static class Solver {
         static class Pair {
             double ED;
-            int[] points;
-            public Pair(double ED, int[] points) {
+            int[] point;
+            public Pair(double ED, int[] point) {
                 this.ED = ED;
-                this.points = points;
+                this.point   = point;
             }
         }
         public int[][] solve1(int[][] points, int K) {
@@ -24,7 +24,7 @@ public class Problem_973 {
             while( !pq.isEmpty() ) {
                 if(K == 0)
                     break;
-                result[i] = pq.poll().points;
+                result[i] = pq.poll().point;
                 i++;
                 K--;
             }
