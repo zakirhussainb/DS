@@ -1,34 +1,35 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import java.util.PriorityQueue;
-
 public class Problem_C {
-    static class Solver {
-        public int solve1(int[] nums, int k) {
-            int n=nums.length;
-            long mod=1000000007;
-            if(n==1){
-                long ans=(nums[0]+k)%mod;
-                return (int)ans;
+    static class ATM {
+        private final long[] money;
+        private final int[] coin;
+        public ATM() {
+            money = new long[5];
+            coin = new int[]{20, 50, 100, 200, 500};
+        }
+
+        public void deposit(int[] banknotesCount) {
+            for(int i = 0; i < 5; i++) {
+                money[i] += banknotesCount[i];
             }
-            PriorityQueue<Long> pq=new PriorityQueue<>();
-            for(int a:nums){
-                pq.add((long)a);
+        }
+
+        public int[] withdraw(int amount) {
+            int[] result = new int[5];
+            for (int i = 4; i >= 0; i--) {
+                // choose larger coin at best we can
+                int k = (int) Math.min(money[i], amount / coin[i]);
+                result[i] = k;
+                amount = amount - ( k * coin[i] );
             }
-            while(k>0){
-                long num1=pq.remove();
-                long num2=pq.remove();
-                long diff=Math.min(k,(num2-num1)+1);
-                num1+=diff;
-                k-=diff;
-                pq.add(num1);
-                pq.add(num2);
+            if(amount != 0) {
+                return new int[]{-1};
             }
-            long ans=1;
-            while(!pq.isEmpty()){
-                ans=(ans*pq.remove())%mod;
+            for(int i = 0; i < 5; i++) {
+                money[i] = money[i] - result[i];
             }
-            return (int)ans;
+            return result;
         }
     }
 }

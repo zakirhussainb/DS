@@ -1,32 +1,42 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(int num) {
-            String str = Integer.toString(num);
-            StringBuilder sb = new StringBuilder(str);
-            int maxSum = 0;
-            for(int i = 0; i < sb.length(); i++) {
-                for(int j = i + 1; j < sb.length(); j++) {
-                    int x = sb.charAt(i) - '0';
-                    int y = sb.charAt(j) - '0';
-                    if( ( isEven(x) && isEven(y) ) || ( isOdd(x) && isOdd(y) ) ) {
-                        if(y > x) {
-                            char temp = sb.charAt(i);
-                            sb.setCharAt(i, sb.charAt(j));
-                            sb.setCharAt(j, temp);
-                        }
+        public int solve1(int[] arr) {
+            int minVal = Integer.MAX_VALUE;
+            int result = 0;
+            Arrays.sort(arr);
+            List<Integer> list = new ArrayList<>();
+            for (int num : arr) {
+                int distanceFromZero = Math.abs(num);
+                if(distanceFromZero <= minVal) {
+                    if(distanceFromZero == minVal || !list.isEmpty()) {
+                        list.add(num);
                     }
+                    minVal = distanceFromZero;
+                    result = num;
                 }
             }
-            return Integer.parseInt(sb.toString());
+            list.sort(Comparator.comparingInt(Math::abs));
+            return list.isEmpty() ? result : list.get(0);
         }
-        private boolean isOdd(int num) {
-            return num % 2 != 0;
+        public int solve2(int[] arr) {
+            int closestIndex = 0;
+            int diff = Integer.MAX_VALUE;
+            for (int i = 0; i < arr.length; ++i) {
+                int abs = Math.abs(arr[i]);
+                if (abs < diff) {
+                    closestIndex = i;
+                    diff = abs;
+                } else if (abs == diff && arr[i] > 0 && arr[closestIndex] < 0) {
+                    //same distance to zero but positive
+                    closestIndex =i;
+                }
+            }
+            return arr[closestIndex];
         }
-        private boolean isEven(int num) {
-            return num % 2 == 0;
-        }
+
     }
 }
