@@ -4,39 +4,27 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(int[] arr) {
-            int minVal = Integer.MAX_VALUE;
-            int result = 0;
-            Arrays.sort(arr);
-            List<Integer> list = new ArrayList<>();
-            for (int num : arr) {
-                int distanceFromZero = Math.abs(num);
-                if(distanceFromZero <= minVal) {
-                    if(distanceFromZero == minVal || !list.isEmpty()) {
-                        list.add(num);
-                    }
-                    minVal = distanceFromZero;
-                    result = num;
+        public String solve1(String str, int k) {
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < str.length(); i = i + k) {
+                String part = "";
+                if(i + k >= str.length()) {
+                    part = str.substring(i, i + k - 1);
+                } else {
+                    part = str.substring(i, i + k);
                 }
+                int val = calculateVal(part);
+                sb.append(val);
+                str = sb.toString();
             }
-            list.sort(Comparator.comparingInt(Math::abs));
-            return list.isEmpty() ? result : list.get(0);
+            return sb.toString();
         }
-        public int solve2(int[] arr) {
-            int closestIndex = 0;
-            int diff = Integer.MAX_VALUE;
-            for (int i = 0; i < arr.length; ++i) {
-                int abs = Math.abs(arr[i]);
-                if (abs < diff) {
-                    closestIndex = i;
-                    diff = abs;
-                } else if (abs == diff && arr[i] > 0 && arr[closestIndex] < 0) {
-                    //same distance to zero but positive
-                    closestIndex =i;
-                }
+        private int calculateVal(String part) {
+            int sum = 0;
+            for(char ch : part.toCharArray()) {
+                sum += ch - '0';
             }
-            return arr[closestIndex];
+            return sum;
         }
-
     }
 }
