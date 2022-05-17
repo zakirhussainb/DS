@@ -4,17 +4,19 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public String solve1(String str) {
+        public int solve1(int val, int k) {
+            String str = String.valueOf(val);
             int n = str.length();
-            int val = Integer.MIN_VALUE;
             int start = 0;
-            int c = 1;
-            for(int end = 0; end < n; end++) {
-                if (end + 1 < n && str.charAt(end) == str.charAt(end + 1)) {
+            int c = 1, count = 0;
+            for (int end = 0; end < n; end++) {
+                if (end + 1 < n) {
                     c++;
-                    if(c >= 3) {
+                    if (c >= k) {
                         String s = str.substring(start, end + 1 + 1);
-                        val = Math.max(val, Integer.parseInt(s));
+                        if(isDivisor(Integer.parseInt(s), val)) {
+                            count++;
+                        }
                         start = end + 1;
                         c = 1;
                     }
@@ -23,12 +25,27 @@ public class Problem_A {
                     c = 1;
                 }
             }
-            if(val == 0)
-                return "000";
-            else if(val == Integer.MIN_VALUE)
-                return "";
-            else
-                return String.valueOf(val);
+            return count;
+        }
+        private boolean isDivisor(int num, int div) {
+            if(num <= 0) {
+                return false;
+            }
+            return div % num == 0;
+        }
+        public int solve2(int val, int k) {
+            String str = String.valueOf(val);
+            int n = str.length();
+            int count = 0;
+            for(int i = 0; i < n; i++) {
+                if(i + k <= n) {
+                    String s = str.substring(i, i + k);
+                    if(isDivisor(Integer.parseInt(s), val)) {
+                        count++;
+                    }
+                }
+            }
+            return count;
         }
     }
 }
