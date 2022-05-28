@@ -16,7 +16,7 @@ public class Problem_692 {
 */
 
             // THE COMPARATOR WORKS WHEN ELEMENT IS ADDED TO PQ AND ALSO WHEN REMOVED FROM PQ
-            PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>( new MyComparator() );
+            PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>( new SortByValuesThenByKeyComparator() );
             pq.addAll( wordFreqMap.entrySet() );
 
             List<String> result = new LinkedList<>();
@@ -30,7 +30,7 @@ public class Problem_692 {
      /*  IF TWO ENTRIES HAVE SAME VALUES THEN
       -> THIS COMPARATOR WILL FIRST SORT IN DESCENDING ORDER OF VALUES
       -> THEN IT WILL SORT IN ASCENDING ORDER OF KEYS -> i.e. lexicographically the smallest word*/
-    static class MyComparator implements Comparator<Map.Entry<String, Integer>> {
+    static class SortByValuesThenByKeyComparator implements Comparator<Map.Entry<String, Integer>> {
         @Override
         public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
             return e1.getValue().equals(e2.getValue()) ? e1.getKey().compareTo(e2.getKey()) : e2.getValue() - e1.getValue();
