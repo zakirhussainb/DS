@@ -15,6 +15,7 @@ public class Problem_692 {
                     entry1.getValue() == entry2.getValue() ? entry1.getKey().compareTo(entry2.getKey()) : entry2.getValue() - entry1.getValue() );
 */
 
+            // THE COMPARATOR WORKS WHEN ELEMENT IS ADDED TO PQ AND ALSO WHEN REMOVED FROM PQ
             PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>( new MyComparator() );
             pq.addAll( wordFreqMap.entrySet() );
 
@@ -25,6 +26,10 @@ public class Problem_692 {
             return result;
         }
     }
+
+     /*  IF TWO ENTRIES HAVE SAME VALUES THEN
+      -> THIS COMPARATOR WILL FIRST SORT IN DESCENDING ORDER OF VALUES
+      -> THEN IT WILL SORT IN ASCENDING ORDER OF KEYS -> i.e. lexicographically the smallest word*/
     static class MyComparator implements Comparator<Map.Entry<String, Integer>> {
         @Override
         public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
