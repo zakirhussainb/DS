@@ -8,18 +8,28 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals( 2, p.solve2(240, 2));
+        assertTrue(p.solve1("1210"));
     }
     @Test
     public void test2() {
-        assertEquals( 2, p.solve2(430043, 2));
+        assertFalse(p.solve1("030"));
     }
     @Test
     public void test3() {
-        assertEquals( 2, p.solve2(11, 1));
+        assertFalse(p.solve1("1"));
+        // [1]
+        // 0 must occur 1 time
     }
     @Test
     public void test4() {
-        assertEquals( 1, p.solve2(2, 1));
+        assertFalse(p.solve1("89"));
+        // 0 is occuring 8 times
+        // 1 is occuring 9 times
+    }
+    @Test
+    public void test5() {
+        assertFalse(p.solve1("8"));
+        // 0 is occuring 8 times
+        // 1 is occuring 9 times
     }
 }
