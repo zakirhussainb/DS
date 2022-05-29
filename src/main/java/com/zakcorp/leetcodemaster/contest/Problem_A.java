@@ -4,25 +4,21 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public boolean solve1(String number) {
-            Map<Integer, Integer> initialMap = new HashMap<>();
-            for(int i = 0; i < number.length(); i++) {
-                initialMap.put(number.charAt(i) - '0', initialMap.getOrDefault(number.charAt(i) - '0', 0) + 1);
+        public int solve1(String s, String target) {
+            int[] sHash = new int[26];
+            for(int i = 0; i < s.length(); i++) {
+                sHash[s.charAt(i) - 'a']++;
             }
-            for(int i = 0; i < number.length(); i++) {
-                if(!initialMap.containsKey(i)) {
-                    initialMap.put(i, 0);
-                }
+            int[] tHash = new int[26];
+            for(int i = 0; i < target.length(); i++) {
+                tHash[target.charAt(i) - 'a']++;
             }
-            int c = 0;
-            for(int i = 0; i < number.length(); i++) {
-                if (initialMap.containsKey(i)) {
-                    if (initialMap.get(i) == number.charAt(i) - '0') {
-                        c++;
-                    }
-                }
-            }
-            return c == number.length();
+
+            int min = Integer.MAX_VALUE;
+            for(char ch : target.toCharArray())
+                min = Math.min(min, sHash[ch - 'a'] / tHash[ch - 'a'] );
+
+            return min;
         }
     }
 }
