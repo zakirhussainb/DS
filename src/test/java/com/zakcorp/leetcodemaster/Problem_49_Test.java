@@ -19,5 +19,17 @@ public class Problem_49_Test {
         list.add(Arrays.asList("ate","eat","tea"));
 //        assertEquals(list, p.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
         assertEquals(list, p1.solve1(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+
+        /*
+        eat - aet
+        tea - aet
+        ate - aet
+        {aet -> {eat, tea, ate}
+        nat - ant
+        tan - ant
+        {ant -> {nat, ant}
+        bat - abt
+        {abt -> {bat}
+         */
     }
 }

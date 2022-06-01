@@ -21,7 +21,7 @@ public class Problem_49 {
         }
     }
     static class Solver1 {
-         /* Similar to the above solution, but here we are going to create hashmap keys in the form
+        /* Similar to the above solution, but here we are going to create hashmap keys in the form
           -> "eat" : #1#0#0#0#1#0#0#0#0#0#0#0#0#0#0#0#0#0#0#1#0#0#0#0#0#0 */
         public List<List<String>> solve1(String[] strArr) {
             Map<String, List<String>> map = new HashMap<>();
