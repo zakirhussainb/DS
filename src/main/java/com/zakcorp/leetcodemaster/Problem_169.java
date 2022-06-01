@@ -21,5 +21,15 @@ public class Problem_169 {
             }
             return majority;
         }
+        public int solve2(int[] arr) {
+            int counter = 0;
+            int candidate = 0;
+            for(int num : arr) {
+                if(counter == 0)
+                    candidate = num;
+                counter += (num == candidate) ? 1 : -1;
+            }
+            return candidate;
+        }
     }
 }
