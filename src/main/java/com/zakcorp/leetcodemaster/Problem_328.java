@@ -16,6 +16,15 @@ public class Problem_328 {
         }
     }
     static class Solver {
+        /*
+        The approach is very simple
+        Iterate the even && even.next pointer, then
+        o.n = e.n
+        o = o.n
+        e.n = o.n
+        e = e.n
+        then finally make your odd.next point to evenHead
+         */
         public ListNode solve1(ListNode head) {
             if(head == null || head.next == null) {
                 return head;
