@@ -15,6 +15,7 @@ public class Problem_142_Test {
         head.next.next.next = new SinglyLLIntImpl.Node(4);
         head.next.next.next.next = new SinglyLLIntImpl.Node(5);
         head.next.next.next.next.next = head.next.next;
-        assertEquals(head.next.next, p.solve1(head));
+//        assertEquals(head.next.next, p.solve1(head));
+        assertEquals(head.next.next, p.solve2(head));
     }
 }

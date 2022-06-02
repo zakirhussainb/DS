@@ -28,5 +28,28 @@ public class Problem_142 {
                 return null;
             }
         }
+        public SinglyLLIntImpl.Node solve2(SinglyLLIntImpl.Node head) {
+            if(head == null)
+                return null;
+            SinglyLLIntImpl.Node slow = head;
+            SinglyLLIntImpl.Node fast = head;
+            SinglyLLIntImpl.Node p1 = null;
+            while(fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+                if(slow == fast) {
+                    p1 = slow;
+                    break;
+                }
+            }
+            if(p1 == null)
+                return null;
+            SinglyLLIntImpl.Node p2 = head;
+            while(p1 != p2) {
+                p1 = p1.next;
+                p2 = p2.next;
+            }
+            return p1;
+        }
     }
 }
