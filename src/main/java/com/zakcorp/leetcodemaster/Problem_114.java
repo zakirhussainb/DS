@@ -45,4 +45,21 @@ public class Problem_114 {
             preOrderPrint(root.right);
         }
     }
+    static class Solver1 {
+        public void solve(TreeNode root) {
+            if (root == null)
+                return;
+            TreeNode curr = root;
+            while(curr != null) {
+                if(curr.left != null) {
+                    TreeNode last = curr.left;
+                    while(last.right != null)
+                        last = last.right;
+                    curr.right = curr.left;
+                    curr.left = null;
+                }
+                curr = curr.right;
+            }
+        }
+    }
 }

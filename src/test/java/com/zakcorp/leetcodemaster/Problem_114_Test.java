@@ -9,6 +9,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class Problem_114_Test {
     Problem_114.Solver p = new Problem_114.Solver();
+    Problem_114.Solver1 p1 = new Problem_114.Solver1();
     @Test
     public void test1() {
         Problem_114.TreeNode root = new Problem_114.TreeNode(1);
@@ -17,7 +18,8 @@ public class Problem_114_Test {
         root.left.left = new Problem_114.TreeNode(3);
         root.left.right = new Problem_114.TreeNode(4);
         root.right.right = new Problem_114.TreeNode(6);
-        p.solve(root);
-        p.preOrderPrint(root);
+//        p.solve(root);
+        p1.solve(root);
+//        p.preOrderPrint(root);
     }
 }
