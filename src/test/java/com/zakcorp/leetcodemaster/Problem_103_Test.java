@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Problem_103_Test {
     Problem_103.Solver p = new Problem_103.Solver();
+    Problem_103.Solver1 p1 = new Problem_103.Solver1();
     @Test
     public void test1() {
         List<List<Integer>> result = new ArrayList<>();
@@ -24,5 +25,6 @@ public class Problem_103_Test {
         root.right.left = new Problem_103.TreeNode(15);
         root.right.right = new Problem_103.TreeNode(7);
         assertEquals(result, p.solve1(root));
+        assertEquals(result, p1.solve1(root));
     }
 }

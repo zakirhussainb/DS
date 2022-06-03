@@ -44,4 +44,28 @@ public class Problem_103 {
             return result;
         }
     }
+    static class Solver1 {
+        public List<List<Integer>> solve1(TreeNode root) {
+            List<List<Integer>> result = new ArrayList<>();
+            if(root == null)
+                return result;
+            preorder(root, result, 0);
+            return result;
+        }
+        private void preorder(TreeNode root, List<List<Integer>> result, int level) {
+            if(root == null)
+                return;
+            if(result.size() <= level) {
+                result.add(new ArrayList<>());
+            }
+            List<Integer> collection = result.get(level);
+            if(level % 2 == 0)
+                collection.add(root.val);
+            else
+                collection.add(0, root.val);
+
+            preorder(root.left, result, level + 1);
+            preorder(root.right, result, level + 1);
+        }
+    }
 }
