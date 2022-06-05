@@ -1,35 +1,37 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Problem_C {
-    static class ATM {
-        private final long[] money;
-        private final int[] coin;
-        public ATM() {
-            money = new long[5];
-            coin = new int[]{20, 50, 100, 200, 500};
+    static class Solver {
+        public int[] solve1(int[] arr, int[][] operations) {
+            for(int i = 0; i < operations.length; i++) {
+                int number = operations[i][0];
+                int val = operations[i][1];
+                for(int j = 0; j < arr.length; j++) {
+                    if(arr[j] == number) {
+                        arr[j] = val;
+                        break;
+                    }
+                }
+            }
+            return arr;
         }
-
-        public void deposit(int[] banknotesCount) {
-            for(int i = 0; i < 5; i++) {
-                money[i] += banknotesCount[i];
+        public int[] solve2(int[] arr, int[][] operations) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for(int i = 0; i < arr.length; i++) {
+                map.put(arr[i], i);// arr[0], 0
             }
-        }
-
-        public int[] withdraw(int amount) {
-            int[] result = new int[5];
-            for (int i = 4; i >= 0; i--) {
-                // choose larger coin at best we can
-                int k = (int) Math.min(money[i], amount / coin[i]);
-                result[i] = k;
-                amount = amount - ( k * coin[i] );
+            for(int i = 0; i < operations.length; i++) {
+                int number = operations[i][0];
+                int val = operations[i][1];
+                if(map.containsKey(number)) {
+                    arr[map.get(number)] = val;
+                    map.put(val, map.get(number));
+                }
             }
-            if(amount != 0) {
-                return new int[]{-1};
-            }
-            for(int i = 0; i < 5; i++) {
-                money[i] = money[i] - result[i];
-            }
-            return result;
+            return arr;
         }
     }
 }
