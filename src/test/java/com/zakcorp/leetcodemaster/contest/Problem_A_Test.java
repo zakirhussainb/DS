@@ -8,14 +8,11 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(2, p.solve1("ilovecodingonleetcode", "code"));
+        assertEquals(1, p.solve1(new int[]{1,3,5,2,4,8,2,2}));
     }
     @Test
     public void test2() {
-        assertEquals(1, p.solve1("abcba", "abc"));
+        assertEquals(3, p.solve1(new int[]{3}));
     }
-    @Test
-    public void test3() {
-        assertEquals(1, p.solve1("abbaccaddaeea", "aaaaa"));
-    }
+
 }
