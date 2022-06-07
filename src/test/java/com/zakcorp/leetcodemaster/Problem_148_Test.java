@@ -2,8 +2,6 @@ package com.zakcorp.leetcodemaster;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Problem_148_Test {
     Problem_148.Solver p = new Problem_148.Solver();
     @Test
