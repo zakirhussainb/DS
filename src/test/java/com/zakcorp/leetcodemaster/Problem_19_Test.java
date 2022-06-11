@@ -1,12 +1,13 @@
 package com.zakcorp.leetcodemaster;
 
 import com.zakcorp.leetcodemaster.classes.ListNode;
+import com.zakcorp.leetcodemaster.util.CommonUtility;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class Problem_19_Test {
-    Problem_19 pro = new Problem_19();
+    CommonUtility util = new CommonUtility();
     Problem_19.Solver p = new Problem_19.Solver();
     Problem_19.Solver1 p1 = new Problem_19.Solver1();
     @Test
@@ -22,7 +23,7 @@ public class Problem_19_Test {
         output.next.next = new ListNode(3);
         output.next.next.next = new ListNode(5);
 //        assertTrue(pro.areListsSame(output, p.solve(head, 2)));
-        assertTrue(pro.areListsSame(output, p1.solve(head, 2)));
+        assertTrue(util.areListsSame(output, p1.solve(head, 2)));
     }
 
     @Test
@@ -38,7 +39,7 @@ public class Problem_19_Test {
         head.next = new ListNode(2);
 
         ListNode output = new ListNode(1);
-        assertTrue(pro.areListsSame(output, p.solve(head, 1)));
-        assertTrue(pro.areListsSame(output, p1.solve(head, 1)));
+        assertTrue(util.areListsSame(output, p.solve(head, 1)));
+        assertTrue(util.areListsSame(output, p1.solve(head, 1)));
     }
 }
