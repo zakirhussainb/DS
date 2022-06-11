@@ -8,11 +8,22 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(1, p.solve1(new int[]{1,3,5,2,4,8,2,2}));
+        assertTrue(p.solve1("IloveLe3tcode!"));
     }
     @Test
     public void test2() {
-        assertEquals(3, p.solve1(new int[]{3}));
+        assertFalse(p.solve1("Me+You--IsMyDream"));
     }
-
+    @Test
+    public void test3() {
+        assertFalse(p.solve1("1aB!"));
+    }
+    @Test
+    public void test4() {
+        assertTrue(p.solve1("(Aa1a1a1"));
+    }
+    @Test
+    public void test5() {
+        assertTrue(p.solve1("-Aa1a1a1"));
+    }
 }
