@@ -8,39 +8,29 @@ import java.util.*;
 
 public class Problem_D {
     static class Solver {
-        public long solve1(int[] arr, long z) {
-            int n = arr.length;
-            long count = 0;
-            for(int i = 0; i < n; i++) {
-                for(int j = i; j < n; j++) {
-                    int val = 0;
-                    for (int k = i; k <= j; k++) {
-                        val += arr[k];
-                    }
-                    int len = j - i + 1;
-                    val = val * len;
-                    if(val < z) {
-                        count++;
-                    } else {
-                        break;
+        public long solve1(String[] ideas) {
+            long counter = 0;
+            Set<String> set = new HashSet<>(Arrays.asList(ideas));
+            for(int i = 0; i < ideas.length; i++) {
+                for(int j = 0; j < ideas.length; j++) {
+                    String swappedStr = swap(ideas[i], ideas[j]);
+                    String[] sdg = swappedStr.split("\\s+");
+                    if( !set.contains(sdg[0]) && !set.contains(sdg[1]) ) {
+                        counter++;
                     }
                 }
             }
-            return count;
+            return counter;
         }
-        public long solve2(int[] nums, long k) {
-            if (k == 0) return 0;
-            int cnt = 0;
-            int sum = 0;
-            for (int i = 0, j = 0; j < nums.length; j++) {
-                sum += nums[j];
-                int pro = sum * (j - i + 1);
-                while (i <= j && pro < k) {
-                    pro /= nums[i++];
-                }
-                cnt += j - i + 1;
-            }
-            return cnt;
+        private String swap(String str1, String str2) {
+            char[] chArr1 = str1.toCharArray();
+            char[] chArr2 = str2.toCharArray();
+            char temp = chArr2[0];
+            chArr2[0] = chArr1[0];
+            chArr1[0] = temp;
+            String s1 = new String(chArr1);
+            String s2 = new String(chArr2);
+            return s1 + " " + s2;
         }
     }
 

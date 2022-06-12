@@ -31,7 +31,8 @@ public class Problem_2299 {
                 if(ch >= '0' && ch <= '9') {
                     isDigit = true;
                 }
-                if(ch == '!' || ch == '@' || ch == '#' || ch == '$' || ch == '%' || ch == '^' || ch == '&' || ch == '*' || ch == '(' || ch == ')' || ch == '-' || ch == '+') {
+                if(ch == '!' || ch == '@' || ch == '#' || ch == '$' || ch == '%' || ch == '^' || ch == '&' || ch == '*'
+                        || ch == '(' || ch == ')' || ch == '-' || ch == '+') {
                     isSpecial = true;
                 }
             }

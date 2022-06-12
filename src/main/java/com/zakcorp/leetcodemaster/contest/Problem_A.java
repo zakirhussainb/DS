@@ -6,40 +6,17 @@ import java.util.regex.Pattern;
 
 public class Problem_A {
     static class Solver {
-        public boolean solve1(String password) {
-//            String regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])$";
-//            boolean matches = false;
-//            if(password.length() >= 8) {
-//                matches = true;
-//            }
-//            if(password.matches("!@#\\$%\\^&\\*\\(\\)-\\+")) {
-//
-//            }
-//
-//            boolean matches = Pattern.matches(regex, password);
-//
-//            if(matches) {
-//                for(int i = 1; i < password.length(); i++) {
-//                    if(password.charAt(i - 1) == password.charAt(i)) {
-//                        return false;
-//                    }
-//                }
-//            } else {
-//                return false;
-//            }
-//            return true;
-            String regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*()\\-+]).{8,}$";
-            boolean matches = java.util.regex.Pattern.matches(regex, password);
-            if(matches) {
-                for(int i = 1; i < password.length(); i++) {
-                    if(password.charAt(i - 1) == password.charAt(i)) {
-                        return false;
-                    }
-                }
-            } else {
-                return false;
+        public double solve1(int[][] brackets, int income) {
+            double res = 0.0;
+            int prevAmnt = 0;
+            for(int[] ele: brackets) {
+                int amnt = ele[0];
+                int tax = ele[1];
+                int minSum = Math.min(amnt, income) - prevAmnt;
+                res += Math.max((minSum) * tax / 100.0, 0);
+                prevAmnt = amnt;
             }
-            return true;
+            return res;
         }
     }
 }
