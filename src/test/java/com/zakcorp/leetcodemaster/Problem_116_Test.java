@@ -18,4 +18,15 @@ public class Problem_116_Test {
         p.right.right =  new Node(7);
         pro.solve1(p);
     }
+    @Test
+    public void test2() {
+        Node p = new Node(1);
+        p.left =  new Node(2);
+        p.right =  new Node(3);
+        p.left.left = new Node(4);
+        p.left.right = new Node(5);
+        p.right.left =  new Node(6);
+        p.right.right =  new Node(7);
+        pro.solve2(p);
+    }
 }
