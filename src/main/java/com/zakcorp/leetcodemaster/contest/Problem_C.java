@@ -25,7 +25,7 @@ public class Problem_C {
 //                ans = Math.max(ans, maxHeap.poll());
 //            }
 //            return ans;
-            return 0;2299
+            return 0;
         }
     }
 }
