@@ -1,41 +1,53 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 public class Problem_1137 {
     static class Solver {
-        public int tribonacci(int n) {
+        // Using recursion -> slow for larger inputs
+        public int tribonacci1(int n) {
             if(n == 0) {
                 return 0;
             }
             if(n == 1 || n == 2) {
                 return 1;
             }
-            int t0 = 0; int t1 = 1; int t2 = 1;
-            int[] arr = new int[n + 1];
-            arr[0] = t0; arr[1] = t1; arr[2] = t2;
-            for(int i = 3; i <= n; i++) {
-                int t3 = t0 + t1 + t2;
-                arr[i] = t3;
-                t0 = t1;
-                t1 = t2;
-                t2 = t3;
-            }
-            return arr[n];
+            return tribonacci1(n - 1) + tribonacci1(n - 2) + tribonacci1(n - 3);
         }
-    }
-    static class Solver1 {
-        public int tribonacci(int n) {
+
+        // Using Tabulation DP with space
+        public int tribonacci2(int n) {
             if(n == 0) {
                 return 0;
             }
             if(n == 1 || n == 2) {
                 return 1;
             }
-            return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+            int[] dp = new int[n + 1];
+            dp[0] = 0;
+            dp[1] = 1;
+            dp[2] = 1;
+            for(int i = 3; i <= n; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+            }
+            return dp[n];
+        }
+
+        // Using space optimized DP without additional space
+        public int tribonacci3(int n) {
+            if(n == 0) {
+                return 0;
+            }
+            if(n == 1 || n == 2) {
+                return 1;
+            }
+            int n0 = 0, n1 = 1, n2 = 1;
+            int n3 = 0;
+            for(int i = 3; i <= n; i++) {
+                n3 = n0 + n1 + n2;
+                n0 = n1;
+                n1 = n2;
+                n2 = n3;
+            }
+            return n3;
         }
     }
 }
