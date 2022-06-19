@@ -11,5 +11,17 @@ public class Problem_26 {
             }
             return i;
         }
+        public int solve2(int[] arr) {
+            int n = arr.length;
+            int i = 0, j = 1;
+            while(j < n) {
+                if(arr[i] != arr[j]) {
+                    arr[i + 1] = arr[j];
+                    i = i + 1;
+                }
+                j++;
+            }
+            return i + 1;
+        }
     }
 }
