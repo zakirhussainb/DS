@@ -46,4 +46,28 @@ public class Problem_746 {
             return memo[n];
         }
     }
+    // Using Bottom-Up Dynamic Programming
+    static class Solver3 {
+        // Tabulation Method with O(n) extra space
+        public int solve1(int[] cost) {
+            int[] dp = new int[cost.length + 1];
+            for(int i = 2; i < dp.length; i++) {
+                int oneStep = dp[i - 1] + cost[i - 1];
+                int twoStep = dp[i - 2] + cost[i - 2];
+                dp[i] = Math.min(oneStep, twoStep);
+            }
+            return dp[cost.length];
+        }
+        // Constant space method O(1)
+        public int solve2(int[] cost) {
+            int oneStep = 0;
+            int twoStep = 0;
+            for(int i = 2; i <= cost.length; i++) {
+                int temp = oneStep;
+                oneStep = Math.min(oneStep + cost[i - 1], twoStep + cost[i - 2]);
+                twoStep = temp;
+            }
+            return oneStep;
+        }
+    }
 }
