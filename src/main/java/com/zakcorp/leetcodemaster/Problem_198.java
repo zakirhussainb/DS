@@ -59,5 +59,18 @@ public class Problem_198 {
             }
             return dp[n];
         }
+        public int solve2(int[] arr) {
+            int n = arr.length;
+            if(n == 1)
+                return n;
+            int t1 = 0;
+            int t2 = arr[0];
+            for(int i = 1; i < n; i++) {
+                int temp = Math.max(t2, t1 + arr[i]);
+                t1 = t2;
+                t2 = temp;
+            }
+            return t2;
+        }
     }
 }
