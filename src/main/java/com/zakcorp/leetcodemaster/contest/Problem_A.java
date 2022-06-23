@@ -6,17 +6,17 @@ import java.util.regex.Pattern;
 
 public class Problem_A {
     static class Solver {
-        public double solve1(int[][] brackets, int income) {
-            double res = 0.0;
-            int prevAmnt = 0;
-            for(int[] ele: brackets) {
-                int amnt = ele[0];
-                int tax = ele[1];
-                int minSum = Math.min(amnt, income) - prevAmnt;
-                res += Math.max((minSum) * tax / 100.0, 0);
-                prevAmnt = amnt;
+        public boolean solve1(int[] arr) {
+            return canJump(0, arr);
+        }
+        private boolean canJump(int index, int[] arr) {
+            if(index == arr.length - 1)
+                return true;
+            for(int i = index; i < index + arr[index]; i++) {
+                if(canJump(i + 1, arr))
+                    return true;
             }
-            return res;
+            return false;
         }
     }
 }

@@ -10,10 +10,10 @@ public class Problem_55 {
         if( memo[index] ) {
             return true;
         }
-//        if(index == arr.length - 1) {
-//            memo[index] = true;
-//            return true;
-//        }
+        if(index == arr.length - 1) {
+            memo[index] = true;
+            return true;
+        }
         for(int i = index + 1; i <= arr[index]; i++) {
             if( jumpArr(arr, i, memo) ) {
                 memo[index] = true;

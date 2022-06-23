@@ -6,8 +6,8 @@ import java.util.Set;
 
 public class DeleteLines {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("/Users/zb/Downloads/lc.txt"));
-        BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/zb/Downloads/lc_res.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/zb/Downloads/lc11.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/zb/Downloads/lc11_res.txt"));
         String line = "";
         Set<String> set = new HashSet<>();
         StringBuilder sb = new StringBuilder();
