@@ -6,17 +6,22 @@ import java.util.regex.Pattern;
 
 public class Problem_A {
     static class Solver {
-        public boolean solve1(int[] arr) {
-            return canJump(0, arr);
-        }
-        private boolean canJump(int index, int[] arr) {
-            if(index == arr.length - 1)
-                return true;
-            for(int i = index; i < index + arr[index]; i++) {
-                if(canJump(i + 1, arr))
-                    return true;
+        public boolean solve1(int[][] grid) {
+            for(int i = 0; i < grid.length; i++) {
+                for(int j = 0; j < grid[0].length; j++) {
+                    if(i == j) {
+                        if(grid[i][j] == 0)
+                            return false;
+                    } else if( (i + j) == (grid.length - 1) ) {
+                        if(grid[i][j] == 0)
+                            return false;
+                    } else {
+                        if(grid[i][j] != 0)
+                            return false;
+                    }
+                }
             }
-            return false;
+            return true;
         }
     }
 }

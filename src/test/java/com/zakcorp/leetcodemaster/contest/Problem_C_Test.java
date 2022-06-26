@@ -8,10 +8,10 @@ public class Problem_C_Test {
     Problem_C.Solver p = new Problem_C.Solver();
     @Test
     public void test1() {
-        assertEquals(31, p.solve1(new int[]{8,15,10,20,8}, 2));
+        assertEquals(210, p.solve1(new int[]{60,60,60}, new int[]{10,90,10}));
     }
     @Test
     public void test2() {
-        assertEquals(7, p.solve1(new int[]{6,1,3,2,2,4,1,2}, 3));
+        assertEquals(220, p.solve1(new int[]{20,40,20,70,30}, new int[]{50,20,50,40,20}));
     }
 }
