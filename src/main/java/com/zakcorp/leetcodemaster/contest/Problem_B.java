@@ -31,7 +31,7 @@ public class Problem_B {
     }
     static class Solver1 {
         public int solve1(int n) {
-            if(n == 0)return 1;
+            /*if(n == 0)return 1;
             else if(n == 1)return 2;
             else
             {
@@ -43,7 +43,8 @@ public class Problem_B {
                     dp[i] = dp[i-1]+dp[i-2];
                 }
                 return (Math.pow(dp[n],2));
-            }
+            }*/
+            return 0;
         }
     }
 }
