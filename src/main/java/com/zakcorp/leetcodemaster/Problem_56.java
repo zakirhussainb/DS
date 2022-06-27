@@ -23,6 +23,11 @@ public class Problem_56 {
     Practice them in a row for better understanding
      */
     static class Solver {
+        // Sort the intervals by their starting time
+        // Create a linked list for output
+        // Initially the list is empty so add the first interval
+        // Then compare the subsequent intervals with the last interval and
+        // Update the maximum value from the both -> Math.max(ll.getLast()[1], interval[1])
         private static class IntervalComparator implements Comparator<int[]> {
             @Override
             public int compare(int[] a, int[] b) {
