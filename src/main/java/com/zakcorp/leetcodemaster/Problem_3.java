@@ -14,6 +14,14 @@ import java.util.*;
  */
 public class Problem_3 {
     static class Solver {
+        /*
+        Use Sliding Window to address this problem
+        Create a HashMap -> Define a mapping of the characters to its index.
+        Then we can skip the characters immediately when we found a repeated character.
+        The reason is that if str[end] have a duplicate in the range [start, end) with index end' we dont need to increase
+        start little-by-little.
+        We can skip all the elements in the range [start, end'] and let start to be end;
+         */
         public int solve1(String str) {
             int n = str.length();
             int start = 0, maxLength = 0;
