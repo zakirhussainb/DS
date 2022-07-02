@@ -1,16 +1,10 @@
 package com.zakcorp.leetcodemaster;
 
+import com.zakcorp.leetcodemaster.classes.TreeNode;
+
 import java.util.*;
 
 public class Problem_199 {
-    static class TreeNode {
-        TreeNode left;
-        int val;
-        TreeNode right;
-        public TreeNode(int val){
-            this.val = val;
-        }
-    }
     static class Solver {
         public List<Integer> rightSideView(TreeNode root) {
             List<Integer> list = new ArrayList<>();
@@ -47,6 +41,9 @@ public class Problem_199 {
             treeMap.get(key).add(value);
         }
     }
+    // Do a depth-first-search using pre-order traversal
+    // When the level is equal to the list size, add the root value to the list
+    // Remember to traverse on the right subtree first
     static class Solver1 {
         List<Integer> result = new ArrayList<>();
         public List<Integer> rightSideView(TreeNode root) {
@@ -65,6 +62,32 @@ public class Problem_199 {
             }
             dfs(root.right, level + 1);
             dfs(root.left, level + 1);
+        }
+    }
+    // Good solution -> just check for the last element while traversing level-by-level
+    static class Solver2 {
+        public List<Integer> rightSideView(TreeNode root) {
+            List<Integer> list = new ArrayList<>();
+            if(root == null)
+                return list;
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            while(!queue.isEmpty()) {
+                int size = queue.size();
+                for(int i = 0; i < size; i++) {
+                    TreeNode curr = queue.poll();
+                    if(i == size - 1) {
+                        list.add(curr.val);
+                    }
+                    if(curr.left != null) {
+                        queue.add(curr.left);
+                    }
+                    if(curr.right != null) {
+                        queue.add(curr.right);
+                    }
+                }
+            }
+            return list;
         }
     }
 }
