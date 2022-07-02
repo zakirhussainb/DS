@@ -1,33 +1,31 @@
 package com.zakcorp.leetcodemaster;
 
+import com.zakcorp.leetcodemaster.classes.TreeNode;
+
 public class Problem_110 {
+    /*
+    This is a Bottom-Up strategy also known as Post-order traversal
+    To check if a Binary Tree is Height Balanced -> You must know the following
+        -> The absolute difference between the height of the left subtree and the right subtree
+            should not be more than 1.
+     */
     static class Solver {
-        boolean isBalanced = true;
-        static class TreeNode {
-            TreeNode left;
-            int val;
-            TreeNode right;
-            public TreeNode(int val){
-                this.val = val;
-            }
-        }
         public boolean isBalanced(TreeNode root) {
-            if(root == null)
-                return isBalanced;
-            postOrderRecursive(root);
-            return isBalanced;
+            if (root == null)
+                return true;
+            return dfsHeight(root) != -1;
         }
-        public int postOrderRecursive(TreeNode root) {
-            if(root != null) {
-                int x = postOrderRecursive(root.left);
-                int y = postOrderRecursive(root.right);
-                int sub = Math.abs(x - y);
-                if (sub > 1) {
-                    isBalanced = false;
-                }
-                return Math.max(x, y) + 1;
-            }
-            return 0;
+        private int dfsHeight(TreeNode root) {
+            if(root == null)
+                return 0;
+            int left = dfsHeight(root.left);
+            int right = dfsHeight(root.right);
+            // left or right subtree is unbalanced or curr tree is unbalanced
+            if(left == -1 || right == -1)
+                return -1;
+            if( Math.abs(left - right) > 1)
+                return -1;
+            return Math.max(left, right) + 1;
         }
     }
 }
