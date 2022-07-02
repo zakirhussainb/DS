@@ -28,10 +28,10 @@ public class Problem_54 {
                     }
                 }
 
-                startCol++;
                 startRow++;
                 endCol--;
                 endRow--;
+                startCol++;
             }
 
             return output;
