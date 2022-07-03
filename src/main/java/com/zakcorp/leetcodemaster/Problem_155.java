@@ -8,9 +8,6 @@ public class Problem_155 {
             Node next;
             int min;
             int val;
-            private Node(int val, int min) {
-                this(val, min, null);
-            }
             private Node(int val, int min, Node next) {
                 this.val = val;
                 this.min = min;
@@ -19,7 +16,7 @@ public class Problem_155 {
         }
         public void push(int x) {
             if(head == null){
-                head = new Node(x, x);
+                head = new Node(x, x, null);
             } else {
                 head = new Node(x, Math.min(x, head.min), head);
             }
