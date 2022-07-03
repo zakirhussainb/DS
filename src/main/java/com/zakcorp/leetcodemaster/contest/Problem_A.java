@@ -6,22 +6,24 @@ import java.util.regex.Pattern;
 
 public class Problem_A {
     static class Solver {
-        public boolean solve1(int[][] grid) {
-            for(int i = 0; i < grid.length; i++) {
-                for(int j = 0; j < grid[0].length; j++) {
-                    if(i == j) {
-                        if(grid[i][j] == 0)
-                            return false;
-                    } else if( (i + j) == (grid.length - 1) ) {
-                        if(grid[i][j] == 0)
-                            return false;
-                    } else {
-                        if(grid[i][j] != 0)
-                            return false;
-                    }
+        public String solve1(String key, String message) {
+            Map<Character, Character> map = new HashMap<>();
+            int i = 0;
+            for(char ch : key.toCharArray()) {
+                if(!map.containsKey(ch) && ch != ' ') {
+                    map.put(ch, (char)('a' + i) );
+                    i++;
                 }
             }
-            return true;
+            StringBuilder sb = new StringBuilder();
+            for(char ch : message.toCharArray()) {
+                if(map.containsKey(ch)) {
+                    sb.append(map.get(ch));
+                } else if(ch == ' ') {
+                    sb.append(' ');
+                }
+            }
+            return sb.toString();
         }
     }
 }

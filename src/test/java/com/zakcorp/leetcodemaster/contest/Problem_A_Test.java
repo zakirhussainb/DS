@@ -8,14 +8,17 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertTrue(p.solve1(new int[][]{ {2,0,0,1},{0,3,1,0},{0,5,2,0},{4,0,0,2}}));
+        assertEquals("this is a secret",
+                p.solve1("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv") );
     }
     @Test
     public void test2() {
-        assertFalse(p.solve1(new int[][]{ {5,7,0},{0,3,1},{0,5,0}}));
+        assertEquals("the five boxing wizards jump quickly",
+                p.solve1("eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb") );
     }
     @Test
     public void test3() {
-        assertFalse(p.solve1(new int[][]{{0,0,0,0,1},{0,4,0,1,0},{0,0,5,0,0},{0,5,0,2,0},{4,0,0,0,2}}));
+        assertEquals("the five boxing wizards jump quickly",
+                p.solve1("eljuxhpwnyrdgtqkviszcfmaboeljuxhpwnyrdgtqkviszcfmaboeljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb") );
     }
 }
