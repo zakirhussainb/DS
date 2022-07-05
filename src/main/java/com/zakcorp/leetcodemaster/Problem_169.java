@@ -1,7 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Problem_169 {
     static class Solver {
@@ -30,6 +29,21 @@ public class Problem_169 {
                 counter += (num == candidate) ? 1 : -1;
             }
             return candidate;
+        }
+    }
+    static class Solver1 {
+        public int majorityElement(int[] arr) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int num : arr) {
+                map.put(num, map.getOrDefault(num, 0) + 1);
+            }
+            List<Map.Entry<Integer, Integer>> list = sortMapByValues(map);
+            return list.get(0).getKey();
+        }
+        private List<Map.Entry<Integer, Integer>> sortMapByValues(Map<Integer, Integer> map) {
+            List<Map.Entry<Integer, Integer>> list = new LinkedList<>(map.entrySet());
+            list.sort( (e1, e2) -> e2.getValue() - e1.getValue() );
+            return list;
         }
     }
 }
