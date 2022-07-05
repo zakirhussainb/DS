@@ -10,5 +10,7 @@ public class Problem_621_Test {
     public void test1() {
         assertEquals(8, p.solve1(new char[]{'A','A','A','B','B','B'}, 2));
         assertEquals(8, p.solve2(new char[]{'A','A','A','B','B','B'}, 2));
+        assertEquals(8, p.solve3(new char[]{'A','A','A','B','B','B'}, 2));
+        assertEquals(8, p.solve4(new char[]{'A','A','A','B','B','B'}, 2));
     }
 }
