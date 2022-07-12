@@ -44,9 +44,9 @@ public class Problem_210 {
         }
 
         private boolean dfs(int src, int[] visited, Graph g) {
-            if(visited[src] == 2)
+            if(visited[src] == 2) // visiting
                 return true;
-            if(visited[src] == 1)
+            if(visited[src] == 1) // visited
                 return false;
             visited[src] = 2;
             for(Integer num : g.adjListArr[src]) {

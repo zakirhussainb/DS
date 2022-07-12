@@ -23,9 +23,10 @@ public class Problem_207 {
             for(int[] prerequisite : prerequisites) {
                 g.addEdge(prerequisite[1], prerequisite[0]);
             }
+            // 0: not visited; 1: visited; 2: visiting
             int[] visited = new int[g.V];
             for(int i = 0; i < g.V; i++) {
-                if(dfs(i, visited, g)) {
+                if( dfs(i, visited, g) ) {
                     return false;
                 }
             }
@@ -33,9 +34,9 @@ public class Problem_207 {
         }
 
         private boolean dfs(int src, int[] visited, Graph g) {
-            if(visited[src] == 2)
+            if(visited[src] == 2) // visiting
                 return true;
-            if(visited[src] == 1)
+            if(visited[src] == 1) // visited
                 return false;
             visited[src] = 2;
             for(Integer num : g.adjListArr[src]) {
