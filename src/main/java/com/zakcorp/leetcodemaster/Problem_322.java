@@ -1,25 +1,24 @@
 package com.zakcorp.leetcodemaster;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Problem_322 {
-    static class Solver {
-        public int solve1(int[] coins, int amount) {
-            return recursive(1, amount, coins);
-        }
-        private int recursive(int n, int amount, int[] coins) {
-            if(amount < 0) {
-                return 0;
+    // Tabulation DP -> Bottom UP DP
+    static class Solver1 {
+        public int coinChange(int[] coins, int amount) {
+            int[] dp = new int[amount + 1];
+            Arrays.fill(dp, amount + 1);
+            dp[0] = 0;
+            for(int i = 1; i <= amount; i++) {
+                for(int c : coins) {
+                    if(i - c >= 0) {
+                        dp[i] = Math.min(dp[i], 1 + dp[i - c]);
+                    }
+                }
             }
-            if(amount == 0) {
-                return 1;
-            }
-            if(n >= coins.length) {
-                return 0;
-            }
-            return Math.min(recursive(n, amount - coins[n], coins),
-                    recursive(n + 1, amount, coins) );
+            return dp[amount] == amount + 1 ? -1 : dp[amount];
         }
     }
 }
