@@ -8,7 +8,7 @@ public class Problem_230 {
     // This is a DFS recursive solution.
     static class Solver {
         private int ans = 0;
-        private int count = 0;
+        private int count;
         public int dfsRecursive(TreeNode root, int k) {
             count = k;
             inorder(root);
