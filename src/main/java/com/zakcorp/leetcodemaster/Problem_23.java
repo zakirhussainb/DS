@@ -37,6 +37,28 @@ public class Problem_23 {
              return lists[0];
         }
     }
+    /*
+    Divide and Conquer Approach -> Best Case Time Complexity
+    Super solution and easy to remember.
+     */
+    static class Solver2 {
+        public ListNode mergeKLists(ListNode[] lists) {
+            if(lists.length == 0)
+                return null;
+            return mergeUsingDivideAndConquer(lists, 0, lists.length - 1);
+        }
+        private ListNode mergeUsingDivideAndConquer(ListNode[] lists, int low, int high) {
+            if(low > high)
+                return null;
+            if(low == high)
+                return lists[low];
+            int mid = low + (high - low) / 2;
+
+            ListNode rootL = mergeUsingDivideAndConquer(lists, low, mid);
+            ListNode rootR = mergeUsingDivideAndConquer(lists, mid + 1, high);
+            return mergeTwoSortedLists(rootL, rootR);
+        }
+    }
     private static ListNode mergeTwoSortedLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(-1);
         ListNode l3 = dummy;

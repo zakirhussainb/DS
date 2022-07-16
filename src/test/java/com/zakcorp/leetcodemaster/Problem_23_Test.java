@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class Problem_23_Test {
     Problem_23.Solver p = new Problem_23.Solver();
     Problem_23.Solver1 p1 = new Problem_23.Solver1();
+    Problem_23.Solver2 p2 = new Problem_23.Solver2();
     CommonUtility util = new CommonUtility();
     @Test
     public void test1() {
@@ -44,8 +45,9 @@ public class Problem_23_Test {
         listsArr[2] = l3;
         listsArr[3] = l4;
         listsArr[4] = l5;
-//        assertTrue(util.areListsSame(output, p.solve1(listsArr)));
+        assertTrue(util.areListsSame(output, p.solve1(listsArr)));
         assertTrue(util.areListsSame(output, p1.solve1(listsArr)));
+        assertTrue(util.areListsSame(output, p2.mergeKLists(listsArr)));
     }
 
 }
