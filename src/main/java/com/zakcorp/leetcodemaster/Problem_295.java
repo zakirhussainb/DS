@@ -1,9 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Problem_295 {
     PriorityQueue<Integer> maxHeap;
@@ -14,17 +11,24 @@ public class Problem_295 {
     }
 
     public void addNum(int num) {
-        minHeap.add(num);
-        maxHeap.offer(minHeap.poll());
-
-        if (minHeap.size() < maxHeap.size())
-            minHeap.offer(maxHeap.poll());
+        if(maxHeap.isEmpty() || maxHeap.peek() > num) {
+            maxHeap.add(num);
+        } else {
+            minHeap.add(num);
+        }
+        if(maxHeap.size() > minHeap.size() + 1) {
+            minHeap.add(maxHeap.poll());
+        } else if(minHeap.size() > maxHeap.size() + 1) {
+            maxHeap.add(minHeap.poll());
+        }
     }
 
     public double findMedian() {
-        if (minHeap.size() > maxHeap.size())
+        if (minHeap.size() < maxHeap.size())
+            return maxHeap.peek();
+        else if (minHeap.size() > maxHeap.size())
             return minHeap.peek();
         else
-            return (minHeap.peek() + maxHeap.peek()) / 2.0;
+            return (minHeap.peek() + maxHeap.peek()) * 0.5;
     }
 }
