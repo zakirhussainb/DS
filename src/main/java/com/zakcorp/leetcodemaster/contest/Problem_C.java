@@ -3,41 +3,105 @@ package com.zakcorp.leetcodemaster.contest;
 import java.util.*;
 
 public class Problem_C {
-    static class Pair {
-        String key;
-        int value;
-        public Pair(String key, int value) {
-            this.key = key;
-            this.value = value;
+    static class NumberContainers {
+        // <Number, <Index, Number>>
+        private final Map<Integer, TreeMap<Integer, Integer>> map;
+        public NumberContainers() {
+            map = new HashMap<>();
+        }
+
+        public void change(int index, int number) {
+            if(!map.containsKey(number)) {
+                map.put(number, new TreeMap<>());
+            }
+            // <10, <1,10>> ->
+            for(Map.Entry<Integer, TreeMap<Integer, Integer>> entry : map.entrySet()) {
+                if(entry.getValue().containsKey(index)) {
+                    entry.getValue().remove(index);
+                    break;
+                }
+            }
+
+            map.get(number).put(index, number);
+        }
+
+        public int find(int number) {
+            if(!map.containsKey(number)) {
+                return -1;
+            }
+            if(map.get(number).size() == 0) {
+                map.remove(number);
+                return -1;
+            } else {
+                return map.get(number).firstKey();
+            }
         }
     }
-    static class Solver {
-        public int[] solve1(String[] strArr, int[][] queries) {
-            int[] res = new int[queries.length];
-            String[] temp = Arrays.copyOfRange(strArr, 0, strArr.length);
-            int z = 0;
-            for(int[] query : queries) {
-                int k = query[0];
-                int trim = query[1];
-                PriorityQueue<Pair> pq = new PriorityQueue<>(new MyComparator());
-                for(int i = 0; i < strArr.length; i++) {
-                    strArr[i] = strArr[i].substring(strArr[i].length() - trim);
-                    String key = strArr[i];
-                    pq.add(new Pair(key, i));
-                    if(pq.size() > k) {
-                        pq.poll();
-                    }
-                }
-                res[z++] = pq.poll().value;
-                strArr = temp;
-                pq.clear();
-            }
-            return res;
+    static class NumberContainers1 {
+        // <Number, <Index, Number>>
+        private final Map<Integer, TreeSet<Integer>> map;
+        public NumberContainers1() {
+            map = new HashMap<>();
         }
-        static class MyComparator implements Comparator<Pair> {
-            @Override
-            public int compare(Pair p1, Pair p2) {
-                return p2.key.compareTo(p1.key) == 0 ? p2.value - p1.value : p2.key.compareTo(p1.key);
+
+        public void change(int index, int number) {
+            if(!map.containsKey(number)) {
+                map.put(number, new TreeSet<>());
+            }
+            // <10, <1,10>> ->
+            for(Map.Entry<Integer, TreeSet<Integer>> entry : map.entrySet()) {
+                if(entry.getValue().contains(index)) {
+                    entry.getValue().remove(index);
+                    break;
+                }
+            }
+
+            map.get(number).add(index);
+        }
+
+        public int find(int number) {
+            if(!map.containsKey(number)) {
+                return -1;
+            }
+            if(map.get(number).size() == 0) {
+                map.remove(number);
+                return -1;
+            } else {
+                return map.get(number).first();
+            }
+        }
+    }
+    static class NumberContainers2 {
+        // <Number, <Index, Number>>
+        private final Map<Integer, PriorityQueue<Integer>> map;
+        public NumberContainers2() {
+            map = new HashMap<>();
+        }
+
+        public void change(int index, int number) {
+            if(!map.containsKey(number)) {
+                map.put(number, new PriorityQueue<>());
+            }
+            // <10, <1,10>> ->
+            for(Map.Entry<Integer, PriorityQueue<Integer>> entry : map.entrySet()) {
+                if(entry.getValue().contains(index)) {
+                    entry.getValue().remove(index);
+                    break;
+                }
+            }
+
+            map.get(number).add(index);
+        }
+
+        public int find(int number) {
+            if(!map.containsKey(number)) {
+                return -1;
+            }
+            if(map.get(number).isEmpty()) {
+                map.remove(number);
+                return -1;
+            } else {
+                return map.get(number).peek();
             }
         }
     }

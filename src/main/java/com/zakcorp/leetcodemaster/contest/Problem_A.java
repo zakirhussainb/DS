@@ -4,24 +4,31 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public int[] solve1(int[] arr) {
-            Arrays.sort(arr);
-            int n = arr.length;
-            int[] res = new int[2];
-            int pairs = 0;
-            int removedNumbers = 0;
-            for(int i = 1; i < n;) {
-                if(arr[i - 1] == arr[i]) {
-                    pairs++;
-                    removedNumbers += 2;
-                    i += 2;
-                } else {
-                    i++;
+        public String solve1(int[] ranks, char[] suits) {
+            Map<Character, Integer> suitMap = new HashMap<>();
+            Map<Integer, Integer> rankMap = new HashMap<>();
+            for(char ch : suits) {
+                suitMap.put(ch, suitMap.getOrDefault(ch, 0) + 1);
+            }
+            if(suitMap.size() == 1) {
+                return "Flush";
+            }
+            for(int r : ranks) {
+                rankMap.put(r, rankMap.getOrDefault(r, 0) + 1);
+            }
+            LinkedHashMap<Integer, Integer> reverseSortedMap = new LinkedHashMap<>();
+            rankMap.entrySet()
+                    .stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+            for(Map.Entry<Integer, Integer> entry : reverseSortedMap.entrySet()) {
+                if(entry.getValue() >= 3) {
+                    return "Three of a Kind";
+                } else if(entry.getValue() >= 2) {
+                    return "Pair";
                 }
             }
-            res[0] = pairs;
-            res[1] = arr.length - removedNumbers;
-            return res;
+            return "High Card";
         }
     }
 }

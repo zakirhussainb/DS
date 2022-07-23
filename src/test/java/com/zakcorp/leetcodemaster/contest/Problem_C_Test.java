@@ -5,20 +5,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Problem_C_Test {
-    Problem_C.Solver p = new Problem_C.Solver();
+    Problem_C.NumberContainers2 nc = new Problem_C.NumberContainers2();
     @Test
     public void test1() {
-        assertArrayEquals(new int[]{2,2,1,0}, p.solve1(new String[]{"102","473","251","814"},
-                new int[][] { {1,1},{2,3},{4,2},{1,2} }));
+        assertEquals(-1, nc.find(10));
+        nc.change(2, 10);
+        nc.change(1, 10);
+        nc.change(3, 10);
+        nc.change(5, 10);
+        assertEquals(1, nc.find(10));
+        nc.change(1, 20);
+        assertEquals(2, nc.find(10));
     }
+//    ["NumberContainers","change","find","change","find","find","find"]
+//            [[],[1,10],[10],[1,20],[10],[20],[30]]
     @Test
     public void test2() {
-        assertArrayEquals(new int[]{3,0}, p.solve1(new String[]{"24","37","96","04"},
-                new int[][] { {2,1},{2,2} }));
-    }
-    @Test
-    public void test3() {
-        assertArrayEquals(new int[]{3,0}, p.solve1(new String[]{"9415","5908","1840","5307"},
-                new int[][] { {3,2},{2,2},{3,3},{1,3} }));
+        nc.change(1, 10);
+        assertEquals(1, nc.find(10));
+        nc.change(1, 20);
+        assertEquals(-1, nc.find(10));
+        assertEquals(1, nc.find(20));
+        assertEquals(-1, nc.find(30));
     }
 }
