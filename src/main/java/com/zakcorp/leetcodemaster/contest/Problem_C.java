@@ -3,105 +3,54 @@ package com.zakcorp.leetcodemaster.contest;
 import java.util.*;
 
 public class Problem_C {
-    static class NumberContainers {
-        // <Number, <Index, Number>>
-        private final Map<Integer, TreeMap<Integer, Integer>> map;
-        public NumberContainers() {
-            map = new HashMap<>();
-        }
-
-        public void change(int index, int number) {
-            if(!map.containsKey(number)) {
-                map.put(number, new TreeMap<>());
-            }
-            // <10, <1,10>> ->
-            for(Map.Entry<Integer, TreeMap<Integer, Integer>> entry : map.entrySet()) {
-                if(entry.getValue().containsKey(index)) {
-                    entry.getValue().remove(index);
-                    break;
-                }
-            }
-
-            map.get(number).put(index, number);
-        }
-
-        public int find(int number) {
-            if(!map.containsKey(number)) {
-                return -1;
-            }
-            if(map.get(number).size() == 0) {
-                map.remove(number);
-                return -1;
-            } else {
-                return map.get(number).firstKey();
-            }
+    static class Food {
+        String name;
+        int rating;
+        String cuisine;
+        public Food(String name, int rating, String cuisine) {
+            this.name = name;
+            this.rating = rating;
+            this.cuisine = cuisine;
         }
     }
-    static class NumberContainers1 {
-        // <Number, <Index, Number>>
-        private final Map<Integer, TreeSet<Integer>> map;
-        public NumberContainers1() {
+    static class FoodRatings {
+        private final Map<String, PriorityQueue<Food>> map;
+        private final Map<String, Food> menu;
+        public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {
             map = new HashMap<>();
-        }
-
-        public void change(int index, int number) {
-            if(!map.containsKey(number)) {
-                map.put(number, new TreeSet<>());
-            }
-            // <10, <1,10>> ->
-            for(Map.Entry<Integer, TreeSet<Integer>> entry : map.entrySet()) {
-                if(entry.getValue().contains(index)) {
-                    entry.getValue().remove(index);
-                    break;
+            menu = new HashMap<>();
+            for(int i = 0; i < foods.length; i++) {
+                if(!map.containsKey( cuisines[i])) {
+                    PriorityQueue<Food> pq = new PriorityQueue<>( new SortByValuesThenByKeyComparator() );
+                    map.put(cuisines[i], pq);
                 }
-            }
-
-            map.get(number).add(index);
-        }
-
-        public int find(int number) {
-            if(!map.containsKey(number)) {
-                return -1;
-            }
-            if(map.get(number).size() == 0) {
-                map.remove(number);
-                return -1;
-            } else {
-                return map.get(number).first();
+                PriorityQueue<Food> pq = map.get(cuisines[i]);
+                Food curr = new Food(foods[i], ratings[i], cuisines[i]);
+                pq.add(curr);
+                menu.put(foods[i], curr);
             }
         }
-    }
-    static class NumberContainers2 {
-        // <Number, <Index, Number>>
-        private final Map<Integer, PriorityQueue<Integer>> map;
-        public NumberContainers2() {
-            map = new HashMap<>();
+
+        public void changeRating(String food, int newRating) {
+            Food curr = menu.get(food);
+            PriorityQueue<Food> pq = map.get(curr.cuisine);
+            pq.remove(curr);
+            curr.rating = newRating;
+            pq.add(curr);
         }
 
-        public void change(int index, int number) {
-            if(!map.containsKey(number)) {
-                map.put(number, new PriorityQueue<>());
-            }
-            // <10, <1,10>> ->
-            for(Map.Entry<Integer, PriorityQueue<Integer>> entry : map.entrySet()) {
-                if(entry.getValue().contains(index)) {
-                    entry.getValue().remove(index);
-                    break;
-                }
-            }
-
-            map.get(number).add(index);
+        public String highestRated(String cuisine) {
+            return map.get(cuisine).peek().name;
         }
 
-        public int find(int number) {
-            if(!map.containsKey(number)) {
-                return -1;
-            }
-            if(map.get(number).isEmpty()) {
-                map.remove(number);
-                return -1;
-            } else {
-                return map.get(number).peek();
+        /*
+        If two entries have different values, then the comparator -> will sort based on descending order of values.
+        If two entries have same values, then the comparator -> will sort based on ascending order of keys.
+         */
+        static class SortByValuesThenByKeyComparator implements Comparator<Food> {
+            @Override
+            public int compare(Food f1, Food f2) {
+                return f1.rating == f2.rating ? f1.name.compareTo(f2.name) : f2.rating - f1.rating;
             }
         }
     }
