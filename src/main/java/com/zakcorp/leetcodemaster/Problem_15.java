@@ -61,7 +61,9 @@ public class Problem_15 {
             }
             return new ArrayList<>(result);
         }
-        public List<List<Integer>> solve3(int[] arr) {
+    }
+    static class Solver1 {
+        public List<List<Integer>> threeSum(int[] arr) {
             int n = arr.length;
             if(n == 0)
                 return new ArrayList<>();
@@ -89,6 +91,52 @@ public class Problem_15 {
                     left++;
                 } else {
                     right--;
+                }
+            }
+        }
+    }
+
+    static class Solver2 {
+        public List<List<Integer>> threeSum(int[] arr) {
+            Arrays.sort(arr);
+            return kSum(0, arr.length, 3, 0, arr);
+        }
+        private List<List<Integer>> kSum(int index, int n, int k, int target, int[] arr) {
+            List<List<Integer>> result = new ArrayList<>();
+            if(index >= n) {
+                return result;
+            }
+            if(k == 2) {
+                twoSumII(index, n - 1, target, arr, result);
+            } else {
+                for(int i = index; i < n - k + 1; i++) {
+                    List<List<Integer>> temp = kSum(i + 1, n, k - 1, target - arr[i], arr);
+                    for(List<Integer> t : temp) {
+                        t.add(0, arr[i]);
+                    }
+                    result.addAll(temp);
+                }
+            }
+            return result;
+        }
+        private void twoSumII(int low, int high, int target, int[] arr, List<List<Integer>> result) {
+            while(low < high) {
+                int sum = arr[low] + arr[high];
+                if(sum < target) {
+                    low++;
+                } else if(sum > target) {
+                    high--;
+                } else {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(arr[low]);
+                    list.add(arr[high]);
+                    result.add(list);
+                    while(low < high && arr[low] == arr[low + 1])
+                        low++;
+                    while(low < high && arr[high] == arr[high - 1])
+                        high--;
+                    low++;
+                    high--;
                 }
             }
         }
