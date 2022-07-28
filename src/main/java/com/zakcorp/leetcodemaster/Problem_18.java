@@ -22,12 +22,12 @@ public class Problem_18 {
                 for(int j = i + 1; j < n - 2; j++) {
                     int left = j + 1, right = n - 1;
                     while(left < right) {
-                        int sum = arr[i] + arr[j] + arr[left] + arr[right];
-                        if(sum == target) {
+                        long sum = (long)arr[i] + (long)arr[j] + (long)arr[left] + (long)arr[right];
+                        if(sum == (long)target) {
                             result.add(Arrays.asList(arr[i],arr[j],arr[left],arr[right]));
                             left++;
                             right--;
-                        } else if(sum < target) {
+                        } else if(sum < (long)target) {
                             left++;
                         } else {
                             right--;
@@ -51,8 +51,8 @@ public class Problem_18 {
                     }
                     int left = j + 1, right = n - 1;
                     while(left < right) {
-                        int sum = arr[i] + arr[j] + arr[left] + arr[right];
-                        if(sum == target) {
+                        long sum = (long)arr[i] + (long)arr[j] + (long)arr[left] + (long)arr[right];
+                        if(sum == (long)target) {
                             result.add(Arrays.asList(arr[i],arr[j],arr[left],arr[right]));
                             left++;
                             right--;
@@ -62,7 +62,7 @@ public class Problem_18 {
                             while(left < right && arr[right] == arr[right + 1]) {
                                 right--;
                             }
-                        } else if(sum < target) {
+                        } else if(sum < (long)target) {
                             left++;
                         } else {
                             right--;
@@ -71,6 +71,53 @@ public class Problem_18 {
                 }
             }
             return result;
+        }
+    }
+    static class Solver1 {
+        public List<List<Integer>> fourSum(int[] arr, int target1) {
+            Arrays.sort(arr);
+            return kSum(0, arr, target1, 4, arr.length);
+        }
+        private List<List<Integer>> kSum(int index, int[] arr, long target, int k, int n) {
+            List<List<Integer>> result = new ArrayList<>();
+            if(index >= n) {
+                return result;
+            }
+            if(k == 2) {
+                twoSumII(index, n - 1, target, arr, result);
+            } else {
+                for(int i = index; i < n - k + 1; i++) {
+                    if(i > index && arr[i] == arr[i - 1])
+                        continue;
+                    List<List<Integer>> temp = kSum(i + 1, arr, target - arr[i], k - 1, n);
+                    for(List<Integer> t : temp) {
+                        t.add(0, arr[i]);
+                    }
+                    result.addAll(temp);
+                }
+            }
+            return result;
+        }
+        private void twoSumII(int low, int high, long target, int[] arr, List<List<Integer>> result) {
+            while(low < high) {
+                int sum = arr[low] + arr[high];
+                if(sum < target) {
+                    low++;
+                } else if(sum > target) {
+                    high--;
+                } else {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(arr[low]);
+                    list.add(arr[high]);
+                    result.add(list);
+                    while(low < high && arr[low] == arr[low + 1])
+                        low++;
+                    while(low < high && arr[high] == arr[high - 1])
+                        high--;
+                    low++;
+                    high--;
+                }
+            }
         }
     }
 }
