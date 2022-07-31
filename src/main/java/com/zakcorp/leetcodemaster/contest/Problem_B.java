@@ -1,30 +1,32 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.util.*;
+
 public class Problem_B {
     static class Solver {
-        public int solve1(int[][] grid) {
-            int n = grid.length; // grid size
-
-            int ans = 0; // final answer
-
-            for (int i = 0; i < n; i++) {
-                // ith row
-                for (int j = 0; j < n; j++) {
-                    // jth column
-                    int count = 0;
-
-                    for (int k = 0; k < n; k++) {
-                        if (grid[i][k] == grid[k][j])
-                            count++;
+        public int solve1(int[] grades) {
+            PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+            for(int num : grades)
+                pq.add(num);
+            int c = 1;
+            int currMaxSum = 0;
+            int groups = 0;
+            while (!pq.isEmpty()) {
+                LinkedList<Integer> list = new LinkedList<>();
+                int sum = 0;
+                for(int i = 1; i <= c; i++) {
+                    int x = pq.poll();
+                    if(currMaxSum < sum) {
+                        break;
                     }
-
-                    // check if row and column are equal
-                    if (count == n)
-                        ans++;
+                    sum += x;
+                    list.add(x);
+                    currMaxSum = sum;
+                    groups++;
                 }
+                c++;
             }
-
-            return ans;
+            return groups;
         }
     }
 }

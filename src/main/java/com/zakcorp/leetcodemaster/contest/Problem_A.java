@@ -4,25 +4,52 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public char solve1(String str) {
-            int n = str.length();
-            Map<Character, int[]> map = new HashMap<>();
+        public int solve1(int[] arr) {
+            int n = arr.length;
+            Arrays.sort(arr);
+            int[] cZ = {0};
+            if(isAlreadyArrayZeroes(arr, n)) {
+                return 0;
+            }
+            recursive(arr, cZ, n);
+            return cZ[0];
+        }
+        private void recursive(int[] arr, int[] cZ, int n) {
+            int sE = arr[0];
+            for(int i = 1; i < n; i++) {
+                if(arr[i] != 0) {
+                    sE = arr[i];
+                    break;
+                }
+            }
             for(int i = 0; i < n; i++) {
-                if(!map.containsKey(str.charAt(i))) {
-                    map.put(str.charAt(i), new int[]{i, 101});
+                if (arr[i] != 0) {
+                    arr[i] = arr[i] - sE;
+                }
+            }
+            int countZeroes = 0;
+            for(int i = 0; i < n; i++) {
+                if(arr[i] == 0) {
+                    countZeroes++;
                 } else {
-                    int start = map.get(str.charAt(i))[0];
-                    int end = Math.min(map.get(str.charAt(i))[1], i);
-                    map.put(str.charAt(i), new int[]{start, end});
+                    break;
                 }
             }
-            int minOcc = 101;
-            for(Map.Entry<Character, int[]> entry : map.entrySet()) {
-                if(entry.getValue()[1] < minOcc) {
-                    minOcc = entry.getValue()[1];
+            cZ[0] = cZ[0] + 1;
+            if(countZeroes != n) {
+                recursive(arr, cZ, n);
+            }
+        }
+        private boolean isAlreadyArrayZeroes(int[] arr, int n) {
+            int countZeroes = 0;
+            for(int i = 0; i < n; i++) {
+                if(arr[i] == 0) {
+                    countZeroes++;
+                } else {
+                    break;
                 }
             }
-            return str.charAt(minOcc);
+            return countZeroes == n;
         }
     }
 }
