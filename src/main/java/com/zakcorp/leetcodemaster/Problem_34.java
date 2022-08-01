@@ -32,10 +32,13 @@ public class Problem_34 {
             } else {
                 high--;
             }
+            // Once you have found both starting and ending positions of the given target break,
+            // to avoid unnecessary iterations
+            if(isLow && isHigh)
+                break;
         }
-        if(!isHigh) {
+        if(!isHigh)
             result[1] = result[0];
-        }
         return result;
     }
 }
