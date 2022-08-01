@@ -32,7 +32,7 @@ public class Problem_34 {
             } else {
                 high--;
             }
-            // Once you have found both starting and ending positions of the given target break,
+            // Once you have found both starting and ending positions of the given target break the loop,
             // to avoid unnecessary iterations
             if(isLow && isHigh)
                 break;
