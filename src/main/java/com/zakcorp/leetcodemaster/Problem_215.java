@@ -2,6 +2,7 @@ package com.zakcorp.leetcodemaster;
 
 import java.util.*;
 
+// TODO:- Need to implement the Quick Select version
 public class Problem_215 {
     static class Solver {
         public int solve1(int[] arr, int k) {
@@ -25,6 +26,15 @@ public class Problem_215 {
                 pq.poll();
             }
             return pq.poll();
+        }
+        public int solve3(int[] arr, int k) {
+            Arrays.sort(arr);
+            int n = arr.length;
+            int i = n - 1;
+            while(i >= 0 && k --> 1) {
+                i--;
+            }
+            return arr[i];
         }
     }
 }
