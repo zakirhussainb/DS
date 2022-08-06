@@ -8,12 +8,7 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(3,
-                p.solve1(new int[]{1,5,0,3,5}) );
-    }
-    @Test
-    public void test2() {
-        assertEquals(0,
-                p.solve1(new int[]{0}) );
+        System.out.println(p.solve1(new int[][]{{1,1},{4,5},{3,8}},
+                new int[][]{{1,5},{3,1}}));
     }
 }

@@ -4,52 +4,30 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(int[] arr) {
-            int n = arr.length;
-            Arrays.sort(arr);
-            int[] cZ = {0};
-            if(isAlreadyArrayZeroes(arr, n)) {
-                return 0;
+        public List<List<Integer>> solve1(int[][] items1, int[][] items2) {
+            TreeMap<Integer, Integer> map = new TreeMap<>();
+            for(int[] item1 : items1) {
+                int val = item1[0];
+                int weight = item1[1];
+                map.put(val, weight);
             }
-            recursive(arr, cZ, n);
-            return cZ[0];
-        }
-        private void recursive(int[] arr, int[] cZ, int n) {
-            int sE = arr[0];
-            for(int i = 1; i < n; i++) {
-                if(arr[i] != 0) {
-                    sE = arr[i];
-                    break;
-                }
-            }
-            for(int i = 0; i < n; i++) {
-                if (arr[i] != 0) {
-                    arr[i] = arr[i] - sE;
-                }
-            }
-            int countZeroes = 0;
-            for(int i = 0; i < n; i++) {
-                if(arr[i] == 0) {
-                    countZeroes++;
+            for(int[] item2 : items2) {
+                int val = item2[0];
+                int weight = item2[1];
+                if(map.containsKey(val)) {
+                    map.put(val, map.get(val) + weight);
                 } else {
-                    break;
+                    map.put(val, weight);
                 }
             }
-            cZ[0] = cZ[0] + 1;
-            if(countZeroes != n) {
-                recursive(arr, cZ, n);
+            List<List<Integer>> res = new ArrayList<>();
+            for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                List<Integer> list = new ArrayList<>();
+                list.add(entry.getKey());
+                list.add(entry.getValue());
+                res.add(list);
             }
-        }
-        private boolean isAlreadyArrayZeroes(int[] arr, int n) {
-            int countZeroes = 0;
-            for(int i = 0; i < n; i++) {
-                if(arr[i] == 0) {
-                    countZeroes++;
-                } else {
-                    break;
-                }
-            }
-            return countZeroes == n;
+            return res;
         }
     }
 }
