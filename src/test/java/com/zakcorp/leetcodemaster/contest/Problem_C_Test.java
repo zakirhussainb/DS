@@ -2,19 +2,20 @@ package com.zakcorp.leetcodemaster.contest;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class Problem_C_Test {
-
+    Problem_C.Solver p = new Problem_C.Solver();
     @Test
     public void test1() {
-        Problem_C.FoodRatings p = new Problem_C.FoodRatings( new String[]{"kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"},
-                new String[]{"korean", "japanese", "japanese", "greek", "japanese", "korean"}, new int[]{9, 12, 8, 15, 14, 7});
-        assertEquals("kimchi", p.highestRated("korean"));
-        assertEquals("ramen", p.highestRated("japanese"));
-        p.changeRating("sushi", 16);
-        assertEquals("sushi", p.highestRated("japanese"));
-        p.changeRating("ramen", 16);
-        assertEquals("ramen", p.highestRated("japanese"));
+        assertTrue(p.solve1(new int[]{4,4,4,5,6}));
+    }
+    @Test
+    public void test2() {
+        assertFalse(p.solve1(new int[]{1,1,1,2}));
+    }
+    @Test
+    public void test3() {
+        assertTrue(p.solve1(new int[]{1,5,6,7}));
     }
 }
