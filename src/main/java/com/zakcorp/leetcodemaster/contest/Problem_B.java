@@ -3,30 +3,46 @@ package com.zakcorp.leetcodemaster.contest;
 import java.util.*;
 
 public class Problem_B {
-    static class Solver {
-        public int solve1(int[] grades) {
-            PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
-            for(int num : grades)
-                pq.add(num);
-            int c = 1;
-            int currMaxSum = 0;
-            int groups = 0;
-            while (!pq.isEmpty()) {
-                LinkedList<Integer> list = new LinkedList<>();
-                int sum = 0;
-                for(int i = 1; i <= c; i++) {
-                    int x = pq.poll();
-                    if(currMaxSum < sum) {
-                        break;
-                    }
-                    sum += x;
-                    list.add(x);
-                    currMaxSum = sum;
-                    groups++;
-                }
-                c++;
+    static class Graph {
+        int V;
+        LinkedList<Integer>[] adjListArray;
+        public Graph(int V) {
+            this.V = V;
+            adjListArray = new LinkedList[V];
+            for(int i = 0; i < V; i++) {
+                adjListArray[i] = new LinkedList<>();
             }
-            return groups;
+        }
+        private void addEdge(int u, int v) {
+            adjListArray[u].add(v);
+            adjListArray[v].add(u);
+        }
+    }
+    static class Solver {
+        public int solve1(int n, int[][] edges, int[] restricted) {
+            Set<Integer> set = new HashSet<>();
+            for(int num : restricted)
+                set.add(num);
+            Graph g = new Graph(n);
+            for(int[] edge : edges) {
+                g.addEdge(edge[0], edge[1]);
+            }
+            boolean[] isVisited = new boolean[g.V];
+            dfs(g, 0, set, isVisited);
+            int count = 0;
+            for(int i = 0; i < g.V; i++) {
+                if (isVisited[i])
+                    count++;
+            }
+            return count;
+        }
+        private void dfs(Graph g, int src, Set<Integer> set, boolean[] isVisited) {
+            isVisited[src] = true;
+            for(int num : g.adjListArray[src]) {
+                if(!isVisited[num] && !set.contains(num)) {
+                    dfs(g, num, set, isVisited);
+                }
+            }
         }
     }
 }
