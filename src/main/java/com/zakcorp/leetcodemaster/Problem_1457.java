@@ -22,7 +22,7 @@ public class Problem_1457 {
                         set.add(num);
                     }
                 }
-                if(set.size() == 1) {
+                if(set.size() <= 1) {
                     ans++;
                 }
             }
