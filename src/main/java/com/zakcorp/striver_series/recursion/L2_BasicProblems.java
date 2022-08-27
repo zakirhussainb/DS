@@ -22,4 +22,18 @@ public class L2_BasicProblems
         System.out.println(n);
         printLinearlyFromNToOne( n - 1 );
     }
+
+    protected void printLinearlyFromOneToN_Backtracking(int i, int n) {
+        if(i < 1)
+            return;
+        printLinearlyFromOneToN_Backtracking( i - 1, n );
+        System.out.println(i);
+    }
+
+    protected void printLinearlyFromNToOne_Backtracking(int i, int n) {
+        if(i > n)
+            return;
+        printLinearlyFromNToOne_Backtracking( i + 1, n );
+        System.out.println(i);
+    }
 }
