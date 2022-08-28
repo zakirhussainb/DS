@@ -2,6 +2,14 @@ package com.zakcorp.striver_series.recursion;
 
 public class L2_BasicProblems
 {
+    public static void main( String[] args ) {
+        // AND
+        int a = 5;
+        int b = 1;
+        System.out.println(a & b);
+
+
+    }
     protected void printName(int n) {
         if(n == 0)
             return;
