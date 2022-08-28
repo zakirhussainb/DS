@@ -13,7 +13,7 @@ public class Problem_2191
                 for(char c : s.toCharArray()){
                     sb.append(mapping[c - '0']);
                 }
-                al.add(new int[]{ Integer.parseInt( sb.toString()), num});
+                al.add(new int[]{ Integer.parseInt( sb.toString()), num}); // {mappedVal, originalVal}
             }
             al.sort( Comparator.comparingInt( a -> a[0] ) );
             int[] ans = new int[arr.length];
