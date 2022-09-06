@@ -19,5 +19,19 @@ public class Problem_1003
             }
             return true;
         }
+        public boolean solve2(String str) {
+            Stack<Character> stack = new Stack<>();
+            for(char ch : str.toCharArray()) {
+                if(ch == 'c') {
+                    if(stack.isEmpty() || stack.pop() != 'b')
+                        return false;
+                    if(stack.isEmpty() || stack.pop() != 'a')
+                        return false;
+                } else {
+                    stack.push( ch );
+                }
+            }
+            return stack.isEmpty();
+        }
     }
 }
