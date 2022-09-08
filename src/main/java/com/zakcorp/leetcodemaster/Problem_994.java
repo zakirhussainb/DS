@@ -3,6 +3,11 @@ package com.zakcorp.leetcodemaster;
 import java.util.*;
 
 public class Problem_994 {
+    /*
+    Why DFS ?
+        -> Because the process of rotting could be explained perfectly with the BFS procedure, i.e. the rotten oranges will
+           contaminate their neighbors first, before the contamination propagates to other fresh oranges that are farther away.
+     */
     static class Solver {
         // DFS is not possible -> so we need to go for BFS
         public int solve1(int[][] grid) {
