@@ -21,5 +21,6 @@ public class Problem_1609_Test
         root.right.left.left = new TreeNode(6);
         root.right.right.right = new TreeNode(2);
         assertTrue(p.solve1(root));
+        assertTrue(p.solve2(root));
     }
 }
