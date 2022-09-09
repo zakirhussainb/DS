@@ -51,6 +51,7 @@ public class Problem_1609
                 for(int i = 0; i < size; i++) {
                     TreeNode curr = queue.poll();
                     if(level % 2 == 0) {
+                        // This will fail for first value in the queue, so checking i >= 1
                         if( curr.val % 2 == 0 || (i >= 1 && curr.val <= prevVal) ) {
                             return false;
                         }
