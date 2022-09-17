@@ -4,29 +4,15 @@ import java.util.*;
 
 public class Problem_C {
     static class Solver {
-        public boolean solve1(int[] arr) {
-            int n = arr.length;
-            Arrays.sort(arr);
-            boolean one = false;
-            boolean two = false;
-            for(int i = 1; i < n; i++) {
-                if(arr[i - 1] == arr[i]) {
-                    one = true;
-                }
-                if(arr[i - 1] == arr[i] && arr[i] == arr[i + 1]) {
-                    two = true;
-                }
+        public int[] solve1(int[] arr) {
+            for(int i = 0; i < arr.length; i++) {
+
             }
-            if(one && two)
-                return true;
-            boolean three = false;
-            for(int i = 1; i < n; i++) {
-                if (arr[i - 1] + 1 == arr[i] && arr[i] + 1 == arr[i + 1]) {
-                    three = true;
-                    break;
-                }
-            }
-            return one && three || two && three;
+            int a = 1;
+            int b = 0;
+            int c = 2;
+            System.out.println( "val..." + (a | b | c | 1) );
+            return null;
         }
     }
 }
