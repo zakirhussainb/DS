@@ -15,7 +15,7 @@ public class L6_RecursionOnSubsequences_Test
         l6 = new L6_RecursionOnSubsequences();
     }
     @Test
-    public void test_reverseArrayIterative() {
+    public void test_printAllSubsequences() {
         l6.printAllSubsequences(new int[]{3, 1, 2});
     }
 
