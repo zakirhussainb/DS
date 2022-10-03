@@ -4,22 +4,25 @@ import java.util.*;
 
 public class Problem_B {
     static class Solver {
-        public int solve1(int[] players, int[] trainers) {
-            Arrays.sort( players );
-            Arrays.sort( trainers );
-            int i = players.length - 1;
-            int j = trainers.length - 1;
-            int ans = 0;
-            while(i >= 0 && j >= 0) {
-                if(players[i] <= trainers[j]) {
-                    ans++;
-                    i--;
-                    j--;
-                } else {
-                    i--;
+        int[] arr;
+        int maxVal;
+        public Solver(int n) {
+            maxVal = Integer.MIN_VALUE;
+            arr = new int[n + 1];
+        }
+
+        public void upload(int video) {
+            maxVal = Math.max(maxVal, video);
+            arr[video] = 1;
+        }
+
+        public int longest() {
+            for(int i = 1; i <= maxVal; i++) {
+                if(arr[i] == 0) {
+                    return i - 1;
                 }
             }
-            return ans;
+            return maxVal == Integer.MIN_VALUE ? 0 : maxVal;
         }
     }
 }

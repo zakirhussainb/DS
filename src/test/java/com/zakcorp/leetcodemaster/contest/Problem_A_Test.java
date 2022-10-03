@@ -8,10 +8,22 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(3, p.solve1("08-15", "08-18", "08-16", "08-19"));
+        assertTrue( p.solve1("abcc"));
     }
     @Test
     public void test2() {
-        assertEquals(0, p.solve1("10-01", "10-31", "11-01", "12-31"));
+        assertFalse( p.solve1("aazz"));
+    }
+    @Test
+    public void test3() {
+        assertTrue( p.solve1("abcdefghijklmnopqrstuvwxyz"));
+    }
+    @Test
+    public void test4() {
+        assertTrue( p.solve1("bac"));
+    }
+    @Test
+    public void test5() {
+        assertTrue( p.solve1("cccaa"));
     }
 }
