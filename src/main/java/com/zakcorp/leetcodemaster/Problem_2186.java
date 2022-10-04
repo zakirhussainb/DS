@@ -33,4 +33,28 @@ public class Problem_2186 {
             return res;
         }
     }
+
+    /*
+    More efficient solution, the trick here is that we are using Math.abs(), so even if you subtract the value in the
+    second for loop, and you get a negative value, that will not have an effect, since you are only taking the absolute value.
+     */
+    static class Solver1 {
+        public int solve1(String s, String t) {
+            int[] counter = new int[26];
+
+            for(int i = 0; i < s.length(); i++) {
+                counter[s.charAt(i) - 'a']++;
+            }
+
+            for(int i = 0; i < t.length(); i++) {
+                counter[t.charAt(i) - 'a']--;
+            }
+
+            int minSteps = 0;
+            for(int cnt : counter) {
+                minSteps += Math.abs(cnt);
+            }
+            return minSteps;
+        }
+    }
 }
