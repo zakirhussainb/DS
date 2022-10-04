@@ -1,6 +1,9 @@
 package com.zakcorp.leetcodemaster;
 
 public class Problem_836 {
+    /*
+    Links : https://youtu.be/4sFFxnKX8Mc
+     */
     static class Solver {
         public boolean solve1(int[] rect1, int[] rect2) {
             // Rect1 -> [x1, y1, x2, y2] and Rect2 -> [p1, q1, p2, q2]
