@@ -3,19 +3,19 @@ package com.zakcorp.striver_series.recursion;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
 public class L11_SubsetsII_Test
 {
-    private L11_SubsetsII l11;
+    private L11_SubsetsII.Solver l11_1;
+    private L11_SubsetsII.Solver1 l11_2;
 
     @Before
     public void setup() {
-        l11 = new L11_SubsetsII();
+        l11_1 = new L11_SubsetsII.Solver();
+        l11_2 = new L11_SubsetsII.Solver1();
     }
 
     @Test
@@ -27,6 +27,7 @@ public class L11_SubsetsII_Test
         result.add(List.of(1,2,2));
         result.add(List.of(2));
         result.add(List.of(2,2));
-        assertEquals(result, l11.subsetsWithoutDup(new int[]{1,2,2}));
+        assertEquals(new HashSet<>(result), new HashSet<>(l11_1.subsetsWithoutDup(new int[]{1,2,2})));
+        assertEquals(new HashSet<>(result), new HashSet<>(l11_2.subsetsWithoutDup(new int[]{1,2,2})));
     }
 }
