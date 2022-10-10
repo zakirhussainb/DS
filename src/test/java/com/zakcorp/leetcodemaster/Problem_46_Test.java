@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class Problem_46_Test {
     Problem_46.Solver p = new Problem_46.Solver();
+    Problem_46.Solver1 p1 = new Problem_46.Solver1();
     @Test
     public void test1() {
         List<List<Integer>> result = new ArrayList<>();
@@ -22,6 +23,11 @@ public class Problem_46_Test {
         List<List<Integer>> actual = p.solve1(new int[]{1,2,3});
         actual.sort(Comparator.comparingInt(o -> o.get(1)));
         assertEquals(result, actual);
+
+
+        List<List<Integer>> actual1 = p1.solve1(new int[]{1,2,3});
+        actual1.sort(Comparator.comparingInt(o -> o.get(1)));
+        assertEquals(result, actual1);
     }
 
 }
