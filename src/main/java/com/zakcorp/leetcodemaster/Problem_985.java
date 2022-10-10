@@ -25,37 +25,30 @@ public class Problem_985 {
             return sum;
         }
     }
-    // TLE for this solution
+    // Solution is accepted. I drew/written the solution/debugging logic on the Wacom Tablet and then figured it out.
     static class Solver1 {
         public int[] sumEvenAfterQueries(int[] arr, int[][] queries) {
             int[] res = new int[queries.length];
-            int evenSum = getEvenSum(arr);
+            int evenSum = 0;
+            for(int num : arr) {
+                if(num % 2 == 0)
+                    evenSum += num;
+            }
             for(int i = 0; i < queries.length; i++) {
                 int val = queries[i][0];
                 int index = queries[i][1];
-                if(arr[index] % 2 == 0) {
+                // Before updating the array, if arr[i] is even then subtract it from the evenSum.
+                if(arr[index] % 2 == 0)
                     evenSum -= arr[index];
-                    arr[index] += val;
-                    if(arr[index] % 2 == 0) {
-                        evenSum += arr[index];
-                    }
-                } else {
-                    arr[index] += val;
-                    if(arr[index] % 2 == 0) {
-                        evenSum += arr[index];
-                    }
-                }
+                // Update the arr[i]
+                arr[index] += val;
+                // After the updating the array, if arr[i] is even then add it to the evenSum.
+                if(arr[index] % 2 == 0)
+                    evenSum += arr[index];
+
                 res[i] = evenSum;
             }
             return res;
-        }
-        private int getEvenSum(int[] arr) {
-            int sum = 0;
-            for(int num : arr) {
-                if(num % 2 == 0)
-                    sum += num;
-            }
-            return sum;
         }
     }
 }
