@@ -1,25 +1,49 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import java.util.*;
-
 public class Problem_A {
     static class Solver {
-        public boolean solve1(String word) {
-            int[] hash = new int[26];
-            for(int i = 0; i < word.length(); i++) {
-                hash[word.charAt(i) - 'a']++;
-            }
-            Arrays.sort(hash);
-            for(int i = 1; i < hash.length; i++) {
-                if(hash[i] != 0 && hash[i - 1] != 0) {
-                    if (hash[i] != hash[i - 1]) {
-                        if (hash[i] > hash[i - 1] + 1) {
-                            return false;
-                        }
+        public int solve1(String time) {
+            int h1 = time.charAt(0);
+            int h2 = time.charAt(1);
+            int m1 = time.charAt(3);
+            int m2 = time.charAt(4);
+            int p = 1;
+            if(h1 == 63) {
+                if(h2 != 63) {
+                    if(h2 < 52) {
+                        p *= 3;
+                    } else {
+                        p *= 2;
                     }
+                } else {
+                    p *= 24;
                 }
             }
-            return true;
+            if(h1 != 63) {
+                if(h1 == 50) {
+                    if(h2 == 63) {
+                        p *= 4;
+                    }
+                } else {
+                    if(h2 == 63) {
+                        p *= 10;
+                    }
+                }
+
+            }
+            if(m1 == 63) {
+                if(m2 != 63) {
+                    p *= 6;
+                } else {
+                    p *= 60;
+                }
+            }
+            if(m1 != 63) {
+                if(m2 == 63) {
+                    p *= 10;
+                }
+            }
+            return p;
         }
     }
 }
