@@ -18,4 +18,12 @@ public class Problem_1471_Test {
     public void test3() {
         assertArrayEquals(new int[]{11,8,6,6,7}, p.solve1(new int[]{6,7,11,7,6,8}, 5));
     }
+    @Test
+    public void test4() {
+        assertArrayEquals(new int[]{513}, p.solve1(new int[]{513}, 1));
+    }
+    @Test
+    public void test5() {
+        assertArrayEquals(new int[]{598,521,-918,-532,-493,-76,-262}, p.solve1(new int[]{-493,598,-262,-918,-76,-532,521}, 7));
+    }
 }

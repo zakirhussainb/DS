@@ -7,51 +7,34 @@ import java.util.Map;
 public class Problem_1471 {
     static class Solver {
         public int[] solve1(int[] arr, int k) {
+            if(arr.length == 1)
+                return arr;
             Arrays.sort(arr);
+            int[] res = new int[k];
             int n = arr.length;
-            int median = arr[((n - 1) / 2)];
+            int median = arr[(n - 1) / 2];
             int i = 0, j = n - 1;
-            int[] strongArr = new int[n];
-            int x = 0;
-            boolean processJFirst = true;
-            boolean processIFirst = true;
-            while(i <= j) {
-                if(processJFirst) {
-                    int v1 = Math.abs(arr[j] - median);
-                    int v2 = Math.abs(arr[j - 1] - median);
-                    if(v1 > v2) {
-                        strongArr[x++] = arr[j];
-                    } else if(v1 == v2) {
-                        strongArr[x++] = Math.max(arr[j], arr[j - 1]);
-                    }
-                    if(arr[j] == arr[j - 1]) {
-                        j--;
-                        continue;
-                    } else {
-                        processJFirst = false;
-                    }
-                }
-                if(processIFirst) {
-                    int v1 = Math.abs(arr[i] - median);
-                    int v2 = Math.abs(arr[i + 1] - median);
-                    if(v1 > v2) {
-                        strongArr[x++] = arr[i];
-                    } else if(v1 == v2) {
-                        strongArr[x++] = Math.max(arr[i], arr[i + 1]);
-                    }
-                    if(arr[i] == arr[i + 1]) {
+            int p = 0;
+            while(i <= j && p < k) {
+                int start = Math.abs(arr[i] - median);
+                int end = Math.abs(arr[j] - median);
+                if(start > end) {
+                    res[p++] = arr[i];
+                    i++;
+                } else if(start < end) {
+                    res[p++] = arr[j];
+                    j--;
+                } else {
+                    if(arr[i] > arr[j]) {
+                        res[p++] = arr[i];
                         i++;
-                        continue;
                     } else {
-                        processIFirst = false;
+                        res[p++] = arr[j];
+                        j--;
                     }
                 }
-                processIFirst = !processIFirst;
-                processJFirst = !processJFirst;
-                i++;
-                j--;
             }
-            return strongArr;
+            return res;
         }
     }
 }
