@@ -2,48 +2,20 @@ package com.zakcorp.leetcodemaster.contest;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(String time) {
-            int h1 = time.charAt(0);
-            int h2 = time.charAt(1);
-            int m1 = time.charAt(3);
-            int m2 = time.charAt(4);
-            int p = 1;
-            if(h1 == 63) {
-                if(h2 != 63) {
-                    if(h2 < 52) {
-                        p *= 3;
-                    } else {
-                        p *= 2;
-                    }
-                } else {
-                    p *= 24;
-                }
-            }
-            if(h1 != 63) {
-                if(h1 == 50) {
-                    if(h2 == 63) {
-                        p *= 4;
-                    }
-                } else {
-                    if(h2 == 63) {
-                        p *= 10;
-                    }
-                }
+        public boolean solve1(String[] event1, String[] event2) {
+            // Convert time to minutes
+            int startTime1 = getMinutes(event1[0]);
+            int endTime1 = getMinutes(event1[1]);
 
-            }
-            if(m1 == 63) {
-                if(m2 != 63) {
-                    p *= 6;
-                } else {
-                    p *= 60;
-                }
-            }
-            if(m1 != 63) {
-                if(m2 == 63) {
-                    p *= 10;
-                }
-            }
-            return p;
+            int startTime2 = getMinutes(event2[0]);
+            int endTime2 = getMinutes(event2[1]);
+
+            return endTime1 >= startTime2 && startTime1 <= endTime2;
+        }
+        private int getMinutes(final String s) {
+            int hh = Integer.parseInt(s.substring(0, 2)); // 21
+            int mm = Integer.parseInt(s.substring(3)); // 30
+            return 60 * hh + mm;
         }
     }
 }
