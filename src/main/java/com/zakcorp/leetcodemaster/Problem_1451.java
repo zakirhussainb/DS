@@ -29,7 +29,7 @@ public class Problem_1451 {
                 sb.append(" ");
             }
             String res = sb.toString();
-            res = res.stripTrailing();
+            res = res.trim();
             String firstChar = res.substring(0, 1).toUpperCase();
             res = firstChar + res.substring(1).toLowerCase();
             return res;
