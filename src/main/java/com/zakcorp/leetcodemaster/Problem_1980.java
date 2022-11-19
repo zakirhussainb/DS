@@ -23,5 +23,13 @@ public class Problem_1980
             }
             return backtrack( index + 1, newStr, set );
         }
+
+        public String solve2(String[] arr) {
+            StringBuilder s = new StringBuilder("");
+            for (int i = 0; i < arr.length; i++) {
+                s.append(arr[i].charAt(i) == '0' ? '1' : '0');
+            }
+            return s.toString();
+        }
     }
 }

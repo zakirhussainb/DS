@@ -10,13 +10,16 @@ public class Problem_1980_Test
     @Test
     public void test1() {
         assertEquals("11", p.solve1(new String[]{"01","10"}));
+        assertEquals("11", p.solve2(new String[]{"01","10"}));
     }
     @Test
     public void test2() {
         assertEquals("11", p.solve1(new String[]{"00","01"}));
+        assertEquals("11", p.solve2(new String[]{"00","01"}));
     }
     @Test
     public void test3() {
         assertEquals("101", p.solve1(new String[]{"111","011","001"}));
+        assertEquals("101", p.solve2(new String[]{"111","011","001"}));
     }
 }
