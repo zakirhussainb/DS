@@ -2,8 +2,7 @@ package com.zakcorp.leetcodemaster;
 
 import com.zakcorp.leetcodemaster.classes.TreeNode;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Problem_1038
 {
@@ -26,6 +25,22 @@ public class Problem_1038
     }
 
     static class Solver1 {
-
+        public TreeNode solve1(TreeNode root) {
+            Stack<TreeNode> stack = new Stack<>();
+            TreeNode curr = root;
+            int sum = 0;
+            while(!stack.isEmpty() || curr != null) {
+                if(curr != null) {
+                    stack.push( curr );
+                    curr = curr.right;
+                } else {
+                    curr = stack.pop();
+                    sum += curr.val;
+                    curr.val  = sum;
+                    curr = curr.left;
+                }
+            }
+            return root;
+        }
     }
 }
