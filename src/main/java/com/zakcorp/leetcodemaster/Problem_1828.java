@@ -26,4 +26,27 @@ public class Problem_1828
             return res;
         }
     }
+
+    static class Solver1 {
+        public int[] solve1(int[][] points, int[][] queries) {
+            int n = queries.length;
+            int[] res = new int[n];
+            for(int i = 0; i < n; i++) {
+                int x1 = queries[i][0];
+                int y1 = queries[i][1];
+                int radius = queries[i][2];
+                int ans = 0;
+                for(int[] point : points) {
+                    int x2 = point[0];
+                    int y2 = point[1];
+                    int distance = ( (x2 - x1) * (x2 - x1) ) + ( (y2 - y1) * (y2 - y1) );
+                    if (distance <= radius * radius) {
+                        ans++;
+                    }
+                }
+                res[i] = ans;
+            }
+            return res;
+        }
+    }
 }
