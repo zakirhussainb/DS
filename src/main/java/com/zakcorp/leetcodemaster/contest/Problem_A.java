@@ -1,21 +1,22 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.math.BigDecimal;
+
 public class Problem_A {
     static class Solver {
-        public boolean solve1(String[] event1, String[] event2) {
-            // Convert time to minutes
-            int startTime1 = getMinutes(event1[0]);
-            int endTime1 = getMinutes(event1[1]);
-
-            int startTime2 = getMinutes(event2[0]);
-            int endTime2 = getMinutes(event2[1]);
-
-            return endTime1 >= startTime2 && startTime1 <= endTime2;
-        }
-        private int getMinutes(final String s) {
-            int hh = Integer.parseInt(s.substring(0, 2)); // 21
-            int mm = Integer.parseInt(s.substring(3)); // 30
-            return 60 * hh + mm;
+        public int solve1(String num) {
+            BigDecimal bd = new BigDecimal( num );
+            BigDecimal res = BigDecimal.ZERO;
+            BigDecimal i = BigDecimal.ONE;
+            while ( i.compareTo( bd ) <= 0 )
+            {
+                String s = i.toString();
+                if(s.contains( "1" )) {
+                    res = res.add( BigDecimal.ONE );
+                }
+                i = i.add( BigDecimal.ONE  );
+            }
+            return res.intValue();
         }
     }
 }
