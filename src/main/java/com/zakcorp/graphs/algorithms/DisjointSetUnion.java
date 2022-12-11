@@ -3,7 +3,9 @@ package com.zakcorp.graphs.algorithms;
 /**
  * Created by Zakir Hussain B on 24/08/20.
  *
- * @source: https://youtu.be/BcRLmCS8pfw?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX -> Robert Sedgewick Youtube Channel
+ * @source:
+ * Main Video:- https://youtu.be/j3FsS4cbJLg
+ * https://youtu.be/BcRLmCS8pfw?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX -> Robert Sedgewick Youtube Channel
  * @topic: Graphs
  * @sub-topic: Disjoint-Set-Union (DSU)
  * @platform: General

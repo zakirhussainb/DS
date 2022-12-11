@@ -16,4 +16,8 @@ public class Graph {
         adjListArray[u].add(v);
         adjListArray[v].add(u);
     }
+
+    public void addDirectedEdge(int u, int v) {
+        adjListArray[u].add(v);
+    }
 }

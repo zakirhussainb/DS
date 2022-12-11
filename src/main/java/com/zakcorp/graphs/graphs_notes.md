@@ -94,3 +94,15 @@ minimum cost spanning tree out of all the spanning trees.
 Rules
 1. This must be a Spanning Tree(Connected) and it must not have any cycles.(You must cover all the vertices).
 2. Then it should be minimum cost.
+
+***
+           Union Find
+***
+Modeling the Connections
+
+The Dynamic Connectivity Problem
+
+Given a set of N objects
+
+1. Union: connects two objects.
+2. Find: is there a path connecting the two objects.
