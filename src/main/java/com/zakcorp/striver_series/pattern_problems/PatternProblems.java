@@ -86,16 +86,27 @@ public class PatternProblems
 
   public String pattern7(int n) {
     int x = findNthOddNumber(n);
+    int oddNo = 1;
     for(int i = 1; i <= n; i++) {
-      for(int j = 1; j <= x; j++) {
-        if(j == i - 1 && j == x) {
-
-        }
-        sb.append("*");
+      int v = (x - oddNo) / 2;
+      int k = 1;
+      while(k <= v) {
+        sb.append( " " );
+        k++;
       }
+      k = 1;
+      while(k <= oddNo) {
+        sb.append( "*" );
+        k++;
+      }
+      k = 1;
+      while(k <= v) {
+        sb.append( " " );
+        k++;
+      }
+      oddNo += 2;
       sb.append( "\n" );
     }
-    sb.deleteCharAt( sb.length() - 1 );
     return sb.toString();
   }
 
