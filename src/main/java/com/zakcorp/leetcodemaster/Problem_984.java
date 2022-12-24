@@ -2,6 +2,12 @@ package com.zakcorp.leetcodemaster;
 
 public class Problem_984
 {
+    /*
+        1. If the initial number of A's is greater than B's, we swap A and B.
+        2. For each turn, we add <a> to our string.
+        3. If the no. of remaining A's is greater than B's, we add one more <a>.
+        4. Finally we add <b>.
+     */
     static class Solver {
         public String solve1(int A, int B) {
             StringBuilder sb = new StringBuilder(A + B);
@@ -30,6 +36,13 @@ public class Problem_984
     }
 
     static class Solver1 {
+        /*
+            1. If the current resultant string,
+                -> ends with "aa", next char is "b";
+                -> if ends with "bb", next char is "a";
+            2. Otherwise, A >= B, then next char is "a" or else "b"
+            3. Decrement A and B as you append it to the result.
+         */
         public String solve1(int A, int B) {
             StringBuilder sb = new StringBuilder(A + B);
             while(A + B > 0) {
