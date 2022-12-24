@@ -10,8 +10,8 @@ public class Problem_984_Test
     Problem_984.Solver1 p1 = new Problem_984.Solver1();
     @Test
     public void test1() {
-        assertEquals("bba", p.solve1(1, 2));
-        assertEquals("bba", p1.solve1(1, 2));
+        assertEquals("bab", p.solve1(1, 2));
+        assertEquals("bab", p1.solve1(1, 2));
     }
     @Test
     public void test2() {
@@ -27,5 +27,11 @@ public class Problem_984_Test
     public void test4() {
         assertEquals("abababab", p.solve1(4, 4));
         assertEquals("abababab", p1.solve1(4, 4));
+    }
+
+    @Test
+    public void test5() {
+        assertEquals("bbabbababababab", p.solve1(6, 9));
+        assertEquals("bbabbababababab", p1.solve1(6, 9));
     }
 }
