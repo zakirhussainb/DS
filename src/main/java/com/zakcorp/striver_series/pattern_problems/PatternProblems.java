@@ -71,4 +71,44 @@ public class PatternProblems
     return sb.toString();
   }
 
+  public String pattern6(int n) {
+    for(int i = n; i >= 1; i--) {
+      for(int j = 1; j <= i; j++) {
+        sb.append( j );
+        sb.append( " " );
+      }
+      sb.deleteCharAt( sb.length() - 1 );
+      sb.append("\n");
+    }
+    sb.deleteCharAt( sb.length() - 1 );
+    return sb.toString();
+  }
+
+  public String pattern7(int n) {
+    int x = findNthOddNumber(n);
+    for(int i = 1; i <= n; i++) {
+      for(int j = 1; j <= x; j++) {
+        if(j == i - 1 && j == x) {
+
+        }
+        sb.append("*");
+      }
+      sb.append( "\n" );
+    }
+    sb.deleteCharAt( sb.length() - 1 );
+    return sb.toString();
+  }
+
+  private int findNthOddNumber(int n) {
+    int m = 1;
+    for(int i = 1; i < Integer.MAX_VALUE; i+=2) {
+      if(m == n) {
+        return i;
+      }
+      m++;
+    }
+    return -1;
+  }
+
+
 }

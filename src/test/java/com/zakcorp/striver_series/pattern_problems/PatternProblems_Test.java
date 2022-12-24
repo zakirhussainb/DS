@@ -44,6 +44,7 @@ public class PatternProblems_Test
                "5 5 5 5 5";
     assertEquals(s, p.pattern4(5));
   }
+
   @Test
   public void pattern5() {
     String s = "* * * * *\n" +
@@ -52,5 +53,25 @@ public class PatternProblems_Test
                "* *\n" +
                "*";
     assertEquals(s, p.pattern5(5));
+  }
+
+  @Test
+  public void pattern6() {
+    String s = "1 2 3 4 5\n" +
+               "1 2 3 4\n" +
+               "1 2 3\n" +
+               "1 2\n" +
+               "1";
+    assertEquals(s, p.pattern6(5));
+  }
+
+  @Test
+  public void pattern7() {
+    String s = "      *\n" +
+               "    * * *\n" +
+               "  * * * * *\n" +
+               " * * * * * * *\n" +
+               "* * * * * * * * *";
+    assertEquals(s, p.pattern7(5));
   }
 }
