@@ -2,7 +2,10 @@ package com.zakcorp.striver_series.pattern_problems;
 
 public class PatternProblems
 {
-  StringBuilder sb;
+  /*
+  https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/
+   */
+  private StringBuilder sb;
   public PatternProblems() {
     sb = new StringBuilder();
   }
