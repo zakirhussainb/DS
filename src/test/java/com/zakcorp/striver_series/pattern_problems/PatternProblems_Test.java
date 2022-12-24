@@ -74,4 +74,14 @@ public class PatternProblems_Test
                "* * * * * * * * *";
     assertEquals(s, p.pattern7(5));
   }
+
+  @Test
+  public void pattern8() {
+    String s = "*********\n" +
+               " *******\n" +
+               "  *****\n" +
+               "   ***\n" +
+               "    *";
+    assertEquals(s, p.pattern8(5));
+  }
 }

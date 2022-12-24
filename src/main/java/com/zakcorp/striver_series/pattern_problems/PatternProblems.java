@@ -110,6 +110,32 @@ public class PatternProblems
     return sb.toString();
   }
 
+  public String pattern8(int n) {
+    int x = findNthOddNumber( n );
+    int oddNo = x;
+    for(int i = 1; i <= n; i++) {
+      int v = (x - oddNo) / 2;
+      int k = 1;
+      while(k <= v) {
+        sb.append( " " );
+        k++;
+      }
+      k = 1;
+      while(k <= oddNo) {
+        sb.append( "*" );
+        k++;
+      }
+      k = 1;
+      while(k <= v) {
+        sb.append( " " );
+        k++;
+      }
+      oddNo -= 2;
+      sb.append( "\n" );
+    }
+    return sb.toString();
+  }
+
   private int findNthOddNumber(int n) {
     int m = 1;
     for(int i = 1; i < Integer.MAX_VALUE; i+=2) {
