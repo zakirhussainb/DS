@@ -3,65 +3,52 @@ package com.zakcorp.leetcodemaster;
 public class Problem_984
 {
     static class Solver {
-        public String solve1(int a, int b) {
-            int n = a + b;
-            char[] sA = new char[n];
-            if(a == b || a == b - 1 || a - 1 == b) {
-                int k = 0;
-                boolean f = true;
-                while(k < sA.length) {
-                    if(f) {
-                        sA[k] = 'a';
-                    } else {
-                        sA[k] = 'b';
-                    }
-                    f = !f;
-                    k++;
-                }
-                return new String(sA);
+        public String solve1(int A, int B) {
+            StringBuilder sb = new StringBuilder(A + B);
+            char a = 'a';
+            char b = 'b';
+            int i = A;
+            int j = B;
+            if(B > A) {
+                a = 'b';
+                b = 'a';
+                i = B;
+                j = A;
             }
-            processString( sA, a, b, a > b );
-            return new String(sA);
+            while(i --> 0) {
+                sb.append( a );
+                if(i > j) {
+                    sb.append( a );
+                    --i;
+                }
+                if(j --> 0) {
+                    sb.append( b );
+                }
+            }
+            return sb.toString();
         }
-        private void processString(char[] sA, int a, int b, boolean flag) {
-            int mas1 = 0;
-            int mas2 = 0;
-            char top1 = ' ';
-            char top2= ' ';
-            if(flag) {
-                mas1 = a;
-                mas2 = b;
-                top1 = 'a';
-                top2 = 'b';
-            } else {
-                mas1 = b;
-                mas2 = a;
-                top1 = 'b';
-                top2 = 'a';
-            }
-            int k = 0;
-            int start = 0;
-            while(k < sA.length) {
-                if(mas1 > 0) {
-                    if(k - start != 2) {
-                        sA[k] = top1;
-                        mas1--;
-                    } else {
-                        start = k + 1;
-                    }
+    }
+
+    static class Solver1 {
+        public String solve1(int A, int B) {
+            StringBuilder sb = new StringBuilder(A + B);
+            while(A + B > 0) {
+                String s = sb.toString();
+                if(s.endsWith( "aa" )) {
+                    sb.append( "b" );
+                    --B;
+                } else if(s.endsWith( "bb" )) {
+                    sb.append( "a" );
+                    --A;
+                } else if(A >= B) {
+                    sb.append( "a" );
+                    --A;
                 } else {
-                    break;
+                    sb.append( "b" );
+                    --B;
                 }
-                k++;
             }
-            k = 0;
-            while(k < sA.length) {
-                if(sA[k] == Character.MIN_VALUE && mas2 > 0) {
-                    sA[k] = top2;
-                    mas2--;
-                }
-                k++;
-            }
+            return sb.toString();
         }
     }
 }
