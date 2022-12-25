@@ -8,11 +8,10 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals( 1, p.solve1("1"));
-        assertEquals( 1, p.solve1("5"));
-        assertEquals( 2, p.solve1("10"));
-        assertEquals( 11, p.solve1("20"));
-        assertEquals( 506, p.solve1("1234"));
-        assertEquals( 2, p.solve1("10"));
+        assertEquals( 1, p.solve1(new String[]{"hello","i","am","leetcode"}, "hello", 1));
+    }
+    @Test
+    public void test2() {
+        assertEquals( 1, p.solve1(new String[]{"a","b","leetcode"}, "leetcode", 0));
     }
 }
