@@ -9,6 +9,7 @@ import org.junit.Test;
 public class Problem_951_Test
 {
     Problem_951.Solver p = new Problem_951.Solver();
+    Problem_951.Solver1 p1 = new Problem_951.Solver1();
     @Test
     public void test1() {
         TreeNode root1 = new TreeNode(1);
@@ -31,6 +32,7 @@ public class Problem_951_Test
         root2.right.right.right = new TreeNode(7);
 
         assertTrue(p.solve1(root1, root2));
+        assertTrue(p1.solve1(root1, root2));
     }
 
     @Test
@@ -43,5 +45,6 @@ public class Problem_951_Test
         root2.right = new TreeNode(1);
 
         assertFalse(p.solve1(root1, root2));
+        assertFalse(p1.solve1(root1, root2));
     }
 }

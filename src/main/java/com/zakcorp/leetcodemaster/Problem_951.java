@@ -82,6 +82,24 @@ public class Problem_951
             }
             return root;
         }
+    }
 
+    /*
+    Simple and Elegant Approach:
+    1. If either of the root is null, then check whether they are equal.
+        -> Since if both the roots are null, then we need to return true.
+        -> If either of them are true, then we need to return false.
+    2. Check whether root1.val is equal to root2.val and then solve for two major cases:
+        -> When root1.left and root2.left are equal AND root1.right and root2.right are equal.
+                OR
+        -> When root1.left and root2.right are equal AND root1.right and root2.left are equal.
+     */
+    static class Solver1 {
+        public boolean solve1(TreeNode root1, TreeNode root2) {
+            if(root1 == null || root2 == null)
+                return root1 == root2;
+            return root1.val == root2.val && ( solve1( root1.left, root2.left ) && solve1( root1.right, root2.right )
+                || solve1( root1.left, root2.right ) && solve1( root1.right, root2.left ) );
+        }
     }
 }
