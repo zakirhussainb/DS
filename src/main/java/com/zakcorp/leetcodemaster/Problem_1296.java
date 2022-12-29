@@ -21,5 +21,23 @@ public class Problem_1296
             }
             return true;
         }
+        public boolean solve2(int[] nums, int k) {
+            if(nums.length % k != 0)
+                return false;
+            int[] arr = new int[k];
+            int previous = nums[0];
+            Arrays.sort(nums);
+            for(int x : nums){
+                if(x != previous) {
+                    if(x != previous + 1 && arr[(previous - 1) % k] != arr[previous % k])
+                        return false;
+                    if(arr[(previous - 1) % k] > arr[previous % k])
+                        return false;
+                    previous = x;
+                }
+                arr[previous % k]++;
+            }
+            return arr[(previous - 1) % k] == arr[previous % k];
+        }
     }
 }

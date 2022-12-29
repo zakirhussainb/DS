@@ -10,6 +10,7 @@ public class Problem_1296_Test
     @Test
     public void test1() {
         assertTrue(p.solve1(new int[]{1,2,3,3,4,4,5,6}, 4));
+        assertTrue(p.solve2(new int[]{1,2,3,3,4,4,5,6}, 4));
     }
     @Test
     public void test2() {
