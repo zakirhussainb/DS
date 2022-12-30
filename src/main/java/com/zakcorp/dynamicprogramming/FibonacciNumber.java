@@ -17,7 +17,9 @@ public class FibonacciNumber {
                 return 0;
             if(n == 1)
                 return 1;
-            return recursive(n - 1) + recursive(n - 2);
+            int x = recursive( n - 1 );
+            int y = recursive( n - 2 );
+            return x + y;
         }
     }
     static class Solver1 {
