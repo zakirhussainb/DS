@@ -21,5 +21,18 @@ public class Problem_1208
             }
             return maxLength;
         }
+
+        public int solve2(String s, String t, int maxCost) {
+            int start = 0, end = 0;
+            while(end < s.length()) {
+                maxCost -= Math.abs( s.charAt( end ) - t.charAt( end ) );
+                if(maxCost < 0) {
+                    maxCost += Math.abs( s.charAt( start ) - t.charAt( start ) );
+                    start++;
+                }
+                end++;
+            }
+            return end - start;
+        }
     }
 }
