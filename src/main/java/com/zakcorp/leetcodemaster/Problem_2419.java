@@ -14,7 +14,6 @@ public class Problem_2419
                 } else {
                     currLength = 0;
                 }
-                maxElement = Math.max( maxElement, num );
             }
             return maxLength;
         }
