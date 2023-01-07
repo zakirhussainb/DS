@@ -8,6 +8,10 @@ public class Problem_C_Test {
     Problem_C.Solver p = new Problem_C.Solver();
     @Test
     public void test1() {
-        assertArrayEquals( new int[]{3,3,2,2,1}, p.solve1(new int[]{1,0,2,1,3}));
+        assertEquals( 34, p.solve1(new int[]{15,45,20,2,34,35,5,44,32,30}));
+    }
+    @Test
+    public void test2() {
+        assertEquals( 5, p.solve1(new int[]{1,4}));
     }
 }

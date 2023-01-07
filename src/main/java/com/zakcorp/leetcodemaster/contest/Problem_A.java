@@ -4,23 +4,29 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public int solve1(String[] words, String target, int startIndex) {
-            int n = words.length;
-            int ans = Integer.MAX_VALUE;
-            for(int i = 0; i < n; i++) {
-                if(words[i].equals( target )) {
-                    int nok = Math.abs( i - startIndex );
-                    int circ = 0;
-                    if(i > startIndex) {
-                        circ = startIndex + n - i;
-                    } else {
-                        circ = i + n - startIndex;
-                    }
-                    ans = Math.min(ans, nok);
-                    ans = Math.min(ans, circ);
-                }
+        public String solve1(int length, int width, int height, int mass) {
+            int p4 = 10000;
+            long volume = (long)length * width * height;
+            boolean isBulky = false;
+            boolean isHeavy = false;
+            if( length >= p4 || width >= p4 || height >= p4 || mass >= p4 ) {
+                isBulky = true;
+            } else if(volume >= 1_000_000_000) {
+                isBulky = true;
             }
-            return ans == Integer.MAX_VALUE ? -1 : ans;
+            if(mass >= 100) {
+                isHeavy = true;
+            }
+            if(!isBulky && !isHeavy) {
+                return "Neither";
+            }
+            if(isBulky && isHeavy) {
+                return "Both";
+            }
+            if( isBulky ) {
+                return "Bulky";
+            }
+            return "Heavy";
         }
     }
 }
