@@ -8,14 +8,8 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals( "Heavy", p.solve1(1000, 35, 700, 300));
-    }
-    @Test
-    public void test2() {
-        assertEquals( "Neither", p.solve1(200, 50, 800, 50));
-    }
-    @Test
-    public void test3() {
-        assertEquals( "Both", p.solve1( 2909, 3968, 3272, 727 ) );
+        assertEquals( 3, p.solve1(new int[] {-2,-1,-1,1,2,3}));
+        assertEquals( 3, p.solve1(new int[] {-3,-2,-1,0,0,1,2}));
+        assertEquals( 4, p.solve1(new int[] {5,20,66,1314}));
     }
 }

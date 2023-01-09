@@ -1,14 +1,26 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.util.TreeMap;
+
 public class Problem_C {
     static class Solver {
-        public int solve1(int[] arr) {
-            int n = arr.length;
-            int xor = arr[0];
-            for(int i = 1; i < n; i++) {
-                xor ^= arr[i];
+        public boolean solve1(String word1, String word2) {
+            int[] hash1 = new int[26];
+            int[] hash2 = new int[26];
+            for(int i = 0; i < word1.length(); i++) {
+                hash1[word1.charAt( i ) - 'a']++;
             }
-            return xor;
+            for(int i = 0; i < word2.length(); i++) {
+                hash2[word2.charAt( i ) - 'a']++;
+            }
+            for(char ch1 = 'a'; ch1 <= 'z'; ch1++)
+            {
+                for ( char ch2 = 'a'; ch2 <= 'z'; ch2++ )
+                {
+                    
+                }
+            }
+            return false;
         }
     }
 }

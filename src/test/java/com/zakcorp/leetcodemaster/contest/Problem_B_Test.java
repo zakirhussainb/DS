@@ -5,15 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Problem_B_Test {
+    Problem_B p = new Problem_B();
     @Test
     public void test1() {
-        Problem_B.DataStream p = new Problem_B.DataStream(4, 3);
-        System.out.println("..." + p.consec( 4 ));
-        System.out.println("..." + p.consec( 4 ));
-        System.out.println("..." + p.consec( 4 ));
-        System.out.println("..." + p.consec( 3 ));
-        System.out.println("..." + p.consec( 4 ));
-        System.out.println("..." + p.consec( 4 ));
-        System.out.println("..." + p.consec( 4 ));
+        assertEquals( 50, p.maxKelements( new int[]{10,10,10,10,10}, 5 ) );
+    }
+    @Test
+    public void test2() {
+        assertEquals( 17, p.maxKelements( new int[]{1,10,3,3,3}, 3 ) );
     }
 }
