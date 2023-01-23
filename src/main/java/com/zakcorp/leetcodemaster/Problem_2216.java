@@ -3,9 +3,10 @@ package com.zakcorp.leetcodemaster;
 public class Problem_2216
 {
     static class Solver {
-        /*
-            * there must be no repetitive value next to even index
-            * if we found any element for the above point we have to delete the element and shift every right element to its left by 1.
+        /*    Question Clarity:
+            * There must be no repetitive value next to even index
+            * If we found any element for the above point we have to delete the element and shift every right element
+              to its left by 1.
               Intuition :
                 -> We will run through the array.
                 -> Every time we find a duplicate we will increment ans by 1.
