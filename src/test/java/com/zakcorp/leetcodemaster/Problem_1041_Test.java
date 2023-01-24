@@ -26,4 +26,12 @@ public class Problem_1041_Test {
     public void test5() {
         assertTrue(p.solve1("GGGRGLGL"));
     }
+    @Test
+    public void test6() {
+        assertFalse(p.solve1("GLGLGGLGL"));
+    }
+    @Test
+    public void test7() {
+        assertFalse(p.solve1("RRGRRGLLLRLGGLGLLGRLRLGLRLRRGLGGLLRRRLRLRLLGRGLGRRRGRLG"));
+    }
 }

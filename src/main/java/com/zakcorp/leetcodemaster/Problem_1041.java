@@ -1,31 +1,60 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Problem_1041 {
     static class Solver {
         public boolean solve1(String instructions) {
-            // north = 0, east = 1, south = 2, west = 3
-            int[][] directions = new int[][]{ {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
-            // initial robot start position
-            int x = 0, y = 0;
-            // facing north
-            int index = 0;
-            for(char ch : instructions.toCharArray()) {
-                if(ch == 'L') {
-                    index = (index + 3) % 4;
-                } else if(ch == 'R') {
-                    index = (index + 1) % 4;
+            int[] initial = {0, 0};
+            int n = instructions.length();
+            char currentDirection = 'N';
+            for(int i = 0; i < n; i++) {
+                if(instructions.charAt(i) == 'G') {
+                    switch ( currentDirection ) {
+                        case 'N':
+                            initial[1] += 1;
+                            break;
+                        case 'S':
+                            initial[1] -= 1;
+                            break;
+                        case 'E':
+                            initial[0] += 1;
+                            break;
+                        case 'W':
+                            initial[0] -= 1;
+                            break;
+                    }
+                } else if(instructions.charAt( i ) == 'L') {
+                    switch ( currentDirection ) {
+                        case 'N':
+                            currentDirection = 'W';
+                            break;
+                        case 'W':
+                            currentDirection = 'S';
+                            break;
+                        case 'S':
+                            currentDirection = 'E';
+                            break;
+                        case 'E':
+                            currentDirection = 'N';
+                            break;
+                    }
                 } else {
-                    x += directions[index][0];
-                    y += directions[index][1];
+                    switch ( currentDirection ) {
+                        case 'N':
+                            currentDirection = 'E';
+                            break;
+                        case 'W':
+                            currentDirection = 'N';
+                            break;
+                        case 'S':
+                            currentDirection = 'W';
+                            break;
+                        case 'E':
+                            currentDirection = 'S';
+                            break;
+                    }
                 }
             }
-            // after completing one cycle: the robot is bounded to a circle if
-            // the robot returns to initial position
-            // Or it doesn't face north
-            return (x == 0 && y == 0) || index != 0;
+            return initial[0] ==0 && initial[1] == 0 || currentDirection != 'N';
         }
     }
 }
