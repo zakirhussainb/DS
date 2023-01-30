@@ -3,6 +3,8 @@ package com.zakcorp.leetcodemaster;
 public class Problem_1442
 {
     static class Solver {
+        // Solution Reference : https://youtu.be/-WPBj3Jw0xA
+        // This is based on prefix sum concept
         public int solve1(int[] arr) {
             int n = arr.length;
             int[] prefix = new int[n + 1];
