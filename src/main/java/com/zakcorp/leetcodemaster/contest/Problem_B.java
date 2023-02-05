@@ -3,19 +3,26 @@ package com.zakcorp.leetcodemaster.contest;
 import java.util.*;
 
 public class Problem_B {
-    public long maxKelements(int[] arr, int k) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
-        for(int num : arr) {
-            pq.add( num );
+    public int maxCount(int[] banned, int n, int maxSum) {
+        Set<Integer> bannedSet = new HashSet<>();
+        for(int num : banned) {
+            bannedSet.add( num );
         }
-        long score = 0;
-        while(!pq.isEmpty() && k > 0) {
-            int m = pq.poll();
-            score += m;
-            double x = (double) m / 3;
-            pq.add( (int)Math.ceil(x) );
-            k--;
+        LinkedList<Integer> cI = new LinkedList<>(); // List of Choosen integers
+        for(int i = 1; i <= n; i++) {
+            if(!bannedSet.contains(i)) {
+                cI.add(i);
+            }
         }
-        return score;
+        int maxNums = 0;
+        int sum = 0;
+        for(int num : cI) {
+            sum += num;
+            if(sum > maxSum) {
+                break;
+            }
+            maxNums++;
+        }
+        return maxNums;
     }
 }

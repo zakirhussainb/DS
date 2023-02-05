@@ -1,26 +1,42 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import java.util.TreeMap;
+import java.util.*;
 
 public class Problem_C {
     static class Solver {
-        public boolean solve1(String word1, String word2) {
-            int[] hash1 = new int[26];
-            int[] hash2 = new int[26];
-            for(int i = 0; i < word1.length(); i++) {
-                hash1[word1.charAt( i ) - 'a']++;
-            }
-            for(int i = 0; i < word2.length(); i++) {
-                hash2[word2.charAt( i ) - 'a']++;
-            }
-            for(char ch1 = 'a'; ch1 <= 'z'; ch1++)
-            {
-                for ( char ch2 = 'a'; ch2 <= 'z'; ch2++ )
-                {
-                    
+        public int solve1(int[] prizePositions, int k) {
+            int n = prizePositions.length;
+            int a = prizePositions[0]; // MIN
+            int d = prizePositions[n - 1]; // MAX
+            int b = a + k;
+            int c = d - k;
+            List<Integer> op = new ArrayList<>();
+            for(int i = 0; i < n; i++) {
+                if(a <= prizePositions[i] && prizePositions[i] <= b) {
+                    op.add( prizePositions[i] );
+                } else if(c <= prizePositions[i] && prizePositions[i] <= d) {
+                    op.add( prizePositions[i] );
                 }
             }
-            return false;
+            return op.size();
+        }
+        public int solve2(int[] prizePositions, int k) {
+            int n = prizePositions.length;
+            int maxPrizes = 0;
+            for (int i = 0; i < n; i++) {
+                int left = prizePositions[i] + k;
+                int right = prizePositions[i] + 2 * k;
+                int start = Arrays.binarySearch(prizePositions, left);
+                int end = Arrays.binarySearch(prizePositions, right);
+                if (start < 0) {
+                    start = -start - 1;
+                }
+                if (end < 0) {
+                    end = -end - 1 - 1;
+                }
+                maxPrizes = Math.max(maxPrizes, end - start + 1);
+            }
+            return maxPrizes;
         }
     }
 }
