@@ -1,30 +1,23 @@
 package com.zakcorp.leetcodemaster.contest;
 
-import java.util.*;
-
 public class Problem_A {
     static class Solver {
-        public int[] solve1(int[] arr) {
-            List<List<Integer>> list = new ArrayList<>();
+        public long solve1(int[] arr) {
             int n = arr.length;
-            for(int i = 0; i < n; i++) {
-                int num = arr[i];
-                List<Integer> ls = new ArrayList<>();
-                while(num > 0) {
-                    ls.add( 0, num % 10 );
-                    num = num / 10;
+            int l = 0, h = n - 1;
+            long sum = 0;
+            while(l <= h) {
+                String s;
+                if( l == h) {
+                    s = "" + arr[ l ];
+                } else {
+                    s = arr[ l ] + "" + arr[ h ];
                 }
-                list.add(ls);
+                sum += Integer.parseInt( s );
+                l++;
+                h--;
             }
-            List<Integer> resL = new ArrayList<>();
-            for ( List<Integer> integers : list ) {
-                resL.addAll( integers );
-            }
-            int[] res = new int[resL.size()];
-            for(int i = 0; i < res.length; i++) {
-                res[i] = resL.get( i );
-            }
-            return res;
+            return sum;
         }
     }
 }

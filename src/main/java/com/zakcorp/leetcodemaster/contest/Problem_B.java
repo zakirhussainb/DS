@@ -3,26 +3,36 @@ package com.zakcorp.leetcodemaster.contest;
 import java.util.*;
 
 public class Problem_B {
-    public int maxCount(int[] banned, int n, int maxSum) {
-        Set<Integer> bannedSet = new HashSet<>();
-        for(int num : banned) {
-            bannedSet.add( num );
-        }
-        LinkedList<Integer> cI = new LinkedList<>(); // List of Choosen integers
-        for(int i = 1; i <= n; i++) {
-            if(!bannedSet.contains(i)) {
-                cI.add(i);
+    public long maxCount(int[] arr, int lower, int upper) {
+        Arrays.sort(arr);
+        int n = arr.length;
+        long count = 0;
+        for (int i = 0; i < n; i++) {
+            int left = i + 1, right = n - 1;
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                if (arr[i] + arr[mid] < lower) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
-        }
-        int maxNums = 0;
-        int sum = 0;
-        for(int num : cI) {
-            sum += num;
-            if(sum > maxSum) {
-                break;
+            int low = left;
+
+            left = i + 1;
+            right = n - 1;
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                if (arr[i] + arr[mid] > upper) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
             }
-            maxNums++;
+            int high = right;
+
+            count += high - low + 1;
         }
-        return maxNums;
+        return count;
     }
 }
