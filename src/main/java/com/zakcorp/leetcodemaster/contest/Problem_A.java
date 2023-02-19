@@ -1,24 +1,29 @@
 package com.zakcorp.leetcodemaster.contest;
 
+import java.util.*;
+
 public class Problem_A {
     static class Solver {
-//        # Given an array of positive numbers and a positive number 'k', find the maximum sum of any contiguous subarray of size 'k'.
-//            # Input: [2, 1, 5, 1, 3, 2], k=3
-//            # Output: 9
-//            # Explanation: Subarray with maximum sum is [5, 1, 3].
-        public long solve1(int[] arr, int k) {
-            int start = 0;
-            int maxVal = -1;
-            int sum = 0;
-            for(int end = 0; end < arr.length; end++) {
-                sum += arr[end];
-                if(end - start + 1 >= k) {
-                    maxVal = Math.max(maxVal, sum);
-                    sum -= arr[start];
-                    start++;
+        public int[][] solve1(int[][] arr1, int[][] arr2) {
+            TreeMap<Integer, Integer> map = new TreeMap<>();
+            for(int i = 0; i < arr1.length; i++) {
+                map.put(arr1[i][0], arr1[i][1]);
+            }
+            for(int i = 0; i < arr2.length; i++) {
+                if(map.containsKey( arr2[i][0] )) {
+                    map.put(arr2[i][0], map.get( arr2[i][0] ) + arr2[i][1]);
+                } else {
+                    map.put(arr2[i][0], arr2[i][1]);
                 }
             }
-            return maxVal;
+            int[][] res = new int[map.size()][2];
+            int i = 0;
+            for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                res[i][0] = entry.getKey();
+                res[i][1] = entry.getValue();
+                i++;
+            }
+            return res;
         }
     }
 }
