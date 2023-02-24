@@ -89,4 +89,29 @@ public class PatternProblems_Test
   public void pattern11() {
     p.pattern11(5);
   }
+
+  @Test
+  public void pattern12() {
+    p.pattern12(9);
+  }
+
+  @Test
+  public void pattern13() {
+    p.pattern13(5);
+  }
+
+  @Test
+  public void pattern14() {
+    p.pattern14(5);
+  }
+
+  @Test
+  public void pattern15() {
+    p.pattern15(5);
+  }
+
+  @Test
+  public void pattern16() {
+    p.pattern16(5);
+  }
 }

@@ -165,5 +165,71 @@ public class PatternProblems
     }
   }
 
+  public void pattern12(int n) {
+    for(int i = 1; i <= n; i++) {
+      // Number
+      for(int j = 1; j <= i; j++) {
+        System.out.print(j);
+      }
+
+      // Spaces
+      int spaces = 2 * (n - i);
+      for(int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+
+      // Number
+      for(int j = i; j >= 1; j--) {
+        System.out.print(j);
+      }
+
+      System.out.println();
+    }
+  }
+
+  public void pattern13(int n) {
+    int num = 1;
+    for(int i = 0; i < n; i++) {
+      for(int j = 0; j <= i; j++) {
+        System.out.print(num);
+        System.out.print(" ");
+        num++;
+      }
+      System.out.println();
+    }
+  }
+
+  public void pattern14(int n) {
+    for(int i = 0; i < n; i++) {
+      char letter = 'A';
+      for(int j = 0; j <= i; j++) {
+        System.out.print(letter);
+        letter++;
+      }
+      System.out.println();
+    }
+  }
+
+  public void pattern15(int n) {
+    for(int i = n - 1; i >= 0; i--) {
+      char letter = 'A';
+      for(int j = 0; j <= i; j++) {
+        System.out.print(letter);
+        letter++;
+      }
+      System.out.println();
+    }
+  }
+
+  public void pattern16(int n) {
+    char letter = 'A';
+    for(int i = 0; i < n; i++) {
+      for(int j = 0; j <= i; j++) {
+        System.out.print(letter);
+      }
+      letter++;
+      System.out.println();
+    }
+  }
 
 }
