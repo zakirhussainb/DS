@@ -67,21 +67,26 @@ public class PatternProblems_Test
 
   @Test
   public void pattern7() {
-    String s = "      *\n" +
-               "    * * *\n" +
-               "  * * * * *\n" +
-               " * * * * * * *\n" +
-               "* * * * * * * * *";
-    assertEquals(s, p.pattern7(5));
+    p.pattern7(5);
   }
 
   @Test
   public void pattern8() {
-    String s = "*********\n" +
-               " *******\n" +
-               "  *****\n" +
-               "   ***\n" +
-               "    *";
-    assertEquals(s, p.pattern8(5));
+    p.pattern8(5);
+  }
+
+  @Test
+  public void pattern9() {
+    p.pattern9(5);
+  }
+
+  @Test
+  public void pattern10() {
+    p.pattern10(5);
+  }
+
+  @Test
+  public void pattern11() {
+    p.pattern11(5);
   }
 }

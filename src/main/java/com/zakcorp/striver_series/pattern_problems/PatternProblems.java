@@ -87,67 +87,82 @@ public class PatternProblems
     return sb.toString();
   }
 
-  public String pattern7(int n) {
-    int x = findNthOddNumber(n);
-    int oddNo = 1;
-    for(int i = 1; i <= n; i++) {
-      int v = (x - oddNo) / 2;
-      int k = 1;
-      while(k <= v) {
-        sb.append( " " );
-        k++;
+  public void pattern7(int n) {
+    // Find how many rows must be printed -> n = 5, then 5 rows
+    // Find how many columns must be printed and what should be there in those columns ? -> Spaces, Stars, Spaces
+    for(int i = 0; i < n; i++) {
+      // Spaces
+      int spaces = n - i - 1; // 5 - 0 - 1 = 4, 5 - 1 - 1 = 3, 5 - 2 - 1 = 2, etc.
+      for(int j = 0; j < spaces; j++) {
+        System.out.print(" ");
       }
-      k = 1;
-      while(k <= oddNo) {
-        sb.append( "*" );
-        k++;
+
+      // Stars
+      int stars = 2 * i + 1; // 2 * 0 + 1 = 1, 2 * 1 + 1 = 3, 2 * 2 + 1 = 5
+      for(int j = 0; j < stars; j++) {
+        System.out.print("*");
       }
-      k = 1;
-      while(k <= v) {
-        sb.append( " " );
-        k++;
+
+      // Spaces
+      for(int j = 1; j < spaces; j++) {
+        System.out.print(" ");
       }
-      oddNo += 2;
-      sb.append( "\n" );
+
+      System.out.println();
     }
-    return sb.toString();
   }
 
-  public String pattern8(int n) {
-    int x = findNthOddNumber( n );
-    int oddNo = x;
-    for(int i = 1; i <= n; i++) {
-      int v = (x - oddNo) / 2;
-      int k = 1;
-      while(k <= v) {
-        sb.append( " " );
-        k++;
+  public void pattern8(int n) {
+    for(int i = n - 1; i >= 0; i--) {
+      // Spaces
+      int spaces = n - i - 1;
+      for(int j = 0; j < spaces; j++) {
+        System.out.print(" ");
       }
-      k = 1;
-      while(k <= oddNo) {
-        sb.append( "*" );
-        k++;
+
+      // Stars
+      int stars = 2 * i + 1;
+      for(int j = 0; j < stars; j++) {
+        System.out.print("*");
       }
-      k = 1;
-      while(k <= v) {
-        sb.append( " " );
-        k++;
+
+      // Spaces
+      for(int j = 0; j < spaces; j++) {
+        System.out.print(" ");
       }
-      oddNo -= 2;
-      sb.append( "\n" );
+
+      System.out.println();
     }
-    return sb.toString();
   }
 
-  private int findNthOddNumber(int n) {
-    int m = 1;
-    for(int i = 1; i < Integer.MAX_VALUE; i+=2) {
-      if(m == n) {
-        return i;
+  public void pattern9(int n) {
+    pattern7( n );
+    pattern8( n );
+  }
+
+  public void pattern10(int n) {
+    int x = 2 * n - 1;
+    for(int i = 1; i <= x; i++) {
+      int stars = i;
+      if(i > n)
+        stars = 2 * n - i;
+      for(int j = 0; j < stars; j++) {
+        System.out.print("*");
       }
-      m++;
+      System.out.println();
     }
-    return -1;
+  }
+
+  public void pattern11(int n) {
+    int start = 1;
+    for(int i = 0; i < n; i++) {
+      start = (i % 2 == 0) ? 1 : 0;
+      for(int j = 0; j <= i; j++) {
+          System.out.print(start);
+          start = 1 - start;
+      }
+      System.out.println();
+    }
   }
 
 
