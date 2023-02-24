@@ -114,4 +114,9 @@ public class PatternProblems_Test
   public void pattern16() {
     p.pattern16(5);
   }
+
+  @Test
+  public void pattern17() {
+    p.pattern17(4);
+  }
 }

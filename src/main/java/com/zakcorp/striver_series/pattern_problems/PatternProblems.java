@@ -232,4 +232,31 @@ public class PatternProblems
     }
   }
 
+  public void pattern17(int n) {
+    for(int i = 0; i < n; i++) {
+      // Spaces
+      int spaces = n - i - 1;
+      for(int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+
+      // Letters
+      int letters = 2 * i + 1;
+      char letter = 'A';
+      for(int j = 1; j <= letters; j++) {
+        if(j > letters - i)
+          letter = (char)(letter - j + 1);
+        System.out.print(letter);
+        letter++;
+      }
+
+      // Spaces
+      for(int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+
+      System.out.println();
+    }
+  }
+
 }
