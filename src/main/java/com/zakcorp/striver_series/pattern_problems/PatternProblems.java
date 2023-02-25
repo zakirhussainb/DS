@@ -244,10 +244,12 @@ public class PatternProblems
       int letters = 2 * i + 1;
       char letter = 'A';
       for(int j = 1; j <= letters; j++) {
-        if(j > letters - i)
-          letter = (char)(letter - j + 1);
         System.out.print(letter);
-        letter++;
+        if(j > letters / 2) {
+          letter--;
+        } else {
+          letter++;
+        }
       }
 
       // Spaces
