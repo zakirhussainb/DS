@@ -329,4 +329,31 @@ public class PatternProblems
       System.out.println();
     }
   }
+
+  public void pattern20(int n) {
+    for(int i = 1; i <= 2 * n - 1 ; i++) {
+      int stars = i;
+      int spaces = (2 * n) - (2 * i);
+      if(i > n) {
+        stars = 2 * n - i;
+        spaces = (2 * i) - (2 * n);
+      }
+      // stars
+      for(int j = 1; j <= stars; j++) {
+        System.out.print("*");
+      }
+
+      // spaces
+      for(int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+      }
+
+      // stars
+      for(int j = 1; j <= stars; j++) {
+        System.out.print("*");
+      }
+
+      System.out.println();
+    }
+  }
 }
