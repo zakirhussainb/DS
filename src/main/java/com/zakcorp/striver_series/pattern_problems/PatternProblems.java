@@ -1,5 +1,7 @@
 package com.zakcorp.striver_series.pattern_problems;
 
+import java.util.Arrays;
+
 public class PatternProblems
 {
   /*
@@ -385,6 +387,20 @@ public class PatternProblems
         } else {
           System.out.print(" ");
         }
+      }
+      System.out.println();
+    }
+  }
+
+  public void pattern22(int n) {
+    int len = 2 * n - 1;
+    for(int i = 0; i < len; i++) {
+      for(int j = 0; j < len; j++) {
+        int top = i;
+        int left = j;
+        int right = (2 * n - 2) - left;
+        int bottom = (2 * n - 2) - top ;
+        System.out.print(n - Math.min( Math.min( top, bottom ), Math.min( left, right ) ));
       }
       System.out.println();
     }

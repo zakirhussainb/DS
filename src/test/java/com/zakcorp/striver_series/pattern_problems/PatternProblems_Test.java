@@ -140,4 +140,9 @@ public class PatternProblems_Test
     p.pattern21(5);
     p.pattern21_2nd_method(5);
   }
+
+  @Test
+  public void pattern22() {
+    p.pattern22(4);
+  }
 }
