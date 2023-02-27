@@ -134,4 +134,10 @@ public class PatternProblems_Test
   public void pattern20() {
     p.pattern20(5);
   }
+
+  @Test
+  public void pattern21() {
+    p.pattern21(5);
+    p.pattern21_2nd_method(5);
+  }
 }
