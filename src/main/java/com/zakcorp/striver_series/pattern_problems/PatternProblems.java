@@ -271,4 +271,62 @@ public class PatternProblems
       System.out.println();
     }
   }
+
+  public void pattern19(int n)
+  {
+    // This is a symmetry pattern problem
+    // Solve for both the symmetries separately.
+
+    // 1. Solving for Upper symmetry
+    for ( int i = 0; i < n; i++ )
+    {
+      // stars
+      int stars = n - i;
+      for ( int j = 0; j < stars; j++ )
+      {
+        System.out.print( "*" );
+      }
+
+      // spaces
+      int spaces = 2 * i;
+      for ( int j = 0; j < spaces; j++ )
+      {
+        System.out.print( " " );
+      }
+
+      // stars
+      for ( int j = 0; j < stars; j++ )
+      {
+        System.out.print( "*" );
+      }
+
+      System.out.println();
+    }
+
+    // 2. Solving for Lower symmetry
+    for ( int i = n - 1; i >= 0; i-- )
+    {
+      // stars
+      int stars = n - i;
+      for ( int j = 0; j < stars; j++ )
+      {
+        System.out.print( "*" );
+      }
+
+      // spaces
+      int spaces = 2 * i;
+      for ( int j = 0; j < spaces; j++ )
+      {
+        System.out.print( " " );
+      }
+
+      // stars
+      for ( int j = 0; j < stars; j++ )
+      {
+        System.out.print( "*" );
+      }
+
+      System.out.println();
+    }
+  }
 }
