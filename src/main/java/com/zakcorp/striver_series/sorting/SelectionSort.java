@@ -6,8 +6,6 @@ public class SelectionSort {
   /*
   Keywords to remember selection sort algorithm
   TLDR: Select minimums and swap
-
-
     -> Select minimums
     -> First step :- Select the minimum element in the array and place it at the first -> swap the first element in its place
    */
