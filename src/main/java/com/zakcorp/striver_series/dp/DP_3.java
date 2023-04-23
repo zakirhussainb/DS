@@ -21,6 +21,7 @@ public class DP_3 {
    */
   static class Solver1 {
     // Recursive Solution
+    // Gives TLE for larger inputs
     public int minimumEnergy(int[] arr) {
       return minimumEnergy( arr, arr.length - 1 );
     }
