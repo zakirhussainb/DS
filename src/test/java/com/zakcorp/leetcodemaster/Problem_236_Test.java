@@ -19,7 +19,7 @@ public class Problem_236_Test {
         root.left.right.left = new TreeNode(7);
         root.left.right.right = new TreeNode(4);
 
-//        assertEquals(root, p.solve1(root, root.left, root.right));
-        assertEquals(root, p.solve2(root, root.left, root.right));
+        assertEquals(root, p.solve1(root, root.left, root.right));
+//        assertEquals(root, p.solve2(root, root.left, root.right));
     }
 }
