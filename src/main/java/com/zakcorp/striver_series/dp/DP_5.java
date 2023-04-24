@@ -10,6 +10,7 @@ public class DP_5
    */
   static class Solver1 {
     // Recursive Solution
+    // TC O(2 ^ N) and SC O(N)
     public int findMaxSum(int[] arr) {
       return findMaxSum(arr, arr.length - 1);
     }
@@ -26,6 +27,7 @@ public class DP_5
 
   static class Solver2 {
     // Memoization Approach
+    // TC O(N) and SC O(N) + O(N)
     public int findMaxSum(int[] arr) {
       int n = arr.length;
       return findMaxSum(arr, n - 1, new int[n]);
@@ -46,6 +48,7 @@ public class DP_5
 
   static class Solver3 {
     // Tabulation Approach
+    // TC O(N) and SC O(N)
     public int findMaxSum(int[] arr) {
       int n = arr.length;
       int[] dp = new int[n];
@@ -58,6 +61,26 @@ public class DP_5
         dp[i] = Math.max( pick, notPick );
       }
       return dp[n - 1];
+    }
+  }
+
+  static class Solver4 {
+    // Space Optimization Approach
+    // TC O(N) and SC O(1)
+    public int findMaxSum(int[] arr) {
+      int n = arr.length;
+      int prev2 = 0;
+      int prev = arr[0];
+      for(int i = 1; i < n; i++) {
+        int pick = arr[i];
+        if(i > 1)
+          pick += prev2;
+        int notPick = prev;
+        int curr = Math.max( pick, notPick );
+        prev2 = prev;
+        prev = curr;
+      }
+      return prev;
     }
   }
 
