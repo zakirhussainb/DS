@@ -55,4 +55,29 @@ public class DP_10
       return memo[r][c];
     }
   }
+
+  static class Solver3 {
+    // Tabulation approach
+    public int minPathSum(int[][] grid) {
+      int m = grid.length;
+      int n = grid[0].length;
+      int[][] dp = new int[m][n];
+      for(int r = 0; r < m; r++) {
+        for(int c = 0; c < n; c++) {
+          if(r == 0 && c == 0) {
+            dp[r][c] = grid[r][c];
+          } else {
+            int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
+            if(r > 0)
+              up = dp[r - 1][c];
+            if(c > 0)
+              left = dp[r][c - 1];
+
+            dp[r][c] = grid[r][c] + Math.min(up, left);
+          }
+        }
+      }
+      return dp[m - 1][n - 1];
+    }
+  }
 }
