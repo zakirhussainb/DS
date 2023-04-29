@@ -3,7 +3,7 @@ package com.zakcorp.striver_series.dp;
 public class DP_8
 {
   /*
-  Ninja's Training
+  Unique Paths I
    */
   static class Solver1 {
     // Recursive approach
