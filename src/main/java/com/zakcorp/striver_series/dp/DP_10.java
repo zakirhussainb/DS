@@ -28,4 +28,31 @@ public class DP_10
       return grid[r][c] + Math.min(up, left);
     }
   }
+
+  static class Solver2 {
+    // Memoization approach
+    public int minPathSum(int[][] grid) {
+      int m = grid.length;
+      int n = grid[0].length;
+      int[][] memo = new int[m][n];
+      return findMinPathSum(m - 1, n - 1, grid, memo);
+    }
+    private int findMinPathSum(int r, int c, int[][] grid, int[][] memo) {
+      if(r == 0 && c == 0) {
+        return grid[r][c];
+      }
+      if(r < 0 || c < 0) {
+        return Integer.MAX_VALUE;
+      }
+      if(memo[r][c] != 0)
+        return memo[r][c];
+
+      int up = findMinPathSum( r - 1, c, grid, memo );
+      int left = findMinPathSum( r, c - 1, grid, memo );
+
+      memo[r][c] = grid[r][c] + Math.min(up, left);
+
+      return memo[r][c];
+    }
+  }
 }
