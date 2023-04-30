@@ -80,4 +80,31 @@ public class DP_10
       return dp[m - 1][n - 1];
     }
   }
+
+  static class Solver4 {
+    // Space Optimization Approach
+    public int minPathSum(int[][] grid) {
+      int m = grid.length;
+      int n = grid[0].length;
+      int[] prev = new int[n];
+      for(int r = 0; r < m; r++) {
+        int[] curr = new int[n];
+        for(int c = 0; c < n; c++) {
+          if(r == 0 && c == 0) {
+            curr[c] = grid[r][c];
+          } else {
+            int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
+            if(r > 0)
+              up = prev[c];
+            if(c > 0)
+              left = curr[c - 1];
+
+            curr[c] = grid[r][c] + Math.min(up, left);
+          }
+        }
+        prev = curr;
+      }
+      return prev[n - 1];
+    }
+  }
 }
