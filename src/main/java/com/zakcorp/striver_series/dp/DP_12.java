@@ -94,4 +94,36 @@ public class DP_12
       return minP;
     }
   }
+
+  static class Solver4 {
+    // Space Optimization approach
+    public int minimumTotal( int[][] matrix ) {
+      int m = matrix.length;
+      int n = matrix[0].length;
+      int[] auxRow = new int[n];
+      for(int c = 0; c < n; c++)
+        auxRow[c] = matrix[m - 1][c];
+
+      for(int r = m - 2; r >= 0; r--) {
+        int[] currRow = new int[n];
+        for(int c = n - 1; c >= 0; c--) {
+          int down = auxRow[c];
+          int leftDiag = Integer.MAX_VALUE;
+          if(c - 1 >= 0)
+            leftDiag = auxRow[c - 1];
+          int rightDiag = Integer.MAX_VALUE;
+          if(c + 1 < n)
+            rightDiag = auxRow[c + 1];
+
+          currRow[c] = matrix[r][c] + Math.min(down, Math.min(leftDiag, rightDiag));
+        }
+        auxRow = currRow;
+      }
+      int minP = Integer.MAX_VALUE;
+      for(int c = 0; c < n; c++){
+        minP = Math.min(minP, auxRow[c]);
+      }
+      return minP;
+    }
+  }
 }
