@@ -64,4 +64,34 @@ public class DP_12
       return memo[r][c];
     }
   }
+
+  static class Solver3 {
+    // Tabulation approach
+    public int minimumTotal(int[][] matrix) {
+      int m = matrix.length;
+      int n = matrix[0].length;
+      int[][] dp = new int[m][n];
+      for(int c = 0; c < n; c++) {
+        dp[m - 1][c] = matrix[m - 1][c];
+      }
+      for(int r = m - 2; r >= 0; r--) {
+        for(int c = n - 1; c >= 0; c--) {
+          int down = dp[r + 1][c];
+          int leftDiag = Integer.MAX_VALUE;
+          if(c - 1 >= 0)
+            leftDiag = dp[r + 1][c - 1];
+          int rightDiag = Integer.MAX_VALUE;
+          if(c + 1 < n)
+            rightDiag = dp[r + 1][c + 1];
+
+          dp[r][c] = matrix[r][c] + Math.min(down, Math.min(leftDiag, rightDiag));
+        }
+      }
+      int minP = Integer.MAX_VALUE;
+      for(int c = 0; c < n; c++){
+        minP = Math.min(minP, dp[0][c]);
+      }
+      return minP;
+    }
+  }
 }
