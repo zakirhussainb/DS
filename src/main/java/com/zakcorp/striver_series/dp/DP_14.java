@@ -96,4 +96,34 @@ public class DP_14
       return dp[n - 1][sum];
     }
   }
+
+  /*
+  Space Optimization Approach
+  1. Use prev and curr. Create prev array of sum + 1 length
+  2. Rest of the things are same.
+   */
+  static class Solver4 {
+    public boolean isSubsetSum(int[] arr, int sum) {
+      int n = arr.length;
+      boolean[] prev = new boolean[sum + 1];
+      prev[0] = true;
+      if(arr[0] <= sum)
+        prev[arr[0]] = true;
+
+      for(int ind = 1; ind < n; ind++) {
+        boolean[] curr = new boolean[sum + 1];
+        curr[0] = true;
+        for(int target = 1; target <= sum; target++) {
+          boolean notTake = prev[target];
+          boolean take = false;
+          if(target >= arr[ind])
+            take = prev[target - arr[ind]];
+
+          curr[target] = take || notTake;
+        }
+        prev = curr;
+      }
+      return prev[sum];
+    }
+  }
 }
