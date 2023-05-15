@@ -28,8 +28,15 @@ public class DP_17_Test
 
   @Test
   public void test3() {
-//    assertEquals(40, p1.perfectSum( new int[]{9, 7, 0, 3, 9, 8, 6, 5, 7, 6}, 31) );
-//    assertEquals(40, p2.perfectSum( new int[]{9, 7, 0, 3, 9, 8, 6, 5, 7, 6}, 31) );
+    assertEquals(40, p1.perfectSum( new int[]{9, 7, 0, 3, 9, 8, 6, 5, 7, 6}, 31) );
+    assertEquals(40, p2.perfectSum( new int[]{9, 7, 0, 3, 9, 8, 6, 5, 7, 6}, 31) );
     assertEquals(40, p3.perfectSum( new int[]{9, 7, 0, 3, 9, 8, 6, 5, 7, 6}, 31) );
+  }
+
+  @Test
+  public void test4() {
+    assertEquals(4, p1.perfectSum( new int[]{0, 0, 1}, 1) );
+    assertEquals(4, p2.perfectSum( new int[]{0, 0, 1}, 1) );
+    assertEquals(4, p3.perfectSum( new int[]{0, 0, 1}, 1) );
   }
 }
