@@ -1,6 +1,6 @@
 package com.zakcorp.striver_series.dp;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class DP_16
 {
@@ -39,6 +39,55 @@ public class DP_16
       int minDiff = Integer.MAX_VALUE;
       for(int i = 0; i <= totSum; i++) {
         if(dp[n - 1][i]) {
+          int s1 = i;
+          int s2 = totSum - i;
+          minDiff = Math.min( minDiff, Math.abs( s1 - s2 ) );
+        }
+      }
+      return minDiff;
+    }
+  }
+
+  // To solve negative integers
+  static class Solver1 {
+    public int minimumDifference(int[] arr) {
+      int n = arr.length;
+      int totSum = 0;
+      for(int i = 0; i < n; i++) {
+        if(arr[i] < 0) {
+          totSum += -arr[i];
+        } else {
+          totSum += arr[i];
+        }
+      }
+      Map<String, Boolean> dpMap = new HashMap<>();
+      for(int i = 0; i < n; i++) {
+        for(int j = 0; j < totSum + 1; j++) {
+          dpMap.put(i + "_" + j, false);
+        }
+      }
+      for(int i = 0; i < n; i++) {
+        dpMap.put( i + "_" + "0", true );
+      }
+
+      if(arr[0] <= totSum) {
+        dpMap.put( "0" + "_" + totSum, true);
+      }
+
+      for(int ind = 1; ind < n; ind++) {
+        for(int target = Integer.MIN_VALUE; target <= totSum; target++) {
+          int x = ind - 1;
+          boolean notTake = dpMap.get( x + "_" + target );
+          boolean take = false;
+          if(target >= arr[ind]) {
+            take = dpMap.get(x + "_" + (target - arr[ind]) );
+          }
+          dpMap.put(ind + "_" + target, take || notTake);
+        }
+      }
+      int minDiff = Integer.MAX_VALUE;
+      for(int i = 0; i <= totSum; i++) {
+        if( dpMap.get( (n - 1) + "_" + i ) ) {
           int s1 = i;
           int s2 = totSum - i;
           minDiff = Math.min( minDiff, Math.abs( s1 - s2 ) );
