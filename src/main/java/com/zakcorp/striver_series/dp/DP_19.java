@@ -50,10 +50,10 @@ public class DP_19
       int[][] memo = new int[n][W + 1];
       for(int[] row : memo)
         Arrays.fill( row, -1);
-      return recursiveKnapSack(n - 1, W, wt, val, memo);
+      return memoizedKnapSack(n - 1, W, wt, val, memo);
     }
 
-    private int recursiveKnapSack(int index, int W, int[] wt, int[] val, int[][] memo) {
+    private int memoizedKnapSack(int index, int W, int[] wt, int[] val, int[][] memo) {
       if(index == 0) {
         if(W >= wt[index]) return val[index];
         return 0;
@@ -61,10 +61,10 @@ public class DP_19
       if(memo[index][W] != -1) {
         return memo[index][W];
       }
-      int notPick = recursiveKnapSack( index - 1, W, wt, val, memo );
+      int notPick = memoizedKnapSack( index - 1, W, wt, val, memo );
       int pick = Integer.MIN_VALUE;
       if(W >= wt[index]) {
-        pick = val[index] + recursiveKnapSack( index - 1, W - wt[index], wt, val, memo );
+        pick = val[index] + memoizedKnapSack( index - 1, W - wt[index], wt, val, memo );
       }
       memo[index][W] = Math.max( pick, notPick );
       return memo[index][W];
