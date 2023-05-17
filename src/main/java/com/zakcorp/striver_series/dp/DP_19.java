@@ -1,5 +1,7 @@
 package com.zakcorp.striver_series.dp;
 
+import java.util.Arrays;
+
 public class DP_19
 {
   /*
@@ -40,6 +42,32 @@ public class DP_19
         pick = val[index] + recursiveKnapSack( index - 1, W - wt[index], wt, val );
       }
       return Math.max( pick, notPick );
+    }
+  }
+
+  static class Solver2 {
+    public int knapSack(int W, int wt[], int val[], int n) {
+      int[][] memo = new int[n][W + 1];
+      for(int[] row : memo)
+        Arrays.fill( row, -1);
+      return recursiveKnapSack(n - 1, W, wt, val, memo);
+    }
+
+    private int recursiveKnapSack(int index, int W, int[] wt, int[] val, int[][] memo) {
+      if(index == 0) {
+        if(W >= wt[index]) return val[index];
+        return 0;
+      }
+      if(memo[index][W] != -1) {
+        return memo[index][W];
+      }
+      int notPick = recursiveKnapSack( index - 1, W, wt, val, memo );
+      int pick = Integer.MIN_VALUE;
+      if(W >= wt[index]) {
+        pick = val[index] + recursiveKnapSack( index - 1, W - wt[index], wt, val, memo );
+      }
+      memo[index][W] = Math.max( pick, notPick );
+      return memo[index][W];
     }
   }
 }
