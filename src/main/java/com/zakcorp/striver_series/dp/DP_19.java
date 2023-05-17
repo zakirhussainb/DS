@@ -46,6 +46,10 @@ public class DP_19
   }
 
   static class Solver2 {
+    /*
+    Memoized Approach to the 0-1 Knapsack problem
+    Create a memo array of size memo[n][W + 1] -> why W + 1 -> because we have to consider the actual weight also
+     */
     public int knapSack(int W, int wt[], int val[], int n) {
       int[][] memo = new int[n][W + 1];
       for(int[] row : memo)
@@ -68,6 +72,30 @@ public class DP_19
       }
       memo[index][W] = Math.max( pick, notPick );
       return memo[index][W];
+    }
+  }
+
+  static class Solver3 {
+    /*
+    Tabulation Approach to the 0-1 Knapsack problem
+
+     */
+    public int knapSack(int W, int wt[], int val[], int n) {
+      int[][] dp = new int[n][W + 1];
+      for(int wgt = wt[0]; wgt <= W; wgt++)
+        dp[0][wgt] = val[0];
+
+      for(int index = 1; index < n; index++) {
+        for(int weight = 0; weight <= W; weight++) {
+          int notPick = dp[index - 1][weight];
+          int pick = Integer.MIN_VALUE;
+          if(weight >= wt[index]) {
+            pick = val[index] + dp[index - 1][weight - wt[index]];
+          }
+          dp[index][weight] = Math.max( pick, notPick );
+        }
+      }
+      return dp[n - 1][W];
     }
   }
 }
