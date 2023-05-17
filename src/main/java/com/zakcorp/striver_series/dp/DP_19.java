@@ -98,4 +98,29 @@ public class DP_19
       return dp[n - 1][W];
     }
   }
+
+  static class Solver4 {
+    /*
+    Space Optimization Approach to the 0-1 Knapsack problem
+     */
+    public int knapSack(int W, int wt[], int val[], int n) {
+      int[] prev = new int[W + 1];
+      for(int wgt = wt[0]; wgt <= W; wgt++)
+        prev[wgt] = val[0];
+
+      for(int index = 1; index < n; index++) {
+        int[] curr = new int[W + 1];
+        for(int weight = 0; weight <= W; weight++) {
+          int notPick = prev[weight];
+          int pick = Integer.MIN_VALUE;
+          if(weight >= wt[index]) {
+            pick = val[index] + prev[weight - wt[index]];
+          }
+          curr[weight] = Math.max( pick, notPick );
+        }
+        prev = curr;
+      }
+      return prev[W];
+    }
+  }
 }
