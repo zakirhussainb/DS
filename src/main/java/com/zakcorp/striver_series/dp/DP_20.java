@@ -114,4 +114,35 @@ public class DP_20
       return dp[n - 1][amount] == (int)Math.pow(10,9) ? -1 : dp[n - 1][amount];
     }
   }
+
+  static class Solver4 {
+    /*
+    Space Optimization Approach to the Coin Change problem
+     */
+    public int coinChange(int[] coins, int amount) {
+      int n = coins.length;
+      int[] prev = new int[amount + 1];
+
+      for(int amnt = 0; amnt <= amount; amnt++) {
+        if(amnt % coins[0] == 0) {
+          prev[amnt] = amnt / coins[0];
+        } else {
+          prev[amnt] = (int)Math.pow(10,9);
+        }
+      }
+      for(int index = 1; index < n; index++) {
+        int[] curr = new int[amount + 1];
+        for(int amnt = 0; amnt <= amount; amnt++) {
+          int notTake = prev[amnt];
+          int take = (int)Math.pow(10,9);
+          if(amnt >= coins[index]) {
+            take = 1 + curr[amnt - coins[index]];
+          }
+          curr[amnt] = Math.min(take, notTake);
+        }
+        prev = curr;
+      }
+      return prev[amount] == (int)Math.pow(10,9) ? -1 : prev[amount];
+    }
+  }
 }
