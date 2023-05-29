@@ -91,4 +91,32 @@ public class DP_24
       return dp[N - 1][N];
     }
   }
+
+  static class Solver4 {
+    /*
+     */
+    public int cutRod(int[] price)
+    {
+      int N = price.length;
+      int[] prev = new int[N + 1];
+
+      for(int rl = 0; rl <= N; rl++) {
+        prev[rl] = rl * price[0];
+      }
+      for(int index = 1; index < N; index++) {
+        int[] curr = new int[N + 1];
+        for(int rl = 0; rl <= N; rl++) {
+          int notTake = prev[rl];
+          int take = Integer.MIN_VALUE;
+          int rodLength = index + 1;
+          if(rodLength <= rl) {
+            take = price[index] + curr[rl - rodLength];
+          }
+          curr[rl] = Math.max( notTake, take );
+        }
+        prev = curr;
+      }
+      return prev[N];
+    }
+  }
 }
