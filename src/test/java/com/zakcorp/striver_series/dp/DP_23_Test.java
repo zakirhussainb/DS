@@ -12,11 +12,13 @@ public class DP_23_Test
   Solver2 p2 = new Solver2();
   Solver3 p3 = new Solver3();
   Solver4 p4 = new Solver4();
+  Solver5 p5 = new Solver5();
   @Test
   public void test1() {
     assertEquals( 11, p1.unboundedKnapSack( 8, new int[] { 1, 3, 4, 5 }, new int[] { 1, 4, 5, 7 }, 4 ) );
     assertEquals( 11, p2.unboundedKnapSack( 8, new int[] { 1, 3, 4, 5 }, new int[] { 1, 4, 5, 7 }, 4 ) );
     assertEquals( 11, p3.unboundedKnapSack( 8, new int[] { 1, 3, 4, 5 }, new int[] { 1, 4, 5, 7 }, 4 ) );
     assertEquals( 11, p4.unboundedKnapSack( 8, new int[] { 1, 3, 4, 5 }, new int[] { 1, 4, 5, 7 }, 4 ) );
+    assertEquals( 11, p5.unboundedKnapSack( 8, new int[] { 1, 3, 4, 5 }, new int[] { 1, 4, 5, 7 }, 4 ) );
   }
 }
