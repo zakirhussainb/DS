@@ -42,4 +42,30 @@ public class DP_23
       return Math.max( pick, notPick );
     }
   }
+
+  static class Solver2 {
+    public int unboundedKnapSack(int W, int wt[], int val[], int n) {
+      int[][] memo = new int[n][W + 1];
+      for(int[] row : memo)
+        Arrays.fill( row, -1 );
+      return memoizedKnapSack(n - 1, W, wt, val, memo);
+    }
+
+    private int memoizedKnapSack(int index, int W, int[] wt, int[] val, int[][] memo) {
+      if(index == 0) {
+        return (W / wt[index]) * val[index];
+      }
+      if(memo[index][W] != -1) {
+        return memo[index][W];
+      }
+      int notPick = memoizedKnapSack( index - 1, W, wt, val, memo );
+      int pick = Integer.MIN_VALUE;
+      if(W >= wt[index]) {
+        pick = val[index] + memoizedKnapSack( index, W - wt[index], wt, val, memo );
+      }
+      memo[index][W] = Math.max( pick, notPick );
+
+      return memo[index][W];
+    }
+  }
 }
