@@ -119,4 +119,30 @@ public class DP_24
       return prev[N];
     }
   }
+
+  static class Solver5 {
+    /*
+     */
+    public int cutRod(int[] price)
+    {
+      int N = price.length;
+      int[] prev = new int[N + 1];
+
+      for(int rl = 0; rl <= N; rl++) {
+        prev[rl] = rl * price[0];
+      }
+      for(int index = 1; index < N; index++) {
+        for(int rl = 0; rl <= N; rl++) {
+          int notTake = prev[rl];
+          int take = Integer.MIN_VALUE;
+          int rodLength = index + 1;
+          if(rodLength <= rl) {
+            take = price[index] + prev[rl - rodLength];
+          }
+          prev[rl] = Math.max( notTake, take );
+        }
+      }
+      return prev[N];
+    }
+  }
 }
