@@ -37,8 +37,6 @@ public class DP_24
 
   static class Solver2 {
     /*
-      Recursive Solution.
-      1. Express everything in terms of index
      */
     public int cutRod(int[] price) {
       int n = price.length;
@@ -64,6 +62,33 @@ public class DP_24
       memo[index][N] = Math.max( notTake, take );
 
       return memo[index][N];
+    }
+  }
+
+  static class Solver3 {
+    /*
+     */
+    public int cutRod(int[] price)
+    {
+      int N = price.length;
+      int[][] dp = new int[ N ][ N + 1 ];
+
+      for(int rl = 0; rl <= N; rl++) {
+        dp[0][rl] = rl * price[0];
+      }
+
+      for(int index = 1; index < N; index++) {
+        for(int rl = 0; rl <= N; rl++) {
+          int notTake = dp[index - 1][rl];
+          int take = Integer.MIN_VALUE;
+          int rodLength = index + 1;
+          if(rodLength <= rl) {
+            take = price[index] + dp[index][rl - rodLength];
+          }
+          dp[index][rl] = Math.max( notTake, take );
+        }
+      }
+      return dp[N - 1][N];
     }
   }
 }
