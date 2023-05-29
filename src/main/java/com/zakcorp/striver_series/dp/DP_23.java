@@ -68,4 +68,25 @@ public class DP_23
       return memo[index][W];
     }
   }
+
+  static class Solver3 {
+    public int unboundedKnapSack(int W, int wt[], int val[], int n) {
+      int[][] dp = new int[n][W + 1];
+      for(int w = 0; w <= W; w++) {
+        dp[0][w] = (w / wt[0]) * val[0];
+      }
+
+      for(int index = 1; index < n; index++) {
+        for(int w = 0; w <= W; w++) {
+          int notPick = dp[index - 1][w];
+          int pick = 0;
+          if(w >= wt[index]) {
+            pick = val[index] + dp[index][w - wt[index]];
+          }
+          dp[index][w] = Math.max( pick, notPick );
+        }
+      }
+      return dp[n - 1][W];
+    }
+  }
 }
