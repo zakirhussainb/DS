@@ -125,7 +125,7 @@ func spaceOptimizationLCS(text1 string, text2 string) int {
 				curr[j] = Max(notMatch1, notMatch2)
 			}
 		}
-		curr = prev
+		prev = curr
 	}
 	return prev[m]
 }
