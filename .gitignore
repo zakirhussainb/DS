@@ -1,6 +1,7 @@
 /target
 /.mvn
 /.idea
+src/main/go/.idea/
 *.iml
 # Compiled class file
 *.class

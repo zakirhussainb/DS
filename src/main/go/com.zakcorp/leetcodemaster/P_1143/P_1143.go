@@ -1,4 +1,19 @@
-package leetcodemaster
+package P_1143
+
+/*
+* Brute Force - The time complexity is exponential in nature
+* Generate all the subsequences & compare on the way - This is the standard way.
+
+Rules
+* Express everything in terms of (ind1 and ind2)
+ 	-> A single index cannot represent both the strings, so thereby we need to express them with two different indices,
+ind1 and ind2.
+* Explore all the possibilities
+	-> If a character in ind1 is matching with ind2, then add 1 and shrink both the strings by 1 character and perform
+the recursion.
+	-> If match, then, "1 + recursive(ind1 - 1, ind2 - 1)"
+	-> If not match, then, take max( rec(ind1 - 1, ind2), rec(ind1, ind2 - 1) )
+*/
 
 func recursiveLongestCommonSubsequence(text1 string, text2 string) int {
 	n := len(text1)
@@ -55,7 +70,7 @@ func memoizedLCS(ind1 int, ind2 int, text1 string, text2 string, memo [][]int) i
 
 /*
 Using shifting of index for writing the base case for tabulation approach
-Shifted the index to one right
+Shifted the index to one right, that is creating the dp array with 1 extra size
 */
 func tabulationLongestCommonSubsequence(text1 string, text2 string) int {
 	n := len(text1)
@@ -88,6 +103,31 @@ func tabulationLongestCommonSubsequence(text1 string, text2 string) int {
 		}
 	}
 	return dp[n][m]
+}
+
+func spaceOptimizationLCS(text1 string, text2 string) int {
+	n := len(text1)
+	m := len(text2)
+	prev := make([]int, m+1)
+	// Base case seeding
+	for j := 0; j <= m; j++ {
+		prev[j] = 0
+	}
+
+	for i := 1; i <= n; i++ {
+		curr := make([]int, m+1)
+		for j := 1; j <= m; j++ {
+			if text1[i-1] == text2[j-1] {
+				curr[j] = 1 + prev[j-1]
+			} else {
+				notMatch1 := prev[j]
+				notMatch2 := curr[j-1]
+				curr[j] = Max(notMatch1, notMatch2)
+			}
+		}
+		curr = prev
+	}
+	return prev[m]
 }
 
 func Max(x, y int) int {
