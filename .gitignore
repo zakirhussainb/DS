@@ -1,6 +1,7 @@
 /target
 /.mvn
 /.idea
+/.vscode
 src/main/go/.idea/
 *.iml
 # Compiled class file
