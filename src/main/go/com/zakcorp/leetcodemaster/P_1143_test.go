@@ -1,24 +1,16 @@
 package leetcodemaster
 
 import (
-	"fmt"
 	"testing"
+
+	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
 )
 
 func TestLongestCommonSubsequence_1(t *testing.T) {
 
-	assertEquals(t, recursiveLongestCommonSubsequence("abcde", "ace"), 3, "Recursive method")
-	assertEquals(t, memoizedLongestCommonSubsequence("abcde", "ace"), 3, "Memoized method")
-	assertEquals(t, tabulationLongestCommonSubsequence("abcde", "ace"), 3, "Tabulation method")
-	assertEquals(t, spaceOptimizationLCS("abcde", "ace"), 3, "Space Optimization method")
+	AssertEqualsInt(t, recursiveLongestCommonSubsequence("abcde", "ace"), 3, "Recursive method")
+	AssertEqualsInt(t, memoizedLongestCommonSubsequence("abcde", "ace"), 3, "Memoized method")
+	AssertEqualsInt(t, tabulationLongestCommonSubsequence("abcde", "ace"), 3, "Tabulation method")
+	AssertEqualsInt(t, spaceOptimizationLCS("abcde", "ace"), 3, "Space Optimization method")
 
-}
-
-func assertEquals(t *testing.T, got int, want int, desc string) {
-	t.Log(desc)
-	fmt.Println("got...", got)
-	fmt.Println("want...", want)
-	if got != want {
-		t.Errorf("got %q, wanted %q", got, want)
-	}
 }

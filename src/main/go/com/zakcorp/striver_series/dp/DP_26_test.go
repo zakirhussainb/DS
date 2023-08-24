@@ -1,13 +1,13 @@
 package dp
 
 import (
-	. "github.com/onsi/ginkgo/v2"
-	. "github.com/onsi/gomega"
+	"testing"
+
+	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
 )
 
-var _ = Describe("Get Hello World result", func() {
-	It("Now", func() {
-		res := helloWorld()
-		Expect(res).To(Equal("Zakir Hello World"))
-	})
-})
+func TestLongestCommonSubsequence_1(t *testing.T) {
+
+	AssertEqualsStr(t, findLCS("abcde", "ace"), "ace", "Tabulation method")
+
+}

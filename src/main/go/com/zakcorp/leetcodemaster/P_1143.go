@@ -1,7 +1,7 @@
 package leetcodemaster
 
 import (
-	dsa_utils "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils/dsa_utils"
+	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
 )
 
 /*
@@ -34,7 +34,7 @@ func recursiveLCS(ind1 int, ind2 int, text1 string, text2 string) int {
 	}
 	notMatch1 := recursiveLCS(ind1-1, ind2, text1, text2)
 	notMatch2 := recursiveLCS(ind1-1, ind2, text1, text2)
-	return dsa_utils.Max(notMatch1, notMatch2)
+	return Max(notMatch1, notMatch2)
 }
 
 func memoizedLongestCommonSubsequence(text1 string, text2 string) int {
