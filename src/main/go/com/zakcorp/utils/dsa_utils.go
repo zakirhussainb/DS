@@ -29,3 +29,14 @@ func AssertEqualsStr(t *testing.T, got string, want string, desc string) {
 		t.Errorf("got %q, wanted %q", got, want)
 	}
 }
+
+func Reverse(str string) string {
+	res := make([]rune, len(str))
+	end := len(str) - 1
+	i := 0
+	for end > 0 {
+		res[i] = rune(str[end])
+		i++
+	}
+	return string(res)
+}
