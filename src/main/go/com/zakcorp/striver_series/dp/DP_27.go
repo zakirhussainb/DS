@@ -42,3 +42,25 @@ func tabulationFindLongestCommonSubstring(s1, s2 string) int {
 	}
 	return maxVal
 }
+
+func spaceOptimizationLongestCommonSubstring(s1, s2 string) int {
+	n := len(s1)
+	m := len(s2)
+
+	prev := make([]int, n+1)
+
+	maxVal := 0
+	for i := 1; i <= n; i++ {
+		curr := make([]int, m+1)
+		for j := 1; j <= m; j++ {
+			if s1[i-1] == s2[j-1] {
+				curr[j] = 1 + prev[j-1]
+				maxVal = du.Max(maxVal, curr[j])
+			} else {
+				curr[j] = 0
+			}
+		}
+		prev = curr
+	}
+	return maxVal
+}
