@@ -5,3 +5,4 @@
 a given string.
 - So in the above case 2^3 = 8 subsequences.
 - For all the string related comparison problems, you will always see match or not match.
+- A substring is always consecutive.

@@ -1,7 +1,7 @@
 package dp
 
 import (
-	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
+	du "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
 )
 
 func findLCS(s1 string, s2 string) string {
@@ -35,7 +35,7 @@ func findLCS(s1 string, s2 string) string {
 			} else {
 				notMatch1 := dp[i-1][j]
 				notMatch2 := dp[i][j-1]
-				dp[i][j] = Max(notMatch1, notMatch2)
+				dp[i][j] = du.Max(notMatch1, notMatch2)
 			}
 		}
 	}
