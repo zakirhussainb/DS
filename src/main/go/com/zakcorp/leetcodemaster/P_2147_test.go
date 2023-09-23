@@ -8,4 +8,5 @@ import (
 
 func TestNumberOfWays_1(t *testing.T) {
 	AssertEqualsInt(t, numberOfWays_recursive("SSPPSPS"), 3, "Recursive method")
+	AssertEqualsInt(t, numberOfWays_memoized("SSPPSPS"), 3, "Memoized method")
 }
