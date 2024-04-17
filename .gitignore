@@ -30,3 +30,6 @@ hs_err_pid*
 
 # ignoring interview files and folders
 /src/main/java/com/zakcorp/interviews/
+
+# ignoring vendor files and folders - golang
+/src/main/go/com/zakcorp/vendor/*
