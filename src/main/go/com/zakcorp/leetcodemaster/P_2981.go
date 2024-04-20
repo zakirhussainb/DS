@@ -1,7 +1,11 @@
 package leetcodemaster
 
+import (
+	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
+)
+
 type st struct {
-	char   byte
+	substr string
 	length int
 }
 
@@ -10,11 +14,12 @@ func maximumLength(str string) int {
 	n := len(str)
 	count := 0
 	for i := 0; i < n; i++ {
-		spMap[st{char: str[i], length: count}]++
+		count = 1
+		spMap[st{substr: string(str[i]), length: count}]++
 		for j := i; j < n-1; j++ {
 			if str[j] == str[j+1] {
 				count++
-				spMap[st{char: str[i], length: count}]++
+				spMap[st{substr: string(str[i]), length: count}]++
 			} else {
 				break
 			}

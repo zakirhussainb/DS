@@ -9,3 +9,7 @@ import (
 func TestMaximumLength_1(t *testing.T) {
 	AssertEqualsInt(t, maximumLength("aaaa"), 2, "")
 }
+
+func TestMaximumLength_2(t *testing.T) {
+	AssertEqualsInt(t, maximumLength("aaaa"), 2, "")
+}
