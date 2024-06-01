@@ -1,9 +1,5 @@
 package leetcodemaster
 
-import (
-	. "github.com/zakirhussainb/DS/src/main/go/com/zakcorp/utils"
-)
-
 type st struct {
 	substr string
 	length int
