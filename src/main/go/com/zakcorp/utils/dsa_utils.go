@@ -53,6 +53,24 @@ func AssertCompareArrays(t *testing.T, got [][]int, want [][]int, desc string) b
 	return true
 }
 
+func AssertTrue(t *testing.T, got bool, desc string) {
+	t.Log(desc)
+	fmt.Println("got...", got)
+	fmt.Println("want...", true)
+	if !got {
+		t.Errorf("got %t, wanted %t", got, true)
+	}
+}
+
+func AssertFalse(t *testing.T, got bool, desc string) {
+	t.Log(desc)
+	fmt.Println("got...", got)
+	fmt.Println("want...", false)
+	if got {
+		t.Errorf("got %t, wanted %t", got, false)
+	}
+}
+
 func Reverse(str string) string {
 	res := make([]rune, len(str))
 	end := len(str) - 1
