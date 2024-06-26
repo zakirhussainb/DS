@@ -22,6 +22,15 @@ func AssertEqualsInt(t *testing.T, got int, want int, desc string) {
 	}
 }
 
+func AssertEqualsInt64(t *testing.T, got int64, want int64, desc string) {
+	t.Log(desc)
+	fmt.Println("got...", got)
+	fmt.Println("want...", want)
+	if got != want {
+		t.Errorf("got %q, wanted %q", got, want)
+	}
+}
+
 func AssertEqualsStr(t *testing.T, got string, want string, desc string) {
 	t.Log(desc)
 	fmt.Println("got...", got)
