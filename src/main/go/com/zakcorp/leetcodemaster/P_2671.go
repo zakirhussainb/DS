@@ -1,45 +1,66 @@
 package leetcodemaster
 
-// type FrequencyTracker struct {
-// 	cnt  []int
-// 	freq []int
-// }
+type FrequencyTracker struct {
+	numMap map[int]int
+	hfMap  map[int]int
+}
 
-// func Constructor() FrequencyTracker {
-// 	return FrequencyTracker{cnt: make([]int, 100001), freq: make([]int, 100001)}
-// }
+func Constructor() FrequencyTracker {
+	return FrequencyTracker{numMap: make(map[int]int),
+		hfMap: make(map[int]int)}
+}
 
-// func (this *FrequencyTracker) Add(number int) {
-// 	this.freq[this.cnt[number]]
-// }
+func (this *FrequencyTracker) Add(number int) {
+	if frequency, exists := this.numMap[number]; exists {
+		this.numMap[number] = frequency + 1
 
-// func (this *FrequencyTracker) DeleteOne(number int) {
-// 	this.hashtable[number]--
-// }
+		// Check this frequency in freqMap now
+		if occurrence, exists := this.hfMap[frequency]; exists {
+			this.hfMap[frequency] = occurrence - 1
+			if this.hfMap[frequency] == 0 {
+				delete(this.hfMap, frequency)
+			}
+			this.hfMap[this.numMap[number]] = 1
+		} else {
+			this.hfMap[1] = 1
+		}
 
-// func (this *FrequencyTracker) HasFrequency(frequency int) bool {
-// 	sort.Ints(this.hashtable)
-// 	result := this.BinarySearch(frequency)
-// 	return result != -1
-// }
+	} else {
+		this.numMap[number] = 1
+		if value, exists := this.hfMap[1]; exists {
+			this.hfMap[1] = value + 1
+		} else {
+			this.hfMap[1] = 1
+		}
+	}
+}
 
-// // BinarySearch performs a binary search on the sorted slice of the set.
-// func (this *FrequencyTracker) BinarySearch(target int) int {
-// 	fmt.Println("hash...", this.hashtable)
-// 	low := 1
-// 	high := len(this.hashtable) - 1
-// 	for low <= high {
-// 		med := low + (high-low)/2
-// 		if this.hashtable[med] < target {
-// 			low = med + 1
-// 		} else if this.hashtable[med] > target {
-// 			high = med - 1
-// 		} else {
-// 			return med
-// 		}
-// 	}
-// 	return -1
-// }
+func (this *FrequencyTracker) DeleteOne(number int) {
+	if existingFreq, exists := this.numMap[number]; exists {
+		this.numMap[number] = existingFreq - 1
+		if this.numMap[number] == 0 {
+			delete(this.numMap, number)
+		}
+		if occurrence, exists := this.hfMap[existingFreq]; exists {
+			this.hfMap[existingFreq] = occurrence - 1
+			if this.hfMap[existingFreq] == 0 {
+				delete(this.hfMap, existingFreq)
+				if v, exists := this.hfMap[this.numMap[number]]; exists {
+					this.hfMap[this.numMap[number]] = v + 1
+				} else {
+					this.hfMap[this.numMap[number]] = 1
+				}
+			}
+		}
+	}
+}
+
+func (this *FrequencyTracker) HasFrequency(frequency int) bool {
+	if _, exists := this.hfMap[frequency]; exists {
+		return true
+	}
+	return false
+}
 
 /**
  * Your FrequencyTracker object will be instantiated and called as such:
