@@ -33,3 +33,9 @@ hs_err_pid*
 
 # ignoring vendor files and folders - golang
 /src/main/go/com/zakcorp/vendor/*
+
+# ignoring notes and planning .md files
+general_notes.md
+learning-schedule.md
+Problems_Solved_Concept_Wise.md
+Problems_Solved_So_Far.md
