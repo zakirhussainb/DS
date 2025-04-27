@@ -8,10 +8,10 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertEquals(11, p.solve1( new int[][] { {1,2,3},{5,6,7},{9,10,11} }));
+        assertArrayEquals(new int[]{1,2,6}, p.baseUnitConversions(new int[][]{{0,1,2},{1,2,3}}));
     }
     @Test
     public void test2() {
-        assertEquals(17, p.solve1( new int[][] { {1,2,3},{5,17,7},{9,11,10} }));
+        assertArrayEquals(new int[]{1,2,3,8,10,6,30,24}, p.baseUnitConversions(new int[][]{{0,1,2},{0,2,3},{1,3,4},{1,4,5},{2,5,2},{4,6,3},{5,7,4}}));
     }
 }
