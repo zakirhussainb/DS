@@ -7,7 +7,6 @@ public class Problem_2389 {
     static class Solver {
         public int[] solve1(int[] arr, int[] queries) {
             Arrays.sort(arr);
-//            System.out.println(Arrays.toString(arr));
             int n = arr.length;
             long[] ps = new long[n];
             long[] ss = new long[n];
@@ -19,8 +18,6 @@ public class Problem_2389 {
             for(int i=n-2;i>=0;i--){
                 ss[i]=arr[i]+ss[i + 1];
             }
-//            System.out.println("ps." + Arrays.toString(ps));
-//            System.out.println("ss." + Arrays.toString(ss));
             int m=queries.length;
             int[] res = new int[m];
             for(int i=0;i<m;i++){
@@ -38,11 +35,37 @@ public class Problem_2389 {
                 }
                 res[i] = Math.max(psSize, ssSize);
             }
-//            System.out.println("res."+Arrays.toString(res));
             return res;
         }
         public int[] solve2(int[] arr, int[] queries) {
-
+            Arrays.sort(arr);
+            int n = arr.length;
+            int[] ps = new int[n];
+            ps[0] = arr[0];
+            for(int i=1;i<n;i++){
+                ps[i]=arr[i]+ps[i - 1];
+            }
+            int m=queries.length;
+            int[] res = new int[m];
+            for(int i=0;i<m;i++){
+                res[i] = binarySearch(ps, queries[i]);
+            }
+            return res;
+        }
+        static int binarySearch(int[] ps, int query) {
+            int l = 0;
+            int r = ps.length - 1;
+            while(l <= r) {
+                int m = l + (r - l) / 2;
+                if(ps[m] == query) {
+                    return m + 1;
+                } else if(ps[m] > query) {
+                    r = m - 1;
+                } else {
+                    l = m + 1;
+                }
+            }
+            return l;
         }
     }
 }
