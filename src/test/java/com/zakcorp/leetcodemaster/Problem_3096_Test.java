@@ -54,4 +54,8 @@ public class Problem_3096_Test {
     public void test10() {
         assertEquals(1, p.solve1(new int[]{1,0}));
     }
+    @Test
+    public void test11() {
+        assertEquals(-1, p.solve1(new int[]{1,1}));
+    }
 }

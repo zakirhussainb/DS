@@ -7,26 +7,32 @@ import java.util.Map;
 public class Problem_3096 {
     static class Solver {
         public int solve1(int[] possible) {
-            int[] counter = new int[2];
-            for(int i = 0; i < possible.length; i++) {
-                counter[possible[i]]++;
-            }
-//            System.out.println(Arrays.toString(counter));
-            if(counter[1] == 0) {
-                if (counter[0] == 1) {
-                    return 1;
+            int ts = 0;
+            int n=possible.length;
+            for(int i=0;i<n;i++){
+                if(possible[i] == 0) {
+                    ts += -1;
+                    possible[i] = -1;
+                } else {
+                    ts += 1;
                 }
-                return -1;
-            }
-            if(counter[0] == 1 && counter[1] == 1) {
-                return -1;
-            }
-            int ans = 0;
-            if(counter[0] == 0 && counter[1] > 0) {
-                ans += (counter[1] / 2) + 1;
             }
 
-            return ans == 0 ? 1 : ans;
+            int alexMaxPoint = 0;
+            int alexMinLevel = 0;
+            int bobMinLevel = 0;
+            for(int i=0;i<n;i++){
+                alexMaxPoint += possible[i];
+                alexMinLevel++;
+                int bobMaxPoint = ts - alexMaxPoint;
+                bobMinLevel = n - alexMinLevel;
+                if(alexMaxPoint > bobMaxPoint) {
+                    if(bobMinLevel > 0) {
+                        return i + 1;
+                    }
+                }
+            }
+            return -1;
         }
     }
 }
