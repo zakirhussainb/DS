@@ -5,6 +5,14 @@ import java.util.*;
 public class Problem_253 {
     static class Solver {
         public int solve1(int[][] intervals) {
+            int m = intervals.length;
+            for(int r=0;r<m;r++){
+                for(int c = 0; c < intervals[r].length; c++) {
+                    System.out.print(intervals[r][c] + " ");
+                }
+                System.out.println();
+            }
+            System.exit(0);
             if(intervals.length == 0) {
                 return 0;
             }
