@@ -1,7 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 public class Problem_435 {
     static class Solver {
@@ -21,6 +20,22 @@ public class Problem_435 {
                 }
             }
             return counter;
+        }
+
+        public int solve2(int[][] intervals) {
+            PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(x -> x[1]));
+            pq.addAll(Arrays.asList(intervals));
+            int ans = 0;
+            int end = Integer.MIN_VALUE;
+            while(!pq.isEmpty()) {
+                int[] interval = pq.poll();
+                if(end <= interval[0]) {
+                    end = interval[1];
+                } else {
+                    ans++;
+                }
+            }
+            return ans;
         }
     }
 }
