@@ -5,55 +5,40 @@ import java.util.*;
 public class Problem_B {
 
     static class Solver1 {
-        public long[] solve1(int[] arr) {
-            int n = arr.length;
-            Map<Integer, List<Integer>> map = new HashMap<>();
-            for(int i = 0; i < n; i++) {
-                if(!map.containsKey( arr[i] )) {
-                    map.put(arr[i], new ArrayList<>());
-                }
-                map.get( arr[i] ).add( i );
+        static class Pair {
+            int si;
+            int ei;
+            int counter;
+            public Pair(int si, int ei, int counter) {
+                this.si = si;
+                this.ei = ei;
+                this.counter = counter;
             }
-            long[] out = new long[n];
-            for(int i = 0; i < n; i++) {
-                List<Integer> indices = map.get( arr[i] );
-                if(indices.size() == 1) {
-                    out[i] = 0;
-                    continue;
-                }
-                for(int index : indices) {
-                    if(i != index) {
-                        out[i] += Math.abs(i - index);
-                    }
-                }
-            }
-            return out;
         }
-    }
-    static class Solver2 {
-
-        public long[] solve1(int[] nums) {
-            int n = nums.length;
-            long[] out = new long[n];
-            Map<Integer, Integer> countMap = new HashMap<>();
-            Map<Integer, Long> sumMap = new HashMap<>();
-            int totalCount = 0;
-            long totalSum = 0;
-            for(int i = 0; i < n; i++) {
-                countMap.put(nums[i], countMap.getOrDefault( nums[i], 0 ) + 1);
-                sumMap.put(nums[i], sumMap.getOrDefault( nums[i], 0L ) + 1);
-                totalCount++;
-                totalSum += i;
-            }
-
-            for(int i = 0; i < n; i++) {
-                int count = countMap.getOrDefault( nums[i], 0);
-                long sum = sumMap.getOrDefault( nums[i], 0L);
-                if(nums[i] == nums[1] && i != 1) {
-                    out[i] = (int)(count * (long) i - sum) + (int)(totalSum - sum - totalCount * (long)i);
+        public int solve1(int[] arr) {
+            Map<Integer, Pair> map = new HashMap<>();
+            int ans = 0;
+            for(int i = 0; i < arr.length; i++) {
+                if(map.containsKey(arr[i])) {
+                    Pair existing = map.get(arr[i]);
+                    existing.ei = i;
+                    existing.counter = existing.counter + 1;
+                    map.put(arr[i], existing);
+                    int x = arr[i] / 2;
+                    if(map.containsKey(x)) {
+                        Pair mid = map.get(x);
+                        if(existing.ei > -1 && mid.si < existing.ei) {
+                            ans++;
+                        }
+                        if(existing.ei > -1 && mid.ei > -1 && mid.ei < existing.ei) {
+                            ans++;
+                        }
+                    }
+                } else {
+                    map.put(arr[i], new Pair(i, -1, 1));
                 }
             }
-            return out;
+            return ans;
         }
     }
 }

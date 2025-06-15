@@ -8,10 +8,39 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        assertArrayEquals(new int[]{1,2,6}, p.baseUnitConversions(new int[][]{{0,1,2},{1,2,3}}));
+        assertEquals("#leetcodeDailyStreakAchieved", p.solve1("Leetcode daily streak achieved"));
     }
     @Test
     public void test2() {
-        assertArrayEquals(new int[]{1,2,3,8,10,6,30,24}, p.baseUnitConversions(new int[][]{{0,1,2},{0,2,3},{1,3,4},{1,4,5},{2,5,2},{4,6,3},{5,7,4}}));
+        assertEquals("#canIGoThere", p.solve1("can I Go There"));
+    }
+    @Test
+    public void test3() {
+        assertEquals("#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", p.solve1("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"));
+    }
+    @Test
+    public void test4() {
+        assertEquals("#aBCDE",
+                p.solve1("a b c d e"));
+    }
+    @Test
+    public void test5() {
+        assertEquals("#a",
+                p.solve1("a"));
+    }
+    @Test
+    public void test6() {
+        assertEquals("#",
+                p.solve1("    "));
+    }
+    @Test
+    public void test7() {
+        assertEquals("#",
+                p.solve1("FkVsgzfhQxPYKr WtaCvDuHQeo roeVHIoPorZuIuMDxhYVs jlfCrXCDqBVjgmzxxmZOpUpCc  eHMpZrNxilBPngylMcS"));
+    }
+    @Test
+    public void test8() {
+        assertEquals("#fpysartlqlimkvvrhmkkdlnedqkffpncjbitbtovhovjikbfsawvpisdanzxjctqkn",
+                p.solve1(" fPysaRtLQLiMKVvRhMkkDLNedQKffPnCjbITBTOVhoVjiKbfSawvpisDaNzXJctQkn"));
     }
 }
