@@ -7,27 +7,25 @@ import java.util.Map;
 public class Problem_3160 {
     static class Solver {
         public int[] solve1(int limit, int[][] queries) {
-            Map<Integer, Integer> bcMap = new HashMap<>();
-            Map<Integer, Integer> cbMap = new HashMap<>();
+            Map<Integer, Integer> ballMap = new HashMap<>(); // It represents the Ball-to-Color
+            Map<Integer, Integer> colorMap = new HashMap<>(); // It represents the Color-to-NoOfBalls
             int m = queries.length;
             int[] res = new int[m];
             for(int i = 0; i < m; i++) {
                 int ball = queries[i][0];
                 int color = queries[i][1];
 
-                if (!bcMap.containsKey(ball)) {
-                    bcMap.put(ball, color);
-                } else {
-                    int removeKey = bcMap.get(ball);
-                    cbMap.remove(removeKey);
-                    bcMap.put(queries[i][0], queries[i][1]);
+                if(ballMap.containsKey(ball)) {
+                    // Decrement count of the previous color on the ball
+                    int prevColor = ballMap.get(ball);
+                    colorMap.put(prevColor, colorMap.get(prevColor) - 1);
+                    colorMap.remove(prevColor, 0); // If there are no balls with previous color left, remove color from color map
                 }
-
-                cbMap.put(queries[i][1], queries[i][0]);
-
-                res[i] = cbMap.size();
+                ballMap.put(ball, color);
+                // Increment the count of balls for this new color
+                colorMap.put(color, colorMap.getOrDefault(color, 0) + 1);
+                res[i] = colorMap.size();
             }
-            System.out.println(Arrays.toString(res));
             return res;
         }
     }

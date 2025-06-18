@@ -10,4 +10,9 @@ public class Problem_3160_Test {
     public void test1() {
         assertArrayEquals(new int[]{1,2,1,2,1}, p.solve1(1, new int[][]{{0,1},{1,4},{1,1},{1,4},{1,1}}));
     }
+
+    @Test
+    public void test2() {
+        assertArrayEquals(new int[]{1,2,2,3}, p.solve1(4, new int[][]{{1,4},{2,5},{1,3},{3,4}}));
+    }
 }
