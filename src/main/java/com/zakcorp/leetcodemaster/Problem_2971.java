@@ -21,5 +21,17 @@ public class Problem_2971 {
             }
             return -1;
         }
+        public long solve2(int[] arr) {
+            Arrays.sort(arr);
+            long ts = 0;
+            long ans = -1;
+            for (int num : arr) {
+                if(num < ts) {
+                    ans = num + ts;
+                }
+                ts += num;
+            }
+            return ans;
+        }
     }
 }
