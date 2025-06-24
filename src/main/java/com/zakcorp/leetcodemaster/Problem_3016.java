@@ -35,5 +35,36 @@ public class Problem_3016
 
             return ans;
         }
+
+        // Elegant Approach
+        public int solve2(String word) {
+            int ans = 0;
+
+            int[] freq = new int[26];
+            for (int i = 0; i < word.length(); i++) {
+                freq[word.charAt(i) - 'a']++;
+            }
+
+            Arrays.sort(freq);
+            int count = 0;
+            for(int i = freq.length - 1; i >= 0; i--) {
+                int cost = 0;
+                if(count < 8) {
+                    cost = 1;
+                } else if(count < 16) {
+                    cost = 2;
+                } else if(count < 24) {
+                    cost = 3;
+                } else {
+                    cost = 4;
+                }
+
+                int value = freq[i] * cost;
+                ans += value;
+                count++;
+            }
+
+            return ans;
+        }
     }
 }

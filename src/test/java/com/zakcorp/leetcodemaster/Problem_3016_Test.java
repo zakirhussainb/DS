@@ -9,13 +9,16 @@ public class Problem_3016_Test {
     @Test
     public void test1() {
         assertEquals(5, p.solve1("abcde"));
+        assertEquals(5, p.solve2("abcde"));
     }
     @Test
     public void test2() {
         assertEquals(5, p.solve1("abcde"));
+        assertEquals(5, p.solve2("abcde"));
     }
     @Test
     public void test3() {
         assertEquals(24, p.solve1("aabbccddeeffgghhiiiiii"));
+        assertEquals(24, p.solve2("aabbccddeeffgghhiiiiii"));
     }
 }
