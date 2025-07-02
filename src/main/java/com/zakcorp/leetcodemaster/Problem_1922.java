@@ -1,5 +1,6 @@
 package com.zakcorp.leetcodemaster;
 
+// Solution Reference : https://youtu.be/l0YC3876qxg
 public class Problem_1922 {
     static class Solver {
         private static final long MOD = 1000_000_007;
