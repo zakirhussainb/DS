@@ -7,7 +7,7 @@ import java.util.*;
 import static org.junit.Assert.*;
 
 public class Problem_78_Test {
-    Problem_78.Solver p = new Problem_78.Solver();
+    Problem_78.Solver1 p = new Problem_78.Solver1();
     @Test
     public void test1() {
         List<List<Integer>> list = new ArrayList<>();
