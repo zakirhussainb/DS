@@ -3,7 +3,7 @@ package com.zakcorp.leetcodemaster;
 import java.util.*;
 
 public class Problem_78 {
-    static class Solver {
+    /*static class Solver {
         List<List<Integer>> result = new ArrayList<>();
         public List<List<Integer>> solve1(int[] arr) {
             Arrays.sort(arr);
@@ -18,26 +18,25 @@ public class Problem_78 {
                 list.remove(list.size() - 1);
             }
         }
-    }
+    }*/
 
     static class Solver1 {
-        List<List<Integer>> result = new ArrayList<>();
         public List<List<Integer>> solve1(int[] arr) {
             List<List<Integer>> res = new ArrayList<>();
             List<Integer> list = new ArrayList<>();
-            subcal(0, arr, list, res);
+            powerset(0, arr, list, res);
             return res;
         }
 
-        private void subcal(int ind, int[] arr, List<Integer> list, List<List<Integer>> res) {
+        private void powerset(int ind, int[] arr, List<Integer> list, List<List<Integer>> res) {
             if(ind >= arr.length) {
                 res.add(new ArrayList<>(list));
                 return;
             }
-            subcal(ind + 1, arr, list, res);
             list.add(arr[ind]);
-            subcal(ind + 1, arr, list, res);
-            list.remove(arr[ind]);
+            powerset(ind + 1, arr, list, res);
+            list.remove(list.size() - 1);
+            powerset(ind + 1, arr, list, res);
         }
     }
 }
