@@ -10,11 +10,11 @@ public class Subsequence1 {
             return subsequence(0, nums, k);
         }
         private boolean subsequence(int index, int[] nums, int k) {
-            if(k < 0 || index >= nums.length) {
-                return false;
-            }
             if(k == 0) {
                 return true;
+            }
+            if(k < 0 || index >= nums.length) {
+                return false;
             }
             return subsequence(index + 1, nums, k - nums[index]) ||
                     subsequence(index + 1, nums, k) ;
