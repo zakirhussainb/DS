@@ -23,4 +23,24 @@ public class Subsequence2 {
             subsequence(index + 1, nums, k, ans);
         }
     }
+
+    // More elegant solution
+    static class Solver1 {
+
+        public int countSubsequenceWithTargetSum(int[] nums, int k) {
+            return subsequence(0, nums, k);
+        }
+        private int subsequence(int index, int[] nums, int k) {
+            if(k == 0) {
+                return 1;
+            }
+            if(k < 0 || index >= nums.length) {
+                return 0;
+            }
+
+            int path1 = subsequence(index + 1, nums, k - nums[index]);
+            int path2 = subsequence(index + 1, nums, k);
+            return path1 + path2;
+        }
+    }
 }
