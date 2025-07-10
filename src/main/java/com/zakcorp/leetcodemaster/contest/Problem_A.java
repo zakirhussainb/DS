@@ -4,32 +4,23 @@ import java.util.*;
 
 public class Problem_A {
     static class Solver {
-        public String solve1(String caption) {
-            caption = caption.trim();
-            StringBuilder sb = new StringBuilder();
-            String[] split = caption.split(" ");
-            if(split.length < 1) {
-                return "#";
+        public List<List<Integer>> solve1(int[] candidates, int target) {
+            List<List<Integer>> result = new ArrayList<>();
+            combsum(0, candidates, target, new ArrayList<>(), result);
+            return result;
+        }
+        private static void combsum(int index, int[] candidates, int target, List<Integer> list, List<List<Integer>> result) {
+            if(target == 0) {
+                result.add(new ArrayList<>(list));
+                return;
             }
-            sb.append("#");
-            for(int i=0;i<split.length;i++){
-                if(split[i].isEmpty()) {
-                    continue;
-                }
-                split[i] = split[i].toLowerCase();
-                StringBuilder sb1 = new StringBuilder(split[i]);
-                if(sb.length() > 1) {
-                    char firstChar = sb1.charAt(0);
-                    char uppercaseChar = Character.toUpperCase(firstChar);
-                    sb1.setCharAt(0, uppercaseChar);
-                }
-                sb.append(sb1);
+            if(index >= candidates.length || target < 0) {
+                return;
             }
-            if(sb.length() > 100) {
-                return sb.substring(0, 100);
-            } else {
-                return sb.toString();
-            }
+            list.add(candidates[index]);
+            combsum(index, candidates, target - candidates[index], list, result);
+            list.remove(list.size() - 1);
+            combsum(index + 1, candidates, target, list, result);
         }
     }
 }
