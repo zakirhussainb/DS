@@ -12,6 +12,8 @@ public class L9_CombinationSumII
     Each number in candidates may only be used once in the combination.
     Note: The solution set must not contain duplicate combinations.
      */
+
+    // Using plain for loop to avoid duplicates in a sorted array
     static class Solver {
         public List<List<Integer>> combinationSum2(int[] arr, int target) {
             List<List<Integer>> result = new ArrayList<>();
@@ -36,6 +38,30 @@ public class L9_CombinationSumII
                     break;
                 }
             }
+        }
+    }
+
+    // Using binary search to avoid duplicates in a sorted array
+    static class Solver1 {
+        public List<List<Integer>> combinationSum2(int[] arr, int target) {
+            List<List<Integer>> result = new ArrayList<>();
+            Arrays.sort(arr);
+            findCombinations(0, arr, target, result, new ArrayList<>());
+            return result;
+        }
+        private void findCombinations(int index, int[] arr, int target, List<List<Integer>> result, List<Integer> list) {
+            if(target == 0) {
+                result.add(new ArrayList<>(list));
+                return;
+            }
+            if(target < 0 || index >= arr.length) {
+                return;
+            }
+            list.add(arr[index]);
+            findCombinations(index + 1, arr, target - arr[index], result, list);
+            list.remove(list.size() - 1);
+            int dupNumInd = Arrays.binarySearch(arr, arr[index]);
+            findCombinations(dupNumInd + 1, arr, target, result, list);
         }
     }
 }
