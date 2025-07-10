@@ -41,8 +41,8 @@ public class L9_CombinationSumII
         }
     }
 
-    // Using binary search to avoid duplicates in a sorted array
-    static class Solver1 {
+    // Using binary search to avoid duplicates in a sorted array - TODO: NOT WORKING
+    /*static class Solver1 {
         public List<List<Integer>> combinationSum2(int[] arr, int target) {
             List<List<Integer>> result = new ArrayList<>();
             Arrays.sort(arr);
@@ -63,5 +63,5 @@ public class L9_CombinationSumII
             int dupNumInd = Arrays.binarySearch(arr, arr[index]);
             findCombinations(dupNumInd + 1, arr, target, result, list);
         }
-    }
+    }*/
 }
