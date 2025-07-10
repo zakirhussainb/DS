@@ -12,25 +12,30 @@ public class L9_CombinationSumII
     Each number in candidates may only be used once in the combination.
     Note: The solution set must not contain duplicate combinations.
      */
-    public List<List<Integer>> combinationSum2(int[] arr, int target) {
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(arr);
-        findCombinations(0, arr, target, result, new ArrayList<>());
-        return result;
-    }
-    private void findCombinations(int index, int[] arr, int target, List<List<Integer>> result, List<Integer> list) {
-        if(target == 0) {
-            result.add(new ArrayList<>(list));
-            return;
+    static class Solver {
+        public List<List<Integer>> combinationSum2(int[] arr, int target) {
+            List<List<Integer>> result = new ArrayList<>();
+            Arrays.sort(arr);
+            findCombinations(0, arr, target, result, new ArrayList<>());
+            return result;
         }
-        for(int i = index; i < arr.length; i++) {
-            if(i > index && arr[i] == arr[i - 1])
-                continue;
-            if(arr[i] > target)
-                break;
-            list.add(arr[i]);
-            findCombinations(i + 1, arr, target - arr[i], result, list);
+        private void findCombinations(int index, int[] arr, int target, List<List<Integer>> result, List<Integer> list) {
+            if(target == 0) {
+                result.add(new ArrayList<>(list));
+                return;
+            }
+            if(target < 0 || index >= arr.length) {
+                return;
+            }
+            list.add(arr[index]);
+            findCombinations(index + 1, arr, target - arr[index], result, list);
             list.remove(list.size() - 1);
+            for(int i = index + 1; i < arr.length; i++) {
+                if(arr[i] != arr[index]) {
+                    findCombinations(i, arr, target, result, list);
+                    break;
+                }
+            }
         }
     }
 }

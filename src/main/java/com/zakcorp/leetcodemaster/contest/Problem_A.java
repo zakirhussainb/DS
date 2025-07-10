@@ -6,6 +6,7 @@ public class Problem_A {
     static class Solver {
         public List<List<Integer>> solve1(int[] candidates, int target) {
             List<List<Integer>> result = new ArrayList<>();
+            Arrays.sort(candidates);
             combsum(0, candidates, target, new ArrayList<>(), result);
             return result;
         }
@@ -18,7 +19,7 @@ public class Problem_A {
                 return;
             }
             list.add(candidates[index]);
-            combsum(index, candidates, target - candidates[index], list, result);
+            combsum(index + 1, candidates, target - candidates[index], list, result);
             list.remove(list.size() - 1);
             combsum(index + 1, candidates, target, list, result);
         }
