@@ -12,11 +12,22 @@ public class Problem_A_Test {
     Problem_A.Solver p = new Problem_A.Solver();
     @Test
     public void test1() {
-        List<List<Integer>> result = new ArrayList<>();
-        result.add(Arrays.asList(1,1,6));
-        result.add(Arrays.asList(1,2,5));
-        result.add(Arrays.asList(1,7));
-        result.add(Arrays.asList(2,6));
-        assertEquals(result, p.solve1(new int[]{2, 1, 2, 7, 6, 1, 5}, 8));
+        assertEquals("ba", p.solve1("a#b%*"));
+    }
+    @Test
+    public void test2() {
+        assertEquals("", p.solve1("z*#"));
+    }
+    @Test
+    public void test3() {
+        assertEquals("", p.solve1("%"));
+    }
+    @Test
+    public void test4() {
+        assertEquals("z", p.solve1("z"));
+    }
+    @Test
+    public void test5() {
+        assertEquals("", p.solve1("*#%"));
     }
 }
