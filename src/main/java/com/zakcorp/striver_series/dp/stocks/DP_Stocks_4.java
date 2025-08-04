@@ -57,4 +57,27 @@ public class DP_Stocks_4 {
             return memo[day][buy][capacity];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] arr, int n, int k) {
+            int[][][] dp = new int[n + 1][2][k + 1];
+            for(int day = n - 1; day >= 0; day--) {
+                for(int buy = 0; buy < 2; buy++) {
+                    for(int capacity = 1; capacity < k + 1; capacity++) {
+                        int op1;
+                        int op2;
+                        if(buy == 0) {
+                            op1 = (-1) * arr[day] + dp[day + 1][1][capacity];
+                            op2 = dp[day + 1][0][capacity];
+                        } else {
+                            op1 = arr[day] + dp[day + 1][0][capacity - 1];
+                            op2 = dp[day + 1][1][capacity];
+                        }
+                        dp[day][buy][capacity] = Math.max(op1, op2);
+                    }
+                }
+            }
+            return dp[0][0][k];
+        }
+    }
 }
