@@ -1,0 +1,60 @@
+package com.zakcorp.striver_series.dp.stocks;
+
+import java.util.Arrays;
+
+public class DP_Stocks_3 {
+    static class Recursion {
+        public int solve1(int[] arr, int n) {
+            return recur(0, 0, 2, arr, n);
+        }
+        private int recur(int day, int buy, int capacity, int[] arr, int n) {
+            if(day == n || capacity == 0) {
+                return 0;
+            }
+            int op1;
+            int op2;
+            if(buy == 0) {
+                op1 = (-1) * arr[day] + recur(day + 1, 1, capacity, arr, n);
+                op2 = recur(day + 1, 0, capacity, arr, n);
+            } else {
+                op1 = arr[day] + recur(day + 1, 0, capacity - 1, arr, n);
+                op2 = recur(day + 1, 1, capacity, arr, n);
+            }
+            return Math.max(op1, op2);
+        }
+    }
+
+    static class Memoization {
+        public int solve1(int[] arr, int n) {
+            int[][][] memo = new int[n][2][3];
+            for(int x = 0; x < n; x++) {
+                for(int y = 0; y < 2; y++) {
+                    Arrays.fill(memo[x][y], -1);
+                }
+            }
+            return memoized(0, 0, 2, arr, n, memo);
+        }
+        private int memoized(int day, int buy, int capacity, int[] arr, int n, int[][][] memo) {
+            if(day == n || capacity == 0) {
+                return 0;
+            }
+
+            if(memo[day][buy][capacity] != -1) {
+                return memo[day][buy][capacity];
+            }
+
+            int op1;
+            int op2;
+            if(buy == 0) {
+                op1 = (-1) * arr[day] + memoized(day + 1, 1, capacity, arr, n, memo);
+                op2 = memoized(day + 1, 0, capacity, arr, n, memo);
+            } else {
+                op1 = arr[day] + memoized(day + 1, 0, capacity - 1, arr, n, memo);
+                op2 = memoized(day + 1, 1, capacity, arr, n, memo);
+            }
+            memo[day][buy][capacity] = Math.max(op1, op2);
+
+            return memo[day][buy][capacity];
+        }
+    }
+}
