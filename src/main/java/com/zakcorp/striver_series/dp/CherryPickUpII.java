@@ -5,9 +5,9 @@ public class CherryPickUpII {
         int m = matrix.length;
         int n = matrix[0].length;
 
-        return recur(m - 1, n - 1, m - 1, 0, matrix);
+        return 0;
     }
-    private int recur(int r1, int c1, int r2, int c2, int[][] matrix) {
+    /*private int recur(int r1, int c1, int r2, int c2, int[][] matrix) {
 
         if(r1 < 0 || c1 < 0 || c1 >= matrix[0].length
         || r2 < 0 || c2 < 0 || c2 >= matrix[0].length) {
@@ -40,5 +40,5 @@ public class CherryPickUpII {
         int topRight = recur(r - 1, c + 1, matrix);
 
         return Math.max(top, Math.max(topLeft, topRight)) + temp;
-    }
+    }*/
 }
