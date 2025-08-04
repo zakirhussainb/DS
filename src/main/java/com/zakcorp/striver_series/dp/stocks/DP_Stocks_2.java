@@ -52,4 +52,28 @@ public class DP_Stocks_2 {
             return memo[day][buy];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] arr, int n) {
+            int[][] dp = new int[n + 1][2];
+            dp[n][0] = 0;
+            dp[n][1] = 0;
+            for(int day = n - 1; day >= 0; day--) {
+                for(int buy = 0; buy < 2; buy++) {
+                    int op1;
+                    int op2;
+                    if(buy == 0) {
+                        op1 = (-1) * arr[day] + dp[day + 1][1];
+                        op2 = dp[day + 1][0];
+                    } else {
+                        op1 = arr[day] + dp[day + 1][0];
+                        op2 = dp[day + 1][1];
+                    }
+                    dp[day][buy] = Math.max(op1, op2);
+                }
+            }
+
+            return dp[0][0];
+        }
+    }
 }
