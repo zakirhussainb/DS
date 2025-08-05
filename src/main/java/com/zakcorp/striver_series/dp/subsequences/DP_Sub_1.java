@@ -49,4 +49,32 @@ public class DP_Sub_1 {
             return pick || notPick;
         }
     }
+
+    static class Tabulation {
+        public boolean solve1(int[] arr, int target) {
+            int n = arr.length;
+            int[][] dp = new int[n][target + 1];
+            // Base case, target = 0
+            for(int i = 0; i < n; i++) {
+                dp[i][0] = 1;
+            }
+
+            if (arr[0] <= target) {
+                dp[0][arr[0]] = 1;
+            }
+
+            for(int i = 1; i < n; i++) {
+                for(int t = 1; t <= target; t++) {
+                    boolean pick = false;
+                    if (arr[i] <= t) {
+                        pick = dp[i - 1][t - arr[i]] == 1;
+                    }
+                    boolean notPick = dp[i - 1][t] == 1;
+
+                    dp[i][t] = pick || notPick ? 1 : 0;
+                }
+            }
+            return dp[n - 1][target] == 1;
+        }
+    }
 }
