@@ -84,4 +84,39 @@ public class DP_Sub_5 {
             return memo[ind][subset1];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] arr, int diff) {
+            int totalSum = 0;
+            for(int num : arr) {
+                totalSum += num;
+            }
+            // If (totalSum - diff) is negative or odd, no solution exists.
+            // We check (totalSum - diff) instead of (totalSum + diff) to avoid potential overflow if totalSum and diff are large.
+            // or if (totalSum - diff) value is odd, you cannot count the subsets for that..
+            if ((totalSum - diff) < 0 || (totalSum - diff) % 2 != 0) {
+                return 0;
+            }
+
+            int subset1 = (totalSum - diff) / 2;
+            int n = arr.length;
+            int[][] dp = new int[n + 1][subset1 + 1];
+
+            dp[0][0] = 1;
+
+            for(int i = 1; i <= n; i++) {
+                for(int s1 = 0; s1 <= subset1; s1++) {
+                    int notPick = dp[i - 1][s1];
+                    int pick = 0;
+                    if(arr[i - 1] <= s1) {
+                        pick = dp[i - 1][s1 - arr[i - 1]];
+                    }
+
+                    dp[i][s1] = (pick + notPick) % MOD;
+                }
+            }
+
+            return dp[n][subset1];
+        }
+    }
 }
