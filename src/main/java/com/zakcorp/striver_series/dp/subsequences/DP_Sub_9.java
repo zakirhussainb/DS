@@ -52,4 +52,32 @@ public class DP_Sub_9 {
             return memo[ind][amount];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] coins, int amount) {
+            int n = coins.length;
+            int[][] dp = new int[n][amount + 1];
+            for(int t = 0; t <= amount; t++) {
+                if(t % coins[0] == 0) {
+                    dp[0][t] = 1;
+                } else {
+                    dp[0][t] = 0;
+                }
+            }
+
+            for(int ind = 1; ind < n; ind++) {
+                for(int t = 0; t <= amount; t++) {
+                    int notPick = dp[ind - 1][t];
+                    int pick = 0;
+                    if(coins[ind] <= t) {
+                        pick = dp[ind][t - coins[ind]];
+                    }
+
+                    dp[ind][t] = (pick + notPick) % MOD;
+                }
+            }
+
+            return dp[n - 1][amount];
+        }
+    }
 }
