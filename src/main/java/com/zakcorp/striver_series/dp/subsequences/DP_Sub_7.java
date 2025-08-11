@@ -62,4 +62,32 @@ public class DP_Sub_7 {
             return memo[ind][amount];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] coins, int amount) {
+            int n = coins.length;
+            int[][] dp = new int[n][amount + 1];
+            for(int c = 0; c <= amount; c++) {
+                if(c % coins[0] == 0) {
+                    dp[0][c] = c / coins[0];
+                } else {
+                    dp[0][c] = (int)1e9;
+                }
+            }
+            for(int ind = 1; ind < n; ind++) {
+                for(int t = 0; t <= amount; t++) {
+                    int notPick = dp[ind - 1][t];
+
+                    int pick = (int)1e9;
+                    if(coins[ind] <= t) {
+                        pick = 1 + dp[ind][t - coins[ind]];
+                    }
+
+                    dp[ind][t] = Math.min(pick, notPick);
+                }
+            }
+            int ans = dp[n - 1][amount];
+            return  ans >= (int)1e9 ? -1 : ans;
+        }
+    }
 }
