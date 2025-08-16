@@ -47,4 +47,24 @@ public class DP_Sub_10 {
             return memo[ind][W];
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] wt, int[] val, int n, int W) {
+            int[][] dp = new int[n][W + 1];
+            for(int w = 0; w <= W; w++) {
+                dp[0][w] = (w / wt[0]) * val[0];
+            }
+            for(int ind = 1; ind < n; ind++) {
+                for(int w = 0; w <= W; w++) {
+                    int np = dp[ind - 1][w];
+                    int p = Integer.MIN_VALUE;
+                    if(w >= wt[ind]) {
+                        p = dp[ind][w - wt[ind]] + val[ind];
+                    }
+                    dp[ind][w] = Math.max(np, p);
+                }
+            }
+            return dp[n - 1][W];
+        }
+    }
 }
