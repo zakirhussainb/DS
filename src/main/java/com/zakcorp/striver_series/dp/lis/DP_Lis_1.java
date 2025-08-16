@@ -88,4 +88,24 @@ public class DP_Lis_1 {
             return ans;
         }
     }
+
+    static class Tabulation {
+        public int solve1(int[] arr) {
+            int n = arr.length;
+
+            int[][] dp = new int[n + 1][n + 1];
+            for(int ind = n - 1; ind >= 0; ind--) {
+                for(int prevInd = ind - 1; prevInd >= -1; prevInd--) {
+                    int notPick = dp[ind + 1][prevInd + 1];
+
+                    int pick = 0;
+                    if(prevInd == -1 || arr[prevInd] < arr[ind]) {
+                        pick = dp[ind + 1][ind + 1] + 1;
+                    }
+                    dp[ind][prevInd + 1] = Math.max(notPick, pick);
+                }
+            }
+            return dp[0][0];
+        }
+    }
 }
