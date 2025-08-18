@@ -108,4 +108,26 @@ public class DP_Lis_1 {
             return dp[0][0];
         }
     }
+
+    static class SpaceOptimization {
+        public int solve1(int[] arr) {
+            int n = arr.length;
+
+            int[] next = new int[n + 1];
+            int[] curr = new int[n + 1];
+            for(int ind = n - 1; ind >= 0; ind--) {
+                for(int prevInd = ind - 1; prevInd >= -1; prevInd--) {
+                    int notPick = next[prevInd + 1];
+
+                    int pick = 0;
+                    if(prevInd == -1 || arr[prevInd] < arr[ind]) {
+                        pick = next[ind + 1] + 1;
+                    }
+                    curr[prevInd + 1] = Math.max(notPick, pick);
+                }
+                next = curr;
+            }
+            return next[0];
+        }
+    }
 }
