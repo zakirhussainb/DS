@@ -43,12 +43,62 @@ public class DP_Strings_7 {
             if(memo[i][j] != -1) {
                 return memo[i][j];
             }
+            int result = 0;
             if(str1.charAt(i) == str2.charAt(j)) {
-                memo[i][j] = memoized(i - 1, j, str1, str2, memo) % MOD + memoized(i - 1, j - 1, str1, str2, memo) % MOD;
+                result = memoized(i - 1, j, str1, str2, memo) + memoized(i - 1, j - 1, str1, str2, memo);
             } else {
-                memo[i][j] = memoized(i - 1, j, str1, str2, memo) % MOD;
+                result = memoized(i - 1, j, str1, str2, memo);
             }
+            memo[i][j] = result % MOD;
             return memo[i][j];
         }
     }
+
+    static class Tabulation {
+        public int solve1(String s, String t) {
+            int m = s.length(), n = t.length();
+            int[][] dp = new int[m + 1][n + 1];
+            // Base case
+            for(int r = 0; r <= m; r++) {
+                dp[r][0] = 1;
+            }
+            for(int i = 1; i <= m; i++) {
+                for(int j = 1; j <= n; j++) {
+                    int result = 0;
+                    if(s.charAt(i - 1) == t.charAt(j - 1)) {
+                        result = dp[i - 1][j] + dp[i - 1][j - 1];
+                    } else {
+                        result = dp[i - 1][j];
+                    }
+                    dp[i][j] = result % MOD;
+                }
+            }
+            return dp[m][n];
+        }
+    }
+
+    /*static class SpaceOptimization {
+        public int solve1(String s, String t) {
+            int m = s.length(), n = t.length();
+            int[] prev = new int[m + 1];
+            int[] curr = new int[m + 1];
+            // Base case
+            for(int r = 0; r <= m; r++) {
+                prev[r] = 1;
+            }
+            for(int i = 1; i <= m; i++) {
+                for(int j = 1; j <= n; j++) {
+                    int result = 0;
+                    if(s.charAt(i - 1) == t.charAt(j - 1)) {
+                        result = prev[j] + prev[j - 1];
+                    } else {
+                        result = prev[j];
+                    }
+                    curr[j] = result % MOD;
+                }
+                curr = prev;
+            }
+            return curr[n];
+        }
+    }*/
 }
