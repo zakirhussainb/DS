@@ -4,6 +4,8 @@ import java.util.*;
 
 public class ConnectedComponents {
     static class Solver {
+
+        TraversalTechniques.Traversals traversals = new TraversalTechniques.Traversals();
         public int findNumberOfComponents(int V, List<List<Integer>> edges) {
 
             // Create Adjacency List
@@ -22,25 +24,11 @@ public class ConnectedComponents {
             boolean[] visited = new boolean[V];
             for(int i = 0; i < V; i++) {
                 if(!visited[i]) {
-                   bfs(i, visited, adjList);
-                   cc++;
+                    traversals.bfs(i, visited, adjList);
+                    cc++;
                 }
             }
             return cc;
-        }
-        private void bfs(int node, boolean[] visited, List<Integer>[] adjList) {
-            visited[node] = true;
-            Queue<Integer> queue = new LinkedList<>();
-            queue.add(node);
-            while(!queue.isEmpty()) {
-                int current = queue.poll();
-                for(int neighbour : adjList[current]) {
-                    if(!visited[neighbour]) {
-                        queue.add(neighbour);
-                        visited[neighbour] = true;
-                    }
-                }
-            }
         }
     }
 }
