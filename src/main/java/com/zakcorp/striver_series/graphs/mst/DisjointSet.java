@@ -4,7 +4,6 @@ import java.util.*;
 public class DisjointSet {
     int[] rank;
     int[] parent;
-
     int[] size;
     public DisjointSet(int n) {
         rank = new int[n + 1];
